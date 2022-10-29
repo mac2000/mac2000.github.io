@@ -1,0 +1,483 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 4.24.5"/><style data-href="/styles.f7b0302c8427f1a04772.css" data-identity="gatsby-global-css">@media (prefers-color-scheme:light){code[class*=language-],pre[class*=language-]{background:#fafafa;color:#383a42;direction:ltr;font-family:Fira Code,Fira Mono,Menlo,Consolas,DejaVu Sans Mono,monospace;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{background:#e5e5e6;color:inherit}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection{background:#e5e5e6;color:inherit}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.2em .3em;white-space:normal}.token.cdata,.token.comment,.token.prolog{color:#a0a1a7}.token.doctype,.token.entity,.token.punctuation{color:#383a42}.token.atrule,.token.attr-name,.token.boolean,.token.class-name,.token.constant,.token.number{color:#b76b01}.token.keyword{color:#a626a4}.token.deleted,.token.important,.token.property,.token.symbol,.token.tag{color:#e45649}.token.attr-value,.token.attr-value>.token.punctuation,.token.builtin,.token.char,.token.inserted,.token.regex,.token.selector,.token.string{color:#50a14f}.token.function,.token.operator,.token.variable{color:#4078f2}.token.url{color:#0184bc}.token.attr-value>.token.punctuation.attr-equals,.token.special-attr>.token.attr-value>.token.value.css{color:#383a42}.language-css .token.selector{color:#e45649}.language-css .token.property{color:#383a42}.language-css .token.function,.language-css .token.url>.token.function{color:#0184bc}.language-css .token.url>.token.string.url{color:#50a14f}.language-css .token.atrule .token.rule,.language-css .token.important,.language-javascript .token.operator{color:#a626a4}.language-javascript .token.template-string>.token.interpolation>.token.interpolation-punctuation.punctuation{color:#ca1243}.language-json .token.operator{color:#383a42}.language-json .token.null.keyword{color:#b76b01}.language-markdown .token.url,.language-markdown .token.url-reference.url>.token.string,.language-markdown .token.url>.token.operator{color:#383a42}.language-markdown .token.url>.token.content{color:#4078f2}.language-markdown .token.url-reference.url,.language-markdown .token.url>.token.url{color:#0184bc}.language-markdown .token.blockquote.punctuation,.language-markdown .token.hr.punctuation{color:#a0a1a7;font-style:italic}.language-markdown .token.code-snippet{color:#50a14f}.language-markdown .token.bold .token.content{color:#b76b01}.language-markdown .token.italic .token.content{color:#a626a4}.language-markdown .token.list.punctuation,.language-markdown .token.strike .token.content,.language-markdown .token.strike .token.punctuation,.language-markdown .token.title.important>.token.punctuation{color:#e45649}.token.bold{font-weight:700}.token.comment,.token.italic{font-style:italic}.token.entity{cursor:help}.token.namespace{opacity:.8}.token.token.cr:before,.token.token.lf:before,.token.token.space:before,.token.token.tab:not(:empty):before{color:rgba(56,58,66,.2)}div.code-toolbar>.toolbar.toolbar>.toolbar-item{margin-right:.4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span{background:#e5e5e6;border-radius:.3em;color:#696c77;padding:.1em .4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:hover{background:#c6c7c7;color:#383a42}.line-highlight.line-highlight{background:rgba(56,58,66,.05)}.line-highlight.line-highlight:before,.line-highlight.line-highlight[data-end]:after{background:#e5e5e6;border-radius:.3em;box-shadow:0 2px 0 0 rgba(0,0,0,.2);color:#383a42;padding:.1em .6em}pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:rgba(56,58,66,.05)}.command-line .command-line-prompt,.line-numbers.line-numbers .line-numbers-rows{border-right-color:rgba(56,58,66,.2)}.command-line .command-line-prompt>span:before,.line-numbers .line-numbers-rows>span:before{color:#9d9d9f}.rainbow-braces .token.token.punctuation.brace-level-1,.rainbow-braces .token.token.punctuation.brace-level-5,.rainbow-braces .token.token.punctuation.brace-level-9{color:#e45649}.rainbow-braces .token.token.punctuation.brace-level-10,.rainbow-braces .token.token.punctuation.brace-level-2,.rainbow-braces .token.token.punctuation.brace-level-6{color:#50a14f}.rainbow-braces .token.token.punctuation.brace-level-11,.rainbow-braces .token.token.punctuation.brace-level-3,.rainbow-braces .token.token.punctuation.brace-level-7{color:#4078f2}.rainbow-braces .token.token.punctuation.brace-level-12,.rainbow-braces .token.token.punctuation.brace-level-4,.rainbow-braces .token.token.punctuation.brace-level-8{color:#a626a4}pre.diff-highlight>code .token.token.deleted:not(.prefix),pre>code.diff-highlight .token.token.deleted:not(.prefix){background-color:rgba(255,82,102,.15)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::-moz-selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix),pre>code.diff-highlight .token.token.inserted:not(.prefix){background-color:rgba(25,255,91,.15)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::-moz-selection{background-color:rgba(56,224,98,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::selection{background-color:rgba(56,224,98,.25)}.prism-previewer-gradient.prism-previewer-gradient div,.prism-previewer.prism-previewer:before{border-color:hsl(0,0,95%)}.prism-previewer-color.prism-previewer-color:before,.prism-previewer-easing.prism-previewer-easing:before,.prism-previewer-gradient.prism-previewer-gradient div{border-radius:.3em}.prism-previewer.prism-previewer:after{border-top-color:hsl(0,0,95%)}.prism-previewer-flipped.prism-previewer-flipped.after{border-bottom-color:hsl(0,0,95%)}.prism-previewer-angle.prism-previewer-angle:before,.prism-previewer-easing.prism-previewer-easing,.prism-previewer-time.prism-previewer-time:before{background:#fff}.prism-previewer-angle.prism-previewer-angle circle,.prism-previewer-time.prism-previewer-time circle{stroke:#383a42;stroke-opacity:1}.prism-previewer-easing.prism-previewer-easing circle,.prism-previewer-easing.prism-previewer-easing line,.prism-previewer-easing.prism-previewer-easing path{stroke:#383a42}.prism-previewer-easing.prism-previewer-easing circle{fill:transparent}}@media (prefers-color-scheme:dark){code[class*=language-],pre[class*=language-]{background:#282c34;color:#abb2bf;direction:ltr;font-family:Fira Code,Fira Mono,Menlo,Consolas,DejaVu Sans Mono,monospace;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;text-align:left;text-shadow:0 1px rgba(0,0,0,.3);white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{background:#3e4451;color:inherit;text-shadow:none}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection{background:#3e4451;color:inherit;text-shadow:none}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.2em .3em;white-space:normal}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}.token.cdata,.token.comment,.token.prolog{color:#5c6370}.token.doctype,.token.entity,.token.punctuation{color:#abb2bf}.token.atrule,.token.attr-name,.token.boolean,.token.class-name,.token.constant,.token.number{color:#d19a66}.token.keyword{color:#c678dd}.token.deleted,.token.important,.token.property,.token.symbol,.token.tag{color:#e06c75}.token.attr-value,.token.attr-value>.token.punctuation,.token.builtin,.token.char,.token.inserted,.token.regex,.token.selector,.token.string{color:#98c379}.token.function,.token.operator,.token.variable{color:#61afef}.token.url{color:#56b6c2}.token.attr-value>.token.punctuation.attr-equals,.token.special-attr>.token.attr-value>.token.value.css{color:#abb2bf}.language-css .token.selector{color:#e06c75}.language-css .token.property{color:#abb2bf}.language-css .token.function,.language-css .token.url>.token.function{color:#56b6c2}.language-css .token.url>.token.string.url{color:#98c379}.language-css .token.atrule .token.rule,.language-css .token.important,.language-javascript .token.operator{color:#c678dd}.language-javascript .token.template-string>.token.interpolation>.token.interpolation-punctuation.punctuation{color:#be5046}.language-json .token.operator{color:#abb2bf}.language-json .token.null.keyword{color:#d19a66}.language-markdown .token.url,.language-markdown .token.url-reference.url>.token.string,.language-markdown .token.url>.token.operator{color:#abb2bf}.language-markdown .token.url>.token.content{color:#61afef}.language-markdown .token.url-reference.url,.language-markdown .token.url>.token.url{color:#56b6c2}.language-markdown .token.blockquote.punctuation,.language-markdown .token.hr.punctuation{color:#5c6370;font-style:italic}.language-markdown .token.code-snippet{color:#98c379}.language-markdown .token.bold .token.content{color:#d19a66}.language-markdown .token.italic .token.content{color:#c678dd}.language-markdown .token.list.punctuation,.language-markdown .token.strike .token.content,.language-markdown .token.strike .token.punctuation,.language-markdown .token.title.important>.token.punctuation{color:#e06c75}.token.bold{font-weight:700}.token.comment,.token.italic{font-style:italic}.token.entity{cursor:help}.token.namespace{opacity:.8}.token.token.cr:before,.token.token.lf:before,.token.token.space:before,.token.token.tab:not(:empty):before{color:rgba(171,178,191,.15);text-shadow:none}div.code-toolbar>.toolbar.toolbar>.toolbar-item{margin-right:.4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span{background:#3a3f4b;border-radius:.3em;color:#828997;padding:.1em .4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:hover{background:#3e4451;color:#abb2bf}.line-highlight.line-highlight{background:rgba(153,187,255,.04)}.line-highlight.line-highlight:before,.line-highlight.line-highlight[data-end]:after{background:#3a3f4b;border-radius:.3em;box-shadow:0 2px 0 0 rgba(0,0,0,.2);color:#abb2bf;padding:.1em .6em}pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:rgba(153,187,255,.04)}.command-line .command-line-prompt,.line-numbers.line-numbers .line-numbers-rows{border-right-color:rgba(171,178,191,.15)}.command-line .command-line-prompt>span:before,.line-numbers .line-numbers-rows>span:before{color:#636d83}.rainbow-braces .token.token.punctuation.brace-level-1,.rainbow-braces .token.token.punctuation.brace-level-5,.rainbow-braces .token.token.punctuation.brace-level-9{color:#e06c75}.rainbow-braces .token.token.punctuation.brace-level-10,.rainbow-braces .token.token.punctuation.brace-level-2,.rainbow-braces .token.token.punctuation.brace-level-6{color:#98c379}.rainbow-braces .token.token.punctuation.brace-level-11,.rainbow-braces .token.token.punctuation.brace-level-3,.rainbow-braces .token.token.punctuation.brace-level-7{color:#61afef}.rainbow-braces .token.token.punctuation.brace-level-12,.rainbow-braces .token.token.punctuation.brace-level-4,.rainbow-braces .token.token.punctuation.brace-level-8{color:#c678dd}pre.diff-highlight>code .token.token.deleted:not(.prefix),pre>code.diff-highlight .token.token.deleted:not(.prefix){background-color:rgba(255,82,102,.15)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::-moz-selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix),pre>code.diff-highlight .token.token.inserted:not(.prefix){background-color:rgba(25,255,91,.15)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::-moz-selection{background-color:rgba(56,224,98,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::selection{background-color:rgba(56,224,98,.25)}.prism-previewer-gradient.prism-previewer-gradient div,.prism-previewer.prism-previewer:before{border-color:#262931}.prism-previewer-color.prism-previewer-color:before,.prism-previewer-easing.prism-previewer-easing:before,.prism-previewer-gradient.prism-previewer-gradient div{border-radius:.3em}.prism-previewer.prism-previewer:after{border-top-color:#262931}.prism-previewer-flipped.prism-previewer-flipped.after{border-bottom-color:#262931}.prism-previewer-angle.prism-previewer-angle:before,.prism-previewer-easing.prism-previewer-easing,.prism-previewer-time.prism-previewer-time:before{background:#31363f}.prism-previewer-angle.prism-previewer-angle circle,.prism-previewer-time.prism-previewer-time circle{stroke:#abb2bf;stroke-opacity:1}.prism-previewer-easing.prism-previewer-easing circle,.prism-previewer-easing.prism-previewer-easing line,.prism-previewer-easing.prism-previewer-easing path{stroke:#abb2bf}.prism-previewer-easing.prism-previewer-easing circle{fill:transparent}}:root{--foreground:#24292f;--background:#fff}a{color:#0969da}a.visited,a:visited{color:#57606a}.green{color:#1a7f37}.red{color:#cf222e}@media (prefers-color-scheme:dark){:root{--foreground:#adbac7;--background:#22272e}a{color:#539bf5}a.visited,a:visited{color:#768390}.green{color:#57ab5a}.red{color:#e5534b}}a{text-decoration:none}a:hover{text-decoration:underline}html{font-family:Ubuntu,sans-serif}body{background-color:var(--background);color:var(--foreground);margin:0;padding:0}#top{box-sizing:border-box;display:grid;grid-template-rows:1fr 2em;margin:0;min-height:100vh;padding:1em 2em}.graph polygon{fill:transparent}.graph g ellipse[stroke="#000"],.graph g ellipse[stroke="#000000"],.graph g ellipse[stroke=black],.graph g path[stroke="#000"],.graph g path[stroke="#000000"],.graph g path[stroke=black],.graph g polygon[stroke="#000"],.graph g polygon[stroke="#000000"],.graph g polygon[stroke=black]{stroke:var(--foreground)}.graph g text[fill="#000"],.graph g text[fill="#000000"],.graph g text[fill=black]{fill:var(--foreground)}code,pre{font-family:JetBrains Mono,monospace}pre[class*=language-]{word-wrap:break-word;border-radius:0;box-sizing:border-box;margin:1em -2em;max-width:100vw;padding:1em 2em}footer a{line-height:2em;margin-right:.5em}.delta{line-height:1;margin-left:1em;white-space:nowrap}.columns{display:grid;grid-template-columns:repeat(2,1fr)}@media only screen and (max-width:1024px){.columns{grid-template-columns:repeat(1,1fr)}}.pie{text-align:center}.pie figure{display:inline-block}.pie figcaption{font-size:80%;margin-top:.25em}</style><title data-gatsby-head="true">UPC - visa/mastercard payment</title><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="icon" href="/favicon-32x32.png?v=6389d5f13c96000946d60b6bb0a8b5a8" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div id="top"><main><div><h1>UPC - visa/mastercard payment</h1>
+<p>Номер тестовой карточки: 4999999999990011</p>
+<p><a href="https://secure.upc.ua/ecgtest/merchant">https://secure.upc.ua/ecgtest/merchant</a></p>
+<h2>Задача</h2>
+<p>Реализовать оплату кредиткой</p>
+<h2>Шаг 1. Регистрация</h2>
+<p>Скачиваем и заполняем заявку на регистрацию <a href="http://ecommerce.upc.ua/site/docs.html">http://ecommerce.upc.ua/site/docs.html</a>, после чего отправляем заявку на <a href="mailto:ec@upc.ua">ec@upc.ua</a></p>
+<p>Через некоторое время получаем письмо с логином\паролем приблизительно следующего вида:</p>
+<blockquote>
+<p>Добрый день</p>
+</blockquote>
+<p>Тестовые данные:</p>
+<p>Адрес шлюза :<a href="https://secure.upc.ua/ecgtest/enter">https://secure.upc.ua/ecgtest/enter</a></p>
+<p>MerchantID=1753019</p>
+<p>TerminalID=E7881019</p>
+<p>Интерфейс торговца :<a href="https://secure.upc.ua/ecgtest/merchant">https://secure.upc.ua/ecgtest/merchant</a></p>
+<p>Логин / Пароль : 1753019 / 1753019</p>
+<p>Сертификат сервера - в аттаче</p>
+<p>Также необходимо, чтобы Вы выслали сертификат торговца (файл с именем 1753019.crt) на адрес <a href="mailto:ec@upc.ua">ec@upc.ua</a></p>
+<p>Вся необходимая документация: здесь: <a href="http://ecommerce.upc.ua/site/docs.html">http://ecommerce.upc.ua/site/docs.html</a></p>
+<p>Тестовые карты здесь: <a href="http://ecommerce.upc.ua/docs/Testing.pdf">http://ecommerce.upc.ua/docs/Testing.pdf</a></p>
+<p>(See attached file: test-server.cert)</p>
+<p>В архиве batch.rar документация и примеры по формированию подписи.</p>
+<p>(See attached file: batch.rar)</p>
+<p>В архиве image.rar логотипы.</p>
+<p>(See attached file: image.rar)</p>
+<p>Переходим на страницу <a href="https://secure.upc.ua/ecgtest/merchant/">https://secure.upc.ua/ecgtest/merchant/</a> и меняем пароль на странице профиля.</p>
+<p><img src="http://mac-blog.org.ua/images/wp/image3.png" alt="screenshot"></p>
+<p>На странице "Терминалы" выбираем наш сайт и указываем URL, для страниц успешной и неудачных транзакций.</p>
+<p><img src="http://mac-blog.org.ua/images/wp/image2.png" alt="screenshot"></p>
+<p>Так же необходимо сгенерировать и выслать им сертификат, для этого качаем openssl <a href="http://www.slproweb.com/products/Win32OpenSSL.html">http://www.slproweb.com/products/Win32OpenSSL.html</a> и прописываем путь к папке bin в PATH, далее в консоли переходим к папке batch (приатаченой к письму) и запускаем run.bat <code class="language-text">#MERCHANT_ID#</code> (с правами администратора)</p>
+<p><img src="http://mac-blog.org.ua/images/wp/image0.png" alt="screenshot"></p>
+<p>Теперь необходимо выслать файл 1753019.crt на <a href="mailto:ec@upc.ua">ec@upc.ua</a> и дождаться ответа от них (пока не будет ответа, ничего работать не будет).</p>
+<p>В ответ они присылают простой ответ, типа "Сертификат подгружен" и все.</p>
+<p>На сервере нам понадобятся как минимум:</p>
+<p>test-server.cert - файл который они выслали в письме подтверждении регистрации (используется для проверки ответа)</p>
+<p>1753019.pem - файл (приватный ключ) который мы сгенерировали (используется для создания сигнатуры отправляемых данных)</p>
+<h2>Шаг 2. Страница заказа</h2>
+<p>Код страницы заказа:</p>
+<div class="gatsby-highlight" data-language="php"><pre class="language-php"><code class="language-php"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span> <span class="token name">PUBLIC</span> <span class="token string">"-//W3C//DTD XHTML 1.0 Transitional//EN"</span> <span class="token string">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/1999/xhtml<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Content-Type<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/html; charset=utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Buy<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+
+<span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token variable">$MerchantID</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'1753019'</span><span class="token punctuation">;</span>
+<span class="token variable">$TerminalID</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'E7881019'</span><span class="token punctuation">;</span>
+<span class="token variable">$OrderID</span> <span class="token operator">=</span> <span class="token number">19</span><span class="token punctuation">;</span>
+<span class="token variable">$PurchaseTime</span> <span class="token operator">=</span> <span class="token function">date</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"ymdHis"</span><span class="token punctuation">)</span> <span class="token punctuation">;</span>
+<span class="token variable">$TotalAmount</span> <span class="token operator">=</span> <span class="token number">242</span><span class="token punctuation">;</span>
+<span class="token variable">$CurrencyID</span> <span class="token operator">=</span> <span class="token number">980</span><span class="token punctuation">;</span>
+<span class="token variable">$data</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"<span class="token interpolation"><span class="token variable">$MerchantID</span></span>;<span class="token interpolation"><span class="token variable">$TerminalID</span></span>;<span class="token interpolation"><span class="token variable">$PurchaseTime</span></span>;<span class="token interpolation"><span class="token variable">$OrderID</span></span>;<span class="token interpolation"><span class="token variable">$CurrencyID</span></span>;<span class="token interpolation"><span class="token variable">$TotalAmount</span></span>;;"</span><span class="token punctuation">;</span>
+<span class="token variable">$fp</span> <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"<span class="token interpolation"><span class="token variable">$MerchantID</span></span>.pem"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"r"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$priv_key</span> <span class="token operator">=</span> <span class="token function">fread</span><span class="token punctuation">(</span><span class="token variable">$fp</span><span class="token punctuation">,</span> <span class="token number">8192</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">fclose</span><span class="token punctuation">(</span><span class="token variable">$fp</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$pkeyid</span> <span class="token operator">=</span> <span class="token function">openssl_get_privatekey</span><span class="token punctuation">(</span><span class="token variable">$priv_key</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">openssl_sign</span><span class="token punctuation">(</span> <span class="token variable">$data</span> <span class="token punctuation">,</span> <span class="token variable">$signature</span><span class="token punctuation">,</span> <span class="token variable">$pkeyid</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">openssl_free_key</span><span class="token punctuation">(</span><span class="token variable">$pkeyid</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$b64sign</span> <span class="token operator">=</span> <span class="token function">base64_encode</span><span class="token punctuation">(</span><span class="token variable">$signature</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token delimiter important">?></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://secure.upc.ua/ecgtest/enter<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Version<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hidden<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>MerchantID<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hidden<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token keyword">echo</span> <span class="token variable">$MerchantID</span><span class="token delimiter important">?></span></span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>TerminalID<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hidden<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token keyword">echo</span> <span class="token variable">$TerminalID</span><span class="token delimiter important">?></span></span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>TotalAmount<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hidden<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token keyword">echo</span> <span class="token variable">$TotalAmount</span><span class="token delimiter important">?></span></span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Currency<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hidden<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token keyword">echo</span> <span class="token variable">$CurrencyID</span><span class="token delimiter important">?></span></span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>locale<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hidden<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>RU<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>PurchaseTime<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hidden<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token keyword">echo</span> <span class="token variable">$PurchaseTime</span> <span class="token delimiter important">?></span></span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>OrderID<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hidden<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token keyword">echo</span> <span class="token variable">$OrderID</span><span class="token delimiter important">?></span></span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Signature<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hidden<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token keyword">echo</span> <span class="token string double-quoted-string">"<span class="token interpolation"><span class="token variable">$b64sign</span></span>"</span> <span class="token delimiter important">?></span></span><span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    Sum: <span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token keyword">echo</span> <span class="token variable">$TotalAmount</span><span class="token delimiter important">?></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre></div>
+<p>Примечание:</p>
+<p><code class="language-text">$data</code> генериться следующим образом</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">MerchantId;TerminalId;PurchaseTime;OrderId,Delay;CurrencyId,AltCurrencyId;Amount,AltAmount;SessionData(SD);</code></pre></div>
+<p>Количество знаков <code class="language-text">;</code> должно оставаться постоянным. Если какое то поле отсутствует, то ставится <code class="language-text">;;</code>. Например, если отсутствует <code class="language-text">SessionData(SD)</code>, то datafile будет выглядеть следующим образом:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">MerchantId;TerminalId;PurchaseTime;OrderId,Delay;CurrencyId,AltCurrencyId;Amount,AltAmount;;</code></pre></div>
+<p>Если отсутствуют поля <code class="language-text">Delay</code> или <code class="language-text">AltCurrency</code>, <code class="language-text">AltAmount</code> то запятая перед этими полями опускается. Например:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">MerchantId;TerminalId;PurchaseTime;OrderId;CurrencyId,AltCurrencyId;Amount,AltAmount;;
+
+MerchantId;TerminalId;PurchaseTime;OrderId,Delay;CurrencyId;Amount;;
+
+MerchantId;TerminalId;PurchaseTime;OrderId;CurrencyId;Amount;;</code></pre></div>
+<p>в нашем случае использовался последний пример. Важно соблюдать порядок иначе ничего работать не будет, в коде использован самый простой рабочий пример.</p>
+<h2>Шаг 3. Страница удачной авторизации</h2>
+<p>Код страницы:</p>
+<div class="gatsby-highlight" data-language="php"><pre class="language-php"><code class="language-php"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span> <span class="token name">PUBLIC</span> <span class="token string">"-//W3C//DTD XHTML 1.0 Transitional//EN"</span> <span class="token string">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/1999/xhtml<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Content-Type<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/html; charset=utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Buy<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>SUCCESS<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>$_POST<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pre</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">></span></span><span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token function">print_r</span><span class="token punctuation">(</span><span class="token variable">$_POST</span><span class="token punctuation">)</span><span class="token delimiter important">?></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pre</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>Proccessing<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+
+<span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+
+<span class="token variable">$MerchantID</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'MerchantID'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$TerminalID</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'TerminalID'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$OrderID</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'OrderID'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$PurchaseTime</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'PurchaseTime'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$TotalAmount</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'TotalAmount'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$CurrencyID</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'Currency'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$XID</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'XID'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$SD</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'SD'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$TranCode</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'TranCode'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$ApprovalCode</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'ApprovalCode'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token variable">$data</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"<span class="token interpolation"><span class="token variable">$MerchantID</span></span>;<span class="token interpolation"><span class="token variable">$TerminalID</span></span>;<span class="token interpolation"><span class="token variable">$PurchaseTime</span></span>;<span class="token interpolation"><span class="token variable">$OrderID</span></span>;<span class="token interpolation"><span class="token variable">$XID</span></span>;<span class="token interpolation"><span class="token variable">$CurrencyID</span></span>;<span class="token interpolation"><span class="token variable">$TotalAmount</span></span>;<span class="token interpolation"><span class="token variable">$SD</span></span>;<span class="token interpolation"><span class="token variable">$TranCode</span></span>;<span class="token interpolation"><span class="token variable">$ApprovalCode</span></span>;"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">echo</span> <span class="token string single-quoted-string">'data: '</span><span class="token operator">.</span><span class="token variable">$data</span><span class="token operator">.</span><span class="token string single-quoted-string">'&lt;br />'</span><span class="token punctuation">;</span>
+
+<span class="token variable">$signature</span> <span class="token operator">=</span> <span class="token variable">$HTTP_POST_VARS</span><span class="token punctuation">[</span><span class="token string double-quoted-string">"Signature"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$signature</span> <span class="token operator">=</span> <span class="token function">base64_decode</span><span class="token punctuation">(</span><span class="token variable">$signature</span><span class="token punctuation">)</span> <span class="token punctuation">;</span>
+<span class="token variable">$fp</span> <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"test-server.cert"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"r"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$cert</span> <span class="token operator">=</span> <span class="token function">fread</span><span class="token punctuation">(</span><span class="token variable">$fp</span><span class="token punctuation">,</span> <span class="token number">8192</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">fclose</span><span class="token punctuation">(</span><span class="token variable">$fp</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$pubkeyid</span> <span class="token operator">=</span> <span class="token function">openssl_get_publickey</span><span class="token punctuation">(</span><span class="token variable">$cert</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$ok</span> <span class="token operator">=</span> <span class="token function">openssl_verify</span><span class="token punctuation">(</span><span class="token variable">$data</span><span class="token punctuation">,</span> <span class="token variable">$signature</span><span class="token punctuation">,</span> <span class="token variable">$pubkeyid</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$ok</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"good"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">elseif</span> <span class="token punctuation">(</span><span class="token variable">$ok</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"bad"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"ugly, error checking signature"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">openssl_free_key</span><span class="token punctuation">(</span><span class="token variable">$pubkeyid</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token delimiter important">?></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre></div>
+<p>Если все прошло успешно скрипт вернет good что говорит о том что проплата прошла успешно.</p>
+<p>Примечание:</p>
+<p>Тут тоже очень важно не напортачить с переменной $data, которая генериться следующим образом:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">MerchantId;TerminalId;PurchaseTime;OrderId,Delay;Xid;CurrencyId,AltCurrencyId;Amount,AltAmount;SessionData;TranCode;ApprovalCode;</code></pre></div>
+<p>Правила те же самые если полей типа <code class="language-text">Delay</code>, <code class="language-text">AltCurrencyId</code>, <code class="language-text">AltAmount</code> нет - запятая перед ними удаляется</p>
+<p>В идеале на странице <code class="language-text">success.php</code> должна будет выглядеть так:</p>
+<p><img src="http://mac-blog.org.ua/images/wp/image1.png" alt="screenshot"></p>
+<h2>Шаг 4. Страница ошибки</h2>
+<p>Собственно здесь и делать нечего, из полученных данных отменяем заказ по <code class="language-text">OrderID</code> и в зависимости от кода ответа показываем соотв. сообщение.</p>
+<h2>Тестовые карточки</h2>
+<p>Для тестирования можно использовать тестовые кредитки из документации <a href="http://ecommerce.upc.ua/site/docs.html">http://ecommerce.upc.ua/site/docs.html</a></p>
+<p>На момент моих экспериментов они были следующими:</p>
+<table>
+<thead>
+<tr>
+<th>Обобщенные коды ответа для магазина</th>
+<th>Примерная интерпретация ответа на странице возврата электронного магазина</th>
+<th>Номер карты (срок действия 12/2012; CVV2 – 999)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>000</td>
+<td>Сделка авторизована</td>
+<td>4999999999990011</td>
+</tr>
+<tr>
+<td>105</td>
+<td>Тразакция не разрешена банком-эмитентом</td>
+<td>4999999999990029</td>
+</tr>
+<tr>
+<td>116</td>
+<td>Недостаточно средств</td>
+<td>4999999999990037</td>
+</tr>
+<tr>
+<td>111</td>
+<td>Несуществующая карта</td>
+<td>4999999999990045</td>
+</tr>
+<tr>
+<td>108</td>
+<td>Карта утеряна или украдена</td>
+<td>4999999999990052</td>
+</tr>
+<tr>
+<td>101</td>
+<td>Неверный срок действия карты</td>
+<td>4999999999990060</td>
+</tr>
+<tr>
+<td>130</td>
+<td>Превышен допустимый лимит расходов</td>
+<td>4999999999990078</td>
+</tr>
+<tr>
+<td>290</td>
+<td>Банк-издатель недоступен</td>
+<td>4999999999990086</td>
+</tr>
+<tr>
+<td>291</td>
+<td>Техническая или коммуникационная проблема</td>
+<td>4999999999990094</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Ошибка формата</td>
+<td></td>
+</tr>
+<tr>
+<td>402</td>
+<td>Ошибки в параметрах Acquirer/Merchant</td>
+<td></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Ошибки при соединении с ресурсом платежной системы (DS)</td>
+<td>4999999999990102</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Ошибка аутентификации покупателя</td>
+<td>4999999999990110</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Ошибка подписи</td>
+<td></td>
+</tr>
+<tr>
+<td>501</td>
+<td>Транзакция отменена пользователем</td>
+<td></td>
+</tr>
+<tr>
+<td>502</td>
+<td>Сессия браузера устарела</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Данне которые мы передаем</h2>
+<p>Все данные передаются POST запросом на адрес <a href="https://secure.upc.ua/ecgtest/enter">https://secure.upc.ua/ecgtest/enter</a></p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Название (назначение)</th>
+<th>Комментарий</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Version</td>
+<td>Значение версии интерфейса SG</td>
+<td>Версия протокола взаимодействия. Действующая версия в данный момент – 1v. Этот параметр является справочным для обработчика взодных данных шлюза.</td>
+</tr>
+<tr>
+<td>MerchantID</td>
+<td>Идентификатор торговца</td>
+<td>Выдается при регистрации</td>
+</tr>
+<tr>
+<td>TerminalID</td>
+<td>Идентификатор терминала</td>
+<td>Выдается при регистрации, завязан на кокнретный сайт</td>
+</tr>
+<tr>
+<td>TotalAmount</td>
+<td>Сумма заказа</td>
+<td>В мелких единицах валюты (копейки, центы)</td>
+</tr>
+<tr>
+<td>Currency</td>
+<td>Валюта</td>
+<td>Определяется договором с обслуживающим банком 643 руб. 840 у.е. 978 eur. 980 грн.</td>
+</tr>
+<tr>
+<td>AltTotalAmount (опционально)</td>
+<td>Сумма заказа (альтернативная валюта)</td>
+<td></td>
+</tr>
+<tr>
+<td>AltCurrency (опционально)</td>
+<td>Альтернативная Валюта</td>
+<td></td>
+</tr>
+<tr>
+<td>PurchaseTime</td>
+<td>Время запроса в формате yyMMddHHmmss или yyMMddHHmmssZ</td>
+<td>100921113510 Или 100921113510+0300 Если зона не указана используется та же что и у шлюза</td>
+</tr>
+<tr>
+<td>locale</td>
+<td>Язык интерфейса (en, ru, uk)</td>
+<td>Язык страницы шлюза</td>
+</tr>
+<tr>
+<td>OrderID</td>
+<td>Номер заказа длиной до 20 байт</td>
+<td></td>
+</tr>
+<tr>
+<td>SD (опционально)</td>
+<td>Session Data – данные сессии</td>
+<td></td>
+</tr>
+<tr>
+<td>PurchaseDesc (опционально)</td>
+<td>Краткое описание покупки товара (utf-8)</td>
+<td></td>
+</tr>
+<tr>
+<td>Signature</td>
+<td>Значение сгенерированной сигнатуры</td>
+<td>См. примечание</td>
+</tr>
+<tr>
+<td>Delay</td>
+<td>Идентификатор платежа пре-авторизация</td>
+<td>Для преавторизации, значение должно быть равно 1, иначе 0 или пусто. Хз, что это за хрень для работы не нужно</td>
+</tr>
+</tbody>
+</table>
+<p>Примечание: Генерация сигнатуры</p>
+<div class="gatsby-highlight" data-language="php"><pre class="language-php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token variable">$MerchantID</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'1753019'</span><span class="token punctuation">;</span>
+<span class="token variable">$TerminalID</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'E7881019'</span><span class="token punctuation">;</span>
+<span class="token variable">$OrderID</span> <span class="token operator">=</span> <span class="token number">19</span><span class="token punctuation">;</span>
+<span class="token variable">$PurchaseTime</span> <span class="token operator">=</span> <span class="token function">date</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"ymdHis"</span><span class="token punctuation">)</span> <span class="token punctuation">;</span>
+<span class="token variable">$TotalAmount</span> <span class="token operator">=</span> <span class="token number">242</span><span class="token punctuation">;</span>
+<span class="token variable">$CurrencyID</span> <span class="token operator">=</span> <span class="token number">980</span><span class="token punctuation">;</span>
+<span class="token variable">$data</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"<span class="token interpolation"><span class="token variable">$MerchantID</span></span>;<span class="token interpolation"><span class="token variable">$TerminalID</span></span>;<span class="token interpolation"><span class="token variable">$PurchaseTime</span></span>;<span class="token interpolation"><span class="token variable">$OrderID</span></span>;<span class="token interpolation"><span class="token variable">$CurrencyID</span></span>;<span class="token interpolation"><span class="token variable">$TotalAmount</span></span>;;"</span><span class="token punctuation">;</span>
+<span class="token variable">$fp</span> <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"<span class="token interpolation"><span class="token variable">$MerchantID</span></span>.pem"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"r"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$priv_key</span> <span class="token operator">=</span> <span class="token function">fread</span><span class="token punctuation">(</span><span class="token variable">$fp</span><span class="token punctuation">,</span> <span class="token number">8192</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">fclose</span><span class="token punctuation">(</span><span class="token variable">$fp</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$pkeyid</span> <span class="token operator">=</span> <span class="token function">openssl_get_privatekey</span><span class="token punctuation">(</span><span class="token variable">$priv_key</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">openssl_sign</span><span class="token punctuation">(</span> <span class="token variable">$data</span> <span class="token punctuation">,</span> <span class="token variable">$signature</span><span class="token punctuation">,</span> <span class="token variable">$pkeyid</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">openssl_free_key</span><span class="token punctuation">(</span><span class="token variable">$pkeyid</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$b64sign</span> <span class="token operator">=</span> <span class="token function">base64_encode</span><span class="token punctuation">(</span><span class="token variable">$signature</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token delimiter important">?></span></span></code></pre></div>
+<p>Данные которые получаем в ответ</p>
+<p>Все данные передаются POST на страницу <code class="language-text">success.php</code> (указаную в шаге 1)</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Название (назначение)</th>
+<th>Комментарий</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MerchantID</td>
+<td>Идентификатор торговца</td>
+<td></td>
+</tr>
+<tr>
+<td>TerminalID</td>
+<td>Идентификатор терминала</td>
+<td></td>
+</tr>
+<tr>
+<td>TotalAmount</td>
+<td>Сумма заказа</td>
+<td></td>
+</tr>
+<tr>
+<td>Currency</td>
+<td>Валюта</td>
+<td></td>
+</tr>
+<tr>
+<td>AltTotalAmount (опционально)</td>
+<td>Сумма заказа (альтернативная валюта)</td>
+<td></td>
+</tr>
+<tr>
+<td>AltCurrency (опционально)</td>
+<td>Альтернативная Валюта</td>
+<td></td>
+</tr>
+<tr>
+<td>PurchaseTime</td>
+<td>Время запроса в формате yyMMddHHmmss</td>
+<td></td>
+</tr>
+<tr>
+<td>OrderID</td>
+<td>Номер заказа длиной до 20 байт</td>
+<td></td>
+</tr>
+<tr>
+<td>XID</td>
+<td>Идентификатор транзакции (номер заказа, дополненный до 20 символов)</td>
+<td></td>
+</tr>
+<tr>
+<td>SD</td>
+<td>Session Data – данные сессии</td>
+<td></td>
+</tr>
+<tr>
+<td>ApprovalCode</td>
+<td>Код авторизации хоста</td>
+<td></td>
+</tr>
+<tr>
+<td>Rrn</td>
+<td>Retrieval Reference Number</td>
+<td>Уникальный номер транзакции в системе авторизации и расчетов обслуживающего банка</td>
+</tr>
+<tr>
+<td>ProxyPan</td>
+<td>4 последние цифры номера карты.</td>
+<td>Пример: <code class="language-text">499999******0011</code></td>
+</tr>
+<tr>
+<td>TranCode</td>
+<td>Код завершения тразакции</td>
+<td></td>
+</tr>
+<tr>
+<td>Signature</td>
+<td></td>
+<td>см. примечание</td>
+</tr>
+<tr>
+<td>Delay</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Email</td>
+<td></td>
+<td>Email – введенный пользователем на странице шлюза</td>
+</tr>
+</tbody>
+</table>
+<p>Примечание:</p>
+<p>Проверка данный ответа</p>
+<div class="gatsby-highlight" data-language="php"><pre class="language-php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+
+<span class="token variable">$MerchantID</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'MerchantID'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$TerminalID</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'TerminalID'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$OrderID</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'OrderID'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$PurchaseTime</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'PurchaseTime'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$TotalAmount</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'TotalAmount'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$CurrencyID</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'Currency'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$XID</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'XID'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$SD</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'SD'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$TranCode</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'TranCode'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$ApprovalCode</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'ApprovalCode'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token variable">$data</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"<span class="token interpolation"><span class="token variable">$MerchantID</span></span>;<span class="token interpolation"><span class="token variable">$TerminalID</span></span>;<span class="token interpolation"><span class="token variable">$PurchaseTime</span></span>;<span class="token interpolation"><span class="token variable">$OrderID</span></span>;<span class="token interpolation"><span class="token variable">$XID</span></span>;<span class="token interpolation"><span class="token variable">$CurrencyID</span></span>;<span class="token interpolation"><span class="token variable">$TotalAmount</span></span>;<span class="token interpolation"><span class="token variable">$SD</span></span>;<span class="token interpolation"><span class="token variable">$TranCode</span></span>;<span class="token interpolation"><span class="token variable">$ApprovalCode</span></span>;"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">echo</span> <span class="token string single-quoted-string">'data: '</span><span class="token operator">.</span><span class="token variable">$data</span><span class="token operator">.</span><span class="token string single-quoted-string">'&lt;br />'</span><span class="token punctuation">;</span>
+
+<span class="token variable">$signature</span> <span class="token operator">=</span> <span class="token variable">$HTTP_POST_VARS</span><span class="token punctuation">[</span><span class="token string double-quoted-string">"Signature"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$signature</span> <span class="token operator">=</span> <span class="token function">base64_decode</span><span class="token punctuation">(</span><span class="token variable">$signature</span><span class="token punctuation">)</span> <span class="token punctuation">;</span>
+<span class="token variable">$fp</span> <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"test-server.cert"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"r"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$cert</span> <span class="token operator">=</span> <span class="token function">fread</span><span class="token punctuation">(</span><span class="token variable">$fp</span><span class="token punctuation">,</span> <span class="token number">8192</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">fclose</span><span class="token punctuation">(</span><span class="token variable">$fp</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$pubkeyid</span> <span class="token operator">=</span> <span class="token function">openssl_get_publickey</span><span class="token punctuation">(</span><span class="token variable">$cert</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$ok</span> <span class="token operator">=</span> <span class="token function">openssl_verify</span><span class="token punctuation">(</span><span class="token variable">$data</span><span class="token punctuation">,</span> <span class="token variable">$signature</span><span class="token punctuation">,</span> <span class="token variable">$pubkeyid</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$ok</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"good"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">elseif</span> <span class="token punctuation">(</span><span class="token variable">$ok</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"bad"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"ugly, error checking signature"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">openssl_free_key</span><span class="token punctuation">(</span><span class="token variable">$pubkeyid</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token delimiter important">?></span></span></code></pre></div></div></main><footer><a href="#top">top</a><a href="/">home</a><a href="/search">search</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/upc-visa-mastercard-payment";window.___webpackCompilationHash="ef8fb55bb983484b16a7";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-b4bb882d10635d85fa25.js"],"app":["/app-98475b819971087d4b7e.js"],"component---src-pages-404-js":["/component---src-pages-404-js-2652c435d8decd31b8ef.js"],"component---src-pages-index-js":["/component---src-pages-index-js-59ea4a114c2918516395.js"],"component---src-pages-search-js":["/component---src-pages-search-js-078619e3aef857102623.js"],"component---src-templates-note-js":["/component---src-templates-note-js-b005c02681f20ea28edd.js"]};/*]]>*/</script><script src="/polyfill-b4bb882d10635d85fa25.js" nomodule=""></script><script src="/app-98475b819971087d4b7e.js" async=""></script><script src="/framework-2ce620c91826a79f925c.js" async=""></script><script src="/webpack-runtime-72217849817cd80b0f9a.js" async=""></script></body></html>

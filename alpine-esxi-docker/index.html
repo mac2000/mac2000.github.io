@@ -1,0 +1,223 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 4.24.5"/><style data-href="/styles.f7b0302c8427f1a04772.css" data-identity="gatsby-global-css">@media (prefers-color-scheme:light){code[class*=language-],pre[class*=language-]{background:#fafafa;color:#383a42;direction:ltr;font-family:Fira Code,Fira Mono,Menlo,Consolas,DejaVu Sans Mono,monospace;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{background:#e5e5e6;color:inherit}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection{background:#e5e5e6;color:inherit}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.2em .3em;white-space:normal}.token.cdata,.token.comment,.token.prolog{color:#a0a1a7}.token.doctype,.token.entity,.token.punctuation{color:#383a42}.token.atrule,.token.attr-name,.token.boolean,.token.class-name,.token.constant,.token.number{color:#b76b01}.token.keyword{color:#a626a4}.token.deleted,.token.important,.token.property,.token.symbol,.token.tag{color:#e45649}.token.attr-value,.token.attr-value>.token.punctuation,.token.builtin,.token.char,.token.inserted,.token.regex,.token.selector,.token.string{color:#50a14f}.token.function,.token.operator,.token.variable{color:#4078f2}.token.url{color:#0184bc}.token.attr-value>.token.punctuation.attr-equals,.token.special-attr>.token.attr-value>.token.value.css{color:#383a42}.language-css .token.selector{color:#e45649}.language-css .token.property{color:#383a42}.language-css .token.function,.language-css .token.url>.token.function{color:#0184bc}.language-css .token.url>.token.string.url{color:#50a14f}.language-css .token.atrule .token.rule,.language-css .token.important,.language-javascript .token.operator{color:#a626a4}.language-javascript .token.template-string>.token.interpolation>.token.interpolation-punctuation.punctuation{color:#ca1243}.language-json .token.operator{color:#383a42}.language-json .token.null.keyword{color:#b76b01}.language-markdown .token.url,.language-markdown .token.url-reference.url>.token.string,.language-markdown .token.url>.token.operator{color:#383a42}.language-markdown .token.url>.token.content{color:#4078f2}.language-markdown .token.url-reference.url,.language-markdown .token.url>.token.url{color:#0184bc}.language-markdown .token.blockquote.punctuation,.language-markdown .token.hr.punctuation{color:#a0a1a7;font-style:italic}.language-markdown .token.code-snippet{color:#50a14f}.language-markdown .token.bold .token.content{color:#b76b01}.language-markdown .token.italic .token.content{color:#a626a4}.language-markdown .token.list.punctuation,.language-markdown .token.strike .token.content,.language-markdown .token.strike .token.punctuation,.language-markdown .token.title.important>.token.punctuation{color:#e45649}.token.bold{font-weight:700}.token.comment,.token.italic{font-style:italic}.token.entity{cursor:help}.token.namespace{opacity:.8}.token.token.cr:before,.token.token.lf:before,.token.token.space:before,.token.token.tab:not(:empty):before{color:rgba(56,58,66,.2)}div.code-toolbar>.toolbar.toolbar>.toolbar-item{margin-right:.4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span{background:#e5e5e6;border-radius:.3em;color:#696c77;padding:.1em .4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:hover{background:#c6c7c7;color:#383a42}.line-highlight.line-highlight{background:rgba(56,58,66,.05)}.line-highlight.line-highlight:before,.line-highlight.line-highlight[data-end]:after{background:#e5e5e6;border-radius:.3em;box-shadow:0 2px 0 0 rgba(0,0,0,.2);color:#383a42;padding:.1em .6em}pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:rgba(56,58,66,.05)}.command-line .command-line-prompt,.line-numbers.line-numbers .line-numbers-rows{border-right-color:rgba(56,58,66,.2)}.command-line .command-line-prompt>span:before,.line-numbers .line-numbers-rows>span:before{color:#9d9d9f}.rainbow-braces .token.token.punctuation.brace-level-1,.rainbow-braces .token.token.punctuation.brace-level-5,.rainbow-braces .token.token.punctuation.brace-level-9{color:#e45649}.rainbow-braces .token.token.punctuation.brace-level-10,.rainbow-braces .token.token.punctuation.brace-level-2,.rainbow-braces .token.token.punctuation.brace-level-6{color:#50a14f}.rainbow-braces .token.token.punctuation.brace-level-11,.rainbow-braces .token.token.punctuation.brace-level-3,.rainbow-braces .token.token.punctuation.brace-level-7{color:#4078f2}.rainbow-braces .token.token.punctuation.brace-level-12,.rainbow-braces .token.token.punctuation.brace-level-4,.rainbow-braces .token.token.punctuation.brace-level-8{color:#a626a4}pre.diff-highlight>code .token.token.deleted:not(.prefix),pre>code.diff-highlight .token.token.deleted:not(.prefix){background-color:rgba(255,82,102,.15)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::-moz-selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix),pre>code.diff-highlight .token.token.inserted:not(.prefix){background-color:rgba(25,255,91,.15)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::-moz-selection{background-color:rgba(56,224,98,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::selection{background-color:rgba(56,224,98,.25)}.prism-previewer-gradient.prism-previewer-gradient div,.prism-previewer.prism-previewer:before{border-color:hsl(0,0,95%)}.prism-previewer-color.prism-previewer-color:before,.prism-previewer-easing.prism-previewer-easing:before,.prism-previewer-gradient.prism-previewer-gradient div{border-radius:.3em}.prism-previewer.prism-previewer:after{border-top-color:hsl(0,0,95%)}.prism-previewer-flipped.prism-previewer-flipped.after{border-bottom-color:hsl(0,0,95%)}.prism-previewer-angle.prism-previewer-angle:before,.prism-previewer-easing.prism-previewer-easing,.prism-previewer-time.prism-previewer-time:before{background:#fff}.prism-previewer-angle.prism-previewer-angle circle,.prism-previewer-time.prism-previewer-time circle{stroke:#383a42;stroke-opacity:1}.prism-previewer-easing.prism-previewer-easing circle,.prism-previewer-easing.prism-previewer-easing line,.prism-previewer-easing.prism-previewer-easing path{stroke:#383a42}.prism-previewer-easing.prism-previewer-easing circle{fill:transparent}}@media (prefers-color-scheme:dark){code[class*=language-],pre[class*=language-]{background:#282c34;color:#abb2bf;direction:ltr;font-family:Fira Code,Fira Mono,Menlo,Consolas,DejaVu Sans Mono,monospace;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;text-align:left;text-shadow:0 1px rgba(0,0,0,.3);white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{background:#3e4451;color:inherit;text-shadow:none}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection{background:#3e4451;color:inherit;text-shadow:none}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.2em .3em;white-space:normal}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}.token.cdata,.token.comment,.token.prolog{color:#5c6370}.token.doctype,.token.entity,.token.punctuation{color:#abb2bf}.token.atrule,.token.attr-name,.token.boolean,.token.class-name,.token.constant,.token.number{color:#d19a66}.token.keyword{color:#c678dd}.token.deleted,.token.important,.token.property,.token.symbol,.token.tag{color:#e06c75}.token.attr-value,.token.attr-value>.token.punctuation,.token.builtin,.token.char,.token.inserted,.token.regex,.token.selector,.token.string{color:#98c379}.token.function,.token.operator,.token.variable{color:#61afef}.token.url{color:#56b6c2}.token.attr-value>.token.punctuation.attr-equals,.token.special-attr>.token.attr-value>.token.value.css{color:#abb2bf}.language-css .token.selector{color:#e06c75}.language-css .token.property{color:#abb2bf}.language-css .token.function,.language-css .token.url>.token.function{color:#56b6c2}.language-css .token.url>.token.string.url{color:#98c379}.language-css .token.atrule .token.rule,.language-css .token.important,.language-javascript .token.operator{color:#c678dd}.language-javascript .token.template-string>.token.interpolation>.token.interpolation-punctuation.punctuation{color:#be5046}.language-json .token.operator{color:#abb2bf}.language-json .token.null.keyword{color:#d19a66}.language-markdown .token.url,.language-markdown .token.url-reference.url>.token.string,.language-markdown .token.url>.token.operator{color:#abb2bf}.language-markdown .token.url>.token.content{color:#61afef}.language-markdown .token.url-reference.url,.language-markdown .token.url>.token.url{color:#56b6c2}.language-markdown .token.blockquote.punctuation,.language-markdown .token.hr.punctuation{color:#5c6370;font-style:italic}.language-markdown .token.code-snippet{color:#98c379}.language-markdown .token.bold .token.content{color:#d19a66}.language-markdown .token.italic .token.content{color:#c678dd}.language-markdown .token.list.punctuation,.language-markdown .token.strike .token.content,.language-markdown .token.strike .token.punctuation,.language-markdown .token.title.important>.token.punctuation{color:#e06c75}.token.bold{font-weight:700}.token.comment,.token.italic{font-style:italic}.token.entity{cursor:help}.token.namespace{opacity:.8}.token.token.cr:before,.token.token.lf:before,.token.token.space:before,.token.token.tab:not(:empty):before{color:rgba(171,178,191,.15);text-shadow:none}div.code-toolbar>.toolbar.toolbar>.toolbar-item{margin-right:.4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span{background:#3a3f4b;border-radius:.3em;color:#828997;padding:.1em .4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:hover{background:#3e4451;color:#abb2bf}.line-highlight.line-highlight{background:rgba(153,187,255,.04)}.line-highlight.line-highlight:before,.line-highlight.line-highlight[data-end]:after{background:#3a3f4b;border-radius:.3em;box-shadow:0 2px 0 0 rgba(0,0,0,.2);color:#abb2bf;padding:.1em .6em}pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:rgba(153,187,255,.04)}.command-line .command-line-prompt,.line-numbers.line-numbers .line-numbers-rows{border-right-color:rgba(171,178,191,.15)}.command-line .command-line-prompt>span:before,.line-numbers .line-numbers-rows>span:before{color:#636d83}.rainbow-braces .token.token.punctuation.brace-level-1,.rainbow-braces .token.token.punctuation.brace-level-5,.rainbow-braces .token.token.punctuation.brace-level-9{color:#e06c75}.rainbow-braces .token.token.punctuation.brace-level-10,.rainbow-braces .token.token.punctuation.brace-level-2,.rainbow-braces .token.token.punctuation.brace-level-6{color:#98c379}.rainbow-braces .token.token.punctuation.brace-level-11,.rainbow-braces .token.token.punctuation.brace-level-3,.rainbow-braces .token.token.punctuation.brace-level-7{color:#61afef}.rainbow-braces .token.token.punctuation.brace-level-12,.rainbow-braces .token.token.punctuation.brace-level-4,.rainbow-braces .token.token.punctuation.brace-level-8{color:#c678dd}pre.diff-highlight>code .token.token.deleted:not(.prefix),pre>code.diff-highlight .token.token.deleted:not(.prefix){background-color:rgba(255,82,102,.15)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::-moz-selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix),pre>code.diff-highlight .token.token.inserted:not(.prefix){background-color:rgba(25,255,91,.15)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::-moz-selection{background-color:rgba(56,224,98,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::selection{background-color:rgba(56,224,98,.25)}.prism-previewer-gradient.prism-previewer-gradient div,.prism-previewer.prism-previewer:before{border-color:#262931}.prism-previewer-color.prism-previewer-color:before,.prism-previewer-easing.prism-previewer-easing:before,.prism-previewer-gradient.prism-previewer-gradient div{border-radius:.3em}.prism-previewer.prism-previewer:after{border-top-color:#262931}.prism-previewer-flipped.prism-previewer-flipped.after{border-bottom-color:#262931}.prism-previewer-angle.prism-previewer-angle:before,.prism-previewer-easing.prism-previewer-easing,.prism-previewer-time.prism-previewer-time:before{background:#31363f}.prism-previewer-angle.prism-previewer-angle circle,.prism-previewer-time.prism-previewer-time circle{stroke:#abb2bf;stroke-opacity:1}.prism-previewer-easing.prism-previewer-easing circle,.prism-previewer-easing.prism-previewer-easing line,.prism-previewer-easing.prism-previewer-easing path{stroke:#abb2bf}.prism-previewer-easing.prism-previewer-easing circle{fill:transparent}}:root{--foreground:#24292f;--background:#fff}a{color:#0969da}a.visited,a:visited{color:#57606a}.green{color:#1a7f37}.red{color:#cf222e}@media (prefers-color-scheme:dark){:root{--foreground:#adbac7;--background:#22272e}a{color:#539bf5}a.visited,a:visited{color:#768390}.green{color:#57ab5a}.red{color:#e5534b}}a{text-decoration:none}a:hover{text-decoration:underline}html{font-family:Ubuntu,sans-serif}body{background-color:var(--background);color:var(--foreground);margin:0;padding:0}#top{box-sizing:border-box;display:grid;grid-template-rows:1fr 2em;margin:0;min-height:100vh;padding:1em 2em}.graph polygon{fill:transparent}.graph g ellipse[stroke="#000"],.graph g ellipse[stroke="#000000"],.graph g ellipse[stroke=black],.graph g path[stroke="#000"],.graph g path[stroke="#000000"],.graph g path[stroke=black],.graph g polygon[stroke="#000"],.graph g polygon[stroke="#000000"],.graph g polygon[stroke=black]{stroke:var(--foreground)}.graph g text[fill="#000"],.graph g text[fill="#000000"],.graph g text[fill=black]{fill:var(--foreground)}code,pre{font-family:JetBrains Mono,monospace}pre[class*=language-]{word-wrap:break-word;border-radius:0;box-sizing:border-box;margin:1em -2em;max-width:100vw;padding:1em 2em}footer a{line-height:2em;margin-right:.5em}.delta{line-height:1;margin-left:1em;white-space:nowrap}.columns{display:grid;grid-template-columns:repeat(2,1fr)}@media only screen and (max-width:1024px){.columns{grid-template-columns:repeat(1,1fr)}}.pie{text-align:center}.pie figure{display:inline-block}.pie figcaption{font-size:80%;margin-top:.25em}</style><title data-gatsby-head="true">Alpine Linux as a ESXi Docker host</title><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="icon" href="/favicon-32x32.png?v=6389d5f13c96000946d60b6bb0a8b5a8" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div id="top"><main><div><h1>Alpine Linux as a ESXi Docker host</h1>
+<p>Once again realized that Rancher OS is not supported anymore</p>
+<p>After quick "googling" it seems that there is no so much alternatives right now</p>
+<p>Photon OS from VMWare is almost same as Ubuntu and from <a href="https://mac-blog.org.ua/esxi-cloud-init-ubuntu">previous experiments</a> I'm already able to have really small footprint docker host but wondering how much further can it go</p>
+<h2>Alpine Images</h2>
+<p>Alpine images can be downloaded <a href="https://alpinelinux.org/downloads/">here</a></p>
+<p>One we are looking for is under "Virtual"</p>
+<p><a href="https://dl-cdn.alpinelinux.org/alpine/v3.15/releases/x86_64/alpine-virt-3.15.0-x86_64.iso">https://dl-cdn.alpinelinux.org/alpine/v3.15/releases/x86_64/alpine-virt-3.15.0-x86_64.iso</a></p>
+<p>ISO size is only 55mb in size which is really promising</p>
+<blockquote>
+<p>Unfortunatelly there is no something like cloud ready vmdk with build in cloud init at moment, but there are already AWS ready images, so hopefully it will be available in future, so unfortunately setup is manual, but because of how simple and small Alpine is it wont take more than few minutes</p>
+</blockquote>
+<h2>ESXi</h2>
+<p>From ESXi perspective nothing fancy, we are going to create simple virtual machine as usual, as a guest system "Other 5.x or later Linux (64-bit)"</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1024px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/f23bebecefed56f8a289612ff9712c3f/17009/guest.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 51.5625%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAACHklEQVQoz42RS08TYRSG56+4NtFI2CEGXRhWRlduXbhxayKJMYLiAkyILgwrkwYRNCYGQ7FcytB2ZjoUDAVUFrYjAhKx95nOtNNOL/OQGYl4WeibPPkW53zveU+OMDb5gvmwSHAmhCiKqLLE7NwCodAc8wuLRGMykahEYuUdyfVN1pIbf7O2web7j8y8DSEE58KMB2UmpyOMz6jcDCRI7WUoFfJkMhny+TymadJut/mXdna+IHjpdj9/YmpR5dJIjBN9MdL7ecDFdY+bW60WzWbTN/4Tr+YplUohxCSF0fktugbDnLwToWMgztb2Nz9hLueR81N6FItFyuUyhmGg6zqlUsl/bdv2DTUtjXD1/nM6+hc5NyTROahwuj/OB20fvVjAtmtUq1X/g7e2rhu+iVEuY1kVKpWKX/eGeCk1TUO4cCtA95BEz7DEmXsyp+4qbB8UsSvmbytbloVlmliWiW1XaTgOjlOn4dSp12pHCTWE3ttjdA0rnB9R6XwQp/vhKtsHBYxSAcdp+I2u6/I1a7B7UGIvo/tkdZusXvP5Xqxi1tqk017CvgAXHy3T+1jl7LBCz8gqWdPxjdqu65t5NJpt6g2P1hHtn9hO8/goVwYmuD62zo3xJNcCG1weTZKzGkeG3q1/8D9Keys/eTrBy5DMszciE8Eor2ZlwrEEEWWF6C+IMdVnSU6wFJWISnEUNYEUX0GMyiwnVnk9Nc0hrn+7xW7VDAEAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Other Linux 64 bit Guest OS"
+        title="Other Linux 64 bit Guest OS"
+        src="/static/f23bebecefed56f8a289612ff9712c3f/2bef9/guest.png"
+        srcset="/static/f23bebecefed56f8a289612ff9712c3f/6f3f2/guest.png 256w,
+/static/f23bebecefed56f8a289612ff9712c3f/01e7c/guest.png 512w,
+/static/f23bebecefed56f8a289612ff9712c3f/2bef9/guest.png 1024w,
+/static/f23bebecefed56f8a289612ff9712c3f/71c1d/guest.png 1536w,
+/static/f23bebecefed56f8a289612ff9712c3f/17009/guest.png 1932w"
+        sizes="(max-width: 1024px) 100vw, 1024px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>Also make sure that BIOS is used to boot</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1024px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/b3ddd11af09931fc4be9afb791982881/093ec/bios.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 51.953125%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAACV0lEQVQoz32Ry08TURSH539x6cbXDjE+YnSjbl25cOPGLYmJUfCRQNRoTFwZCEp9LIyUVy2BCkyHPhGITqElIrTTAn3NTKftTN/9zIyauDCe5Et+9+bmy7nnCKOut3jnfLgnpvB6Z1la8DE984lx9wRT0x6WRImVL2v/Jbqyytr6V+e94Jnzsi7HiMkym/EtHk9tEE/l0Yp5stksarFAo1GnXq9Tq9WwLMvJ/6pEIoHg+jCOe1Zi6JWXS/0fOXTTTVwpohdzKAc64XieTKECdGi12rRarb/4dW42m3S7XWRZRvD7JYY/xzn1cJ7Dtxc4PhAgpqhsZ7JspXPEU1l2czqqpqNpGpVKhXK5TLVadbJNu912kOUYwtV7Yxzr99E7KHLivsSRu8vEFJ3tvTw7uRIZzSStVckXVTRNpVQyKJVKjqDT6TjYueUIZYSzfSOcHBQ5PSRydEB0hN9SKhs7CpvJfRS16kirpolZrVIuGw41ywK6dLsdh86fDi/eGqVnSOLMkwDHH0j0PoqQODBIpPb5kdXJ6BZpzWQvp1LQShQ0g4JaoqgZDk7WK1j1JrFYDOFc3wjnnwa58CxAz6AtjrCVrZDM686XbZnd5Xa6QOpAQ7HvfpPJGyhZnXTOwGq0icc3Ea7cGeP66Bo3Xq9ybXiNyy9W+Z432dNN0qrJvlFn36hh1epYpomu6zQbDdrtloO9ZXuGdu0mkwjPX7p455FwTS7yZlrkvcfP3FIInz+Czx9mXgwxL4ZZlCIsLkdZWo4SCEUIhqMEQ1GkYBRxOUwoHMU9OcNPRAK0KeOVoEwAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="BIOS boot options"
+        title="BIOS boot options"
+        src="/static/b3ddd11af09931fc4be9afb791982881/2bef9/bios.png"
+        srcset="/static/b3ddd11af09931fc4be9afb791982881/6f3f2/bios.png 256w,
+/static/b3ddd11af09931fc4be9afb791982881/01e7c/bios.png 512w,
+/static/b3ddd11af09931fc4be9afb791982881/2bef9/bios.png 1024w,
+/static/b3ddd11af09931fc4be9afb791982881/71c1d/bios.png 1536w,
+/static/b3ddd11af09931fc4be9afb791982881/093ec/bios.png 1930w"
+        sizes="(max-width: 1024px) 100vw, 1024px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>If everything fine, after power on you will be almost immediatelly boot and promted to login (still can not belive how fast it is)</p>
+<p>Default username is "root" with empty password</p>
+<h2>Alpine Setup</h2>
+<p>From a welcome message you cann see that you may use <code class="language-text">setup-alpine</code> script to actually install OS</p>
+<p>So I give it a go and run <code class="language-text">setup-alping</code>, and here are answers:</p>
+<ul>
+<li>Select keyboard layout: none</li>
+<li>Enter system hostname: demo.mac-blog.org.ua</li>
+<li>Which one do you want ot initialize?: eth0</li>
+<li>Ip address for eth0: 192.168.106.23</li>
+<li>Netmask: 255.255.255.0</li>
+<li>Gateway: 192.168.106.1</li>
+<li>Do you want to do any manual network configuration: n</li>
+<li>DNS domain name: empty string</li>
+<li>DNS nameservers: 1.1.1.1,8.8.8.8</li>
+<li>New password: HelloWorld</li>
+<li>Retryp password: HelloWorld</li>
+<li>Which timezone are you in: Europe/Kiev</li>
+<li>HTTP proxy URL: none</li>
+<li>Which NTP client to run: chrony</li>
+<li>Enter mirror number: 1</li>
+<li>Which SSH server: openssh</li>
+<li>Which disk(s) would you like to use: sda</li>
+<li>How wold you like to use it: sys</li>
+<li>WARNING: Erase the above disk(s) and continue: y</li>
+</ul>
+<p>Actually it is so straight forward that even does not require any notes</p>
+<p>After setup which happens really really fast, Alpine will ask you to reboot, so run <code class="language-text">reboot</code> and you are done</p>
+<p>After booting up, it is good time to install open vm tools</p>
+<p>To do this uncomment community link at <code class="language-text">/etc/apk/repositories</code> so it looks like:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">#/media/cdrom/apks
+http://dl-cdn.alpinelinux.org/alpine/v3.15/main
+http://dl-cdn.alpinelinux.org/alpine/v3.15/community
+#http://dl-cdn.alpinelinux.org/alpine/edge/main
+#http://dl-cdn.alpinelinux.org/alpine/edge/community
+#http://dl-cdn.alpinelinux.org/alpine/edge/testing</code></pre></div>
+<p>Then open vm tools can be installed</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">apk <span class="token function">add</span> <span class="token parameter variable">--update</span> open-vm-tools
+/etc/init.d/open-vm-tools start
+rc-update <span class="token function">add</span> open-vm-tools</code></pre></div>
+<p>After this ESXi should recognize vm tools are installed</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 992px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/610df280d5b5006616a33153908e4fe8/91f10/vmtools.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 48.4375%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABeUlEQVQoz4WRa0+DMBSG+f+/y/hhUQduSjZhA8altFDKpYBc9pp2c7oZ9SRPzmkIT87F8HwfS9PEav0C03rG49MSb46LlDIkaYokpef8HxQxITBMl+DO2mJhrrGwXmF7EfZJhoAJBFToXNYSbdtC/kNV1zAenBD39h4v7gEr94C3OEMkOhy41IRcYpyPUHE8Hn9FxTRNMJyYY71PYG092H4CJ87PskajhLVsMc/zlfR7qLf6Po4jjERIbEOKxWoDN+Gn7vJGE+QNoqIFoQxVVaHvez26yl3X6VqhaiUdhgFGxBvYPsGT7cKj5am7s/DwTcgYBaUUaZqCc64zIQRxHIMx9iUMeYNNyPT+VIdh0V72p1DCvBCYpwl/xWVkexfA2uxgbvZw4uwkvBlZCVV3nz+p5V+Y5+uj7EiB5TbAw6uDIJdX3ekrFy369xHjOPy8LoChr5FnTI8thIAR5RU8wuGnHKoOsxvyCrLr9X7UMW6RTYlSCC0ryxIfdPP2oreCNZsAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vmtools"
+        title="vmtools"
+        src="/static/610df280d5b5006616a33153908e4fe8/91f10/vmtools.png"
+        srcset="/static/610df280d5b5006616a33153908e4fe8/6f3f2/vmtools.png 256w,
+/static/610df280d5b5006616a33153908e4fe8/01e7c/vmtools.png 512w,
+/static/610df280d5b5006616a33153908e4fe8/91f10/vmtools.png 992w"
+        sizes="(max-width: 992px) 100vw, 992px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>But still wont show ip addresses</p>
+<p><a href="https://wiki.alpinelinux.org/wiki/Install_Alpine_on_VMware_ESXi">Install Alpine on VMware ESXi</a> - wiki page I started from</p>
+<h2>Alpine SSH</h2>
+<p>After fresh install for remote connections to work make sure to tune <code class="language-text">/etc/ssh/sshd_config</code>:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">PermitRootLogin yes
+PasswordAuthentication yes</code></pre></div>
+<p>And restart ssh by running <code class="language-text">/etc/init.d/sshd restart</code></p>
+<p><a href="https://wiki.alpinelinux.org/wiki/Setting_up_a_SSH_server">Setting up a SSH server</a></p>
+<h2>Docker</h2>
+<p>Once again make sure that community packages are uncommented in <code class="language-text">/etc/apk/repositories</code></p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">apk <span class="token function">add</span> <span class="token function">docker</span>
+rc-update <span class="token function">add</span> <span class="token function">docker</span> boot
+<span class="token function">service</span> <span class="token function">docker</span> start</code></pre></div>
+<p>Optionally <code class="language-text">apk add docker-compose</code> (is not needed, in fresh releases docker compose v2 is single binary - <a href="https://docs.docker.com/compose/cli-command/#install-on-linux">docs</a>)</p>
+<p><a href="https://wiki.alpinelinux.org/wiki/Docker">Docker</a></p>
+<h2>Resize disk</h2>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">apk <span class="token function">add</span> <span class="token function">cfdisk</span></code></pre></div>
+<p>Choose desired disk, resize, and press enter</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1024px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/6ccee3a22ae9d586b65b86bee1676c9d/05244/cfdisk.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 70.703125%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAABZklEQVQ4y+VTy27CMBA0rzx4o6bOwyGxQ3orUkoCRAJCBWoPFf//O1OtqyBEqXootx5Gu8qOx5OVhzHGcI1ut4vRaITJZAIpJVSicDqdsFwu4fs+xuMxTNM88xuNxhnMNEw4D44edDodGIahe9uywR+57uu57/laiC4iHuf8S+TS0KJY4PB+wKpcIcsyZC8Z5s9z5GWO6lghX+fYv+1RrAocP456Xr1WWJdr7HY7bLdblGWJzWaDoijAhBTgikOkAjKWiGUMJRWCNIA/8xGmIdwnF5GK4MwcRDKCiAXCKITrugjDEEopDVoPu7XDP+FyoffA/R3+Q8FWq/XttTebzZsLJ+5vYBSl6XSKJEkghEAcx3BdruPX7/cxHA51DAeDwY8X1WmxLAuMiCSYpqkWCoIAnudpERKtQeR2u61d1PW614K9Xk+HnbJJbqiSOMXKcRzYtq3zS2SaU96p0jc6S39BPRkg8U/tIDoRa5nnbQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="cfdisk"
+        title="cfdisk"
+        src="/static/6ccee3a22ae9d586b65b86bee1676c9d/2bef9/cfdisk.png"
+        srcset="/static/6ccee3a22ae9d586b65b86bee1676c9d/6f3f2/cfdisk.png 256w,
+/static/6ccee3a22ae9d586b65b86bee1676c9d/01e7c/cfdisk.png 512w,
+/static/6ccee3a22ae9d586b65b86bee1676c9d/2bef9/cfdisk.png 1024w,
+/static/6ccee3a22ae9d586b65b86bee1676c9d/71c1d/cfdisk.png 1536w,
+/static/6ccee3a22ae9d586b65b86bee1676c9d/05244/cfdisk.png 1752w"
+        sizes="(max-width: 1024px) 100vw, 1024px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>After that green line with free space should dissapear</p>
+<p>Write changes and quit</p>
+<p>Now we need to resize filesystem</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">apk <span class="token function">add</span> e2fsprogs-extra
+resize2fs /dev/sda3</code></pre></div>
+<p>Make sure to change <code class="language-text">sda3</code> to appropriate number</p>
+<p>And check what you have now</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">df</span> <span class="token parameter variable">-h</span> /dev/sda3</code></pre></div>
+<p><a href="https://www.reddit.com/r/linuxquestions/comments/ayzdpr/expanding_disk_in_alpine_linux/">Expanding Disk in Alpine Linux</a></p>
+<h2>Alpine install on a single partition without swap</h2>
+<ul>
+<li><a href="https://www.alextsang.net/articles/20200921-032859/index.html">Alpine Linux with custom partitions</a></li>
+<li><a href="https://wiki.alpinelinux.org/wiki/Setting_up_disks_manually">Setting up disks manually</a></li>
+</ul>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">apk <span class="token function">add</span> e2fsprogs
+mkfs.ext4 <span class="token parameter variable">-O</span> ^has_journal /dev/sdXY   <span class="token comment"># the "-O ^has_journal" DISABLES journaling ("^" means "not")</span>
+<span class="token function">mount</span> /dev/sda1 /mnt
+setup-disk /mnt</code></pre></div>
+<p>TODO: wish to have single partition without swap</p>
+<h2>Upgrading Alpine</h2>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">apk update
+apk upgrade</code></pre></div>
+<p><a href="https://wiki.alpinelinux.org/wiki/Tutorials_and_Howtos">Tutorials and Howtos</a></p></div></main><footer><a href="#top">top</a><a href="/">home</a><a href="/search">search</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/alpine-esxi-docker";window.___webpackCompilationHash="ef8fb55bb983484b16a7";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-b4bb882d10635d85fa25.js"],"app":["/app-98475b819971087d4b7e.js"],"component---src-pages-404-js":["/component---src-pages-404-js-2652c435d8decd31b8ef.js"],"component---src-pages-index-js":["/component---src-pages-index-js-59ea4a114c2918516395.js"],"component---src-pages-search-js":["/component---src-pages-search-js-078619e3aef857102623.js"],"component---src-templates-note-js":["/component---src-templates-note-js-b005c02681f20ea28edd.js"]};/*]]>*/</script><script src="/polyfill-b4bb882d10635d85fa25.js" nomodule=""></script><script src="/app-98475b819971087d4b7e.js" async=""></script><script src="/framework-2ce620c91826a79f925c.js" async=""></script><script src="/webpack-runtime-72217849817cd80b0f9a.js" async=""></script></body></html>

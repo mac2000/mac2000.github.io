@@ -1,0 +1,353 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 4.24.5"/><style data-href="/styles.f7b0302c8427f1a04772.css" data-identity="gatsby-global-css">@media (prefers-color-scheme:light){code[class*=language-],pre[class*=language-]{background:#fafafa;color:#383a42;direction:ltr;font-family:Fira Code,Fira Mono,Menlo,Consolas,DejaVu Sans Mono,monospace;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{background:#e5e5e6;color:inherit}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection{background:#e5e5e6;color:inherit}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.2em .3em;white-space:normal}.token.cdata,.token.comment,.token.prolog{color:#a0a1a7}.token.doctype,.token.entity,.token.punctuation{color:#383a42}.token.atrule,.token.attr-name,.token.boolean,.token.class-name,.token.constant,.token.number{color:#b76b01}.token.keyword{color:#a626a4}.token.deleted,.token.important,.token.property,.token.symbol,.token.tag{color:#e45649}.token.attr-value,.token.attr-value>.token.punctuation,.token.builtin,.token.char,.token.inserted,.token.regex,.token.selector,.token.string{color:#50a14f}.token.function,.token.operator,.token.variable{color:#4078f2}.token.url{color:#0184bc}.token.attr-value>.token.punctuation.attr-equals,.token.special-attr>.token.attr-value>.token.value.css{color:#383a42}.language-css .token.selector{color:#e45649}.language-css .token.property{color:#383a42}.language-css .token.function,.language-css .token.url>.token.function{color:#0184bc}.language-css .token.url>.token.string.url{color:#50a14f}.language-css .token.atrule .token.rule,.language-css .token.important,.language-javascript .token.operator{color:#a626a4}.language-javascript .token.template-string>.token.interpolation>.token.interpolation-punctuation.punctuation{color:#ca1243}.language-json .token.operator{color:#383a42}.language-json .token.null.keyword{color:#b76b01}.language-markdown .token.url,.language-markdown .token.url-reference.url>.token.string,.language-markdown .token.url>.token.operator{color:#383a42}.language-markdown .token.url>.token.content{color:#4078f2}.language-markdown .token.url-reference.url,.language-markdown .token.url>.token.url{color:#0184bc}.language-markdown .token.blockquote.punctuation,.language-markdown .token.hr.punctuation{color:#a0a1a7;font-style:italic}.language-markdown .token.code-snippet{color:#50a14f}.language-markdown .token.bold .token.content{color:#b76b01}.language-markdown .token.italic .token.content{color:#a626a4}.language-markdown .token.list.punctuation,.language-markdown .token.strike .token.content,.language-markdown .token.strike .token.punctuation,.language-markdown .token.title.important>.token.punctuation{color:#e45649}.token.bold{font-weight:700}.token.comment,.token.italic{font-style:italic}.token.entity{cursor:help}.token.namespace{opacity:.8}.token.token.cr:before,.token.token.lf:before,.token.token.space:before,.token.token.tab:not(:empty):before{color:rgba(56,58,66,.2)}div.code-toolbar>.toolbar.toolbar>.toolbar-item{margin-right:.4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span{background:#e5e5e6;border-radius:.3em;color:#696c77;padding:.1em .4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:hover{background:#c6c7c7;color:#383a42}.line-highlight.line-highlight{background:rgba(56,58,66,.05)}.line-highlight.line-highlight:before,.line-highlight.line-highlight[data-end]:after{background:#e5e5e6;border-radius:.3em;box-shadow:0 2px 0 0 rgba(0,0,0,.2);color:#383a42;padding:.1em .6em}pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:rgba(56,58,66,.05)}.command-line .command-line-prompt,.line-numbers.line-numbers .line-numbers-rows{border-right-color:rgba(56,58,66,.2)}.command-line .command-line-prompt>span:before,.line-numbers .line-numbers-rows>span:before{color:#9d9d9f}.rainbow-braces .token.token.punctuation.brace-level-1,.rainbow-braces .token.token.punctuation.brace-level-5,.rainbow-braces .token.token.punctuation.brace-level-9{color:#e45649}.rainbow-braces .token.token.punctuation.brace-level-10,.rainbow-braces .token.token.punctuation.brace-level-2,.rainbow-braces .token.token.punctuation.brace-level-6{color:#50a14f}.rainbow-braces .token.token.punctuation.brace-level-11,.rainbow-braces .token.token.punctuation.brace-level-3,.rainbow-braces .token.token.punctuation.brace-level-7{color:#4078f2}.rainbow-braces .token.token.punctuation.brace-level-12,.rainbow-braces .token.token.punctuation.brace-level-4,.rainbow-braces .token.token.punctuation.brace-level-8{color:#a626a4}pre.diff-highlight>code .token.token.deleted:not(.prefix),pre>code.diff-highlight .token.token.deleted:not(.prefix){background-color:rgba(255,82,102,.15)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::-moz-selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix),pre>code.diff-highlight .token.token.inserted:not(.prefix){background-color:rgba(25,255,91,.15)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::-moz-selection{background-color:rgba(56,224,98,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::selection{background-color:rgba(56,224,98,.25)}.prism-previewer-gradient.prism-previewer-gradient div,.prism-previewer.prism-previewer:before{border-color:hsl(0,0,95%)}.prism-previewer-color.prism-previewer-color:before,.prism-previewer-easing.prism-previewer-easing:before,.prism-previewer-gradient.prism-previewer-gradient div{border-radius:.3em}.prism-previewer.prism-previewer:after{border-top-color:hsl(0,0,95%)}.prism-previewer-flipped.prism-previewer-flipped.after{border-bottom-color:hsl(0,0,95%)}.prism-previewer-angle.prism-previewer-angle:before,.prism-previewer-easing.prism-previewer-easing,.prism-previewer-time.prism-previewer-time:before{background:#fff}.prism-previewer-angle.prism-previewer-angle circle,.prism-previewer-time.prism-previewer-time circle{stroke:#383a42;stroke-opacity:1}.prism-previewer-easing.prism-previewer-easing circle,.prism-previewer-easing.prism-previewer-easing line,.prism-previewer-easing.prism-previewer-easing path{stroke:#383a42}.prism-previewer-easing.prism-previewer-easing circle{fill:transparent}}@media (prefers-color-scheme:dark){code[class*=language-],pre[class*=language-]{background:#282c34;color:#abb2bf;direction:ltr;font-family:Fira Code,Fira Mono,Menlo,Consolas,DejaVu Sans Mono,monospace;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;text-align:left;text-shadow:0 1px rgba(0,0,0,.3);white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{background:#3e4451;color:inherit;text-shadow:none}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection{background:#3e4451;color:inherit;text-shadow:none}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.2em .3em;white-space:normal}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}.token.cdata,.token.comment,.token.prolog{color:#5c6370}.token.doctype,.token.entity,.token.punctuation{color:#abb2bf}.token.atrule,.token.attr-name,.token.boolean,.token.class-name,.token.constant,.token.number{color:#d19a66}.token.keyword{color:#c678dd}.token.deleted,.token.important,.token.property,.token.symbol,.token.tag{color:#e06c75}.token.attr-value,.token.attr-value>.token.punctuation,.token.builtin,.token.char,.token.inserted,.token.regex,.token.selector,.token.string{color:#98c379}.token.function,.token.operator,.token.variable{color:#61afef}.token.url{color:#56b6c2}.token.attr-value>.token.punctuation.attr-equals,.token.special-attr>.token.attr-value>.token.value.css{color:#abb2bf}.language-css .token.selector{color:#e06c75}.language-css .token.property{color:#abb2bf}.language-css .token.function,.language-css .token.url>.token.function{color:#56b6c2}.language-css .token.url>.token.string.url{color:#98c379}.language-css .token.atrule .token.rule,.language-css .token.important,.language-javascript .token.operator{color:#c678dd}.language-javascript .token.template-string>.token.interpolation>.token.interpolation-punctuation.punctuation{color:#be5046}.language-json .token.operator{color:#abb2bf}.language-json .token.null.keyword{color:#d19a66}.language-markdown .token.url,.language-markdown .token.url-reference.url>.token.string,.language-markdown .token.url>.token.operator{color:#abb2bf}.language-markdown .token.url>.token.content{color:#61afef}.language-markdown .token.url-reference.url,.language-markdown .token.url>.token.url{color:#56b6c2}.language-markdown .token.blockquote.punctuation,.language-markdown .token.hr.punctuation{color:#5c6370;font-style:italic}.language-markdown .token.code-snippet{color:#98c379}.language-markdown .token.bold .token.content{color:#d19a66}.language-markdown .token.italic .token.content{color:#c678dd}.language-markdown .token.list.punctuation,.language-markdown .token.strike .token.content,.language-markdown .token.strike .token.punctuation,.language-markdown .token.title.important>.token.punctuation{color:#e06c75}.token.bold{font-weight:700}.token.comment,.token.italic{font-style:italic}.token.entity{cursor:help}.token.namespace{opacity:.8}.token.token.cr:before,.token.token.lf:before,.token.token.space:before,.token.token.tab:not(:empty):before{color:rgba(171,178,191,.15);text-shadow:none}div.code-toolbar>.toolbar.toolbar>.toolbar-item{margin-right:.4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span{background:#3a3f4b;border-radius:.3em;color:#828997;padding:.1em .4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:hover{background:#3e4451;color:#abb2bf}.line-highlight.line-highlight{background:rgba(153,187,255,.04)}.line-highlight.line-highlight:before,.line-highlight.line-highlight[data-end]:after{background:#3a3f4b;border-radius:.3em;box-shadow:0 2px 0 0 rgba(0,0,0,.2);color:#abb2bf;padding:.1em .6em}pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:rgba(153,187,255,.04)}.command-line .command-line-prompt,.line-numbers.line-numbers .line-numbers-rows{border-right-color:rgba(171,178,191,.15)}.command-line .command-line-prompt>span:before,.line-numbers .line-numbers-rows>span:before{color:#636d83}.rainbow-braces .token.token.punctuation.brace-level-1,.rainbow-braces .token.token.punctuation.brace-level-5,.rainbow-braces .token.token.punctuation.brace-level-9{color:#e06c75}.rainbow-braces .token.token.punctuation.brace-level-10,.rainbow-braces .token.token.punctuation.brace-level-2,.rainbow-braces .token.token.punctuation.brace-level-6{color:#98c379}.rainbow-braces .token.token.punctuation.brace-level-11,.rainbow-braces .token.token.punctuation.brace-level-3,.rainbow-braces .token.token.punctuation.brace-level-7{color:#61afef}.rainbow-braces .token.token.punctuation.brace-level-12,.rainbow-braces .token.token.punctuation.brace-level-4,.rainbow-braces .token.token.punctuation.brace-level-8{color:#c678dd}pre.diff-highlight>code .token.token.deleted:not(.prefix),pre>code.diff-highlight .token.token.deleted:not(.prefix){background-color:rgba(255,82,102,.15)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::-moz-selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix),pre>code.diff-highlight .token.token.inserted:not(.prefix){background-color:rgba(25,255,91,.15)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::-moz-selection{background-color:rgba(56,224,98,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::selection{background-color:rgba(56,224,98,.25)}.prism-previewer-gradient.prism-previewer-gradient div,.prism-previewer.prism-previewer:before{border-color:#262931}.prism-previewer-color.prism-previewer-color:before,.prism-previewer-easing.prism-previewer-easing:before,.prism-previewer-gradient.prism-previewer-gradient div{border-radius:.3em}.prism-previewer.prism-previewer:after{border-top-color:#262931}.prism-previewer-flipped.prism-previewer-flipped.after{border-bottom-color:#262931}.prism-previewer-angle.prism-previewer-angle:before,.prism-previewer-easing.prism-previewer-easing,.prism-previewer-time.prism-previewer-time:before{background:#31363f}.prism-previewer-angle.prism-previewer-angle circle,.prism-previewer-time.prism-previewer-time circle{stroke:#abb2bf;stroke-opacity:1}.prism-previewer-easing.prism-previewer-easing circle,.prism-previewer-easing.prism-previewer-easing line,.prism-previewer-easing.prism-previewer-easing path{stroke:#abb2bf}.prism-previewer-easing.prism-previewer-easing circle{fill:transparent}}:root{--foreground:#24292f;--background:#fff}a{color:#0969da}a.visited,a:visited{color:#57606a}.green{color:#1a7f37}.red{color:#cf222e}@media (prefers-color-scheme:dark){:root{--foreground:#adbac7;--background:#22272e}a{color:#539bf5}a.visited,a:visited{color:#768390}.green{color:#57ab5a}.red{color:#e5534b}}a{text-decoration:none}a:hover{text-decoration:underline}html{font-family:Ubuntu,sans-serif}body{background-color:var(--background);color:var(--foreground);margin:0;padding:0}#top{box-sizing:border-box;display:grid;grid-template-rows:1fr 2em;margin:0;min-height:100vh;padding:1em 2em}.graph polygon{fill:transparent}.graph g ellipse[stroke="#000"],.graph g ellipse[stroke="#000000"],.graph g ellipse[stroke=black],.graph g path[stroke="#000"],.graph g path[stroke="#000000"],.graph g path[stroke=black],.graph g polygon[stroke="#000"],.graph g polygon[stroke="#000000"],.graph g polygon[stroke=black]{stroke:var(--foreground)}.graph g text[fill="#000"],.graph g text[fill="#000000"],.graph g text[fill=black]{fill:var(--foreground)}code,pre{font-family:JetBrains Mono,monospace}pre[class*=language-]{word-wrap:break-word;border-radius:0;box-sizing:border-box;margin:1em -2em;max-width:100vw;padding:1em 2em}footer a{line-height:2em;margin-right:.5em}.delta{line-height:1;margin-left:1em;white-space:nowrap}.columns{display:grid;grid-template-columns:repeat(2,1fr)}@media only screen and (max-width:1024px){.columns{grid-template-columns:repeat(1,1fr)}}.pie{text-align:center}.pie figure{display:inline-block}.pie figcaption{font-size:80%;margin-top:.25em}</style><title data-gatsby-head="true">WordPress multisite</title><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="icon" href="/favicon-32x32.png?v=6389d5f13c96000946d60b6bb0a8b5a8" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div id="top"><main><div><h1>WordPress multisite</h1>
+<p>Необходимо реализовать ферму сайтов на wordpress.</p>
+<p>Для начала, необходим главный домен, который будет смотреть на наш сервер, а так же резолвить любые поддомены на него же.</p>
+<p>В моем случае это домен multi.com</p>
+<p>Если домен уже где то припаркова просто добавляем запись:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">* A 192.168.5.11</code></pre></div>
+<p>Если домен у нас - необходимо поставить и настроить DNS.</p>
+<p><strong>/etc/bind/named.conf.local</strong>:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">zone "multi.com" {
+        type master;
+        file "/etc/bind/db.multi.com";
+};</code></pre></div>
+<p><strong>/etc/bind/db.multi.com</strong>:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">$TTL    604800
+@       IN      SOA     multi.com. root.multi.com. (
+                                2         ; Serial
+                            604800         ; Refresh
+                            86400         ; Retry
+                        2419200         ; Expire
+                            604800 )       ; Negative Cache TTL
+;
+@       IN      NS      multi.com.
+@       IN      A       192.168.5.11
+@       IN      AAAA    ::1
+*.multi.com. IN A 192.168.5.11</code></pre></div>
+<p>Теперь настройка apache. Во первых надо убедиться что включен <code class="language-text">mod_rewrite</code></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">sudo a2enmod rewrite</code></pre></div>
+<p>Добавляем и включаем сайты</p>
+<p><strong>/etc/apache2/sites-available/default</strong>:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">&lt;VirtualHost *:80>
+        ServerName multi.com
+        ServerAlias *.multi.com
+        DocumentRoot /var/www
+        &lt;Directory /var/www/>
+                Options All
+                AllowOverride All
+                Order allow,deny
+                allow from all
+        &lt;/Directory>
+&lt;/VirtualHost></code></pre></div>
+<p><strong>/etc/apache2/sites-available/test1.ru</strong>:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">&lt;VirtualHost *:80>
+        ServerName test1.ru
+        ServerAlias www.test1.ru
+&lt;/VirtualHost></code></pre></div>
+<p><strong>/etc/apache2/sites-available/test2.ru</strong>:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">&lt;VirtualHost *:80>
+        ServerName test2.ru
+        ServerAlias www.test2.ru
+&lt;/VirtualHost></code></pre></div>
+<p>Включаем сайты:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">a2ensite test1.ru
+a2ensite test2.ru</code></pre></div>
+<p>Теперь файлы в /var/www должны быть доступны с доменов <code class="language-text">multi.com</code>, <code class="language-text">*.multi.com</code>, <code class="language-text">test1.ru</code>, <code class="language-text">test2.ru.</code></p>
+<p>Эти шаги важны так как multi site не будет работать на локалхосте.</p>
+<p>Устанавливаем Wordpress, как обычный блог.</p>
+<p>После чего, в файл <strong>wp-config.php</strong>, в самое начало, добавляем:</p>
+<div class="gatsby-highlight" data-language="php"><pre class="language-php"><code class="language-php"><span class="token function">define</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'WP_ALLOW_MULTISITE'</span><span class="token punctuation">,</span> <span class="token constant boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>Теперь в админке в разделе <strong>Инструменты</strong> должен появиться новый пункт <strong>Установка сети</strong>.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 174px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/f3cb9811a2c7080e606b89bba535227e/fe9c7/114.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 102.29885057471265%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7DAAAOwwHHb6hkAAADR0lEQVQ4y42VWW/bVhBG9f//QJ8aFwiQIEX6kNoO2jiubVm2osXWYi2WLGqluFMiRYqk1lPcK1twjMTtAANiZshzvxmRo9R4PCaTuaTRbPIpW+XDZZn36TLHNw0OC3Xep0u8vbjlj6sKx/k7fr8s8+H6Dt12sEwTXdcRtlqtCIKAlOu6aJqGqqp4ExfTsrAsC80w0U1Txrphypz56LZtSzcMYw9cr9fM53NSpmnS7XZlwbQdZt5076Ev3GM+8wi8qXQRT1wXIUQcIqDPLTUaqZyenlKr3fHrSZ63FyX+LjX5nKvyLlORrYoRHBXqfMzW+VxoMNRM1NGQwXCIECRsu91KlSlxQrPZRFEUGt0hxfsu9e6QSkvha6XNt3pH5ioPfaqdAfmmIsdhi1Ho+ncth2FIKooikjhhuViwXS1gs4L1ktUikVcZb1ewWu7q6yVxFBHHsQSI1p9+lNlsRkoEuY5GoTOmbXrUhiZ5xeC2b3HbM6j0dbIdnULPpNw30LxoPy/RpoAIWy6XEi6B0zDG8kMm84RJMMfy5xjenIHtYUwDhs4MQ+SmAZMw2cM2mw2+7+8VTqfTHdCdRbhhhDdPCJIlfpSw3mz4mQmYsOdAMUMxPgms9gzSzQHpxohcT+e8McAN48eHthLw0l8ChUL5Hj4Vf6hEqBT1J9/Jex0oggfdJT+0qWgeNdOjrDo8THbD3z73xzH8J9D3A7R2F63VxVb69GotZkofxFdg22BZsFzsYa8Dk4Tg8oogmyPOFVgUiiyKNwTFW6LiDVG+yCybwztLs6o3/ofCSoVeTyVrR6TNkAsj4Hrk8FfHpGj41CcROWtGpq3hfPwESfzD91AAd1/K/T2b01PWtTuoVli27kksi4XvEU8nJL7HqlplfXJCVKsxj2PmYSjViHXlOM73wL6qkstmaZ2fUzvLMMpc4375gnV4hH14iHF0jHl1jSFW2XQqN4z1uMKer6898KHdJp1OU221+LPU5pezEm/SZQ7SFX67KPHuW4ODqxoH/xT5ensvFT25+WLBSqBIdBWFsari2DZDVUMZquiGwVjTpZreaMxgrO+2zONy/alCURCnyZssC8excR1bwh35oCXjp9xrLYu/gH8BiwvZikSoZNAAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/f3cb9811a2c7080e606b89bba535227e/fe9c7/114.png"
+        srcset="/static/f3cb9811a2c7080e606b89bba535227e/fe9c7/114.png 174w"
+        sizes="(max-width: 174px) 100vw, 174px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>Заходим туда, и в разделе <strong>Адреса сайтов вашей сети</strong> выбираем <strong>Поддомены</strong>.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 468px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/66724346e3d50f767d5a9246cc35ab50/90372/26.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 38.28125000000001%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABR0lEQVQoz5VR2Y7DIBDL/39gtG16KQckHCGBKhchXs20fVj1aZEsw4zk8Zgsz3MIIXC5FLjf7rherzj9nFBVFaqqRkoJ/zmZEBLDMMBayzDGQCsN5xz6vseyLNi2iHVZsK4rg2qRavReVmzbhm3dsMWITAoJozV6Y5mNNrDGsqhSCtTvug6yEZBSonmz6hRvVpYlpGi5po1BpnsHN47oyaVzL4fasDANUEozW9tjGEbud53ibcZh5MF0H5yDNhbZrhQIh9Y4vEeKkXP7YN93RoyRmdaj++f9h1NCJk4F2qKAOJ9h8xwoy6+g52lGK1vOldZvmobXJYevGBrItsVxHMjmuoF/PDDebgh1gyNGFqEmgQ59QPAB0zTh+XzCe48QAuZ5ZvYhcJ0FnfeQXYdWa2jrkNLxJUhC5IR+nbh+OyTHH7dCSo7oF2g4Yy7Ycai0AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/66724346e3d50f767d5a9246cc35ab50/90372/26.png"
+        srcset="/static/66724346e3d50f767d5a9246cc35ab50/6f3f2/26.png 256w,
+/static/66724346e3d50f767d5a9246cc35ab50/90372/26.png 468w"
+        sizes="(max-width: 468px) 100vw, 468px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>Давим кнопку <strong>Установить</strong>. Wordpress матюкнеться что не может достучаться до поддоменов - на это можно не обращать внимания.</p>
+<p>Далее следуем инструкциям wordpress'а (нужно внести изменения в файл <strong>wp-config.php</strong> и <strong>.htaccess</strong> и создать папку <strong>blogs.dir</strong>)</p>
+<p>После внесения всех изменений необходимо перелогиниться в админку.</p>
+<p>Если все было сделано правильно в разделе <strong>Консоль</strong> появиться новый пункт <strong>Мои сайты</strong>.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 163px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/bde91a1760551856ce2ac27e91562f49/222b7/32.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 52.760736196319016%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACP0lEQVQoz22R7U9SYRiH+WdrbnCA5E3A9aFWri+RgAqWpqs5lKVuorZ0qVnG8IO8KIEmooICh5eOBxWb51ztQNM1urdrv/vZc9/Xnu3ReXzDaHj9AV55OznoH/mbAQZ9I/iGgl14h4L4h0fbs4HRcUqVOtX6BbrnTjcvnG6cbjcDz57i7HPgdrtwOftwuZz097uw26zYbNa77PQ2ensfYbVaEAQD6+traKWb9XpY9L/k8ZMBwjMhxt6MMTUdwu/1Mf52gtD0FB6PB5vVgt1ux6Zhs+NwODCZTFgsFvR6A8HgaEdo6HmI0PMAvV6P0ShgNBrbmE2mNtqS2WzGYDB0YRSEdgqCQLFY7Ajj6UN20odkc8U2mVyBTK5I+uCEVCZHKnNEKptnd/+4m4NjEtr9j4O2TFVVdPnaJZ+jCTbjKSJfYnyK7rG6FWMrc0oDqKtQv4H6pUL9mi5qV3Am/kK5ve28sLz3k/Nv2+xHlkmG58l+iJAOz3Gy9p3aThoxkUGsSIg3IF7cdFGWWpyeV1EUpSO83linGouh5vNQKsHZGRQKXCTi/E4mURNJbldWUeJxtBVFUf/hVlFpNBr3wpPCMRMTY0RWVphdWmVvN05kcYHX797zcfMrW9nD9iALCyDL/K8kSboXSrJM5fqKc0miJMuIV5cUZLl9Lh8dIca2aS0vI0ejNFstmrJMs9m8Q5ZlSqXSvVAMBBDn5qkuLVGNRBBnwlQnJ6mFQsiaaGODSjZLudGgXC53ock0tB/WhH8Aq2jSnS1gZNYAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/bde91a1760551856ce2ac27e91562f49/222b7/32.png"
+        srcset="/static/bde91a1760551856ce2ac27e91562f49/222b7/32.png 163w"
+        sizes="(max-width: 163px) 100vw, 163px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>Управление сетью находиться по адресу: <strong>/wp-admin/network/</strong> собственно туда и нужно идти чтобы добавить новые сайты. В самом верхнем-правом углу в выпадайке - там где пишут "Привет, admin"</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 273px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/8aa96c0996dd7ec4cc0fcd38d0b65a68/0217c/6.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 71.09375%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAB5klEQVQ4y6XSXXOaQBTGcb7/V+j0G/SmN73sTWtiFZCQ1CjGBEEjsryDoPjy7+xa26bNpOl0Z34zh53hcHZ5NP024FVGAaYjMMahIp+tScpHw+SD3uHyzVsu3r1Hy8uaX2XPkPtJXjF98JjNl/iLgMUyxFN1yGOQ4D+GJEWNxj8sZ/iVi84FnU+fmThj9F6Xfl9Xte/N4HhA2+/3nG23W9br9RN1XStFUfC4DFgJwSoULFehEoqIOI4RQqj3tePxyOFwUBNkWcaVZWHbNpZloesGtn3NwDS5vrIZPfhc3rrYEw9z4tG5maKPXYI4JS+Knw0luXa73Y+pnkzZtpRRRNLrkZsmxXelaZzqfp/UdWn3+1feYVlyLEvc5Qrjzkd3PMw7n97ExwkiqnpN1u3SygnlmGebzeYpuVdVtJZFXVW4i4C+4ymrOEEEK2LPp5xOyQyDtm3R8jznbwrHIdd1ou4Xop5O1NepBgMq26YcDilGI9Ioot3t0JIk4UVpSpLnJJFg6i24vp9zcz9HxIn68/l6TdE0pFn255FfIn/UbL5g+DBn7C4IQkEcRYgwPBHidGQZmddQOd1s2G1Pmqahbhp1JTIJMiEyLdrvQX5OVVWnWsXp5Bx4STaTSzWUX/ofsqG8knPDb7XvIbcHMtWxAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/8aa96c0996dd7ec4cc0fcd38d0b65a68/0217c/6.png"
+        srcset="/static/8aa96c0996dd7ec4cc0fcd38d0b65a68/6f3f2/6.png 256w,
+/static/8aa96c0996dd7ec4cc0fcd38d0b65a68/0217c/6.png 273w"
+        sizes="(max-width: 273px) 100vw, 273px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 400px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/d216da2c72ddf42c5c841ce72ff0798a/e17e5/41.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 37.890625%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABoUlEQVQoz32RW4vaYBCG88+9cK8K0qLtSqkXdf/OdqFG3XVNYvy+nM9Rm5iD+pSEpWx70QcG3mFmXpgZZaUJ1juHtWGjSw/LDRF2gO1GvTaF0+fC9hGWhyk9bC9COgHCCTCli25aeFFGdixR1I3G4/OWx2cNQ9rEUYjveeRZRlkUFL9OxHGMbVmEgY/jOCRJTBj6fZ7EEY5t09QVHcp08oHJeMKnjyPuhkOGwzsGgwGj0Yg8z5FScj6XVFVNURSczxW3243mcuFct1RNy+V6paxqzlWF8u3rZ77P58xmM+7vvzCdTpmMxzw8zLEsi8VCJYlCVutnnp5+oKoqtuPiJzlL0+FVeuzckKXpEqQ5irR9dGPHzpT8S9s0tG3L9Xrlv9xuf6SivhgsXwwM4bHaGGxNl/jY4Kenvxo7OuP35u91d4YuFHWjszAkS0Oy0AU/dYkmXdI0pSwLDN3A3Jl4nt8PdOz3+74eBgFCCKSQ+H7Qb6MYe4EmHTRhs30L4XikSUJV12RZRpblHA5HmrcTdF8/nU4cDgeiKCKO4r6vrmt+A0pZTDu9Q7EaAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/d216da2c72ddf42c5c841ce72ff0798a/e17e5/41.png"
+        srcset="/static/d216da2c72ddf42c5c841ce72ff0798a/6f3f2/41.png 256w,
+/static/d216da2c72ddf42c5c841ce72ff0798a/e17e5/41.png 400w"
+        sizes="(max-width: 400px) 100vw, 400px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>При добавлении нового сайта - указываем его имя (не домен), заголовок и email админа (вбивать тот же email что и для админа - чтобы не плодить пользователей).</p>
+<p>В моем случае:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 664px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/41891d032a211845ea2fcdb332e27fc7/31493/71.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 53.515625%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABuklEQVQoz21T23KbMBT0//9CH/uGM06dH2g84+ljkkmTtE7jYG5GEuIiMBgBZjs6hCR2vDM7SEhanV0Ok4vLS1gXM1iWheVyiSzLEEURGGNIkoTmcRwThRAoyxIGh8PhLCfTH1eYz68wnVq4XiwgBCdB27bhui5EJOH7Hl0QBAHyPCfBvu/PcsJljCwv0HYH2mgOmKrqusYpiryArvWHIPojcarw7u8/3K/WeHyxkaQpurYlsaZpvtzOQgbGOOp9TXtGNrqB1nqo8Mn2wCOJWEZU2WeMQuN4v99DKYVc5SiKgtwolVOuVVUNgo9rBysnAOeCNpuFNE2RZQpaN+9iBrvdDm3bfoniyPL9i4Pfry6cIESuFB0SXECaquOY5iPSJCXbnHNao1jQHws+2y7+2C5sL4AyH0NrlFU1sCwpm67riCYvc4GxapyYNWJd05MEOQshGAMLQ7LcVgVSHkJFHHy7het68H0fm80Gge9jG4bwvOGds3EgZUzOTESUoZQShqb30izDz9UW8zsbs9tXrCNlEnqvcGzez+NTTIxQZASFoLaZ3azx/dcTvi0e8BDEw1/x9lHO4bSx/wNd1EeGFqW58AAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/41891d032a211845ea2fcdb332e27fc7/31493/71.png"
+        srcset="/static/41891d032a211845ea2fcdb332e27fc7/6f3f2/71.png 256w,
+/static/41891d032a211845ea2fcdb332e27fc7/01e7c/71.png 512w,
+/static/41891d032a211845ea2fcdb332e27fc7/31493/71.png 664w"
+        sizes="(max-width: 664px) 100vw, 664px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>Теперь этот сайт доступен по адресу: <strong>test1.multi.com</strong>, можно в него залогиниться под тем же логином паролем что и для основного сайта (это возможно только при условии что добавляя новый сайт мы указали email администратора основного сайта, иначе будет создан отдельный пользователь для сайта).</p>
+<p>Чтобы сделать его доступным по адресу <strong>test1.ru</strong>, необходим модуль:</p>
+<p><a href="http://wordpress.org/extend/plugins/wordpress-mu-domain-mapping/">http://wordpress.org/extend/plugins/wordpress-mu-domain-mapping/</a></p>
+<p>Качаем разорхивируем, копируем файл <code class="language-text">domain_mapping.php</code> в <code class="language-text">/wp-content/plugins</code>, файл <code class="language-text">sunrise.php</code> - в <code class="language-text">/wp-content</code>.</p>
+<p>В самый конец файла <code class="language-text">wp-config.php</code> перед последним <code class="language-text">require_once</code> добавляем, чтобы получилось так:</p>
+<div class="gatsby-highlight" data-language="php"><pre class="language-php"><code class="language-php"><span class="token function">define</span><span class="token punctuation">(</span> <span class="token string single-quoted-string">'SUNRISE'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'on'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/** Инициализирует переменные WordPress и подключает файлы. */</span>
+<span class="token keyword">require_once</span><span class="token punctuation">(</span><span class="token constant">ABSPATH</span> <span class="token operator">.</span> <span class="token string single-quoted-string">'wp-settings.php'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>После чего идем в плагины и активируем для сети плагин. (Под "активацией для сети" подразумевается активация модуля на странице <code class="language-text">/wp-admin/network/plugins.php</code>. Плагины активированные тут будут автоматически включены для всех сайтов сети, при этом администратор сайта может устанавливать и удалять свои модули но не может удалить уже установленный модуль.)</p>
+<p>Далее переходим на страницу настроек плагина <code class="language-text">/wp-admin/network/settings.php?page=dm_admin_page</code> и прописываем IP адрес нашего сервера.</p>
+<p>Остальные настройки (галочки) я не трогал.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 411px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/bd4431a7a3194842a363e9702f87b37d/2a432/8.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 119.140625%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAYAAAD6S912AAAACXBIWXMAAA7DAAAOwwHHb6hkAAADEklEQVQ4y6VUW3LbOBDE6fYKe6987zXytZWvHEFyHCeyZfMFEiRIPPiQRMq91UNZm6TWtXGCqikC5HAw09PTylQlNpsNHh4e8Pn2M262W3y6ucVTkuDrlztsNze4v99hu9linA74v6WmaUTXdfDewzkHYwxMZdC2Lbx30LpE55ycT6cTlmXBPM9XO5/PYnxPUzFGceaPTW3QNM0lcI26bmCqCta24sOLdKFR6hK1qZCmmfiUZYXaGBRFATWOo9zw6np+xluWBOTNtmnQ1DUqY1CWpWRSVZVklmWZZFWVGnmeI0tz6KJAnuVyzvNCsqtNDRVCAC3GHsF7wXKaJsQQ4DonZ+8DTscTjsejGLFcn7PsaS+YqiRJ0LYdnPOSpdYawziitVayZPb89tMlH6ZJMmQjXNeBTVozjhKIXScLVnPix31d15IIm8izvG87KO88bj/dYv+wR/L4hN3XnWD2uH+Uzvd9L3Y8HEC8CQdtGIYVphCuPvyuuOEtBJ83NXJzez2PwyCO3DNIPwyC6zhOr3R5GNdSOreW2a14cs8gtrFSDjv/Ujo5GkL874B9jCsOzqHIcxS6RNtaweh8fp2DIXihT6m1EJsUY0Nl9F6aIBSKUfCIIeJwOGA+fUOX4+lKE+LY9wMG+sYosPA/RbCdzGqHxtTwIQjveGNVlvJkBsSWGbDrHFGOnMx514mftVYqVbapsdvdC+vTNBVl4YzO84JfWYopkyZVZWR0sjSVrDgF6yg/v8kUf+r7Ebo0UhbLtbaRd29ZzxcRUcs8o7Gt4MAxIz0oBKXIlr1g1shYrrjpVQgumNLYIC6qljoviwRkhtQ46l9lagmcpdn6zDKM0yQCerp0nHvp/Dx/j+EasEOSaSTJ00WOcqRJiv1+jyzLQQFhdqSVd6sCNY2VJyeKw2DbVipSyzKjZYZFsaqxlKyvlBHCFvpf06UMQJrm0kDuX5ScMRTr7uKA1oeL9nnJgtp4JfsPxI8X/eTIci9CIX4e6v02xR/v3uPPvz4gcyN+dyntBvy92ePjXYrxF7n3LQ//ATZOLmlq+twyAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/bd4431a7a3194842a363e9702f87b37d/2a432/8.png"
+        srcset="/static/bd4431a7a3194842a363e9702f87b37d/6f3f2/8.png 256w,
+/static/bd4431a7a3194842a363e9702f87b37d/2a432/8.png 411w"
+        sizes="(max-width: 411px) 100vw, 411px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>Теперь идем на <code class="language-text">test1.multi.com</code>, логинимся и идем в настроку доменов (<code class="language-text">/wp-admin/tools.php?page=domainmapping</code>), прописываем в качестве домена <code class="language-text">test1.ru</code>, и ставим галочку <strong>Primary domain for this blog</strong>.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 220px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/aaf75ee5566b28e73980c0b2fc0743a1/c8042/9.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 58.18181818181818%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAA7DAAAOwwHHb6hkAAABf0lEQVQoz6WTb2+TUBTG+f7fQuMLfbHFuFmzGBNfaUy6tjSwAm3qNinWQgcDLn8LP3OvllHTbDE7yZPLuRye+xzOczWAu22At/LY3oXE8T1hGJHnGf5mgx9siaII3/eJ41iW07atwrHQoOVicMbLF68Yjqd8/vSR05NTJrrOh/fnvD0fMDh7x+s3J4zHkwPCPvb7WlEUPDf6ajXDMLqkaR5e7Ha7bq3rWq3H0DRNTzVoZS4YDUfoU5Nfa48rw+TL1yHzmYVjLcjLUhXLD/st7onuo4iyqh5alg/bIMDzPIRICXyf2x8rRJKwXm8oirJT+gd1p0yiqiranko1lG+XJovFEse2sO05tmVxfXODbc2Yzx2muo5hSMUzHNthdDlhufyONTMxpiZ5+Y/C69ufxHFCWZYIIVQbaSqUTaR9ZC5ERpZlyCGmSarqZB74AVVVHxJ2P/Wv9OdMWhFGYciVaSrvyZOP+ewpHChMkwTXdXHdFXtfPnYbHgvtKaP+L+FvVZmeIupS5W0AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/aaf75ee5566b28e73980c0b2fc0743a1/c8042/9.png"
+        srcset="/static/aaf75ee5566b28e73980c0b2fc0743a1/c8042/9.png 220w"
+        sizes="(max-width: 220px) 100vw, 220px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>После сохранения изменений сайт будет доступен по адресу <strong>test1.ru</strong>.</p>
+<p>При логине - перекидывает на test1.multi.com - это связано с cookies - иначе не получилось бы залогиниться - главное что фронэнд сайта на нужном домене.</p>
+<p>К сожалению далеко не все модули можно включить сразу для всей сети. Но в любом случае это лучше чем необходимость каждый раз их качать и устанавливать.</p>
+<p>Темы - ставяться как обычно в /wp-content/themes - после чего в настройках сети необходимо разрешить тему для выбора сайтами.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 636px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/ba50275d793ea7dcb0615736a9158d5e/9be90/10.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 83.984375%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAA7DAAAOwwHHb6hkAAADEUlEQVQ4y3WUW2/kRBSE/esRQgh4CRL/A3iFBx6iJUibxNnJjO3x+Da+u2237/bMh7ozWRCXlkrdbanrnFNVsmE5R14cj1MQkSYJZVXRti1FUVCWFaKqaOqaUt9L/V1KiVrX6/VfME5BiBW+EdV1rREEAUkcE58jWtlxLmrSqka03f8SfSa8//2BX+8f+OX+gd8+/IF3OiGEYJwmsqqh7kf6aUaOM6If6aaZy+Xymfify/ju7gfu7r7n62++5Ysvv+LHn37WYxZFhZwWirqlbSVpXhAXgm78i/C/lrH3zjztXUzbJ6t7hml5IywF27bRNI2WQemnzuuysK4r0zRpLLf7O4xYSM5CMi6rHmEaR4qyJExz8qKkb1tk29DLlq5taaSklZIoirBtmyzPtYmqqCpoHByXj5aHF8UUeY5oGkQc4354IHx5JTs4ZHuLVGF3QBws2jzHPbrsPu00TNPEfDYxzRcM63jCdEM+nUKSNKORLUNZ0no+dRRThxHCD6j8EOH5NOczsm50EhzHwbEdjscjjuPiHF2MvOkJy5ZEdCzbxjxPeixFXNcC2UnmZWFZZuZlZpxnnQCVyzRNdSJUNtO8ohQNRiFHwkoS1x3bFS3yOI7YXsDjzsL2I6q2JxUtQvZs66pdTpKEo+NgWbYe37FtbMvGCLMSNy0pGonse8Zh0O6u24XtcmXdNqZ50Z3NN0eVed7J4/npmdfdq8Zu98p+v8dwg4i9H/PJO5PkBV0n3whvMVAdqfs71luHalzP8wh8X+++7+uzkTY9USVR++V6ZZlnPbZ6fNEk6w1v5/VyYbteybJMk5ZFSaIipmSpJUaSpkRxjNrzPNdZqoTAPfkcrCNpVlCJWge9qGrqNEWWpXbZOlhaN+W2yqTS01CVsjTV1RRUQPu+Jy8r7ZwmKgX5DSqjilBF5fHjIy+mqbVUeXx6esJQlr9DdagIh2FgGgbGoafvO13gHd0w0A8DeZZpp+M4ftMyCAiDAEORKPydsKkblPuFaOi7Tv//pOxukAz9wOnk6o7iONFvVB6rquJPM+z+xjSl5EoAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/ba50275d793ea7dcb0615736a9158d5e/9be90/10.png"
+        srcset="/static/ba50275d793ea7dcb0615736a9158d5e/6f3f2/10.png 256w,
+/static/ba50275d793ea7dcb0615736a9158d5e/01e7c/10.png 512w,
+/static/ba50275d793ea7dcb0615736a9158d5e/9be90/10.png 636w"
+        sizes="(max-width: 636px) 100vw, 636px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>Ссылки:</p>
+<p><a href="http://codex.wordpress.org/Create_A_Network">http://codex.wordpress.org/Create_A_Network</a></p>
+<p><a href="http://www.binaryturf.com/run-multiple-sites-wordpress-30-separate-domains/">http://www.binaryturf.com/run-multiple-sites-wordpress-30-separate-domains/</a></p>
+<p>Самое классное в этом всем - теперь:</p>
+<ul>
+<li>Нужно бекапить только одну базу и папку с файлами.</li>
+<li>У всех сайтов одинаковые логин\пароль к фтп, базе, админке.</li>
+<li>Процесс разворачивания нового сайта сводиться к его добавлению в админке и выбору темы.</li>
+</ul></div></main><footer><a href="#top">top</a><a href="/">home</a><a href="/search">search</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wordpress-multisite";window.___webpackCompilationHash="ef8fb55bb983484b16a7";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-b4bb882d10635d85fa25.js"],"app":["/app-98475b819971087d4b7e.js"],"component---src-pages-404-js":["/component---src-pages-404-js-2652c435d8decd31b8ef.js"],"component---src-pages-index-js":["/component---src-pages-index-js-59ea4a114c2918516395.js"],"component---src-pages-search-js":["/component---src-pages-search-js-078619e3aef857102623.js"],"component---src-templates-note-js":["/component---src-templates-note-js-b005c02681f20ea28edd.js"]};/*]]>*/</script><script src="/polyfill-b4bb882d10635d85fa25.js" nomodule=""></script><script src="/app-98475b819971087d4b7e.js" async=""></script><script src="/framework-2ce620c91826a79f925c.js" async=""></script><script src="/webpack-runtime-72217849817cd80b0f9a.js" async=""></script></body></html>

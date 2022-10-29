@@ -1,0 +1,307 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 4.24.5"/><style data-href="/styles.f7b0302c8427f1a04772.css" data-identity="gatsby-global-css">@media (prefers-color-scheme:light){code[class*=language-],pre[class*=language-]{background:#fafafa;color:#383a42;direction:ltr;font-family:Fira Code,Fira Mono,Menlo,Consolas,DejaVu Sans Mono,monospace;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{background:#e5e5e6;color:inherit}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection{background:#e5e5e6;color:inherit}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.2em .3em;white-space:normal}.token.cdata,.token.comment,.token.prolog{color:#a0a1a7}.token.doctype,.token.entity,.token.punctuation{color:#383a42}.token.atrule,.token.attr-name,.token.boolean,.token.class-name,.token.constant,.token.number{color:#b76b01}.token.keyword{color:#a626a4}.token.deleted,.token.important,.token.property,.token.symbol,.token.tag{color:#e45649}.token.attr-value,.token.attr-value>.token.punctuation,.token.builtin,.token.char,.token.inserted,.token.regex,.token.selector,.token.string{color:#50a14f}.token.function,.token.operator,.token.variable{color:#4078f2}.token.url{color:#0184bc}.token.attr-value>.token.punctuation.attr-equals,.token.special-attr>.token.attr-value>.token.value.css{color:#383a42}.language-css .token.selector{color:#e45649}.language-css .token.property{color:#383a42}.language-css .token.function,.language-css .token.url>.token.function{color:#0184bc}.language-css .token.url>.token.string.url{color:#50a14f}.language-css .token.atrule .token.rule,.language-css .token.important,.language-javascript .token.operator{color:#a626a4}.language-javascript .token.template-string>.token.interpolation>.token.interpolation-punctuation.punctuation{color:#ca1243}.language-json .token.operator{color:#383a42}.language-json .token.null.keyword{color:#b76b01}.language-markdown .token.url,.language-markdown .token.url-reference.url>.token.string,.language-markdown .token.url>.token.operator{color:#383a42}.language-markdown .token.url>.token.content{color:#4078f2}.language-markdown .token.url-reference.url,.language-markdown .token.url>.token.url{color:#0184bc}.language-markdown .token.blockquote.punctuation,.language-markdown .token.hr.punctuation{color:#a0a1a7;font-style:italic}.language-markdown .token.code-snippet{color:#50a14f}.language-markdown .token.bold .token.content{color:#b76b01}.language-markdown .token.italic .token.content{color:#a626a4}.language-markdown .token.list.punctuation,.language-markdown .token.strike .token.content,.language-markdown .token.strike .token.punctuation,.language-markdown .token.title.important>.token.punctuation{color:#e45649}.token.bold{font-weight:700}.token.comment,.token.italic{font-style:italic}.token.entity{cursor:help}.token.namespace{opacity:.8}.token.token.cr:before,.token.token.lf:before,.token.token.space:before,.token.token.tab:not(:empty):before{color:rgba(56,58,66,.2)}div.code-toolbar>.toolbar.toolbar>.toolbar-item{margin-right:.4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span{background:#e5e5e6;border-radius:.3em;color:#696c77;padding:.1em .4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:hover{background:#c6c7c7;color:#383a42}.line-highlight.line-highlight{background:rgba(56,58,66,.05)}.line-highlight.line-highlight:before,.line-highlight.line-highlight[data-end]:after{background:#e5e5e6;border-radius:.3em;box-shadow:0 2px 0 0 rgba(0,0,0,.2);color:#383a42;padding:.1em .6em}pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:rgba(56,58,66,.05)}.command-line .command-line-prompt,.line-numbers.line-numbers .line-numbers-rows{border-right-color:rgba(56,58,66,.2)}.command-line .command-line-prompt>span:before,.line-numbers .line-numbers-rows>span:before{color:#9d9d9f}.rainbow-braces .token.token.punctuation.brace-level-1,.rainbow-braces .token.token.punctuation.brace-level-5,.rainbow-braces .token.token.punctuation.brace-level-9{color:#e45649}.rainbow-braces .token.token.punctuation.brace-level-10,.rainbow-braces .token.token.punctuation.brace-level-2,.rainbow-braces .token.token.punctuation.brace-level-6{color:#50a14f}.rainbow-braces .token.token.punctuation.brace-level-11,.rainbow-braces .token.token.punctuation.brace-level-3,.rainbow-braces .token.token.punctuation.brace-level-7{color:#4078f2}.rainbow-braces .token.token.punctuation.brace-level-12,.rainbow-braces .token.token.punctuation.brace-level-4,.rainbow-braces .token.token.punctuation.brace-level-8{color:#a626a4}pre.diff-highlight>code .token.token.deleted:not(.prefix),pre>code.diff-highlight .token.token.deleted:not(.prefix){background-color:rgba(255,82,102,.15)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::-moz-selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix),pre>code.diff-highlight .token.token.inserted:not(.prefix){background-color:rgba(25,255,91,.15)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::-moz-selection{background-color:rgba(56,224,98,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::selection{background-color:rgba(56,224,98,.25)}.prism-previewer-gradient.prism-previewer-gradient div,.prism-previewer.prism-previewer:before{border-color:hsl(0,0,95%)}.prism-previewer-color.prism-previewer-color:before,.prism-previewer-easing.prism-previewer-easing:before,.prism-previewer-gradient.prism-previewer-gradient div{border-radius:.3em}.prism-previewer.prism-previewer:after{border-top-color:hsl(0,0,95%)}.prism-previewer-flipped.prism-previewer-flipped.after{border-bottom-color:hsl(0,0,95%)}.prism-previewer-angle.prism-previewer-angle:before,.prism-previewer-easing.prism-previewer-easing,.prism-previewer-time.prism-previewer-time:before{background:#fff}.prism-previewer-angle.prism-previewer-angle circle,.prism-previewer-time.prism-previewer-time circle{stroke:#383a42;stroke-opacity:1}.prism-previewer-easing.prism-previewer-easing circle,.prism-previewer-easing.prism-previewer-easing line,.prism-previewer-easing.prism-previewer-easing path{stroke:#383a42}.prism-previewer-easing.prism-previewer-easing circle{fill:transparent}}@media (prefers-color-scheme:dark){code[class*=language-],pre[class*=language-]{background:#282c34;color:#abb2bf;direction:ltr;font-family:Fira Code,Fira Mono,Menlo,Consolas,DejaVu Sans Mono,monospace;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;text-align:left;text-shadow:0 1px rgba(0,0,0,.3);white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{background:#3e4451;color:inherit;text-shadow:none}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection{background:#3e4451;color:inherit;text-shadow:none}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.2em .3em;white-space:normal}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}.token.cdata,.token.comment,.token.prolog{color:#5c6370}.token.doctype,.token.entity,.token.punctuation{color:#abb2bf}.token.atrule,.token.attr-name,.token.boolean,.token.class-name,.token.constant,.token.number{color:#d19a66}.token.keyword{color:#c678dd}.token.deleted,.token.important,.token.property,.token.symbol,.token.tag{color:#e06c75}.token.attr-value,.token.attr-value>.token.punctuation,.token.builtin,.token.char,.token.inserted,.token.regex,.token.selector,.token.string{color:#98c379}.token.function,.token.operator,.token.variable{color:#61afef}.token.url{color:#56b6c2}.token.attr-value>.token.punctuation.attr-equals,.token.special-attr>.token.attr-value>.token.value.css{color:#abb2bf}.language-css .token.selector{color:#e06c75}.language-css .token.property{color:#abb2bf}.language-css .token.function,.language-css .token.url>.token.function{color:#56b6c2}.language-css .token.url>.token.string.url{color:#98c379}.language-css .token.atrule .token.rule,.language-css .token.important,.language-javascript .token.operator{color:#c678dd}.language-javascript .token.template-string>.token.interpolation>.token.interpolation-punctuation.punctuation{color:#be5046}.language-json .token.operator{color:#abb2bf}.language-json .token.null.keyword{color:#d19a66}.language-markdown .token.url,.language-markdown .token.url-reference.url>.token.string,.language-markdown .token.url>.token.operator{color:#abb2bf}.language-markdown .token.url>.token.content{color:#61afef}.language-markdown .token.url-reference.url,.language-markdown .token.url>.token.url{color:#56b6c2}.language-markdown .token.blockquote.punctuation,.language-markdown .token.hr.punctuation{color:#5c6370;font-style:italic}.language-markdown .token.code-snippet{color:#98c379}.language-markdown .token.bold .token.content{color:#d19a66}.language-markdown .token.italic .token.content{color:#c678dd}.language-markdown .token.list.punctuation,.language-markdown .token.strike .token.content,.language-markdown .token.strike .token.punctuation,.language-markdown .token.title.important>.token.punctuation{color:#e06c75}.token.bold{font-weight:700}.token.comment,.token.italic{font-style:italic}.token.entity{cursor:help}.token.namespace{opacity:.8}.token.token.cr:before,.token.token.lf:before,.token.token.space:before,.token.token.tab:not(:empty):before{color:rgba(171,178,191,.15);text-shadow:none}div.code-toolbar>.toolbar.toolbar>.toolbar-item{margin-right:.4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span{background:#3a3f4b;border-radius:.3em;color:#828997;padding:.1em .4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:hover{background:#3e4451;color:#abb2bf}.line-highlight.line-highlight{background:rgba(153,187,255,.04)}.line-highlight.line-highlight:before,.line-highlight.line-highlight[data-end]:after{background:#3a3f4b;border-radius:.3em;box-shadow:0 2px 0 0 rgba(0,0,0,.2);color:#abb2bf;padding:.1em .6em}pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:rgba(153,187,255,.04)}.command-line .command-line-prompt,.line-numbers.line-numbers .line-numbers-rows{border-right-color:rgba(171,178,191,.15)}.command-line .command-line-prompt>span:before,.line-numbers .line-numbers-rows>span:before{color:#636d83}.rainbow-braces .token.token.punctuation.brace-level-1,.rainbow-braces .token.token.punctuation.brace-level-5,.rainbow-braces .token.token.punctuation.brace-level-9{color:#e06c75}.rainbow-braces .token.token.punctuation.brace-level-10,.rainbow-braces .token.token.punctuation.brace-level-2,.rainbow-braces .token.token.punctuation.brace-level-6{color:#98c379}.rainbow-braces .token.token.punctuation.brace-level-11,.rainbow-braces .token.token.punctuation.brace-level-3,.rainbow-braces .token.token.punctuation.brace-level-7{color:#61afef}.rainbow-braces .token.token.punctuation.brace-level-12,.rainbow-braces .token.token.punctuation.brace-level-4,.rainbow-braces .token.token.punctuation.brace-level-8{color:#c678dd}pre.diff-highlight>code .token.token.deleted:not(.prefix),pre>code.diff-highlight .token.token.deleted:not(.prefix){background-color:rgba(255,82,102,.15)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::-moz-selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix),pre>code.diff-highlight .token.token.inserted:not(.prefix){background-color:rgba(25,255,91,.15)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::-moz-selection{background-color:rgba(56,224,98,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::selection{background-color:rgba(56,224,98,.25)}.prism-previewer-gradient.prism-previewer-gradient div,.prism-previewer.prism-previewer:before{border-color:#262931}.prism-previewer-color.prism-previewer-color:before,.prism-previewer-easing.prism-previewer-easing:before,.prism-previewer-gradient.prism-previewer-gradient div{border-radius:.3em}.prism-previewer.prism-previewer:after{border-top-color:#262931}.prism-previewer-flipped.prism-previewer-flipped.after{border-bottom-color:#262931}.prism-previewer-angle.prism-previewer-angle:before,.prism-previewer-easing.prism-previewer-easing,.prism-previewer-time.prism-previewer-time:before{background:#31363f}.prism-previewer-angle.prism-previewer-angle circle,.prism-previewer-time.prism-previewer-time circle{stroke:#abb2bf;stroke-opacity:1}.prism-previewer-easing.prism-previewer-easing circle,.prism-previewer-easing.prism-previewer-easing line,.prism-previewer-easing.prism-previewer-easing path{stroke:#abb2bf}.prism-previewer-easing.prism-previewer-easing circle{fill:transparent}}:root{--foreground:#24292f;--background:#fff}a{color:#0969da}a.visited,a:visited{color:#57606a}.green{color:#1a7f37}.red{color:#cf222e}@media (prefers-color-scheme:dark){:root{--foreground:#adbac7;--background:#22272e}a{color:#539bf5}a.visited,a:visited{color:#768390}.green{color:#57ab5a}.red{color:#e5534b}}a{text-decoration:none}a:hover{text-decoration:underline}html{font-family:Ubuntu,sans-serif}body{background-color:var(--background);color:var(--foreground);margin:0;padding:0}#top{box-sizing:border-box;display:grid;grid-template-rows:1fr 2em;margin:0;min-height:100vh;padding:1em 2em}.graph polygon{fill:transparent}.graph g ellipse[stroke="#000"],.graph g ellipse[stroke="#000000"],.graph g ellipse[stroke=black],.graph g path[stroke="#000"],.graph g path[stroke="#000000"],.graph g path[stroke=black],.graph g polygon[stroke="#000"],.graph g polygon[stroke="#000000"],.graph g polygon[stroke=black]{stroke:var(--foreground)}.graph g text[fill="#000"],.graph g text[fill="#000000"],.graph g text[fill=black]{fill:var(--foreground)}code,pre{font-family:JetBrains Mono,monospace}pre[class*=language-]{word-wrap:break-word;border-radius:0;box-sizing:border-box;margin:1em -2em;max-width:100vw;padding:1em 2em}footer a{line-height:2em;margin-right:.5em}.delta{line-height:1;margin-left:1em;white-space:nowrap}.columns{display:grid;grid-template-columns:repeat(2,1fr)}@media only screen and (max-width:1024px){.columns{grid-template-columns:repeat(1,1fr)}}.pie{text-align:center}.pie figure{display:inline-block}.pie figcaption{font-size:80%;margin-top:.25em}</style><title data-gatsby-head="true">Microsoft CRM web service</title><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="icon" href="/favicon-32x32.png?v=6389d5f13c96000946d60b6bb0a8b5a8" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div id="top"><main><div><h1>Microsoft CRM web service</h1>
+<p>Интеграция с MS CRM по средствам встроенного сервиса дает возможность получать\изменять данные в системе.</p>
+<p><strong>Полезные ссылки:</strong></p>
+<p><a href="http://example.com:5555/mscrmservices/2006/crmservice.asmx">http://example.com:5555/mscrmservices/2006/crmservice.asmx</a> - сам сервис</p>
+<p><a href="http://example.com:5555/mscrmservices/2006/metadataservice.asmx">http://example.com:5555/mscrmservices/2006/metadataservice.asmx</a> - мета данные</p>
+<p><a href="http://example.com:5555/sdk/list.aspx">http://example.com:5555/sdk/list.aspx</a> - список сущностей</p>
+<p>Для подключения к студии надо использовать вот такие ссылки:</p>
+<p><a href="http://example.com:5555/mscrmservices/2006/crmservice.asmx?WSDL&#x26;uniquename=COMPANYNAME">http://example.com:5555/mscrmservices/2006/crmservice.asmx?WSDL&#x26;uniquename=COMPANYNAME</a></p>
+<p><a href="http://example.com:5555/mscrmservices/2006/metadataservice.asmx?WSDL&#x26;uniquename=COMPANYNAME">http://example.com:5555/mscrmservices/2006/metadataservice.asmx?WSDL&#x26;uniquename=COMPANYNAME</a></p>
+<p>По ним будут доступны xml файлы описывающие сервис, со всеми кастомными полями и т.п. и именно они будут нужны для подключения к студии.</p>
+<p><strong>Добавление сервиса к проекту.</strong></p>
+<p>Для WinForms - правый клик по проекту <strong>Add Web Reference</strong>, в URL вбиваем путь к сохраненному xml файлу, в Web reference name вбиваем имя создаваемой ссылки.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 817px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/dca587f763ce7e3b105d21891ca6bc38/98314/111.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 69.53125%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACYUlEQVQ4y2WUi47aSBBF+f8/20ykhUw2YKBx2z34/X5gbGxOVE1ArNLSkUzbvty61eXVzjdsteaUZgTDQNj3qLrmkGWkZUnX9VRVRZZldH3H9Xp9MQwDbdtaiqKgKEtWR19x8jy01ngnhfF9fK3Rvo/nG7SrH/c8jzRNKcuSPM8fAm/IvrBS7o5gu8X/9R/R3qHQHulRUXgefdvS9T1d19E0DXEWWbfiSH4LdV3bPcEKhsZw/PYPx/WGw0ZYEypF5rpURUHTtvR9z+VyIa8yojiybo0xliAIXmLidOWamPXWJUkTwigmCFOqpqO7PHKaponb7cb9fkdWkiQ4O4fj4UAcxzaGoniISRSrth/w/cDm9GVifL+jKC7cbvy15nm2TuIoJokTW64ge6+Sp3Fkt93y73rN5+cnP39+4bohWXZhnhfrThAxK1hVNG1D3TSv7J7YksdpQh0VHx/fORwUSp1xHA/XDQjDEOMbzufAYnPKc5IwIksS8ix/ZWdLtoLjiDFfKKUIg4QgKIjjkratqOuSuq4s8kI/XMnkzH77wKzX1GnGMI6M15HrONrur6ZpZO/s2Wx+oNQB1z2z34dot6Wq7lyvC+O42KYsy0KZ51RhSJ0k9thI9pvNBsdxbMdthiel2Pz4ZL/f4/tnTirH0ylalxjTEkXt/89bXdkspVyZoCiKbPflejXZDI9W7HxO0LohCBKGoed+n7nfbyzLozESz3Miqj+dFeTPxK3tsjwk5cyzvDRzuy2W57l7X7L3Evzj8Im4s+dQxkpcivA77x+BJzIt0px3MbmWknfbnZ2g3/eOH0Tt8HXsAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/dca587f763ce7e3b105d21891ca6bc38/98314/111.png"
+        srcset="/static/dca587f763ce7e3b105d21891ca6bc38/6f3f2/111.png 256w,
+/static/dca587f763ce7e3b105d21891ca6bc38/01e7c/111.png 512w,
+/static/dca587f763ce7e3b105d21891ca6bc38/98314/111.png 817w"
+        sizes="(max-width: 817px) 100vw, 817px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>Для asp.net - правый клик по проекту <strong>Add Service Reference</strong>, далее клик по кнопке <strong>Advanced...</strong> и еще раз клик по кнопке <strong>Add Web Reference..</strong>. и дальше то же самое как и для обычных апликух.</p>
+<p><a href="http://msdn.microsoft.com/en-us/library/cc151015.aspx">http://msdn.microsoft.com/en-us/library/cc151015.aspx</a></p>
+<p><a href="http://msdn.microsoft.com/en-us/library/cc151014.aspx">http://msdn.microsoft.com/en-us/library/cc151014.aspx</a></p>
+<p>Теперь после того как сервисы прикручены можно с ними работать.</p>
+<p><strong>Пример получения информации и компании из CRM</strong></p>
+<div class="gatsby-highlight" data-language="csharp"><pre class="language-csharp"><code class="language-csharp"><span class="token class-name">MetadataService</span> ms <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">MetadataService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">CrmService</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">CrmService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+s<span class="token punctuation">.</span>Credentials <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">NetworkCredential</span><span class="token punctuation">(</span><span class="token string">"LOGIN"</span><span class="token punctuation">,</span> <span class="token string">"PASSWORD"</span><span class="token punctuation">,</span> <span class="token string">"COMPANYNAME"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+s<span class="token punctuation">.</span>Credentials <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">NetworkCredential</span><span class="token punctuation">(</span><span class="token string">"LOGIN"</span><span class="token punctuation">,</span> <span class="token string">"PASSWORD"</span><span class="token punctuation">,</span> <span class="token string">"COMPANYNAME"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name">EntityMetadata</span> em <span class="token operator">=</span> ms<span class="token punctuation">.</span><span class="token function">RetrieveEntityMetadata</span><span class="token punctuation">(</span><span class="token string">"organization"</span><span class="token punctuation">,</span> EntityFlags<span class="token punctuation">.</span>All<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">List<span class="token punctuation">&lt;</span><span class="token keyword">string</span><span class="token punctuation">></span></span> attrs <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">List<span class="token punctuation">&lt;</span><span class="token keyword">string</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token class-name">AttributeMetadata</span> am <span class="token keyword">in</span> em<span class="token punctuation">.</span>Attributes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    attrs<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>am<span class="token punctuation">.</span>Name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//MessageBox.Show(string.Join("\r\n", attrs.ToArray()));</span>
+
+<span class="token class-name">ColumnSet</span> colSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ColumnSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+colSet<span class="token punctuation">.</span>Attributes <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> <span class="token punctuation">{</span> <span class="token string">"accountid"</span><span class="token punctuation">,</span> <span class="token string">"name"</span><span class="token punctuation">,</span> <span class="token string">"new_notebookid"</span><span class="token punctuation">,</span> <span class="token string">"createdon"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token class-name">QueryExpression</span> query <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">QueryExpression</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+query<span class="token punctuation">.</span>EntityName <span class="token operator">=</span> EntityName<span class="token punctuation">.</span>account<span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+query<span class="token punctuation">.</span>ColumnSet <span class="token operator">=</span> colSet<span class="token punctuation">;</span>
+
+<span class="token comment">//////</span>
+<span class="token class-name">ConditionExpression</span> condition <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ConditionExpression</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+condition<span class="token punctuation">.</span>AttributeName <span class="token operator">=</span> <span class="token string">"createdon"</span><span class="token punctuation">;</span>
+condition<span class="token punctuation">.</span>Operator <span class="token operator">=</span> ConditionOperator<span class="token punctuation">.</span>LastXDays<span class="token punctuation">;</span>
+condition<span class="token punctuation">.</span>Values <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name"><span class="token keyword">object</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> <span class="token punctuation">{</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Build the filter based on the condition.</span>
+<span class="token class-name">FilterExpression</span> filter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">FilterExpression</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+filter<span class="token punctuation">.</span>FilterOperator <span class="token operator">=</span> LogicalOperator<span class="token punctuation">.</span>And<span class="token punctuation">;</span>
+filter<span class="token punctuation">.</span>Conditions <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ConditionExpression<span class="token punctuation">[</span><span class="token punctuation">]</span></span> <span class="token punctuation">{</span> condition <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Set the Criteria field.</span>
+query<span class="token punctuation">.</span>Criteria <span class="token operator">=</span> filter<span class="token punctuation">;</span>
+<span class="token comment">//////////////////////////</span>
+
+<span class="token class-name">RetrieveMultipleRequest</span> req <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">RetrieveMultipleRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+req<span class="token punctuation">.</span>Query <span class="token operator">=</span> query<span class="token punctuation">;</span>
+
+<span class="token class-name">RetrieveMultipleResponse</span> response <span class="token operator">=</span> <span class="token punctuation">(</span>RetrieveMultipleResponse<span class="token punctuation">)</span>s<span class="token punctuation">.</span><span class="token function">Execute</span><span class="token punctuation">(</span>req<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name"><span class="token keyword">string</span></span> res <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+<span class="token class-name">List<span class="token punctuation">&lt;</span>TMP<span class="token punctuation">></span></span> items <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">List<span class="token punctuation">&lt;</span>TMP<span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token class-name">BusinessEntity</span> item <span class="token keyword">in</span> response<span class="token punctuation">.</span>BusinessEntityCollection<span class="token punctuation">.</span>BusinessEntities<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token class-name">account</span> a <span class="token operator">=</span> <span class="token punctuation">(</span>account<span class="token punctuation">)</span>item<span class="token punctuation">;</span>
+
+    items<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token constructor-invocation class-name">TMP</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>accountid<span class="token punctuation">.</span>Value<span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> a<span class="token punctuation">.</span>new_notebookid<span class="token punctuation">,</span> a<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+dataGridView1<span class="token punctuation">.</span>DataSource <span class="token operator">=</span> items<span class="token punctuation">;</span></code></pre></div>
+<p>Собственно вот как это может выглядеть:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 539px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/6e5609b456222331f6ece68a56d400b8/10f9a/22.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 51.953125%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACAUlEQVQoz42SW2/aMBhA+e/7BXva09ZNK7TQQgca0JY+VJvWCq0XIDcISSDhEkhSoA2XQNeeKWaapk2VZunIn+3PR/5sJ+oth77r0ev1cRwbdzRiPB5j2gPa3SFWb4zVG9E0HUzHxR76qO0ul1d1qjcS1ZsG1esaDa3NaHJP4rqhMvFGlGoer4oub76FvP664OK2Scdss1wsmE7ukCWJ6WTCZh1Rr92y8+4tqeQuyd2PfHi/Q6n4mYf7GQm5abBczKnb9+SuPDIXNmUlRDMcXHdI3JbLJZ1OB98PxFjTmqT29shmc2SzWdLpDJXKGbPZjERd0VmtIvyxi2NoWC2Z+dSj2zHp2g6Pjz8IwxCjbaAqKkFwh6KqJJNJDg8POTg4YH9/n9PT063wu6QTrVb0By6mYdFs6Xh+gGVZdLpdnp+fRdmO42BZHebzBZqmvSy8vFFZR2sGgyG63sI0TVx3RBD4IuHp6YnwIcQ0DEzTYjh0kSSJ1IvCa5koiuj1+yiKjKIoQjidTlmv12w2G1Gy3tLxg0DMybJMKpUSwphYWKlUtsIv1RpnZxVKpZKgWCxSLpdFfHx8zMnJiehL5bI4RbyxUCgISTqdJpPJCHmc90tYp5D/JF4rl8v9w5/zcRxzdHREPp//Tbx2fn6+FTZaNpO7QHxmz/P+izj3b3x/e+c/AaiqtChDiktMAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/6e5609b456222331f6ece68a56d400b8/10f9a/22.png"
+        srcset="/static/6e5609b456222331f6ece68a56d400b8/6f3f2/22.png 256w,
+/static/6e5609b456222331f6ece68a56d400b8/01e7c/22.png 512w,
+/static/6e5609b456222331f6ece68a56d400b8/10f9a/22.png 539w"
+        sizes="(max-width: 539px) 100vw, 539px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>Чтобы не заморачиваться с ColumnSet - можно юзать вот такую штуку:</p>
+<div class="gatsby-highlight" data-language="csharp"><pre class="language-csharp"><code class="language-csharp">query<span class="token punctuation">.</span>ColumnSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">AllColumns</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>Взято отсюда: <a href="http://community.dynamics.com/roletailored/customerservice/b/cscrmblog/archive/2009/01/07/building-rich-client-dashboards-for-microsoft-dynamics-crm-with-windows-presentation-foundation.aspx">http://community.dynamics.com/roletailored/customerservice/b/cscrmblog/archive/2009/01/07/building-rich-client-dashboards-for-microsoft-dynamics-crm-with-windows-presentation-foundation.aspx</a></p>
+<p>Пример выуживания данных сразу из двух сущностей:</p>
+<div class="gatsby-highlight" data-language="csharp"><pre class="language-csharp"><code class="language-csharp"><span class="token class-name">String</span> fetch <span class="token operator">=</span> <span class="token string">"&lt;fetch mapping='logical'>"</span> <span class="token operator">+</span>
+<span class="token string">"&lt;entity name='account'>"</span> <span class="token operator">+</span>
+<span class="token string">"&lt;attribute name='new_notebookid'/>"</span> <span class="token operator">+</span>
+<span class="token string">"&lt;attribute name='name'/>"</span> <span class="token operator">+</span>
+
+<span class="token string">"&lt;link-entity name='systemuser' link-type='inner' from='systemuserid' to='ownerid'>"</span> <span class="token operator">+</span>
+<span class="token string">"&lt;attribute name='lastname'/>"</span> <span class="token operator">+</span>
+<span class="token string">"&lt;/link-entity>"</span> <span class="token operator">+</span>
+
+<span class="token string">"&lt;filter type='and'>"</span> <span class="token operator">+</span>
+<span class="token string">"&lt;condition attribute = 'name' operator='like' value='%Саша%'/>"</span> <span class="token operator">+</span>
+<span class="token string">"&lt;/filter>"</span> <span class="token operator">+</span>
+
+<span class="token string">"&lt;/entity>"</span> <span class="token operator">+</span>
+<span class="token string">"&lt;/fetch>"</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span> result <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">Fetch</span><span class="token punctuation">(</span>fetch<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>Взято из этих мест:</p>
+<p><a href="http://msdn.microsoft.com/en-us/library/ms914457.aspx">http://msdn.microsoft.com/en-us/library/ms914457.aspx</a></p>
+<p><a href="http://social.microsoft.com/Forums/en/crmdevelopment/thread/5ef585a5-58bc-46cd-a134-a46869d0684c">http://social.microsoft.com/Forums/en/crmdevelopment/thread/5ef585a5-58bc-46cd-a134-a46869d0684c</a></p>
+<p><a href="http://www.stunnware.com/crm2/topic.aspx?id=FindingData6">http://www.stunnware.com/crm2/topic.aspx?id=FindingData6</a></p>
+<p><a href="http://mymscrm3.blogspot.com/2008/01/fetchxml-query-examples.html">http://mymscrm3.blogspot.com/2008/01/fetchxml-query-examples.html</a></p>
+<p><strong>Вытягивание связанных записей</strong></p>
+<p>Задачи за последние N дней плюс кастомное поле из account</p>
+<div class="gatsby-highlight" data-language="csharp"><pre class="language-csharp"><code class="language-csharp"><span class="token class-name"><span class="token keyword">string</span></span> fetchXml <span class="token operator">=</span> <span class="token string">@"
+&lt;fetch mapping=""logical"" count=""5"">
+    &lt;entity name=""activitypointer"">
+    &lt;attribute name=""subject"" />
+    &lt;filter>
+        &lt;condition attribute=""createdon"" operator=""last-x-days"" value=""3"" />
+        &lt;condition attribute=""statuscode"" operator=""eq"" value=""1"" />
+    &lt;/filter>
+    &lt;link-entity name=""account"" from=""accountid"" to=""regardingobjectid"">
+        &lt;attribute name=""name"" />
+        &lt;attribute name=""new_notebookid"" />
+    &lt;/link-entity>
+    &lt;/entity>
+&lt;/fetch>
+"</span><span class="token punctuation">;</span></code></pre></div>
+<p>выглядит вот так:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 363px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/531d43eeaf0c1336cf04199775c4c609/4e786/23.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 46.484375%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACBElEQVQoz0WQy3LaQBBF+dYsssgq62QR/0A+IyuyyNs4LofgjYlBEggDQS8QeiAkBMgSFgaJk9K4knTVVPX03D7dd2qddoveSOWXojKPYvzVmnkQYgch82VEuE2I00ycdZqxuk+JkkTk0TbB9hZYjsvAtHDXG2qD4Zgo3uDaUyZqF88ak2+W5JuA3TrA0DQUWUaWZKSujNrvM7MserKCLMsokoSs9JHVPh8+f6ImKz2O+5y6tOHZuyXP6wkvvx158fGRN5d77oZjNE1jGa5wXZ8oWmHbcyxrKnLHcQiCEN/zeV+vU+urAx7znC+9mLOLe159TXh9nnL2o+Bta4emm3ieR5pmFEXB6XQiCBZ4nst+vxf3KrIso14BremUooTAc1jYBrE/5ZDFQAnFg9hgPneYzWZsk4SyLImiCFVVxVs1pKqlafoE1A2Dw7HEdT1Go98ovQGabpCkO7Jsh2mYjEcjJpMJqnqH7weE4ZLRcCgGHQ4Hjscj2+32P/DxUAigoRuY5hTLtPA8X4i0yUTYtkwT27bxFwHxaoWq9lEHAx7yXED/AWczm+oXKhuu4+C4rtisLE9C6Lqu2KQaaJqmaKzs6brOOl7zN/I8fwI2GhcoSo/r1jWN83O+X17S6XSQJInb21uurq64aDRoNptU2larRbvdpvmzyc3NjdB2u11Rq4B/AIbXheUOFH/8AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/531d43eeaf0c1336cf04199775c4c609/4e786/23.png"
+        srcset="/static/531d43eeaf0c1336cf04199775c4c609/6f3f2/23.png 256w,
+/static/531d43eeaf0c1336cf04199775c4c609/4e786/23.png 363w"
+        sizes="(max-width: 363px) 100vw, 363px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p><strong>fetch link-entity aggregate</strong></p>
+<p>Вытягиваем количество действий для конкретного аккаунта:</p>
+<div class="gatsby-highlight" data-language="csharp"><pre class="language-csharp"><code class="language-csharp"><span class="token class-name"><span class="token keyword">string</span></span> fetchXml <span class="token operator">=</span> <span class="token string">@"
+&lt;fetch mapping=""logical"" count=""50"" aggregate=""true"">
+    &lt;entity name=""activitypointer"">
+    &lt;attribute name=""activityid"" aggregate=""count"" alias=""activitypointer_count"" />
+    &lt;link-entity name=""account"" from=""accountid"" to=""regardingobjectid"">
+        &lt;attribute name=""new_notebookid"" />
+    &lt;filter>
+        &lt;condition attribute=""new_notebookid"" operator=""eq"" value=""99"" />
+    &lt;/filter>
+    &lt;/link-entity>
+    &lt;/entity>
+&lt;/fetch>
+"</span><span class="token punctuation">;</span></code></pre></div>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 392px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/ba7d28d4f419f40e51d7db7ed1750b3e/0acb4/31.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 20.3125%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABBUlEQVQY00XKT0vCYACA8X3NDhHeK6LvUxQY4UkqzMpLabitbbzv5porKTJiLt0f381BB+UJJejwOzzwaI9PBsaz4M70kNGMUbHAjVKszwQ5mSOiHBkpgllFkFQM0wo3LnDjEu+7RMYlIio2nzlO0O4tn/FkSvgywvck/kDge4Jh4BOGPrPphOD1nYe+Tc906BkOuuPiDIYYjkdXX/eAt6+Yy3YHre94rH4qOmHFVl2xfZaxc66oNQpqjZL9a7CCD/JkSp5lpElKoRSlUhRqTp6lLMqS1XJJu9VCu2jdYps69Rub3WPJ4ank4GRNbOwd2Vx1uniuQEoX6UqE/Cf/WJZFs9nkFzokEwVnAMrTAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/ba7d28d4f419f40e51d7db7ed1750b3e/0acb4/31.png"
+        srcset="/static/ba7d28d4f419f40e51d7db7ed1750b3e/6f3f2/31.png 256w,
+/static/ba7d28d4f419f40e51d7db7ed1750b3e/0acb4/31.png 392w"
+        sizes="(max-width: 392px) 100vw, 392px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p><strong>fetchxml into datagridview</strong></p>
+<div class="gatsby-highlight" data-language="csharp"><pre class="language-csharp"><code class="language-csharp"><span class="token class-name"><span class="token keyword">string</span></span> fetchXml <span class="token operator">=</span> <span class="token string">@"
+&lt;fetch mapping=""logical"" count=""50"" aggregate=""true"">
+    &lt;entity name=""activitypointer"">
+    &lt;attribute name=""activityid"" aggregate=""count"" alias=""activitypointer_count"" />
+    &lt;link-entity name=""account"" from=""accountid"" to=""regardingobjectid"">
+        &lt;attribute name=""new_notebookid"" />
+    &lt;filter>
+        &lt;condition attribute=""new_notebookid"" operator=""eq"" value=""99"" />
+    &lt;/filter>
+    &lt;/link-entity>
+    &lt;/entity>
+&lt;/fetch>
+"</span><span class="token punctuation">;</span>
+
+<span class="token class-name">String</span> result <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">Fetch</span><span class="token punctuation">(</span>fetchXml<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name">StringReader</span> lxmlStringReader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">StringReader</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">DataSet</span> ds <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">DataSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ds<span class="token punctuation">.</span><span class="token function">ReadXml</span><span class="token punctuation">(</span>lxmlStringReader<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+dataGridView1<span class="token punctuation">.</span>DataSource <span class="token operator">=</span> ds<span class="token punctuation">.</span>Tables<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre></div>
+<h2>Avoid CRM 5000 limit</h2>
+<p>By default CRM Web Services is limited to return only first 5000 records. Here is how you can retrieve all records:</p>
+<div class="gatsby-highlight" data-language="csharp"><pre class="language-csharp"><code class="language-csharp"><span class="token class-name">MetadataService</span> ms <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">MetadataService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">CrmService</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">CrmService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+s<span class="token punctuation">.</span>Credentials <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">NetworkCredential</span><span class="token punctuation">(</span><span class="token string">"USERNAME"</span><span class="token punctuation">,</span> <span class="token string">"PASSWORD"</span><span class="token punctuation">,</span> <span class="token string">"DOMAIN"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ms<span class="token punctuation">.</span>Credentials <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">NetworkCredential</span><span class="token punctuation">(</span><span class="token string">"USERNAME"</span><span class="token punctuation">,</span> <span class="token string">"PASSWORD"</span><span class="token punctuation">,</span> <span class="token string">"DOMAIN"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name"><span class="token keyword">int</span></span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token class-name"><span class="token keyword">bool</span></span> finished <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token class-name">DataSet</span> dsAll <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">DataSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>finished <span class="token operator">==</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token class-name">String</span> fetch <span class="token operator">=</span> <span class="token string">@"&lt;fetch mapping='logical' page='"</span> <span class="token operator">+</span> i <span class="token operator">+</span> <span class="token string">@"' count='5000'> &lt;!-- add page and count attributes to avoid 5000 limit -->
+    &lt;!-- http://example.com:5555/sdk/list.aspx - list of available entities can be found here-->
+    &lt;entity name='account'>
+        &lt;!-- &lt;all-attributes /> - to retrieve all attributes -->
+        &lt;attribute name='new_notebookid'/>
+        &lt;attribute name='name'/>
+        &lt;link-entity name='systemuser' link-type='inner' from='systemuserid' to='ownerid'>
+            &lt;attribute name='fullname'/>
+            &lt;attribute name='firstname'/>
+            &lt;attribute name='lastname'/>
+        &lt;/link-entity>
+        &lt;!-- filtering example
+        &lt;filter type='and'>
+            &lt;condition attribute = 'name' operator='like' value='%Саша%'/>
+        &lt;/filter>
+        -->
+    &lt;/entity>
+    &lt;/fetch>"</span><span class="token punctuation">;</span>
+
+    <span class="token class-name">String</span> result <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">Fetch</span><span class="token punctuation">(</span>fetch<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">DataSet</span> ds <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">DataSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">StringReader</span> reader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">StringReader</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ds<span class="token punctuation">.</span><span class="token function">ReadXml</span><span class="token punctuation">(</span>reader<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    dsAll<span class="token punctuation">.</span><span class="token function">Merge</span><span class="token punctuation">(</span>ds<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// if there is &lt;resultset morerecods="1"> in response</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>ds<span class="token punctuation">.</span>Tables<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>Rows<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"morerecords"</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">"0"</span><span class="token punctuation">)</span> finished <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span> i<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+grid<span class="token punctuation">.</span>DataSource <span class="token operator">=</span> dsAll<span class="token punctuation">.</span>Tables<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+grid<span class="token punctuation">.</span><span class="token function">DataBind</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div></div></main><footer><a href="#top">top</a><a href="/">home</a><a href="/search">search</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/microsoft-crm-web-service";window.___webpackCompilationHash="ef8fb55bb983484b16a7";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-b4bb882d10635d85fa25.js"],"app":["/app-98475b819971087d4b7e.js"],"component---src-pages-404-js":["/component---src-pages-404-js-2652c435d8decd31b8ef.js"],"component---src-pages-index-js":["/component---src-pages-index-js-59ea4a114c2918516395.js"],"component---src-pages-search-js":["/component---src-pages-search-js-078619e3aef857102623.js"],"component---src-templates-note-js":["/component---src-templates-note-js-b005c02681f20ea28edd.js"]};/*]]>*/</script><script src="/polyfill-b4bb882d10635d85fa25.js" nomodule=""></script><script src="/app-98475b819971087d4b7e.js" async=""></script><script src="/framework-2ce620c91826a79f925c.js" async=""></script><script src="/webpack-runtime-72217849817cd80b0f9a.js" async=""></script></body></html>

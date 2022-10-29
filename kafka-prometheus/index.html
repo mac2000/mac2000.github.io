@@ -1,0 +1,442 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 4.24.5"/><style data-href="/styles.f7b0302c8427f1a04772.css" data-identity="gatsby-global-css">@media (prefers-color-scheme:light){code[class*=language-],pre[class*=language-]{background:#fafafa;color:#383a42;direction:ltr;font-family:Fira Code,Fira Mono,Menlo,Consolas,DejaVu Sans Mono,monospace;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{background:#e5e5e6;color:inherit}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection{background:#e5e5e6;color:inherit}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.2em .3em;white-space:normal}.token.cdata,.token.comment,.token.prolog{color:#a0a1a7}.token.doctype,.token.entity,.token.punctuation{color:#383a42}.token.atrule,.token.attr-name,.token.boolean,.token.class-name,.token.constant,.token.number{color:#b76b01}.token.keyword{color:#a626a4}.token.deleted,.token.important,.token.property,.token.symbol,.token.tag{color:#e45649}.token.attr-value,.token.attr-value>.token.punctuation,.token.builtin,.token.char,.token.inserted,.token.regex,.token.selector,.token.string{color:#50a14f}.token.function,.token.operator,.token.variable{color:#4078f2}.token.url{color:#0184bc}.token.attr-value>.token.punctuation.attr-equals,.token.special-attr>.token.attr-value>.token.value.css{color:#383a42}.language-css .token.selector{color:#e45649}.language-css .token.property{color:#383a42}.language-css .token.function,.language-css .token.url>.token.function{color:#0184bc}.language-css .token.url>.token.string.url{color:#50a14f}.language-css .token.atrule .token.rule,.language-css .token.important,.language-javascript .token.operator{color:#a626a4}.language-javascript .token.template-string>.token.interpolation>.token.interpolation-punctuation.punctuation{color:#ca1243}.language-json .token.operator{color:#383a42}.language-json .token.null.keyword{color:#b76b01}.language-markdown .token.url,.language-markdown .token.url-reference.url>.token.string,.language-markdown .token.url>.token.operator{color:#383a42}.language-markdown .token.url>.token.content{color:#4078f2}.language-markdown .token.url-reference.url,.language-markdown .token.url>.token.url{color:#0184bc}.language-markdown .token.blockquote.punctuation,.language-markdown .token.hr.punctuation{color:#a0a1a7;font-style:italic}.language-markdown .token.code-snippet{color:#50a14f}.language-markdown .token.bold .token.content{color:#b76b01}.language-markdown .token.italic .token.content{color:#a626a4}.language-markdown .token.list.punctuation,.language-markdown .token.strike .token.content,.language-markdown .token.strike .token.punctuation,.language-markdown .token.title.important>.token.punctuation{color:#e45649}.token.bold{font-weight:700}.token.comment,.token.italic{font-style:italic}.token.entity{cursor:help}.token.namespace{opacity:.8}.token.token.cr:before,.token.token.lf:before,.token.token.space:before,.token.token.tab:not(:empty):before{color:rgba(56,58,66,.2)}div.code-toolbar>.toolbar.toolbar>.toolbar-item{margin-right:.4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span{background:#e5e5e6;border-radius:.3em;color:#696c77;padding:.1em .4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:hover{background:#c6c7c7;color:#383a42}.line-highlight.line-highlight{background:rgba(56,58,66,.05)}.line-highlight.line-highlight:before,.line-highlight.line-highlight[data-end]:after{background:#e5e5e6;border-radius:.3em;box-shadow:0 2px 0 0 rgba(0,0,0,.2);color:#383a42;padding:.1em .6em}pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:rgba(56,58,66,.05)}.command-line .command-line-prompt,.line-numbers.line-numbers .line-numbers-rows{border-right-color:rgba(56,58,66,.2)}.command-line .command-line-prompt>span:before,.line-numbers .line-numbers-rows>span:before{color:#9d9d9f}.rainbow-braces .token.token.punctuation.brace-level-1,.rainbow-braces .token.token.punctuation.brace-level-5,.rainbow-braces .token.token.punctuation.brace-level-9{color:#e45649}.rainbow-braces .token.token.punctuation.brace-level-10,.rainbow-braces .token.token.punctuation.brace-level-2,.rainbow-braces .token.token.punctuation.brace-level-6{color:#50a14f}.rainbow-braces .token.token.punctuation.brace-level-11,.rainbow-braces .token.token.punctuation.brace-level-3,.rainbow-braces .token.token.punctuation.brace-level-7{color:#4078f2}.rainbow-braces .token.token.punctuation.brace-level-12,.rainbow-braces .token.token.punctuation.brace-level-4,.rainbow-braces .token.token.punctuation.brace-level-8{color:#a626a4}pre.diff-highlight>code .token.token.deleted:not(.prefix),pre>code.diff-highlight .token.token.deleted:not(.prefix){background-color:rgba(255,82,102,.15)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::-moz-selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix),pre>code.diff-highlight .token.token.inserted:not(.prefix){background-color:rgba(25,255,91,.15)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::-moz-selection{background-color:rgba(56,224,98,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::selection{background-color:rgba(56,224,98,.25)}.prism-previewer-gradient.prism-previewer-gradient div,.prism-previewer.prism-previewer:before{border-color:hsl(0,0,95%)}.prism-previewer-color.prism-previewer-color:before,.prism-previewer-easing.prism-previewer-easing:before,.prism-previewer-gradient.prism-previewer-gradient div{border-radius:.3em}.prism-previewer.prism-previewer:after{border-top-color:hsl(0,0,95%)}.prism-previewer-flipped.prism-previewer-flipped.after{border-bottom-color:hsl(0,0,95%)}.prism-previewer-angle.prism-previewer-angle:before,.prism-previewer-easing.prism-previewer-easing,.prism-previewer-time.prism-previewer-time:before{background:#fff}.prism-previewer-angle.prism-previewer-angle circle,.prism-previewer-time.prism-previewer-time circle{stroke:#383a42;stroke-opacity:1}.prism-previewer-easing.prism-previewer-easing circle,.prism-previewer-easing.prism-previewer-easing line,.prism-previewer-easing.prism-previewer-easing path{stroke:#383a42}.prism-previewer-easing.prism-previewer-easing circle{fill:transparent}}@media (prefers-color-scheme:dark){code[class*=language-],pre[class*=language-]{background:#282c34;color:#abb2bf;direction:ltr;font-family:Fira Code,Fira Mono,Menlo,Consolas,DejaVu Sans Mono,monospace;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;text-align:left;text-shadow:0 1px rgba(0,0,0,.3);white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{background:#3e4451;color:inherit;text-shadow:none}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection{background:#3e4451;color:inherit;text-shadow:none}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.2em .3em;white-space:normal}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}.token.cdata,.token.comment,.token.prolog{color:#5c6370}.token.doctype,.token.entity,.token.punctuation{color:#abb2bf}.token.atrule,.token.attr-name,.token.boolean,.token.class-name,.token.constant,.token.number{color:#d19a66}.token.keyword{color:#c678dd}.token.deleted,.token.important,.token.property,.token.symbol,.token.tag{color:#e06c75}.token.attr-value,.token.attr-value>.token.punctuation,.token.builtin,.token.char,.token.inserted,.token.regex,.token.selector,.token.string{color:#98c379}.token.function,.token.operator,.token.variable{color:#61afef}.token.url{color:#56b6c2}.token.attr-value>.token.punctuation.attr-equals,.token.special-attr>.token.attr-value>.token.value.css{color:#abb2bf}.language-css .token.selector{color:#e06c75}.language-css .token.property{color:#abb2bf}.language-css .token.function,.language-css .token.url>.token.function{color:#56b6c2}.language-css .token.url>.token.string.url{color:#98c379}.language-css .token.atrule .token.rule,.language-css .token.important,.language-javascript .token.operator{color:#c678dd}.language-javascript .token.template-string>.token.interpolation>.token.interpolation-punctuation.punctuation{color:#be5046}.language-json .token.operator{color:#abb2bf}.language-json .token.null.keyword{color:#d19a66}.language-markdown .token.url,.language-markdown .token.url-reference.url>.token.string,.language-markdown .token.url>.token.operator{color:#abb2bf}.language-markdown .token.url>.token.content{color:#61afef}.language-markdown .token.url-reference.url,.language-markdown .token.url>.token.url{color:#56b6c2}.language-markdown .token.blockquote.punctuation,.language-markdown .token.hr.punctuation{color:#5c6370;font-style:italic}.language-markdown .token.code-snippet{color:#98c379}.language-markdown .token.bold .token.content{color:#d19a66}.language-markdown .token.italic .token.content{color:#c678dd}.language-markdown .token.list.punctuation,.language-markdown .token.strike .token.content,.language-markdown .token.strike .token.punctuation,.language-markdown .token.title.important>.token.punctuation{color:#e06c75}.token.bold{font-weight:700}.token.comment,.token.italic{font-style:italic}.token.entity{cursor:help}.token.namespace{opacity:.8}.token.token.cr:before,.token.token.lf:before,.token.token.space:before,.token.token.tab:not(:empty):before{color:rgba(171,178,191,.15);text-shadow:none}div.code-toolbar>.toolbar.toolbar>.toolbar-item{margin-right:.4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span{background:#3a3f4b;border-radius:.3em;color:#828997;padding:.1em .4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:hover{background:#3e4451;color:#abb2bf}.line-highlight.line-highlight{background:rgba(153,187,255,.04)}.line-highlight.line-highlight:before,.line-highlight.line-highlight[data-end]:after{background:#3a3f4b;border-radius:.3em;box-shadow:0 2px 0 0 rgba(0,0,0,.2);color:#abb2bf;padding:.1em .6em}pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:rgba(153,187,255,.04)}.command-line .command-line-prompt,.line-numbers.line-numbers .line-numbers-rows{border-right-color:rgba(171,178,191,.15)}.command-line .command-line-prompt>span:before,.line-numbers .line-numbers-rows>span:before{color:#636d83}.rainbow-braces .token.token.punctuation.brace-level-1,.rainbow-braces .token.token.punctuation.brace-level-5,.rainbow-braces .token.token.punctuation.brace-level-9{color:#e06c75}.rainbow-braces .token.token.punctuation.brace-level-10,.rainbow-braces .token.token.punctuation.brace-level-2,.rainbow-braces .token.token.punctuation.brace-level-6{color:#98c379}.rainbow-braces .token.token.punctuation.brace-level-11,.rainbow-braces .token.token.punctuation.brace-level-3,.rainbow-braces .token.token.punctuation.brace-level-7{color:#61afef}.rainbow-braces .token.token.punctuation.brace-level-12,.rainbow-braces .token.token.punctuation.brace-level-4,.rainbow-braces .token.token.punctuation.brace-level-8{color:#c678dd}pre.diff-highlight>code .token.token.deleted:not(.prefix),pre>code.diff-highlight .token.token.deleted:not(.prefix){background-color:rgba(255,82,102,.15)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::-moz-selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix),pre>code.diff-highlight .token.token.inserted:not(.prefix){background-color:rgba(25,255,91,.15)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::-moz-selection{background-color:rgba(56,224,98,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::selection{background-color:rgba(56,224,98,.25)}.prism-previewer-gradient.prism-previewer-gradient div,.prism-previewer.prism-previewer:before{border-color:#262931}.prism-previewer-color.prism-previewer-color:before,.prism-previewer-easing.prism-previewer-easing:before,.prism-previewer-gradient.prism-previewer-gradient div{border-radius:.3em}.prism-previewer.prism-previewer:after{border-top-color:#262931}.prism-previewer-flipped.prism-previewer-flipped.after{border-bottom-color:#262931}.prism-previewer-angle.prism-previewer-angle:before,.prism-previewer-easing.prism-previewer-easing,.prism-previewer-time.prism-previewer-time:before{background:#31363f}.prism-previewer-angle.prism-previewer-angle circle,.prism-previewer-time.prism-previewer-time circle{stroke:#abb2bf;stroke-opacity:1}.prism-previewer-easing.prism-previewer-easing circle,.prism-previewer-easing.prism-previewer-easing line,.prism-previewer-easing.prism-previewer-easing path{stroke:#abb2bf}.prism-previewer-easing.prism-previewer-easing circle{fill:transparent}}:root{--foreground:#24292f;--background:#fff}a{color:#0969da}a.visited,a:visited{color:#57606a}.green{color:#1a7f37}.red{color:#cf222e}@media (prefers-color-scheme:dark){:root{--foreground:#adbac7;--background:#22272e}a{color:#539bf5}a.visited,a:visited{color:#768390}.green{color:#57ab5a}.red{color:#e5534b}}a{text-decoration:none}a:hover{text-decoration:underline}html{font-family:Ubuntu,sans-serif}body{background-color:var(--background);color:var(--foreground);margin:0;padding:0}#top{box-sizing:border-box;display:grid;grid-template-rows:1fr 2em;margin:0;min-height:100vh;padding:1em 2em}.graph polygon{fill:transparent}.graph g ellipse[stroke="#000"],.graph g ellipse[stroke="#000000"],.graph g ellipse[stroke=black],.graph g path[stroke="#000"],.graph g path[stroke="#000000"],.graph g path[stroke=black],.graph g polygon[stroke="#000"],.graph g polygon[stroke="#000000"],.graph g polygon[stroke=black]{stroke:var(--foreground)}.graph g text[fill="#000"],.graph g text[fill="#000000"],.graph g text[fill=black]{fill:var(--foreground)}code,pre{font-family:JetBrains Mono,monospace}pre[class*=language-]{word-wrap:break-word;border-radius:0;box-sizing:border-box;margin:1em -2em;max-width:100vw;padding:1em 2em}footer a{line-height:2em;margin-right:.5em}.delta{line-height:1;margin-left:1em;white-space:nowrap}.columns{display:grid;grid-template-columns:repeat(2,1fr)}@media only screen and (max-width:1024px){.columns{grid-template-columns:repeat(1,1fr)}}.pie{text-align:center}.pie figure{display:inline-block}.pie figcaption{font-size:80%;margin-top:.25em}</style><title data-gatsby-head="true">Kafka Prometheus Exporter</title><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="icon" href="/favicon-32x32.png?v=6389d5f13c96000946d60b6bb0a8b5a8" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div id="top"><main><div><h1>Kafka Prometheus Exporter</h1>
+<p>Kafka exporter for prometheus configuration example</p>
+<p>How it will works:</p>
+<p>In Java there is a way to pass so called javaagent which can modify bytecode before it will be ran by JVM</p>
+<p>Really good explanation is available in this <a href="https://www.youtube.com/watch?v=BjyI93c8ltA&#x26;t=740s">video</a> starting from 12:20</p>
+<p>Confluent already <a href="https://github.com/prometheus/jmx_exporter">created</a> and <a href="https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/">published</a> jmx exporter we need</p>
+<p>Also there are <a href="https://github.com/confluentinc/jmx-monitoring-stacks/tree/6.1.0-post/shared-assets/jmx-exporter">configuration examples</a> that will be used as a starting point</p>
+<h2>Kafka</h2>
+<p>Before anything else lets setup basic kafka (more datailed description can be found <a href="/kafka-sasl-ssl">here</a>)</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">wget</span> <span class="token parameter variable">-O</span> /opt/confluent-community-7.0.1.tar.gz https://packages.confluent.io/archive/7.0/confluent-community-7.0.1.tar.gz
+<span class="token function">sudo</span> <span class="token function">tar</span> <span class="token parameter variable">-xzf</span> /opt/confluent-community-7.0.1.tar.gz <span class="token parameter variable">-C</span> /opt
+<span class="token function">sudo</span> <span class="token function">rm</span> /opt/confluent-community-7.0.1.tar.gz
+<span class="token function">sudo</span> <span class="token function">ln</span> <span class="token parameter variable">-s</span> /opt/confluent-7.0.1 /opt/confluent</code></pre></div>
+<h2>JMX Exporter for Kafka</h2>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">mkdir</span> /opt/confluent-7.0.1/share/java/prometheus
+<span class="token function">sudo</span> <span class="token function">wget</span> <span class="token parameter variable">-O</span> /opt/confluent-7.0.1/share/java/prometheus/jmx_prometheus_javaagent-0.16.1.jar https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/0.16.1/jmx_prometheus_javaagent-0.16.1.jar</code></pre></div>
+<p>configs</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">mkdir</span> /etc/confluent
+
+<span class="token function">sudo</span> <span class="token function">wget</span> <span class="token parameter variable">-O</span> /etc/confluent/zookeeper.yml https://raw.githubusercontent.com/confluentinc/jmx-monitoring-stacks/6.1.0-post/shared-assets/jmx-exporter/zookeeper.yml
+
+<span class="token function">sudo</span> <span class="token function">wget</span> <span class="token parameter variable">-O</span> /etc/confluent/kafka_broker.yml https://raw.githubusercontent.com/confluentinc/jmx-monitoring-stacks/6.1.0-post/shared-assets/jmx-exporter/kafka_broker.yml
+
+<span class="token function">sudo</span> <span class="token function">wget</span> <span class="token parameter variable">-O</span> /etc/confluent/confluent_schemaregistry.yml https://raw.githubusercontent.com/confluentinc/jmx-monitoring-stacks/6.1.0-post/shared-assets/jmx-exporter/confluent_schemaregistry.yml
+
+<span class="token function">sudo</span> <span class="token function">wget</span> <span class="token parameter variable">-O</span> /etc/confluent/confluent_rest.yml https://raw.githubusercontent.com/confluentinc/jmx-monitoring-stacks/6.1.0-post/shared-assets/jmx-exporter/confluent_rest.yml</code></pre></div>
+<p>start zookeeper</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token assign-left variable">EXTRA_ARGS</span><span class="token operator">=</span>-javaagent:/opt/confluent-7.0.1/share/java/prometheus/jmx_prometheus_javaagent-0.16.1.jar<span class="token operator">=</span><span class="token number">9101</span>:/etc/confluent/zookeeper.yml /opt/confluent-7.0.1/bin/zookeeper-server-start /opt/confluent-7.0.1/etc/kafka/zookeeper.properties</code></pre></div>
+<p>start kafka</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token assign-left variable">EXTRA_ARGS</span><span class="token operator">=</span>-javaagent:/opt/confluent-7.0.1/share/java/prometheus/jmx_prometheus_javaagent-0.16.1.jar<span class="token operator">=</span><span class="token number">9102</span>:/etc/confluent/kafka_broker.yml /opt/confluent-7.0.1/bin/kafka-server-start /opt/confluent-7.0.1/etc/kafka/server.properties</code></pre></div>
+<p>start schema registry</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token assign-left variable">EXTRA_ARGS</span><span class="token operator">=</span>-javaagent:/opt/confluent-7.0.1/share/java/prometheus/jmx_prometheus_javaagent-0.16.1.jar<span class="token operator">=</span><span class="token number">9103</span>:/etc/confluent/confluent_rest.yml /opt/confluent-7.0.1/bin/schema-registry-start /opt/confluent-7.0.1/etc/schema-registry/schema-registry.properties</code></pre></div>
+<p>start rest proxy</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token assign-left variable">KAFKAREST_OPTS</span><span class="token operator">=</span>-javaagent:/opt/confluent-7.0.1/share/java/prometheus/jmx_prometheus_javaagent-0.16.1.jar<span class="token operator">=</span><span class="token number">9104</span>:/etc/confluent/confluent_schemaregistry.yml /opt/confluent-7.0.1/bin/kafka-rest-start /opt/confluent-7.0.1/etc/kafka-rest/kafka-rest.properties</code></pre></div>
+<p>for metrics to appear we need to wait few minutes, meanwhile lets do some stuff:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token comment"># create topic</span>
+/opt/confluent-7.0.1/bin/kafka-topics --bootstrap-server localhost:9092 <span class="token parameter variable">--partitions</span> <span class="token number">1</span> <span class="token parameter variable">--create</span> <span class="token parameter variable">--topic</span> demo
+/opt/confluent-7.0.1/bin/kafka-topics --bootstrap-server localhost:9092 <span class="token parameter variable">--list</span>
+
+<span class="token comment"># optionaly start consumer</span>
+/opt/confluent-7.0.1/bin/kafka-console-consumer --bootstrap-server localhost:9092 <span class="token parameter variable">--topic</span> demo
+
+<span class="token comment"># start producer and send few messages</span>
+/opt/confluent-7.0.1/bin/kafka-console-producer --bootstrap-server localhost:9092 <span class="token parameter variable">--topic</span> demo</code></pre></div>
+<p>and if everything fine we should get our metrics:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> http://localhost:9101/metrics
+<span class="token function">curl</span> http://localhost:9102/metrics</code></pre></div>
+<p>in my case it is single node dev environment, so from one hand I wish not to expose cluster metrics, from another go thrue <a href="https://github.com/confluentinc/jmx-monitoring-stacks/tree/6.1.0-post/jmxexporter-prometheus-grafana/assets/grafana/provisioning/dashboards">grafana dashboards</a> to see what is collected and here are my minimal valuable configs</p>
+<h2>Zookeeper</h2>
+<div class="gatsby-highlight" data-language="yml"><pre class="language-yml"><code class="language-yml"><span class="token punctuation">---</span>
+<span class="token key atrule">lowercaseOutputName</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">lowercaseOutputLabelNames</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">rules</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">pattern</span><span class="token punctuation">:</span> <span class="token string">"org.apache.ZooKeeperService&lt;name0=(.+), name1=InMemoryDataTree>&lt;>(WatchCount|NodeCount): (\\d+)"</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> zookeeper_inmemorydatatree_$2
+    <span class="token key atrule">type</span><span class="token punctuation">:</span> GAUGE
+    <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">server_name</span><span class="token punctuation">:</span> $1
+      <span class="token key atrule">server_id</span><span class="token punctuation">:</span> <span class="token string">'1'</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">pattern</span><span class="token punctuation">:</span> <span class="token string">'org.apache.ZooKeeperService&lt;name0=(.+)>&lt;>(.+): (.+)'</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> zookeeper_$2
+    <span class="token key atrule">type</span><span class="token punctuation">:</span> GAUGE</code></pre></div>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token comment"># 106mb ram usage</span>
+process_resident_memory_bytes 1.21942016E8
+
+<span class="token comment"># CPU Usage</span>
+process_cpu_seconds_total 2.99
+<span class="token comment"># irate(process_cpu_seconds_total{job=\"zookeeper\"}[5m])*100</span>
+
+<span class="token comment"># JVM Memory Used - 34mb</span>
+<span class="token key attr-name">jvm_memory_bytes_used{area</span><span class="token punctuation">=</span><span class="token value attr-value">"heap",} 2.9829424E7</span>
+<span class="token key attr-name">jvm_memory_bytes_used{area</span><span class="token punctuation">=</span><span class="token value attr-value">"nonheap",} 2.0637672E7</span>
+<span class="token comment">; sum without(area)(jvm_memory_bytes_used{job=\"zookeeper\"})</span>
+<span class="token comment"># JVM Memory Max - 512mb - seems like xmx</span>
+<span class="token key attr-name">jvm_memory_bytes_max{area</span><span class="token punctuation">=</span><span class="token value attr-value">"heap",} 5.36870912E8</span>
+<span class="token comment">; jvm_memory_bytes_max{job=\"zookeeper\",area=\"heap\"}</span>
+
+<span class="token comment"># Time spent in GC</span>
+<span class="token key attr-name">jvm_gc_collection_seconds_count{gc</span><span class="token punctuation">=</span><span class="token value attr-value">"G1 Young Generation",} 2.0</span>
+<span class="token key attr-name">jvm_gc_collection_seconds_sum{gc</span><span class="token punctuation">=</span><span class="token value attr-value">"G1 Young Generation",} 0.018</span>
+<span class="token key attr-name">jvm_gc_collection_seconds_count{gc</span><span class="token punctuation">=</span><span class="token value attr-value">"G1 Old Generation",} 0.0</span>
+<span class="token key attr-name">jvm_gc_collection_seconds_sum{gc</span><span class="token punctuation">=</span><span class="token value attr-value">"G1 Old Generation",} 0.0</span>
+<span class="token comment">; sum without(gc)(rate(jvm_gc_collection_seconds_sum{job=\"zookeeper\"}[5m]))</span>
+
+<span class="token comment"># For clusters: Quorum Size of Zookeeper ensemble</span>
+<span class="token comment"># count(zookeeper_status_quorumsize{job=\"zookeeper\"})</span>
+
+<span class="token comment"># Number of Alive Connections</span>
+zookeeper_numaliveconnections 1.0
+<span class="token comment">; sum(zookeeper_numaliveconnections{job=\"zookeeper\"})</span>
+
+<span class="token comment"># Number of queued requests in the server. This goes up when the server receives more requests than it can process</span>
+zookeeper_outstandingrequests 0.0
+<span class="token comment">; zookeeper_outstandingrequests{job=\"zookeeper\"}</span>
+
+<span class="token comment"># Number of ZNodes</span>
+<span class="token key attr-name">zookeeper_inmemorydatatree_nodecount{server_id</span><span class="token punctuation">=</span><span class="token value attr-value">"1",server_name="StandaloneServer_port2181",} 134.0</span>
+<span class="token comment">; avg(zookeeper_inmemorydatatree_nodecount{job=\"zookeeper\"})</span>
+
+<span class="token comment"># Number of Watchers</span>
+<span class="token key attr-name">zookeeper_inmemorydatatree_watchcount{server_id</span><span class="token punctuation">=</span><span class="token value attr-value">"1",server_name="StandaloneServer_port2181",} 0.0</span>
+<span class="token comment">; sum(zookeeper_inmemorydatatree_watchcount{job=\"zookeeper\"})</span>
+
+<span class="token comment"># millisecond Amount of time it takes for the server to respond to a client request</span>
+zookeeper_ticktime 3000.0
+zookeeper_minrequestlatency 0.0
+<span class="token comment">; zookeeper_minrequestlatency{job=\"zookeeper\"} * zookeeper_ticktime</span>
+<span class="token comment">; zookeeper_avgrequestlatency{job=\"zookeeper\"} * zookeeper_ticktime</span>
+<span class="token comment">; zookeeper_maxrequestlatency{job=\"zookeeper\"} * zookeeper_ticktime</span>
+
+<span class="token comment"># bytes probably</span>
+zookeeper_datadirsize 2.01350043E8
+zookeeper_logdirsize  2.01350043E8</code></pre></div>
+<h2>Kafka</h2>
+<p>TODO: config and number of metrics are huge, need more time to figure out what is needed and what isnt</p>
+<p>This one from kafka cluster dashboard</p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token comment"># Number of active controllers in the cluster</span>
+kafka_controller_kafkacontroller_activecontrollercount 1.0
+<span class="token comment"># stat: kafka_controller_kafkacontroller_activecontrollercount{job=\"kafka-broker\",env=\"$env\",instance=~\"$instance\"} > 0</span>
+
+<span class="token comment"># Online Partitions count</span>
+kafka_server_replicamanager_partitioncount 51.0
+<span class="token comment"># stat: sum(kafka_server_replicamanager_partitioncount{job=\"kafka-broker\",env=\"$env\",instance=~\"$instance\"})</span>
+
+<span class="token comment"># Broker network throughput</span>
+kafka_server_brokertopicmetrics_bytesinpersec 2002.0
+<span class="token key attr-name">kafka_server_brokertopicmetrics_bytesinpersec{topic</span><span class="token punctuation">=</span><span class="token value attr-value">"demo",} 2002.0</span>
+kafka_server_brokertopicmetrics_bytesoutpersec 0.0
+<span class="token comment"># sum(rate(kafka_server_brokertopicmetrics_bytesinpersec{job=\"kafka-broker\",env=\"$env\",instance=~\"$instance\",topic!=\"\"}[5m]))</span>
+<span class="token comment"># sum(rate(kafka_server_brokertopicmetrics_bytesoutpersec{job=\"kafka-broker\",env=\"$env\",instance=~\"$instance\",topic!=\"\"}[5m]))</span>
+
+<span class="token comment"># Offline Partitions Count</span>
+kafka_controller_kafkacontroller_offlinepartitionscount 0.0
+<span class="token comment"># sum(kafka_controller_kafkacontroller_offlinepartitionscount{job=\"kafka-broker\",env=\"$env\",instance=~\"$instance\"})</span>
+
+<span class="token comment"># Produce request rate</span>
+<span class="token key attr-name">kafka_network_requestmetrics_requestspersec{request</span><span class="token punctuation">=</span><span class="token value attr-value">"Produce",version="9",} 23.0</span>
+<span class="token comment"># sum(rate(kafka_network_requestmetrics_requestspersec{job=\"kafka-broker\",env=\"$env\",instance=~\"$instance\",request=\"Produce\"}[5m]))</span>
+
+<span class="token comment"># Consumer Fetch Request Per Sec</span>
+<span class="token key attr-name">kafka_network_requestmetrics_requestspersec{request</span><span class="token punctuation">=</span><span class="token value attr-value">"FetchConsumer",version="11",} 2.0</span>
+<span class="token comment"># sum(rate(kafka_network_requestmetrics_requestspersec{job=\"kafka-broker\",env=\"$env\",instance=~\"$instance\",request=\"FetchConsumer\"}[5m]))</span>
+
+<span class="token comment"># Broker Fetch Request Per Sec</span>
+<span class="token comment"># sum(rate(kafka_network_requestmetrics_requestspersec{job=\"kafka-broker\",env=\"$env\",instance=~\"$instance\",request=\"Fetch\"}[5m]))</span>
+
+<span class="token comment"># Offset Commit Request Per Sec</span>
+<span class="token key attr-name">kafka_network_requestmetrics_requestspersec{request</span><span class="token punctuation">=</span><span class="token value attr-value">"OffsetCommit",version="11",} 2.0</span>
+<span class="token comment"># sum(rate(kafka_network_requestmetrics_requestspersec{job=\"kafka-broker\",env=\"$env\",instance=~\"$instance\",request=\"OffsetCommit\"}[5m]))</span>
+
+<span class="token comment"># CPU usage</span>
+process_cpu_seconds_total 7.67
+<span class="token comment"># irate(process_cpu_seconds_total{job=\"kafka-broker\",env=\"$env\",instance=~\"$instance\"}[5m])*100</span>
+
+<span class="token comment"># JVM Memory Used</span>
+<span class="token key attr-name">jvm_memory_bytes_used{area</span><span class="token punctuation">=</span><span class="token value attr-value">"heap",} 1.66297072E8</span>
+<span class="token key attr-name">jvm_memory_bytes_max{area</span><span class="token punctuation">=</span><span class="token value attr-value">"heap",} 1.073741824E9</span>
+<span class="token comment"># sum without(area)(jvm_memory_bytes_used{job=\"kafka-broker\",env=\"$env\",instance=~\"$instance\"})</span>
+<span class="token comment"># jvm_memory_bytes_max{job=\"kafka-broker\",area=\"heap\",env=\"$env\",instance=~\"$instance\"}</span>
+
+<span class="token comment"># Time spent in GC (% time in GC, threthold 80%)</span>
+<span class="token key attr-name">jvm_gc_collection_seconds_sum{gc</span><span class="token punctuation">=</span><span class="token value attr-value">"G1 Young Generation",} 0.052</span>
+<span class="token comment"># sum without(gc)(rate(jvm_gc_collection_seconds_sum{job=\"kafka-broker\",env=\"$env\",instance=~\"$instance\"}[5m]))</span>
+
+<span class="token comment"># Messages In</span>
+kafka_server_brokertopicmetrics_messagesinpersec 69.0
+<span class="token key attr-name">kafka_server_brokertopicmetrics_messagesinpersec{topic</span><span class="token punctuation">=</span><span class="token value attr-value">"demo",} 69.0</span>
+<span class="token comment"># sum without(instance,topic)(rate(kafka_server_brokertopicmetrics_messagesinpersec{job=\"kafka-broker\",env=\"$env\",topic!=\"\"}[5m]))</span>
+
+<span class="token comment"># Network Processor Avg Usage Percent - Average fraction of time the network processor threads are idle. Values are between 0 (all resources are used) and 100 (all resources are available)</span>
+kafka_network_socketserver_networkprocessoravgidlepercent 1.0
+<span class="token comment"># 1-kafka_network_socketserver_networkprocessoravgidlepercent{job=\"kafka-broker\",env=\"$env\",instance=~\"$instance\"}</span>
+
+<span class="token comment"># Zookeeper Request Latency - Latency in millseconds for ZooKeeper requests from broker</span>
+kafka_server_zookeeperclientmetrics_zookeeperrequestlatencyms 108.0
+<span class="token key attr-name">kafka_server_zookeeperclientmetrics_zookeeperrequestlatencyms{quantile</span><span class="token punctuation">=</span><span class="token value attr-value">"0.50",} 3.0</span>
+<span class="token key attr-name">kafka_server_zookeeperclientmetrics_zookeeperrequestlatencyms{quantile</span><span class="token punctuation">=</span><span class="token value attr-value">"0.95",} 9.0</span>
+<span class="token comment"># kafka_server_zookeeperclientmetrics_zookeeperrequestlatencyms{job=\"kafka-broker\",env=\"$env\",instance=~\"$instance\",quantile=~\"$percentile\"}</span>
+
+<span class="token comment"># Log size per Topic</span>
+<span class="token key attr-name">kafka_log_log_size{partition</span><span class="token punctuation">=</span><span class="token value attr-value">"0",topic="demo",} 2898.0</span>
+<span class="token comment"># sum(kafka_log_log_size{job=\"kafka-broker\",env=\"$env\",instance=~\"$instance\"}) by (topic)</span>
+
+<span class="token comment"># Producer - RequestQueueTimeMs - A high value can imply there aren't enough IO threads or the CPU is a bottleneck, or the request queue isnt large enough. The request queue size should match the number of connections.</span>
+<span class="token key attr-name">kafka_network_requestmetrics_requestqueuetimems{request</span><span class="token punctuation">=</span><span class="token value attr-value">"Produce",} 23.0</span>
+<span class="token key attr-name">kafka_network_requestmetrics_requestqueuetimems{request</span><span class="token punctuation">=</span><span class="token value attr-value">"Produce",quantile="0.50",} 0.0</span>
+<span class="token comment"># kafka_network_requestmetrics_requestqueuetimems{job=\"kafka-broker\",env=\"$env\",instance=~\"$instance\",quantile=~\"$percentile\",request=\"Produce\"}</span>
+<span class="token comment"># kafka_network_requestmetrics_requestqueuetimems{job=\"kafka-broker\",env=\"$env\",instance=~\"$instance\",quantile=~\"$percentile\",request=\"Produce\"}</span>
+
+<span class="token comment"># In most cases, a high value can imply slow local storage or the storage is a bottleneck. One should also investigate LogFlushRateAndTimeMs to know how long page flushes are taking, which will also indicate a slow disk. In the case of FetchFollower requests, time spent in LocalTimeMs can be the result of a ZooKeeper write to change the ISR</span>
+<span class="token key attr-name">kafka_network_requestmetrics_localtimems{request</span><span class="token punctuation">=</span><span class="token value attr-value">"Produce",} 23.0</span>
+<span class="token key attr-name">kafka_network_requestmetrics_localtimems{request</span><span class="token punctuation">=</span><span class="token value attr-value">"Produce",quantile="0.50",} 1.0</span>
+<span class="token comment"># kafka_network_requestmetrics_localtimems{job=\"kafka-broker\",env=\"$env\",instance=~\"$instance\",quantile=~\"$percentile\",request=\"Produce\"}</span>
+
+<span class="token comment"># A high value can imply a slow network connection. For fetch request, if the remote time is high, it could be that there is not enough data to give in a fetch response. This can happen when the consumer or replica is caught up and there is no new incoming data. If this is the case, remote time will be close to the max wait time, which is normal. Max wait time is configured via replica.fetch.wait.max.ms and fetch.max.wait.ms.</span>
+<span class="token key attr-name">kafka_network_requestmetrics_remotetimems{request</span><span class="token punctuation">=</span><span class="token value attr-value">"Produce",} 23.0</span>
+<span class="token key attr-name">kafka_network_requestmetrics_remotetimems{request</span><span class="token punctuation">=</span><span class="token value attr-value">"Produce",quantile="0.50",} 0.0</span>
+<span class="token comment"># kafka_network_requestmetrics_remotetimems{job=\"kafka-broker\",env=\"$env\",instance=~\"$instance\",quantile=~\"$percentile\",request=\"Produce\"}</span>
+
+<span class="token comment"># A high value can imply there aren't enough network threads or the network cant dequeue responses quickly enough, causing back pressure in the response queue.</span>
+<span class="token key attr-name">kafka_network_requestmetrics_responsequeuetimems{request</span><span class="token punctuation">=</span><span class="token value attr-value">"Produce",} 23.0</span>
+<span class="token comment"># kafka_network_requestmetrics_responsequeuetimems{job=\"kafka-broker\",env=\"$env\",instance=~\"$instance\",quantile=~\"$percentile\",request=\"Produce\"}</span>
+
+<span class="token comment"># A high value can imply the zero-copy from disk to the network is slow, or the network is the bottleneck because the network cant dequeue responses of the TCP socket as quickly as theyre being created. If the network buffer gets full, Kafka will block.</span>
+<span class="token key attr-name">kafka_network_requestmetrics_responsesendtimems{request</span><span class="token punctuation">=</span><span class="token value attr-value">"Produce",} 23.0</span>
+<span class="token comment"># kafka_network_requestmetrics_responsesendtimems{job=\"kafka-broker\",env=\"$env\",instance=~\"$instance\",quantile=~\"$percentile\",request=\"Produce\"}</span>
+
+<span class="token comment"># Same set for {request="Fetch"}</span>
+
+<span class="token comment"># Connections count per listener</span>
+<span class="token key attr-name">kafka_server_socketservermetrics_connection_count{listener</span><span class="token punctuation">=</span><span class="token value attr-value">"PLAINTEXT",network_processor="0",} 1.0</span>
+<span class="token comment"># sum(kafka_server_socketservermetrics_connection_count{job=\"kafka-broker\", env=\"$env\", instance=~\"$instance\"}) by (listener)</span>
+
+<span class="token comment"># Connections creation rate per listener</span>
+<span class="token key attr-name">kafka_server_socketservermetrics_connection_creation_rate{listener</span><span class="token punctuation">=</span><span class="token value attr-value">"PLAINTEXT",network_processor="1",} 0.0</span>
+<span class="token comment"># sum(kafka_server_socketservermetrics_connection_creation_rate{job=\"kafka-broker\", env=\"$env\", instance=~\"$instance\"}) by (listener)</span>
+
+<span class="token comment"># Connections close rate per listener</span>
+<span class="token key attr-name">kafka_server_socketservermetrics_connection_close_rate{listener</span><span class="token punctuation">=</span><span class="token value attr-value">"PLAINTEXT",network_processor="1",} 0.0</span>
+<span class="token comment"># sum(kafka_server_socketservermetrics_connection_close_rate{job=\"kafka-broker\", env=\"$env\", instance=~\"$instance\"}) by (listener)</span>
+
+<span class="token comment"># Connections per client version</span>
+<span class="token key attr-name">kafka_server_socketservermetrics_connections{client_software_name</span><span class="token punctuation">=</span><span class="token value attr-value">"apache-kafka-java",client_software_version="7.0.1-ccs",listener="PLAINTEXT",network_processor="2",} 0.0</span>
+<span class="token comment"># sum(kafka_server_socketservermetrics_connections{job=\"kafka-broker\", env=\"$env\", instance=~\"$instance\"}) by (client_software_name, client_software_version)</span>
+
+<span class="token comment"># Number of consumer group per state</span>
+<span class="token comment"># sum(kafka_coordinator_group_groupmetadatamanager_numgroupsstable{job=\"kafka-broker\", env=\"$env\", instance=~\"$instance\"})</span>
+<span class="token comment"># sum(kafka_coordinator_group_groupmetadatamanager_numgroupspreparingrebalance{job=\"kafka-broker\", env=\"$env\", instance=~\"$instance\"})</span>
+<span class="token comment"># sum(kafka_coordinator_group_groupmetadatamanager_numgroupsdead{job=\"kafka-broker\", env=\"$env\", instance=~\"$instance\"})</span>
+<span class="token comment"># sum(kafka_coordinator_group_groupmetadatamanager_numgroupscompletingrebalance{job=\"kafka-broker\", env=\"$env\", instance=~\"$instance\"})</span>
+<span class="token comment"># sum(kafka_coordinator_group_groupmetadatamanager_numgroupsempty{job=\"kafka-broker\", env=\"$env\", instance=~\"$instance\"})</span></code></pre></div>
+<p>And this is from kafka topics dashboard:</p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token comment"># Total # of Topics</span>
+kafka_controller_kafkacontroller_globaltopiccount 2.0
+<span class="token comment"># sum(kafka_controller_kafkacontroller_globaltopiccount)</span>
+
+<span class="token comment"># Messages In</span>
+kafka_server_brokertopicmetrics_messagesinpersec 69.0
+<span class="token key attr-name">kafka_server_brokertopicmetrics_messagesinpersec{topic</span><span class="token punctuation">=</span><span class="token value attr-value">"demo",} 69.0</span>
+<span class="token comment"># sum without(instance) (rate(kafka_server_brokertopicmetrics_messagesinpersec{job=\"kafka-broker\",topic=~\"$topic\",env=~\"$env\"}[5m]))</span>
+
+<span class="token comment"># Log size</span>
+<span class="token key attr-name">kafka_log_log_size{partition</span><span class="token punctuation">=</span><span class="token value attr-value">"0",topic="demo",} 2898.0</span>
+<span class="token comment"># sum(kafka_log_log_size{job=\"kafka-broker\",env=\"$env\",topic=~\"$topic\"}) by (topic)</span>
+
+<span class="token comment"># Total # of Partitions</span>
+kafka_controller_kafkacontroller_globalpartitioncount 51.0
+<span class="token comment"># sum(kafka_controller_kafkacontroller_globalpartitioncount)</span>
+
+<span class="token comment"># Bytes In</span>
+<span class="token key attr-name">kafka_server_brokertopicmetrics_bytesinpersec{topic</span><span class="token punctuation">=</span><span class="token value attr-value">"demo",} 2002.0</span>
+<span class="token comment"># sum without(instance) (rate(kafka_server_brokertopicmetrics_bytesinpersec{job=\"kafka-broker\",topic=~\"$topic\",env=~\"$env\"}[5m]))</span>
+
+<span class="token comment"># Bytes Out</span>
+kafka_server_brokertopicmetrics_bytesoutpersec 0.0
+<span class="token comment"># sum without(instance) (rate(kafka_server_brokertopicmetrics_bytesoutpersec{job=\"kafka-broker\",topic=~\"$topic\",env=~\"$env\"}[5m]))</span>
+
+<span class="token comment"># Produce Request per sec</span>
+<span class="token key attr-name">kafka_server_brokertopicmetrics_totalproducerequestspersec{topic</span><span class="token punctuation">=</span><span class="token value attr-value">"demo",} 23.0</span>
+<span class="token comment"># sum(rate(kafka_server_brokertopicmetrics_totalproducerequestspersec{job=\"kafka-broker\", env=\"$env\", topic=~\"$topic\"}[5m])) by (topic)</span>
+
+<span class="token comment"># Fetch Request per sec</span>
+kafka_server_brokertopicmetrics_totalfetchrequestspersec 0.0
+<span class="token comment"># sum(rate(kafka_server_brokertopicmetrics_totalfetchrequestspersec{job=\"kafka-broker\", env=\"$env\",topic=~\"$topic\"}[5m])) by (topic)</span>
+
+<span class="token comment"># Start Offset</span>
+<span class="token key attr-name">kafka_log_log_logstartoffset{partition</span><span class="token punctuation">=</span><span class="token value attr-value">"0",topic="demo",} 0.0</span>
+<span class="token comment"># kafka_log_log_logstartoffset{job=\"kafka-broker\",env=~\"$env\",topic=~\"$topic\"}</span>
+
+<span class="token comment"># End Offset</span>
+<span class="token key attr-name">kafka_log_log_logendoffset{partition</span><span class="token punctuation">=</span><span class="token value attr-value">"0",topic="demo",} 86.0</span>
+<span class="token comment"># kafka_log_log_logendoffset{job=\"kafka-broker\",env=~\"$env\",topic=~\"$topic\"}</span></code></pre></div>
+<h2>Schema Registry</h2>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token comment"># Schema Registry Instances</span>
+kafka_schema_registry_registered_count 0.0
+<span class="token comment"># count(kafka_schema_registry_registered_count{job=\"schema-registry\",env=\"$env\"})</span>
+
+<span class="token comment"># CPU Usage</span>
+process_cpu_seconds_total 8.27
+<span class="token comment"># irate(process_cpu_seconds_total{job=\"schema-registry\",env=\"$env\"}[5m])*100</span>
+
+<span class="token comment"># JVM Memory, JVM GC</span>
+<span class="token comment"># ...</span>
+
+<span class="token comment"># Active Connections</span>
+kafka_schema_registry_jetty_metrics_connections_active 0.0
+<span class="token comment"># kafka_schema_registry_jetty_metrics_connections_active{job=\"schema-registry\",env=\"$env\"}</span>
+
+<span class="token comment"># Requests Rate</span>
+kafka_schema_registry_jersey_metrics_request_rate 0.05037445007891997
+<span class="token comment"># kafka_schema_registry_jersey_metrics_request_rate{job=\"schema-registry\",env=\"$env\"}</span>
+
+<span class="token comment"># Requests latency 99p</span>
+kafka_schema_registry_jersey_metrics_request_latency_99 50.0
+<span class="token comment"># kafka_schema_registry_jersey_metrics_request_latency_99{job=\"schema-registry\",env=\"$env\"}</span></code></pre></div>
+<p>There is much more interesting metrics, like compatibility check errors, auth errors and so on, need to return back to it after some data will be collected</p>
+<p>The same is true for kafka rest</p>
+<p>Also both have <a href="https://github.com/confluentinc/jmx-monitoring-stacks/blob/6.1.0-post/jmxexporter-prometheus-grafana/assets/grafana/provisioning/dashboards/kafka-consumer.json">consumers</a> and <a href="https://github.com/confluentinc/jmx-monitoring-stacks/blob/6.1.0-post/jmxexporter-prometheus-grafana/assets/grafana/provisioning/dashboards/kafka-producer.json">producers</a></p>
+<p><strong>consumer</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"># The number of commit calls per second
+kafka_consumer_consumer_coordinator_metrics_commit_rate{job="schema"}
+
+# The average time in ms a request was throttled by a broker
+kafka_consumer_consumer_fetch_manager_metrics_fetch_throttle_time_avg{job="schema"}
+
+# Rate of failed authentication attempts
+kafka_consumer_consumer_metrics_failed_authentication_rate{job="schema"}
+
+# The number of total rebalance events per hour, both successful and unsuccessful rebalance attempts
+kafka_consumer_consumer_coordinator_metrics_rebalance_rate_per_hour{job="schema"} + kafka_consumer_consumer_coordinator_metrics_failed_rebalance_rate_per_hour{job="schema"}
+
+# The average number of bytes consumed per second
+rate(kafka_consumer_consumer_fetch_manager_metrics_bytes_consumed_total{job="schema",topic="_schemas"}[1m])
+
+# The average number of records consumed per second
+rate(kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total{job="schema",topic="_schemas"}[1m])
+
+# The number of fetch requests per second
+rate(kafka_consumer_consumer_fetch_manager_metrics_fetch_total{job="schema"}[1m])
+
+# The average number of bytes fetched per request for a topic
+kafka_consumer_consumer_fetch_manager_metrics_fetch_size_avg{job="schema",topic="_schemas"}
+
+# The average time taken for a fetch request
+kafka_consumer_consumer_fetch_manager_metrics_fetch_latency_avg{job="schema"}
+
+# The average time taken for a commit request
+kafka_consumer_consumer_coordinator_metrics_commit_latency_avg{job="schema"}
+
+# The number of commit calls per second
+kafka_consumer_consumer_coordinator_metrics_commit_rate{job="schema"}
+
+# Number of simultaneous connections
+kafka_consumer_consumer_metrics_connection_count{job="schema"}
+
+# response rate per node
+kafka_consumer_consumer_node_metrics_response_rate{job="schema"}</code></pre></div>
+<p><strong>producer</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"># The average per-second number of retried record sends for a topic. An increase could signal connectivity problems from the application to the broker
+kafka_producer_producer_metrics_record_retry_rate{job="schema"}
+
+# The average per-second number of record sends that resulted in errors.
+rate(kafka_producer_producer_metrics_record_error_total{job="schema"}[1m])
+
+# he total amount of buffer memory that is not being used (either unallocated or in the free list)
+kafka_producer_producer_metrics_buffer_available_bytes{job="schema"}
+
+# The average time in ms a request was throttled by a broker.
+kafka_producer_producer_metrics_produce_throttle_time_avg{job="schema"}
+
+# The average compression rate of record batches for a topic, defined as the average ratio of the compressed batch size over the uncompressed size.
+kafka_producer_producer_metrics_compression_rate_avg{job="schema"}
+
+# The average request latency in ms
+kafka_producer_producer_metrics_request_latency_avg{job="schema"}
+
+# The average time in ms record batches spent in the send buffer
+kafka_producer_producer_metrics_record_queue_time_avg{job="schema"}
+
+# The rate of failed authentication per seconds
+rate(kafka_producer_producer_metrics_failed_authentication_total{job="schema"}[1m])
+
+# The average number of bytes sent per second to the broker.
+rate(kafka_producer_producer_metrics_outgoing_byte_total{job="schema"}[1m])
+
+# The average number of bytes sent per second to the broker per topic.
+sum(rate(kafka_producer_producer_topic_metrics_byte_total{job="schema"}[1m])) by (instance,topic)
+
+# The average number of messages sent per second to the broker.
+rate(kafka_producer_producer_metrics_record_send_total{job="schema"}[1m])
+
+# The average number of messages sent per second to the broker per topic.
+sum(rate(kafka_producer_producer_topic_metrics_record_send_total{job="schema"}[1m])) by (instance, topic)
+
+# The average number of bytes sent per partition per-request.
+kafka_producer_producer_metrics_batch_size_avg{job="schema"}
+
+# The current number of in-flight requests awaiting a response.
+kafka_producer_producer_metrics_requests_in_flight{job="schema"}
+
+# The average record size
+kafka_producer_producer_metrics_record_size_avg{job="schema"}
+
+# The average number of requests sent per second to the broker.
+rate(kafka_producer_producer_metrics_request_total{job="schema"}[1m])
+
+# The average number of records per request.
+kafka_producer_producer_metrics_request_size_avg{job="schema"}
+
+# The average number of response received per second to the broker.
+rate(kafka_producer_producer_metrics_response_total{job="schema"}[1m])
+
+# The current number of active connections.
+rate(kafka_producer_producer_metrics_connection_count{job="schema"}[1m])
+
+# New connections established per second in the window.
+kafka_producer_producer_metrics_connection_creation_rate{job="schema"}
+
+# Connections closed per second in the window.
+kafka_producer_producer_metrics_connection_close_rate{job="schema"}
+
+# The fraction of time the I/O thread spent doing I/O.
+kafka_producer_producer_metrics_io_ratio{job="schema"}
+
+# The average length of time the I/O thread spent waiting for a socket ready for reads or writes in nanoseconds.
+kafka_producer_producer_metrics_io_wait_time_ns_avg{job="schema"}
+
+# The average length of time for I/O per select call in nanoseconds.
+kafka_producer_producer_metrics_io_time_ns_avg{job="schema"}
+
+# The fraction of time the I/O thread spent waiting.
+kafka_producer_producer_metrics_io_wait_ratio{job="schema"}
+
+# Number of times the I/O layer checked for new I/O to perform per second.
+kafka_producer_producer_metrics_select_rate{job="schema"}</code></pre></div>
+<p><strong>jetty</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"># The number of requests in the jetty thread pool queue
+kafka_schema_registry_jetty_metrics_request_queue_size{job="schema"}
+</code></pre></div>
+<p><strong>jersey</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"># The average number of HTTP requests per second
+kafka_schema_registry_jersey_metrics_subjects_get_schema_request_rate{job="schema"}
+
+# The average number of HTTP requests per second.
+kafka_schema_registry_jersey_metrics_subjects_versions_deleteschemaversion_schema_request_rate
+
+# The average number of HTTP responses per second.
+kafka_schema_registry_jersey_metrics_schemas_get_schemas_response_rate
+
+# The average number of requests per second that resulted in HTTP error responses
+kafka_schema_registry_jersey_metrics_metadata_id_request_error_rate
+
+# bazillion of metrics per endpoint to measure number of requests, timing, error rate</code></pre></div>
+<p>Links:</p>
+<ul>
+<li><a href="https://www.confluent.io/blog/monitor-kafka-clusters-with-prometheus-grafana-and-confluent/">Monitoring Your Event Streams: Integrating Confluent with Prometheus and Grafana</a></li>
+<li><a href="https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/">io.prometheus.jmx.jmx_prometheus_javaagent actual versions</a></li>
+<li><a href="/kafka-sasl-ssl">kafka sasl_ssl</a></li>
+<li><a href="https://github.com/prometheus/jmx_exporter">jmx exporter sources</a></li>
+<li><a href="https://github.com/confluentinc/jmx-monitoring-stacks/tree/6.1.0-post/shared-assets/jmx-exporter">jmx configuration examples</a></li>
+<li><a href="https://github.com/confluentinc/jmx-monitoring-stacks/blob/6.1.0-post/jmxexporter-prometheus-grafana/docker-compose.override.yml">example of docker compose with environment variables</a></li>
+</ul></div></main><footer><a href="#top">top</a><a href="/">home</a><a href="/search">search</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/kafka-prometheus";window.___webpackCompilationHash="ef8fb55bb983484b16a7";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-b4bb882d10635d85fa25.js"],"app":["/app-98475b819971087d4b7e.js"],"component---src-pages-404-js":["/component---src-pages-404-js-2652c435d8decd31b8ef.js"],"component---src-pages-index-js":["/component---src-pages-index-js-59ea4a114c2918516395.js"],"component---src-pages-search-js":["/component---src-pages-search-js-078619e3aef857102623.js"],"component---src-templates-note-js":["/component---src-templates-note-js-b005c02681f20ea28edd.js"]};/*]]>*/</script><script src="/polyfill-b4bb882d10635d85fa25.js" nomodule=""></script><script src="/app-98475b819971087d4b7e.js" async=""></script><script src="/framework-2ce620c91826a79f925c.js" async=""></script><script src="/webpack-runtime-72217849817cd80b0f9a.js" async=""></script></body></html>

@@ -1,0 +1,557 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 4.24.5"/><style data-href="/styles.f7b0302c8427f1a04772.css" data-identity="gatsby-global-css">@media (prefers-color-scheme:light){code[class*=language-],pre[class*=language-]{background:#fafafa;color:#383a42;direction:ltr;font-family:Fira Code,Fira Mono,Menlo,Consolas,DejaVu Sans Mono,monospace;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{background:#e5e5e6;color:inherit}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection{background:#e5e5e6;color:inherit}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.2em .3em;white-space:normal}.token.cdata,.token.comment,.token.prolog{color:#a0a1a7}.token.doctype,.token.entity,.token.punctuation{color:#383a42}.token.atrule,.token.attr-name,.token.boolean,.token.class-name,.token.constant,.token.number{color:#b76b01}.token.keyword{color:#a626a4}.token.deleted,.token.important,.token.property,.token.symbol,.token.tag{color:#e45649}.token.attr-value,.token.attr-value>.token.punctuation,.token.builtin,.token.char,.token.inserted,.token.regex,.token.selector,.token.string{color:#50a14f}.token.function,.token.operator,.token.variable{color:#4078f2}.token.url{color:#0184bc}.token.attr-value>.token.punctuation.attr-equals,.token.special-attr>.token.attr-value>.token.value.css{color:#383a42}.language-css .token.selector{color:#e45649}.language-css .token.property{color:#383a42}.language-css .token.function,.language-css .token.url>.token.function{color:#0184bc}.language-css .token.url>.token.string.url{color:#50a14f}.language-css .token.atrule .token.rule,.language-css .token.important,.language-javascript .token.operator{color:#a626a4}.language-javascript .token.template-string>.token.interpolation>.token.interpolation-punctuation.punctuation{color:#ca1243}.language-json .token.operator{color:#383a42}.language-json .token.null.keyword{color:#b76b01}.language-markdown .token.url,.language-markdown .token.url-reference.url>.token.string,.language-markdown .token.url>.token.operator{color:#383a42}.language-markdown .token.url>.token.content{color:#4078f2}.language-markdown .token.url-reference.url,.language-markdown .token.url>.token.url{color:#0184bc}.language-markdown .token.blockquote.punctuation,.language-markdown .token.hr.punctuation{color:#a0a1a7;font-style:italic}.language-markdown .token.code-snippet{color:#50a14f}.language-markdown .token.bold .token.content{color:#b76b01}.language-markdown .token.italic .token.content{color:#a626a4}.language-markdown .token.list.punctuation,.language-markdown .token.strike .token.content,.language-markdown .token.strike .token.punctuation,.language-markdown .token.title.important>.token.punctuation{color:#e45649}.token.bold{font-weight:700}.token.comment,.token.italic{font-style:italic}.token.entity{cursor:help}.token.namespace{opacity:.8}.token.token.cr:before,.token.token.lf:before,.token.token.space:before,.token.token.tab:not(:empty):before{color:rgba(56,58,66,.2)}div.code-toolbar>.toolbar.toolbar>.toolbar-item{margin-right:.4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span{background:#e5e5e6;border-radius:.3em;color:#696c77;padding:.1em .4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:hover{background:#c6c7c7;color:#383a42}.line-highlight.line-highlight{background:rgba(56,58,66,.05)}.line-highlight.line-highlight:before,.line-highlight.line-highlight[data-end]:after{background:#e5e5e6;border-radius:.3em;box-shadow:0 2px 0 0 rgba(0,0,0,.2);color:#383a42;padding:.1em .6em}pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:rgba(56,58,66,.05)}.command-line .command-line-prompt,.line-numbers.line-numbers .line-numbers-rows{border-right-color:rgba(56,58,66,.2)}.command-line .command-line-prompt>span:before,.line-numbers .line-numbers-rows>span:before{color:#9d9d9f}.rainbow-braces .token.token.punctuation.brace-level-1,.rainbow-braces .token.token.punctuation.brace-level-5,.rainbow-braces .token.token.punctuation.brace-level-9{color:#e45649}.rainbow-braces .token.token.punctuation.brace-level-10,.rainbow-braces .token.token.punctuation.brace-level-2,.rainbow-braces .token.token.punctuation.brace-level-6{color:#50a14f}.rainbow-braces .token.token.punctuation.brace-level-11,.rainbow-braces .token.token.punctuation.brace-level-3,.rainbow-braces .token.token.punctuation.brace-level-7{color:#4078f2}.rainbow-braces .token.token.punctuation.brace-level-12,.rainbow-braces .token.token.punctuation.brace-level-4,.rainbow-braces .token.token.punctuation.brace-level-8{color:#a626a4}pre.diff-highlight>code .token.token.deleted:not(.prefix),pre>code.diff-highlight .token.token.deleted:not(.prefix){background-color:rgba(255,82,102,.15)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::-moz-selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix),pre>code.diff-highlight .token.token.inserted:not(.prefix){background-color:rgba(25,255,91,.15)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::-moz-selection{background-color:rgba(56,224,98,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::selection{background-color:rgba(56,224,98,.25)}.prism-previewer-gradient.prism-previewer-gradient div,.prism-previewer.prism-previewer:before{border-color:hsl(0,0,95%)}.prism-previewer-color.prism-previewer-color:before,.prism-previewer-easing.prism-previewer-easing:before,.prism-previewer-gradient.prism-previewer-gradient div{border-radius:.3em}.prism-previewer.prism-previewer:after{border-top-color:hsl(0,0,95%)}.prism-previewer-flipped.prism-previewer-flipped.after{border-bottom-color:hsl(0,0,95%)}.prism-previewer-angle.prism-previewer-angle:before,.prism-previewer-easing.prism-previewer-easing,.prism-previewer-time.prism-previewer-time:before{background:#fff}.prism-previewer-angle.prism-previewer-angle circle,.prism-previewer-time.prism-previewer-time circle{stroke:#383a42;stroke-opacity:1}.prism-previewer-easing.prism-previewer-easing circle,.prism-previewer-easing.prism-previewer-easing line,.prism-previewer-easing.prism-previewer-easing path{stroke:#383a42}.prism-previewer-easing.prism-previewer-easing circle{fill:transparent}}@media (prefers-color-scheme:dark){code[class*=language-],pre[class*=language-]{background:#282c34;color:#abb2bf;direction:ltr;font-family:Fira Code,Fira Mono,Menlo,Consolas,DejaVu Sans Mono,monospace;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;text-align:left;text-shadow:0 1px rgba(0,0,0,.3);white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{background:#3e4451;color:inherit;text-shadow:none}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection{background:#3e4451;color:inherit;text-shadow:none}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.2em .3em;white-space:normal}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}.token.cdata,.token.comment,.token.prolog{color:#5c6370}.token.doctype,.token.entity,.token.punctuation{color:#abb2bf}.token.atrule,.token.attr-name,.token.boolean,.token.class-name,.token.constant,.token.number{color:#d19a66}.token.keyword{color:#c678dd}.token.deleted,.token.important,.token.property,.token.symbol,.token.tag{color:#e06c75}.token.attr-value,.token.attr-value>.token.punctuation,.token.builtin,.token.char,.token.inserted,.token.regex,.token.selector,.token.string{color:#98c379}.token.function,.token.operator,.token.variable{color:#61afef}.token.url{color:#56b6c2}.token.attr-value>.token.punctuation.attr-equals,.token.special-attr>.token.attr-value>.token.value.css{color:#abb2bf}.language-css .token.selector{color:#e06c75}.language-css .token.property{color:#abb2bf}.language-css .token.function,.language-css .token.url>.token.function{color:#56b6c2}.language-css .token.url>.token.string.url{color:#98c379}.language-css .token.atrule .token.rule,.language-css .token.important,.language-javascript .token.operator{color:#c678dd}.language-javascript .token.template-string>.token.interpolation>.token.interpolation-punctuation.punctuation{color:#be5046}.language-json .token.operator{color:#abb2bf}.language-json .token.null.keyword{color:#d19a66}.language-markdown .token.url,.language-markdown .token.url-reference.url>.token.string,.language-markdown .token.url>.token.operator{color:#abb2bf}.language-markdown .token.url>.token.content{color:#61afef}.language-markdown .token.url-reference.url,.language-markdown .token.url>.token.url{color:#56b6c2}.language-markdown .token.blockquote.punctuation,.language-markdown .token.hr.punctuation{color:#5c6370;font-style:italic}.language-markdown .token.code-snippet{color:#98c379}.language-markdown .token.bold .token.content{color:#d19a66}.language-markdown .token.italic .token.content{color:#c678dd}.language-markdown .token.list.punctuation,.language-markdown .token.strike .token.content,.language-markdown .token.strike .token.punctuation,.language-markdown .token.title.important>.token.punctuation{color:#e06c75}.token.bold{font-weight:700}.token.comment,.token.italic{font-style:italic}.token.entity{cursor:help}.token.namespace{opacity:.8}.token.token.cr:before,.token.token.lf:before,.token.token.space:before,.token.token.tab:not(:empty):before{color:rgba(171,178,191,.15);text-shadow:none}div.code-toolbar>.toolbar.toolbar>.toolbar-item{margin-right:.4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span{background:#3a3f4b;border-radius:.3em;color:#828997;padding:.1em .4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:hover{background:#3e4451;color:#abb2bf}.line-highlight.line-highlight{background:rgba(153,187,255,.04)}.line-highlight.line-highlight:before,.line-highlight.line-highlight[data-end]:after{background:#3a3f4b;border-radius:.3em;box-shadow:0 2px 0 0 rgba(0,0,0,.2);color:#abb2bf;padding:.1em .6em}pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:rgba(153,187,255,.04)}.command-line .command-line-prompt,.line-numbers.line-numbers .line-numbers-rows{border-right-color:rgba(171,178,191,.15)}.command-line .command-line-prompt>span:before,.line-numbers .line-numbers-rows>span:before{color:#636d83}.rainbow-braces .token.token.punctuation.brace-level-1,.rainbow-braces .token.token.punctuation.brace-level-5,.rainbow-braces .token.token.punctuation.brace-level-9{color:#e06c75}.rainbow-braces .token.token.punctuation.brace-level-10,.rainbow-braces .token.token.punctuation.brace-level-2,.rainbow-braces .token.token.punctuation.brace-level-6{color:#98c379}.rainbow-braces .token.token.punctuation.brace-level-11,.rainbow-braces .token.token.punctuation.brace-level-3,.rainbow-braces .token.token.punctuation.brace-level-7{color:#61afef}.rainbow-braces .token.token.punctuation.brace-level-12,.rainbow-braces .token.token.punctuation.brace-level-4,.rainbow-braces .token.token.punctuation.brace-level-8{color:#c678dd}pre.diff-highlight>code .token.token.deleted:not(.prefix),pre>code.diff-highlight .token.token.deleted:not(.prefix){background-color:rgba(255,82,102,.15)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::-moz-selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix),pre>code.diff-highlight .token.token.inserted:not(.prefix){background-color:rgba(25,255,91,.15)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::-moz-selection{background-color:rgba(56,224,98,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::selection{background-color:rgba(56,224,98,.25)}.prism-previewer-gradient.prism-previewer-gradient div,.prism-previewer.prism-previewer:before{border-color:#262931}.prism-previewer-color.prism-previewer-color:before,.prism-previewer-easing.prism-previewer-easing:before,.prism-previewer-gradient.prism-previewer-gradient div{border-radius:.3em}.prism-previewer.prism-previewer:after{border-top-color:#262931}.prism-previewer-flipped.prism-previewer-flipped.after{border-bottom-color:#262931}.prism-previewer-angle.prism-previewer-angle:before,.prism-previewer-easing.prism-previewer-easing,.prism-previewer-time.prism-previewer-time:before{background:#31363f}.prism-previewer-angle.prism-previewer-angle circle,.prism-previewer-time.prism-previewer-time circle{stroke:#abb2bf;stroke-opacity:1}.prism-previewer-easing.prism-previewer-easing circle,.prism-previewer-easing.prism-previewer-easing line,.prism-previewer-easing.prism-previewer-easing path{stroke:#abb2bf}.prism-previewer-easing.prism-previewer-easing circle{fill:transparent}}:root{--foreground:#24292f;--background:#fff}a{color:#0969da}a.visited,a:visited{color:#57606a}.green{color:#1a7f37}.red{color:#cf222e}@media (prefers-color-scheme:dark){:root{--foreground:#adbac7;--background:#22272e}a{color:#539bf5}a.visited,a:visited{color:#768390}.green{color:#57ab5a}.red{color:#e5534b}}a{text-decoration:none}a:hover{text-decoration:underline}html{font-family:Ubuntu,sans-serif}body{background-color:var(--background);color:var(--foreground);margin:0;padding:0}#top{box-sizing:border-box;display:grid;grid-template-rows:1fr 2em;margin:0;min-height:100vh;padding:1em 2em}.graph polygon{fill:transparent}.graph g ellipse[stroke="#000"],.graph g ellipse[stroke="#000000"],.graph g ellipse[stroke=black],.graph g path[stroke="#000"],.graph g path[stroke="#000000"],.graph g path[stroke=black],.graph g polygon[stroke="#000"],.graph g polygon[stroke="#000000"],.graph g polygon[stroke=black]{stroke:var(--foreground)}.graph g text[fill="#000"],.graph g text[fill="#000000"],.graph g text[fill=black]{fill:var(--foreground)}code,pre{font-family:JetBrains Mono,monospace}pre[class*=language-]{word-wrap:break-word;border-radius:0;box-sizing:border-box;margin:1em -2em;max-width:100vw;padding:1em 2em}footer a{line-height:2em;margin-right:.5em}.delta{line-height:1;margin-left:1em;white-space:nowrap}.columns{display:grid;grid-template-columns:repeat(2,1fr)}@media only screen and (max-width:1024px){.columns{grid-template-columns:repeat(1,1fr)}}.pie{text-align:center}.pie figure{display:inline-block}.pie figcaption{font-size:80%;margin-top:.25em}</style><title data-gatsby-head="true">Branching with TortoiseSVN</title><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="icon" href="/favicon-32x32.png?v=6389d5f13c96000946d60b6bb0a8b5a8" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div id="top"><main><div><h1>Branching with TortoiseSVN</h1>
+<h2>Flow</h2>
+<ul>
+<li>Create a new branch</li>
+<li>Switch your local working copy to the new branch</li>
+<li>Develop in the branch (commit changes, etc.)</li>
+<li>Merge changes from trunk into your branch</li>
+<li>Merge changes from branch into trunk</li>
+<li>Delete the branch</li>
+</ul>
+<p>Original article: <a href="http://stevesmithblog.com/blog/simple-branching-and-merging-with-svn/">http://stevesmithblog.com/blog/simple-branching-and-merging-with-svn/</a></p>
+<h2>Create a new branch</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 416px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/402205b3f18d7dbb7de2185373549307/b0122/image001.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 115.234375%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAXCAIAAACEf/j0AAAACXBIWXMAAAsTAAALEwEAmpwYAAADR0lEQVQ4y22UaY+bSBCG+f8/apXdVTYrbTLxmMs0TTcY6Pvk8IGxHYEznkm0r0p8KHhUbxdVHSjtuuFwPk+n0/lwPB1P59Ma5/Pku0EoS4Xu+vF4PCvjjuefb7X14+EY9L5VUs7zPF8uP59rXOf5cBg554JzKeXhcNBKaaXn+fHVogA1X7QSt9t9mqbLB83zPI4jo2wVH8dRCskYWyytWuC43FRVaY2b53l60wMehpESSgmtm7JpmhwAQmjXdc45a63ROsjqbJckJa6m6XK9Xm/3++12e1amlHLG9zXcVxgVqK5rrbVzTmtNSRts0BZk2S5OkygmhEohjTbTNK2Vh7ZtaUsxBghm4TaKwyhNUoyQlIoxGlDDrLHWGCWV1lpJZa1b4cvpdOr7fhgGVC51YQ6zNKOEGmu11pyx4Lrq9tTi+vZs2/U6z/NNysV2mu4IocYY+4A5D6b/04Ocpuk8TZfzhATJIYzCEGMMIVRKGWMW+Lffc11rPXWZlyQlNSpQDgpn/dAPne+ssb/AjxN2XTd80DiO/TDu9/Em/vb56z9xkcC2qGhFxdLad3gYBkZpkqT6g5SW2zzcJv/F6fbl9XsGAeGkbMtdmYVF9A6P4ygEj8OoqirvvTHGO08E2YANwBUqaQoqVDHtjtqduBn/2H7+BZZC7NIdY6zrOu+8tdZZV9P6U/jlz69/f/r3rwTvsjpPqyxCSVHhX2wrpXIAAMhzkOd5rpW21nbew32TZmkcx1wuiyKVMNooKX+H27bV2iynVcqupa31kLzswDYJEyGl997ZZTwZZx/gcZRSYoQxxoxx7xfbS8eEZFxRQiilj+T7kDwXeFzhAhYgA5wLt6olbbOvI4lxU5YIN01jjHFP+HA6P8L3g+Ac5jlG+DGDq21nlNpUVVYU37+9RGH8HE/KWDCebsPxepzuXFmMMVorK6UeS2utVUrV9b5EONqGTds+8lprQkUQwXaJnMS4aEVVAAiyTAjh32jvbAzKvEAwh++OrMlgGbyGyWuYbMP0JQ4TBOM422xjXDbG9VJ7ZTqpXF4zkOclxo9rxDk3Dv0mioP7enXc73dt+wy1qGpBURFhpR6E7pdQ/nsIdhmAENI3Fbh8TeEPL9H1rRPPQXYAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/402205b3f18d7dbb7de2185373549307/b0122/image001.png"
+        srcset="/static/402205b3f18d7dbb7de2185373549307/6f3f2/image001.png 256w,
+/static/402205b3f18d7dbb7de2185373549307/b0122/image001.png 416w"
+        sizes="(max-width: 416px) 100vw, 416px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 435px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/f1cd8c61849fef00f9f983c41e3f460d/330eb/image002.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 110.15625%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAIAAABPIytRAAAACXBIWXMAAAsTAAALEwEAmpwYAAACqElEQVQ4y8WTy2/jNhCH9f/fC/TWvbXAHnrcFotue9gkTvyIY4niQ6Jk6kFRJMWHFcsONt4UkrNFgEWCopd+GAzmwR+HGkDBFVY3sLiKi4twO4vLP9bVJ/rld3z8DT18QA8/X/Gf/sx/mcn31+2vC/kJ9Z/T/V93/OLdu6sffwjySsQ4hSSrhOLSFI0qhSlFd/aMq23V5pXIJ1+1hktTNqpStu58UNZ8OV/erlYEY875bue9s95ZZ42bAu/cZFPRWXuu2zEOuGgBAOv1OtyEUQSiMIIQEZJE0RjEII4iABEGII5jmJAEgJhmuXXO2EmMEc6y3BijtW5bqZSSo9Na62/xlOjum40YYwKlzbAfGGN5vmWsoFnOWJFleZ5vq7rOt9ss32ZZRunYTmneNE3XdWmaSimDVps0pWEYEkIwxiCKwjDCGJEkNc51nTHGTs6ONgXOez01AqE6lGbruzsAYhAChDCIwO3qtigK772dcNZOr+7ceF0npTyvbhTXdR1uIgQRhIimFMUQQtRpbV9QTxhjmqZJSPK8MKG6tm0JITGEhCTjGOfOvZeMqXnBVAm4UJw3ZVlJpe73e9/3frf7R/+2BWUtEEKbzWaxWFJKMSZpmgohOOfTgFcZxazkBJOEkPnNfD5fXF5ezmbX568wxvR9v3sF61xQN613bufH/DAy7J8ZTqfT0+v43S4QUn9989Bb4qZVj49fnp6evn7HvxBLfTo9/tfJ/5tYqG5a7bjkvr/v7+8nPxYehv3DYTgO+2EYDofjMByGYUwOx+N+GLzzQc7qm5vF9Wy2Wq4AABghCLGWstIW1BqULRam5k3BWFVVQoi2bRljvGmUUkHdyKIoKaVlWT7/Rs71zibCfCTiIywvWEdSulwsNmHEGKOULhdLCFFdVX8Dm3u8Y6TAOwkAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/f1cd8c61849fef00f9f983c41e3f460d/330eb/image002.png"
+        srcset="/static/f1cd8c61849fef00f9f983c41e3f460d/6f3f2/image002.png 256w,
+/static/f1cd8c61849fef00f9f983c41e3f460d/330eb/image002.png 435w"
+        sizes="(max-width: 435px) 100vw, 435px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p><strong>From WC at URL</strong> – will be path where you make previous step</p>
+<p><strong>To URL</strong> – path where branch will be created (usual: branches/YOUR_BRANCH_NAME)</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 640px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/4f745a84cc06a7e2b032fb55b4d076ae/6af66/image003.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 44.921875%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAAsTAAALEwEAmpwYAAABRElEQVQoz5WQW0/CQBCF+/9/jj4Z4osITXhAEI0C3e6WXrbsbXa77RaFFt3GaIjxwS+TkzPzMJM5wXxdrBB92KSzlyR8ItO1CHE7Qc00bkLsxhtz81CMluVoSW9XbPwK98/l5DEO72aL66uAliUXSkiQytSNM1WltdFaA4BXb3wp5QcK/MSYyjStcoegKCjGhHOR7nZZlikF1lpbWa11ZarK79LW+tYMCA4AxhoQjAWU0hhhxjghSZqm1tbtgBvwpnHfrXOuLA3jFlgObBfUdd2dvui67vw3fe8V9LtUb31/PhzawDl3/g/OHY8nf6Nt/c8FxgRjQkjizaBxjLMs/6k0p7T0iYEPEzxaCBFkWbbdRlEUYUyiCCGEogjFMRaXSCmFVOmepyVjQnLOhZSBMUOmv9CXGK33EhYJnZMi55Kx/eflD12w9BQOkHguAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/4f745a84cc06a7e2b032fb55b4d076ae/6af66/image003.png"
+        srcset="/static/4f745a84cc06a7e2b032fb55b4d076ae/6f3f2/image003.png 256w,
+/static/4f745a84cc06a7e2b032fb55b4d076ae/01e7c/image003.png 512w,
+/static/4f745a84cc06a7e2b032fb55b4d076ae/6af66/image003.png 640w"
+        sizes="(max-width: 640px) 100vw, 640px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<h2>Switch Local Working Copy to New Branch</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 402px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/36fd12bd3e551917c09f123bd442c0ca/0ec92/image004.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 119.53125%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAIAAAB1KUohAAAACXBIWXMAAAsTAAALEwEAmpwYAAADHklEQVQ4y32TbW+kNhSF+f9/ph9aqV1V3Sqtuoo22WwGsA3YgI1tbGPAvExmmsxLKoaZCWmqPvIHJPtw7j2+9nYfeHl50VoJIVRZci6M0ZwXAMA8z/sT3QVv919qa61S2laVVlXBU63LLM0JIbIsZ73rnHPO2+/3LyeWzpNMazNRMYoFz2EIkzhGCHHOjTa2tpPzZrN9fX09vh4Ph8Ob2FqtdVVVSmmcZVIQEAIQggiiMAijKBJC9n3vkTQTnHPGra13+/0sNsaUZalKpbXGJOcFy9KMURZBpJUe12PXTXV7UwPOda5br8dr5ZsT283TZvPcmEwZOvfctu04ju6Cd7iwP9nO7C8cD0dRM6Zz//vK932CSRIn2piz8+5/Oex3wja50KEf5DmtbW2MaZrm7Ly0+ijeH45GUVFECMVxFDvn5jbP4ufn53Ecm6ae+xne0/WDUawqM38VQgCNMW6Bt9lshmGgWYYAmju50nXO2lpyao1IYpwSwgvetu2beLvd9n3POQchkFIu9dN32yJMlKAoQgCGMUn6frie8bab7ck5f7i/F0IMw3CdPufcfXL3w5eff7r79OPvn3758vnG//oZ3Iqqte6patdn51LKJE6UUkYbpZS11jnXOieVuIPBzerh1z9/++PbbVxkmFFtm9r1tu3OYlWWOEmSBOMEI4h4wefahn6gJScljgIkuFyP62F6VVNl3dxz13XGGK31Ke1xHMfz2E2HhqJEqfwGwxhCaK1dhnJ2llKmhDBKpZTXPNuJRptKmQpjbC6D9UEsZBzHEEAh3gJnjNGMMluyRhWUTS/cVv++qnEcOedxFOGEXEfPOde0rbPNg0zuS4xh7Ps+CEFd14ur2m6VUqWUjFLGiuWPT6E0jGqaNyD0gwCkabbc9trhKcszIXiEIgSRtfWysbZpM5ZoI3BCEIyq6n1gbv130aSM0QgiBJFSul9sD30XpyKIWIJQmmbOvQ/MJxwUCc6yIACrx4Ck1PVD47rzal1R6lyq4HGltO7e4938dft1hQlTPiSPYZIWlemedLu+ru8gXUGMIJgTqRf8A5JOIwI2jRe/AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/36fd12bd3e551917c09f123bd442c0ca/0ec92/image004.png"
+        srcset="/static/36fd12bd3e551917c09f123bd442c0ca/6f3f2/image004.png 256w,
+/static/36fd12bd3e551917c09f123bd442c0ca/0ec92/image004.png 402w"
+        sizes="(max-width: 402px) 100vw, 402px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 458px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/2070402145846b56bf5a974eb0af8a85/f7a31/image005.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 60.15625%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAIAAADtbgqsAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB4UlEQVQoz2WRSYvbQBCF9f9PIeeE3AO55DKYzCVD8GScOJJlydpbUq9ae1N7JB8Cob2RkMejuujig1eUs074JqLPIX3y4bcAP/noy35cJaeHaH6IlotX8fKYnr7mp+/l8pP83uzx9sO7x7dvnKQkoCgYa5qmpazBrMtRn5PxfxdkLCmvGK/YiNjghrnj5c37p+bT7vh5P3/05lWoleBaCi0v9d7YqiRXkkvB59fjIU4dgLsfaRsiFVET4ilnWkqpzro+10afv+2Uc2GOJowzp0K0LlICK4ZhxzDDECGMMUEIUyuGECaYIIgpY4SQpmn7YRj63t0FDm5HpRUmtKohwqSu4Zm+wOwKE4IgIoRCCCll4yjaptm6vlOTLs+ysobGGKW10kpIKYSw1Vpco2t9C/9XbIC7JMvjOC4KUNdQSgkhDMNw8/Liuh4AZdu2Qgj+r8w0BVHqVLQHoPT9PQBl13XipvGsC3aH76MrDNnQ9z1CeBhGqdTI+WTMvCzzsiyn07wsNqcQSlsJYXdRSpmjsTBpRzPZZe1F7CXtwpPkoB3XOVknlU85ozQM9kEQYARhXe08jxLs7XwnrjvEhooO9c0VHRAbItivU7KO0bbs0op6YeodsiiHh6z+FSQJwM9u9AcSV4RF+JUF8wAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/2070402145846b56bf5a974eb0af8a85/f7a31/image005.png"
+        srcset="/static/2070402145846b56bf5a974eb0af8a85/6f3f2/image005.png 256w,
+/static/2070402145846b56bf5a974eb0af8a85/f7a31/image005.png 458w"
+        sizes="(max-width: 458px) 100vw, 458px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<h2>Develop in the Branch</h2>
+<p>As usual</p>
+<h2>Merge Changes from Trunk into your Branch</h2>
+<p>Instead <strong>SVN Update</strong> command use Merge</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 506px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/d61503abe14ef7bbde0954bad03cd621/29f4e/image006.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 91.796875%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAIAAADUsmlHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACdElEQVQ4y4WSyW7bMBCG9f5P00uPPdlObC3U4mgjZVmLtVEiRVJeAkRpCoqxkbSHfhgIQ3CWfzjS7KR14vIlp155Bvl5l4oNZJtk2mav2+z1Ob1u0LRB09Nh0rOLXVz31cUrz94z8NdP2vV2TRAydb0o8stZCEZfX28fkvnj432x3//Y+w6Mx9NNu9xu8zxzxjkXlFJKiBDneX5/m+d/bZ7ntzdZ1AJt1wqt6zAlZBiGcWTTNAkxCSHG/8G4NK3DfYwSz/OKougXug6PjIkFLmQ1Lh3pClldLNUZpTIZNx02TbBebdbrja7rq9V6v/cRRLEE+r6PUBJH8uD7AYxhGEVN0zLGtLbrBOdZlkVhBOM4CEKEUBCEYRAu38Bx3EB6Etf1fD8Io6iXY45aK0WOnPPpPIlJwpXWO8tDSL3TFxhjdFxkY4xd1zN03fU8x3HzvGibpq6bpmmbuqnruq6qqqofVFVFCFGdO87Yy4u/2+4s0zItC1gAAGDbtmUC07R2ux2wgK4bhmECYAPbPiQHQuhnMmOMEKoWNgwDWVjcfhhI3/fqVkEJYYyN4/gpu+97hJI0TRFECUrSJB2WCMa4DFK/jspcUKumn7I5t2172ZNh6IZpmK7jOrbjel4cQwgRhDCKoiiMkuSQpqnKp4+Zq6oq7pSSIs/zY5phjMeRqgnpnW+dpb7vPM4qiN6jHyhfa5qWUjoQ8pepN2KUspEuvenImJpelSOUahj3nLOvLArlI/eEHmt8OLVlT3uMy7Ks65oQIjd9Og3DoKHDsSirvDg9LMvLNCsgRH5a/LSiH9v9Lz/zg3C1eTIsG6KDYYLnrRHF6A8+8cyl0nfyEQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/d61503abe14ef7bbde0954bad03cd621/29f4e/image006.png"
+        srcset="/static/d61503abe14ef7bbde0954bad03cd621/6f3f2/image006.png 256w,
+/static/d61503abe14ef7bbde0954bad03cd621/29f4e/image006.png 506w"
+        sizes="(max-width: 506px) 100vw, 506px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 512px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/a6f325339c3df0f4c2c7ccc2e205010b/01e7c/image007.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 92.96875%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAIAAAAf7rriAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC/klEQVQ4y32SaW/TShSG/f//xlWvBKKFKhRKukBLgRaaxLHjZeItXmKPx7N5vE2W2yKnLdAPl0ePjo4/nBm/OqNcqc63WfTdF59tejIjgxE8vM2HdncC5NDujjQ2UMnRlB3r/BOov8zL72H3Y+xqL/fUD6dKGCUmcO25Z7sLywmIaOtuW3XrB2u5/WXVbepuIzf/hctKs3lc1MrddhtHcRLHy2USLhZFgRij9//D3d3d/f19UXSXn6GoW6VtmratZVt3TSXbpq3FX2x6K8ZEjjgiXEmSpWaAH6p5O7W8CCaIxTlN0M58J6KweDTb1QJjzmiWY6UWHMBuf7bZn61fm5tDY/VCla80eaD19bUuX6ry34ncG8t/RnJvIi8ABo4LYZYiquQQOo4bLEI/CIJgkcGcMkYo/dMeRjnnpShZKTCljLEowwolBCGEMUYI5XlOKW2apn5OU9dCCAgz13VMw1yEIcZFDLHCOcOEEkIwJp2Um+1WSrlar1er1Wq9lqvVerPuGymLAodh6Hle0C9lN5yly+vrm5vrm4uLS3U61TXdsixN02c9hmEY6kQ1DUPXddO0XM8LggUhtCzLKCuUHGaTiTqbGdOpZhjmeDR2HceZOwAAy7JsGxj9ESYAwDStNM0QQoQQzneZUQ712WwO5r7nAzC3LDuOk6IoEEJlKarf9H1Zcs45Y+xxmFISRXEQBGEY+n4QRZHv+Z7nO66LUMEYo0+QPxr2MFyg3PeDMIowIVVV8bIUO0ohGGeU/Zb1qxKiqrgQnPM+M4LZeDQZj8a6rts2SJIl54+3seekaWrbtqbpbv9TKIZEKcs+A+P818DjVfSh0qdPCiEMgmA+d3Z7xv2qKMEFfgYh/WNinHNKBGclo5QQxrgQgpd9qj4d54slUlZt3TR1+2TXNgXKgW0FrnMb4xOQXkXcL9jCcyzTgNkSZqltGkkUpjlRzi5vTp97fP7l4Oj0zfuzg9Ove0cXL4Zf3368Pjw+fzUYvju7end+tf92OBh+Gpx9+wnLzPtqqBGs6gAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/a6f325339c3df0f4c2c7ccc2e205010b/01e7c/image007.png"
+        srcset="/static/a6f325339c3df0f4c2c7ccc2e205010b/6f3f2/image007.png 256w,
+/static/a6f325339c3df0f4c2c7ccc2e205010b/01e7c/image007.png 512w"
+        sizes="(max-width: 512px) 100vw, 512px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p><strong>URL to merge from</strong> – will probably be trunk, leave all other blank</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 509px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/c1de1d97d85f018e87b3d6617eb44a05/71554/image008.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 91.015625%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAIAAADUsmlHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACNUlEQVQ4y32SCW+jMBSE+f+/LJtDQAhHCNiALw5jP5sQbZMeK0iK0t1tP42QkZjnYWzHQ3J/IjHpIzbuydktzxtkV7ndFpdtcdngcY2GdT6s0bAtRp+MITuHdPS20XG1ccz4uxbc89zdbis4twCX8fzxPe/v03PnmxRdHAnnt9dXALDWggYpe2Pt7fZ6vd7uerle73q8vtw+Pt72QSM4OKyRsuvatuu67j7CGKOfMMYMwzCNNrBwPlsA7TRSYYxd1/M9v+2k1loptTgBgFIax0maphUhXHDGOaW0rIjS2ilFzzlLkiNCqK5r/RVjDCHkcAijMMQYE0KqqirLklCqtXYK0de1cF3vcAhd1yvK0hjzvPk99jAM5iuPnQnjQRBGURyFke/5959/3l/N6H94xHZdLwiC3Xbn+/5+H1DKFs93zjk2l1J2aXpCCGdZHseJqBtjrbFzOPvgryyLuW/bBiFcFAXGGE8jsjxHeCabyLMsqwgFALXEuZsxl1r1/BNG6STGpjPhgt4hpG6a6eC0Hgc7DnYwMJtZZw2AAfMjMH2iaSvXcb6JT0daawAHM2lA/7+Q58K1NqBZK9cJ+nVIj0TAD+al4efFEtvO/TmIdlop2av+SUrp5YbPd0YrpcEYDSDnYVN5SjuYdmauUH9K9X0tWH46EVJRUmWnlHNWC5HnWVkWXdNQUiKUN7Vw4kryVpFG0U+Ruk9ysvHCIEGHI1rtgiirUkw3XuyGp6wUQYK2+yTF9A98qdi4TYQhzwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/c1de1d97d85f018e87b3d6617eb44a05/71554/image008.png"
+        srcset="/static/c1de1d97d85f018e87b3d6617eb44a05/6f3f2/image008.png 256w,
+/static/c1de1d97d85f018e87b3d6617eb44a05/71554/image008.png 509w"
+        sizes="(max-width: 509px) 100vw, 509px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>Default settings in most cases will match your needs</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 640px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/b7c1002b64709b32684fda7731fddf3f/6af66/image009.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 45.3125%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAAsTAAALEwEAmpwYAAABYklEQVQoz33La2vbMBQGYP3/v9NvoyuDtYGylibOyjbLTmRJtqz7zUkc27ELKoZ92R5eDucceMHr73r7B2WQbnbw/jn7snm/37Hvud8U3Wee8vCw51+z9tu7fMzt5hd7yg4/Hp/f7u4ArZnS5tJf+/56ufQtF87aU9fFGIP33jmfuLRYa9MV4qkXvgMVplVVGW2U0t4H3nJ0RISQum5SL4QQQ4zO+ZgmQsJYfz6dOOMAFscs2/d9PwzDNE2U0u12t9//zHMIc1iWhwrjQ1lCWOQ5RKhqalGUOoRJGw8Yl0rK6zAsSRejFFIp7Zwbx3FajcntdpvnpeWXaVpCiEBbvyzLbTXP87KaV8tfzueR0G6cZu8DoE1bNw0h9DOYUFRhjAleP4RQIaROnDXOGim1sYaxFhwrcihLpbT5N5s6QhvIZMGk0ForJYQAR9LQmrVccfG/CKFwq14K+lLWiAlSN5iyDzoK7rGmuAd6AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/b7c1002b64709b32684fda7731fddf3f/6af66/image009.png"
+        srcset="/static/b7c1002b64709b32684fda7731fddf3f/6f3f2/image009.png 256w,
+/static/b7c1002b64709b32684fda7731fddf3f/01e7c/image009.png 512w,
+/static/b7c1002b64709b32684fda7731fddf3f/6af66/image009.png 640w"
+        sizes="(max-width: 640px) 100vw, 640px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>It there is conflicts, you will see something like this:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 470px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/cd603c140ec17c8fa41517bbda3c497c/f96db/image010.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 56.640625%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB9UlEQVQozzWQS2+bQBRG+f9/ouq+UtdVWmWTh41jbGCA4TUw7/cwNunCaaRWIerR0dUn3c29X7JrzR7MB8ifAH5q7eP8ft/ffnVvd+3trr397N42b/fD7WH6k+K3s/p7gjr9+mX/7XvSIVK3Q9ONVTNUcIQDLuFYdVPT46qbABwBRHU3Ve10rrq6Q0XdVS3iJkxqSTgXnDHGKCWEEaIkpwRzRpUQgrHP/CnBMyUYzzOe5xi8sj7Rxi3LEsISNqxzIYTF+yWEuC2C99vwMcZ1fV3X1+u6XmKUxieEyzwvyqIEALRdD5umqNtDAfbn8pBXx7LencAJ1Pn53Ha9NlpKpbT23s3CJVzqCaFxGIUQ67r+Xq8V1c+jeob4xwE8QrxDusRKCQ4hzLIsTQ8AVJTgAcsEMwlhO89z3/dSqhgj43ycZlA32bkAdYMwpow766y1QgjOhbFu8R4x93H2PM1CCEqosfZyuQgh8DS1EIKy7NuWYMw591sjUn306HyIS0DcJkzqYaOqa0rp9XoVQiCEzqfT8ZgVeUEIYYwRQvI8T9NDuk+PWUYJ7rBMpHExxrAsYdmI0XtvjFH/0Vpba42xWmttjNZaae2sQcwmlCv38Y41m9Za5xwXsh+GEaGXl5eHh8fdLh3GsR+GYRzRNO33adM0eTP+A7uYQu5JOcKbAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/cd603c140ec17c8fa41517bbda3c497c/f96db/image010.png"
+        srcset="/static/cd603c140ec17c8fa41517bbda3c497c/6f3f2/image010.png 256w,
+/static/cd603c140ec17c8fa41517bbda3c497c/f96db/image010.png 470w"
+        sizes="(max-width: 470px) 100vw, 470px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<h2>Merge Your Branch Back Into Trunk</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 512px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/2b9209e245dee95fd9aed0cf1a448e95/01e7c/image011.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 92.57812500000001%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAIAAAAf7rriAAAACXBIWXMAAAsTAAALEwEAmpwYAAACqUlEQVQ4y3WSW2+jRhTH+f6vfeqn6EPVVt2XVFUTJ+ZizH0AY24zwNyZwbFxpU0Fjru7ivLTXzBndG46c4xNUDmFcPu3x+P1Ib/+Cebf4/m36Af9Ec9fkvkhvz4e5y16M+3c/vmnl19+NdK82HlRnFd0PJPxlYxnpufPxPWsz9eiUVFKMiiNf6/zsSiqshScScEZpW+f8/Xr8sX4/PBXT9TFmOfL5XI5n89KKa21UnqaptPnvL6eOFcICcRGo2maKIrLshJSCiHEKLkQ7Hv4/cfvJ8FHyZuOGpSSMIz2ey9JEgDSMIjKY3n34z9kobc7TgiRQpSIGVqrPD9sNpvn5xfTNM2t6djOTbbjmJa5fTF3u73nec/PL5ZpWZYdhpFSMq6oodTI2ZIMY9yvQIgQQhAiCGHbwrqq27a9mQjCtmkJoWqUSU0NymjVLF5d1yGIKGOn00lrradlcrfhTd9YLqWUoxRJzQzOuR9ET49P5tayLdv3gyzN0jQ95Ic0ywAAIAHJoiRd7wEAbdO+V5606rsuDMMojBcPADzPj8Iw8APP892dG/iB7/m+50dR5HtBlueE0rUyNQTnizGOUgjOuJRSKbX0tzSupw8opYWQ78FSiiQBju3s98tIXXd/KIphGPCAh2FA6/Tatm3qZp0ixJis27AGT5MuimLztFnexrJd193tXNt2zK3peX5dV4fvKMuy73sh75VHKRljBJPba5EVSinGmDI2fkBKybn41rYQQn5klGL142LVDfFuvgdzzsi6ef9rXcFlMRVnJ8m1YIKzpdVxvGVYjlLEFTHUrfJdawk2DAMj2IPsnwxaDSt6UhaHNE3RunsApG1Th0dswB43HW7varqh6YZjDesGmcXwxTv+nXVh2flhbLt+VlRZUTr7MAaZk6L/AG4NATyOd5GDAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/2b9209e245dee95fd9aed0cf1a448e95/01e7c/image011.png"
+        srcset="/static/2b9209e245dee95fd9aed0cf1a448e95/6f3f2/image011.png 256w,
+/static/2b9209e245dee95fd9aed0cf1a448e95/01e7c/image011.png 512w"
+        sizes="(max-width: 512px) 100vw, 512px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 519px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/56a41a8f71e98ba786b627a8d0d38b4d/b23ad/image012.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 90.625%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAIAAADUsmlHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACOUlEQVQ4y52TaW/UMBCG8///CR9KkQqoooCgfGDb0m5Jttlszo1jx3Ec22Pn3C6XknYpRwuIV49GI8uvPePDOgnEyRW6XINdfJmtN++i69f+5mi1eeEN3znyhpf+8DYc3ifDOd5eRODsPfrweN8qZJdmZOGugjiDZpCmU3WvmkG3G9Nd/0672TLRza9knBtLNZtP22uMMSFECCmlkkIyVrZt+/UBbbefj48pLWuLctXUpqn10NV9a/rmlq65y/vGDO0tTVNrUzMmi0pZBZcZxme29zEsghx8onwCPoEgh2CKPgEPw3LCzYAwUZallIKyykqpMFrZuD1wh4Or/nDZP3f7p1PyzO0PvTE+WfT7Tr9n93vOEBcaZyjPc8yEFREBamy0BlFr1fzMzUhXq6EBI0u8DhcLJwgjXrI1nczGAGijtBZSTighlZzij7CSpwgnSZIiJCqe0spKcslLhlBGCFHjIkYpJe9DARhjmrat69povc4ra00VztD8Ym7bdhRFCKGqEuo+VVWVpulyuYzjhPNy3Dmeei6KglK6u+37zZzzJElWnheGIWNFSsVoNjCWBABaa9BaPSyYKtejYCw7JkKDGp/WTuqPupmjQd2Z/+L4xa/UP5nlf5in/sdTMBoMjFNhp5vMaJ3mlRXhCsaPdCch5Pj6sizL6QpTHxdJwSmlGcrynDLGMMY0JxEqLB+VFees5OUOxkrP885OTx0veGOvXp0v5jH2g3A2m7nuMk3RfH7p2I4bZt8Ag0PZwTCaMiAAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/56a41a8f71e98ba786b627a8d0d38b4d/b23ad/image012.png"
+        srcset="/static/56a41a8f71e98ba786b627a8d0d38b4d/6f3f2/image012.png 256w,
+/static/56a41a8f71e98ba786b627a8d0d38b4d/01e7c/image012.png 512w,
+/static/56a41a8f71e98ba786b627a8d0d38b4d/b23ad/image012.png 519w"
+        sizes="(max-width: 519px) 100vw, 519px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 515px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/3614ea477d5e037a4dc9f89b6909701f/fbdcb/image013.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 91.40624999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAIAAADUsmlHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACM0lEQVQ4y4WSW2/aMBSA8///zqZJfVi3aau0FpZ7oEnDSJz4Hh/boSAKFKYkpYW1VT+dpyN/ts/FGed6NCkC1Ebs8QZtruab7/nDZbb+ehKX2frb3frnbP27WHt46/614edP7pcLR9n7WT7z/XDseqJRtr2/X642293DZvs61pvtdrfTdj0O9ZwtnXa12T/upJAaOoQQq+XqcDjs9/vDO+x2+19XTKilQwUYrU2PtbZtW2utOaFL9dgjxlhQhgpwRKPzPPf9II6TRikAUHAGIQRVNcaYH6GMNUoyoZyaQ1WhOE6mt6kQwugzjDFZmo5G4yAIiqIoyxIhlOczQnDNwSkpEFzHcZJlWZIknAtjDAA8+0Mtbdue3tlaMyfKQQxQVUVRnKZpHMWTybSr6uTg8/9fMlpbo4tBLhHyPD8MQ/eP67lemmZSSmP+q0C/IZcMOKNhGE2naRCEQRiVJQLQxj4NYOi5NgZ6DbRWXS8GmSoNijJGWQftIYRg0oExxoTUGEsp33i56OXjFARjnDEmjjDGujRjTdMMzV88Dd30MlHt85a8z2ByzssOBKopaS9bo0F/AABYa6uq8lzP9wPJecngAxle7cxisXj59hxLDapRZwznNHSNsf3SDBkA3W+wttbMceMUuLH9IuhjAChKSIUQpiyvSVbiijeMMYRKSqkUoq5qSvCsFk5eSSkbJhp+DMZlMk1HYze8zX+E2cV16M7q9G52fTOeTNN5Wbl+FEZxkuN/1svYg8QJwlYAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/3614ea477d5e037a4dc9f89b6909701f/fbdcb/image013.png"
+        srcset="/static/3614ea477d5e037a4dc9f89b6909701f/6f3f2/image013.png 256w,
+/static/3614ea477d5e037a4dc9f89b6909701f/01e7c/image013.png 512w,
+/static/3614ea477d5e037a4dc9f89b6909701f/fbdcb/image013.png 515w"
+        sizes="(max-width: 515px) 100vw, 515px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 640px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/32dcda8e29662f7edd02dafc7cae3fff/6af66/image014.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 46.09375%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAAsTAAALEwEAmpwYAAABOUlEQVQoz5XL3WobQQwF4H1/KHXAtRNIXRfa+oGaqzQGrzs/0mhGuzujWZLgXRXHJBeFFHr4EEcgNXsTLEaLyRC71B8htT7amB2L43KZBvk3JINsQ+cCW4gQ+xa5sUcTPTCGdGiLc9l7QayIBUC8rwDinHS9iORhyEOm0NUqoxTw2BgDCXB6flYRzVmlnhV5KaKlaC56Oulruv6J4mMdp0B941NW1XmeZ9V/mS8nOk2zMfXxaeI+NxCz/k/G8eT8qKrn59YRpxQTE8UQ6AIxAODb+oZTGobsoSu5OAjNQ+v2D/v7+1+Hw8F7cM6/x1rfOrBIFImIjMPm6IkCAgBzqrXKO6kiNJSfhu5soq5njiFys9zsVpvderP79PnH8vbb8vb71c3XxfrL1fX2L4vr7YfV2WJ99nG1/QN21ebeqElSSgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/32dcda8e29662f7edd02dafc7cae3fff/6af66/image014.png"
+        srcset="/static/32dcda8e29662f7edd02dafc7cae3fff/6f3f2/image014.png 256w,
+/static/32dcda8e29662f7edd02dafc7cae3fff/01e7c/image014.png 512w,
+/static/32dcda8e29662f7edd02dafc7cae3fff/6af66/image014.png 640w"
+        sizes="(max-width: 640px) 100vw, 640px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>You’ll see this if you have not committed changes is your branch</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 640px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/ef4a14d14301a35c6f90bfad20dc34a5/6af66/image015.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 46.09375%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAAsTAAALEwEAmpwYAAABB0lEQVQoz43Q3WrDMAyGYd//tW0nS9hK6Si1E8uR5DryT5JCGo8yBmVs616eU30HUgcNnUMDpIGcF8uxo9ih/IzEsvQYgMKpH5Q2vTEGkbTWOAwOQMaQU0oxRpGcYooxRYlyIyJMIadYcnYO1fFkm5dGm65t2rZpX99207zUWrdvtvpZCBd/vszzijQqi+eplHlZSs6llDJN67puv1RrvV43Y8q8XM9jVHhO9W74YdO0Wphrrbfjk0XvmegOeyQekIj9PSQfQhBJFsacCwysdI8OnLXwH+AcM3vPzNwDKkCfv575hyzigjxpfDbs2DMOMJBqj/wO6WDjQ/s+NkaaTvZWDjbuzPgBJ7z3Yp/oHXoAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/ef4a14d14301a35c6f90bfad20dc34a5/6af66/image015.png"
+        srcset="/static/ef4a14d14301a35c6f90bfad20dc34a5/6f3f2/image015.png 256w,
+/static/ef4a14d14301a35c6f90bfad20dc34a5/01e7c/image015.png 512w,
+/static/ef4a14d14301a35c6f90bfad20dc34a5/6af66/image015.png 640w"
+        sizes="(max-width: 640px) 100vw, 640px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>Noticed, that in new versions of SVN, <strong>first</strong> you need to <strong>switch back to trunk</strong>, then make <strong>reintegrate branch</strong>, and in <strong>from url</strong> put <strong>url to branch</strong> that u want to reintegrate.</p>
+<h2>Delete the Branch</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 640px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/5475f4da265f62a45b185f70a93e6c77/6af66/image016.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.03125%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAABu0lEQVQoz3VQaY+bMBDl//+pfqlU9ZKWTQIBG+ML2xy+gG1wQnCV0JVWWnX0NHqamTdvNMkhR4xzAElV0xKgEuICcUAEwAISeS7roqyKEtWEWzezRuaggLg7A3QEOBHtMFpyPPxCmPlxmqaxwmd3CfNtm8I6/7m8zbNSnRDyft+ssYxxIeQ8zbLtH+IYo1K8KEFdU+ecNW2rVFhCjNF7v66rlApC1PU9JfR0PKXpq3d+sGPCZB9jlAPL8gPBRGvtx5EQ2jTCOWeMXdfVaNO2ndFGStVwzhgPIajBJ/QpJh06ZiklT2drnXPbtsX/xN6SvfvnbJwEZYZrbK2x1hpj9on3/CB7xBivt3XbPohbTU/FK+Xc+8k8F3x03umel3DF3HTDROWQMPl4GOboy4+vL0WuOtNqp63/fPZe6M1bmnFYq7TgCW7aGKPWOsszCCDGeBgGrfUSQrheL8uyLGEJD4Rw3e73sNxo40Q317xP8hJhhCipGaMQVg1vnPeEkOJccM6VlDukkH3XdVpDrrBQDaOgpsnPnJ/wUDc9oxQCiCo0eldR8QLkmZmS2+IdJbcnar6B9nfVpUB8z/hfZxxfrXdotqIAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/5475f4da265f62a45b185f70a93e6c77/6af66/image016.png"
+        srcset="/static/5475f4da265f62a45b185f70a93e6c77/6f3f2/image016.png 256w,
+/static/5475f4da265f62a45b185f70a93e6c77/01e7c/image016.png 512w,
+/static/5475f4da265f62a45b185f70a93e6c77/6af66/image016.png 640w"
+        sizes="(max-width: 640px) 100vw, 640px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 471px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/66714456d60ee979843a5d853e6732fe/1f09d/image017.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 71.09375%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAIAAACgpqunAAAACXBIWXMAAAsTAAALEwEAmpwYAAABo0lEQVQoz73RTWvbMBjAcX/6nfYdxmBbYbQwul1GB9nLoS1LuyVNKstvkizZUmJZkmXZqZ12GXEpS0co7LIf/4MuDw/o8T5d4tGFPxr77z+fH52cHX9PDy+KN2f89akY4q++4INv5Og8Oxj570Y/Dj+efnh7/PX5s5MXLz2ABAgxiMj0Gv6cwaswC6hKuI0fSkSdCJsIG7IySJcB5igrUiZQrjxMGaMkYxQlCUIJQUmx4K7StVF2qB7aPipdW+NsZauqcTXlhSeWZZqmlLLaOeca55yta22M0nqb2p82JhOFx/gSQuj7kFIKIQxgAADAGHPOGWNSSmOMfkxpXRmz3Uy4pClBGEdRNJlMptOr8XjsA0AIieNYCKGUKh+TZWm0wkJ7JC8Ez62tNzt+Pbjd727d3yCuPJwX63W/O3Bv86S723747bzou27zj/4Mr/vufvP/HSZcNs41TftEbduuBu3gputWqwZx7VFRVtX2kn9fcwfnPIoiTPBCCMbofD6nBMWZ9MJ0IZYyEzITRb6Qe4sxnQEIghilWRCjy8nMh+E1Er8BwwoIQz+iB+QAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/66714456d60ee979843a5d853e6732fe/1f09d/image017.png"
+        srcset="/static/66714456d60ee979843a5d853e6732fe/6f3f2/image017.png 256w,
+/static/66714456d60ee979843a5d853e6732fe/1f09d/image017.png 471w"
+        sizes="(max-width: 471px) 100vw, 471px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 544px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/0eafbcaddf897f2e972ae4de521c62d4/b3e51/image018.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 88.28125%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAIAAADUsmlHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACjklEQVQ4y41QiW7TQBD1//8QAkElGijN5SSOHceO42vXe/nY22lSkiAnCIGoEE+j2ZFm3nsz6yx3eBbsZ2ExDcuRlz+u8k+T6MNz8DDfPcx2HyfRwyx5XJWfl+mjlz/55TSEX9fF+GG0ePfeKUrAhYAQNS3nQtR103UcwqrjQkpVs/ZwOBpj66Zt266uW8pqbezxfG3sycEYl2VZIVRjQjBBFSKY1JQpIQXnggsllVY6z/Ombl5Pp97a3lqrVV5Ch+mjF5Vpghvx3U/wOqnigo3G3ngZjab+k7uZLKNtXk/X6dzfhylu7KXtr509A0SdAiJ/E/temAHsb+L1JvKCrbv0F97GXfruyveCbVZWcZIHYRyEMUQU07bCDCLipGlalmWapUWRKyXFAK6UlFIoJZWSWimjtTWm723fW62HntGStsKxtr9er5fL5frfuM8K8/IH+fJ/OJ+HYa4PjrH2H86Xy0+f3wfu5UD+5fwm/la7z/4kVwi3HWd1rbTWxvwKYy0XEmGCMGnaDmMipLy31NA0qBZOWhBIBEAtZpo2BjGFmcZMk8ZI1Q+fLqSxvZTq5Xh8veF0er2cv9NWOYfDy5s3v7nx7zc3wjhFCauqgrBCCFW3TAlBCFNKKaEAwLIEjNVam+GuG5TSRmvEhPNlsnDdxXyA63leluUEk6pCGGNCyKBbVZQxznl3A+fdfr/3Vqskh85+n4bbKI7jMNxSym7Cg4eUw2uMkVJyLgZSdwvOIYTJbpdB4gzyAOyiLQSAEFwzCgEo8qypGQRlnmWC82HRQVEZPWQIQBQGOUDOeBGMXf/z0/Tb3Jssguly8zRdjZ7d2Sq8F6tNstkVfpR7YbLe7v0oHbvr8dx7Xm5/AKYg4hYiSNfqAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="screenshot"
+        title="screenshot"
+        src="/static/0eafbcaddf897f2e972ae4de521c62d4/b3e51/image018.png"
+        srcset="/static/0eafbcaddf897f2e972ae4de521c62d4/6f3f2/image018.png 256w,
+/static/0eafbcaddf897f2e972ae4de521c62d4/01e7c/image018.png 512w,
+/static/0eafbcaddf897f2e972ae4de521c62d4/b3e51/image018.png 544w"
+        sizes="(max-width: 544px) 100vw, 544px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>You can easily restore any deleted branch</p></div></main><footer><a href="#top">top</a><a href="/">home</a><a href="/search">search</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/branching-with-tortoisesvn";window.___webpackCompilationHash="ef8fb55bb983484b16a7";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-b4bb882d10635d85fa25.js"],"app":["/app-98475b819971087d4b7e.js"],"component---src-pages-404-js":["/component---src-pages-404-js-2652c435d8decd31b8ef.js"],"component---src-pages-index-js":["/component---src-pages-index-js-59ea4a114c2918516395.js"],"component---src-pages-search-js":["/component---src-pages-search-js-078619e3aef857102623.js"],"component---src-templates-note-js":["/component---src-templates-note-js-b005c02681f20ea28edd.js"]};/*]]>*/</script><script src="/polyfill-b4bb882d10635d85fa25.js" nomodule=""></script><script src="/app-98475b819971087d4b7e.js" async=""></script><script src="/framework-2ce620c91826a79f925c.js" async=""></script><script src="/webpack-runtime-72217849817cd80b0f9a.js" async=""></script></body></html>

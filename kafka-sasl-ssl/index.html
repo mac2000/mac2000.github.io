@@ -1,0 +1,429 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 4.24.5"/><style data-href="/styles.f7b0302c8427f1a04772.css" data-identity="gatsby-global-css">@media (prefers-color-scheme:light){code[class*=language-],pre[class*=language-]{background:#fafafa;color:#383a42;direction:ltr;font-family:Fira Code,Fira Mono,Menlo,Consolas,DejaVu Sans Mono,monospace;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{background:#e5e5e6;color:inherit}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection{background:#e5e5e6;color:inherit}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.2em .3em;white-space:normal}.token.cdata,.token.comment,.token.prolog{color:#a0a1a7}.token.doctype,.token.entity,.token.punctuation{color:#383a42}.token.atrule,.token.attr-name,.token.boolean,.token.class-name,.token.constant,.token.number{color:#b76b01}.token.keyword{color:#a626a4}.token.deleted,.token.important,.token.property,.token.symbol,.token.tag{color:#e45649}.token.attr-value,.token.attr-value>.token.punctuation,.token.builtin,.token.char,.token.inserted,.token.regex,.token.selector,.token.string{color:#50a14f}.token.function,.token.operator,.token.variable{color:#4078f2}.token.url{color:#0184bc}.token.attr-value>.token.punctuation.attr-equals,.token.special-attr>.token.attr-value>.token.value.css{color:#383a42}.language-css .token.selector{color:#e45649}.language-css .token.property{color:#383a42}.language-css .token.function,.language-css .token.url>.token.function{color:#0184bc}.language-css .token.url>.token.string.url{color:#50a14f}.language-css .token.atrule .token.rule,.language-css .token.important,.language-javascript .token.operator{color:#a626a4}.language-javascript .token.template-string>.token.interpolation>.token.interpolation-punctuation.punctuation{color:#ca1243}.language-json .token.operator{color:#383a42}.language-json .token.null.keyword{color:#b76b01}.language-markdown .token.url,.language-markdown .token.url-reference.url>.token.string,.language-markdown .token.url>.token.operator{color:#383a42}.language-markdown .token.url>.token.content{color:#4078f2}.language-markdown .token.url-reference.url,.language-markdown .token.url>.token.url{color:#0184bc}.language-markdown .token.blockquote.punctuation,.language-markdown .token.hr.punctuation{color:#a0a1a7;font-style:italic}.language-markdown .token.code-snippet{color:#50a14f}.language-markdown .token.bold .token.content{color:#b76b01}.language-markdown .token.italic .token.content{color:#a626a4}.language-markdown .token.list.punctuation,.language-markdown .token.strike .token.content,.language-markdown .token.strike .token.punctuation,.language-markdown .token.title.important>.token.punctuation{color:#e45649}.token.bold{font-weight:700}.token.comment,.token.italic{font-style:italic}.token.entity{cursor:help}.token.namespace{opacity:.8}.token.token.cr:before,.token.token.lf:before,.token.token.space:before,.token.token.tab:not(:empty):before{color:rgba(56,58,66,.2)}div.code-toolbar>.toolbar.toolbar>.toolbar-item{margin-right:.4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span{background:#e5e5e6;border-radius:.3em;color:#696c77;padding:.1em .4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:hover{background:#c6c7c7;color:#383a42}.line-highlight.line-highlight{background:rgba(56,58,66,.05)}.line-highlight.line-highlight:before,.line-highlight.line-highlight[data-end]:after{background:#e5e5e6;border-radius:.3em;box-shadow:0 2px 0 0 rgba(0,0,0,.2);color:#383a42;padding:.1em .6em}pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:rgba(56,58,66,.05)}.command-line .command-line-prompt,.line-numbers.line-numbers .line-numbers-rows{border-right-color:rgba(56,58,66,.2)}.command-line .command-line-prompt>span:before,.line-numbers .line-numbers-rows>span:before{color:#9d9d9f}.rainbow-braces .token.token.punctuation.brace-level-1,.rainbow-braces .token.token.punctuation.brace-level-5,.rainbow-braces .token.token.punctuation.brace-level-9{color:#e45649}.rainbow-braces .token.token.punctuation.brace-level-10,.rainbow-braces .token.token.punctuation.brace-level-2,.rainbow-braces .token.token.punctuation.brace-level-6{color:#50a14f}.rainbow-braces .token.token.punctuation.brace-level-11,.rainbow-braces .token.token.punctuation.brace-level-3,.rainbow-braces .token.token.punctuation.brace-level-7{color:#4078f2}.rainbow-braces .token.token.punctuation.brace-level-12,.rainbow-braces .token.token.punctuation.brace-level-4,.rainbow-braces .token.token.punctuation.brace-level-8{color:#a626a4}pre.diff-highlight>code .token.token.deleted:not(.prefix),pre>code.diff-highlight .token.token.deleted:not(.prefix){background-color:rgba(255,82,102,.15)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::-moz-selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix),pre>code.diff-highlight .token.token.inserted:not(.prefix){background-color:rgba(25,255,91,.15)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::-moz-selection{background-color:rgba(56,224,98,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::selection{background-color:rgba(56,224,98,.25)}.prism-previewer-gradient.prism-previewer-gradient div,.prism-previewer.prism-previewer:before{border-color:hsl(0,0,95%)}.prism-previewer-color.prism-previewer-color:before,.prism-previewer-easing.prism-previewer-easing:before,.prism-previewer-gradient.prism-previewer-gradient div{border-radius:.3em}.prism-previewer.prism-previewer:after{border-top-color:hsl(0,0,95%)}.prism-previewer-flipped.prism-previewer-flipped.after{border-bottom-color:hsl(0,0,95%)}.prism-previewer-angle.prism-previewer-angle:before,.prism-previewer-easing.prism-previewer-easing,.prism-previewer-time.prism-previewer-time:before{background:#fff}.prism-previewer-angle.prism-previewer-angle circle,.prism-previewer-time.prism-previewer-time circle{stroke:#383a42;stroke-opacity:1}.prism-previewer-easing.prism-previewer-easing circle,.prism-previewer-easing.prism-previewer-easing line,.prism-previewer-easing.prism-previewer-easing path{stroke:#383a42}.prism-previewer-easing.prism-previewer-easing circle{fill:transparent}}@media (prefers-color-scheme:dark){code[class*=language-],pre[class*=language-]{background:#282c34;color:#abb2bf;direction:ltr;font-family:Fira Code,Fira Mono,Menlo,Consolas,DejaVu Sans Mono,monospace;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;text-align:left;text-shadow:0 1px rgba(0,0,0,.3);white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{background:#3e4451;color:inherit;text-shadow:none}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection{background:#3e4451;color:inherit;text-shadow:none}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.2em .3em;white-space:normal}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}.token.cdata,.token.comment,.token.prolog{color:#5c6370}.token.doctype,.token.entity,.token.punctuation{color:#abb2bf}.token.atrule,.token.attr-name,.token.boolean,.token.class-name,.token.constant,.token.number{color:#d19a66}.token.keyword{color:#c678dd}.token.deleted,.token.important,.token.property,.token.symbol,.token.tag{color:#e06c75}.token.attr-value,.token.attr-value>.token.punctuation,.token.builtin,.token.char,.token.inserted,.token.regex,.token.selector,.token.string{color:#98c379}.token.function,.token.operator,.token.variable{color:#61afef}.token.url{color:#56b6c2}.token.attr-value>.token.punctuation.attr-equals,.token.special-attr>.token.attr-value>.token.value.css{color:#abb2bf}.language-css .token.selector{color:#e06c75}.language-css .token.property{color:#abb2bf}.language-css .token.function,.language-css .token.url>.token.function{color:#56b6c2}.language-css .token.url>.token.string.url{color:#98c379}.language-css .token.atrule .token.rule,.language-css .token.important,.language-javascript .token.operator{color:#c678dd}.language-javascript .token.template-string>.token.interpolation>.token.interpolation-punctuation.punctuation{color:#be5046}.language-json .token.operator{color:#abb2bf}.language-json .token.null.keyword{color:#d19a66}.language-markdown .token.url,.language-markdown .token.url-reference.url>.token.string,.language-markdown .token.url>.token.operator{color:#abb2bf}.language-markdown .token.url>.token.content{color:#61afef}.language-markdown .token.url-reference.url,.language-markdown .token.url>.token.url{color:#56b6c2}.language-markdown .token.blockquote.punctuation,.language-markdown .token.hr.punctuation{color:#5c6370;font-style:italic}.language-markdown .token.code-snippet{color:#98c379}.language-markdown .token.bold .token.content{color:#d19a66}.language-markdown .token.italic .token.content{color:#c678dd}.language-markdown .token.list.punctuation,.language-markdown .token.strike .token.content,.language-markdown .token.strike .token.punctuation,.language-markdown .token.title.important>.token.punctuation{color:#e06c75}.token.bold{font-weight:700}.token.comment,.token.italic{font-style:italic}.token.entity{cursor:help}.token.namespace{opacity:.8}.token.token.cr:before,.token.token.lf:before,.token.token.space:before,.token.token.tab:not(:empty):before{color:rgba(171,178,191,.15);text-shadow:none}div.code-toolbar>.toolbar.toolbar>.toolbar-item{margin-right:.4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span{background:#3a3f4b;border-radius:.3em;color:#828997;padding:.1em .4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:hover{background:#3e4451;color:#abb2bf}.line-highlight.line-highlight{background:rgba(153,187,255,.04)}.line-highlight.line-highlight:before,.line-highlight.line-highlight[data-end]:after{background:#3a3f4b;border-radius:.3em;box-shadow:0 2px 0 0 rgba(0,0,0,.2);color:#abb2bf;padding:.1em .6em}pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:rgba(153,187,255,.04)}.command-line .command-line-prompt,.line-numbers.line-numbers .line-numbers-rows{border-right-color:rgba(171,178,191,.15)}.command-line .command-line-prompt>span:before,.line-numbers .line-numbers-rows>span:before{color:#636d83}.rainbow-braces .token.token.punctuation.brace-level-1,.rainbow-braces .token.token.punctuation.brace-level-5,.rainbow-braces .token.token.punctuation.brace-level-9{color:#e06c75}.rainbow-braces .token.token.punctuation.brace-level-10,.rainbow-braces .token.token.punctuation.brace-level-2,.rainbow-braces .token.token.punctuation.brace-level-6{color:#98c379}.rainbow-braces .token.token.punctuation.brace-level-11,.rainbow-braces .token.token.punctuation.brace-level-3,.rainbow-braces .token.token.punctuation.brace-level-7{color:#61afef}.rainbow-braces .token.token.punctuation.brace-level-12,.rainbow-braces .token.token.punctuation.brace-level-4,.rainbow-braces .token.token.punctuation.brace-level-8{color:#c678dd}pre.diff-highlight>code .token.token.deleted:not(.prefix),pre>code.diff-highlight .token.token.deleted:not(.prefix){background-color:rgba(255,82,102,.15)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::-moz-selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix),pre>code.diff-highlight .token.token.inserted:not(.prefix){background-color:rgba(25,255,91,.15)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::-moz-selection{background-color:rgba(56,224,98,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::selection{background-color:rgba(56,224,98,.25)}.prism-previewer-gradient.prism-previewer-gradient div,.prism-previewer.prism-previewer:before{border-color:#262931}.prism-previewer-color.prism-previewer-color:before,.prism-previewer-easing.prism-previewer-easing:before,.prism-previewer-gradient.prism-previewer-gradient div{border-radius:.3em}.prism-previewer.prism-previewer:after{border-top-color:#262931}.prism-previewer-flipped.prism-previewer-flipped.after{border-bottom-color:#262931}.prism-previewer-angle.prism-previewer-angle:before,.prism-previewer-easing.prism-previewer-easing,.prism-previewer-time.prism-previewer-time:before{background:#31363f}.prism-previewer-angle.prism-previewer-angle circle,.prism-previewer-time.prism-previewer-time circle{stroke:#abb2bf;stroke-opacity:1}.prism-previewer-easing.prism-previewer-easing circle,.prism-previewer-easing.prism-previewer-easing line,.prism-previewer-easing.prism-previewer-easing path{stroke:#abb2bf}.prism-previewer-easing.prism-previewer-easing circle{fill:transparent}}:root{--foreground:#24292f;--background:#fff}a{color:#0969da}a.visited,a:visited{color:#57606a}.green{color:#1a7f37}.red{color:#cf222e}@media (prefers-color-scheme:dark){:root{--foreground:#adbac7;--background:#22272e}a{color:#539bf5}a.visited,a:visited{color:#768390}.green{color:#57ab5a}.red{color:#e5534b}}a{text-decoration:none}a:hover{text-decoration:underline}html{font-family:Ubuntu,sans-serif}body{background-color:var(--background);color:var(--foreground);margin:0;padding:0}#top{box-sizing:border-box;display:grid;grid-template-rows:1fr 2em;margin:0;min-height:100vh;padding:1em 2em}.graph polygon{fill:transparent}.graph g ellipse[stroke="#000"],.graph g ellipse[stroke="#000000"],.graph g ellipse[stroke=black],.graph g path[stroke="#000"],.graph g path[stroke="#000000"],.graph g path[stroke=black],.graph g polygon[stroke="#000"],.graph g polygon[stroke="#000000"],.graph g polygon[stroke=black]{stroke:var(--foreground)}.graph g text[fill="#000"],.graph g text[fill="#000000"],.graph g text[fill=black]{fill:var(--foreground)}code,pre{font-family:JetBrains Mono,monospace}pre[class*=language-]{word-wrap:break-word;border-radius:0;box-sizing:border-box;margin:1em -2em;max-width:100vw;padding:1em 2em}footer a{line-height:2em;margin-right:.5em}.delta{line-height:1;margin-left:1em;white-space:nowrap}.columns{display:grid;grid-template-columns:repeat(2,1fr)}@media only screen and (max-width:1024px){.columns{grid-template-columns:repeat(1,1fr)}}.pie{text-align:center}.pie figure{display:inline-block}.pie figcaption{font-size:80%;margin-top:.25em}</style><title data-gatsby-head="true">Kafka SASL SSL authentication like in Confluent</title><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="icon" href="/favicon-32x32.png?v=6389d5f13c96000946d60b6bb0a8b5a8" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div id="top"><main><div><h1>Kafka SASL SSL authentication like in Confluent</h1>
+<p>Confluent changed pricing policy which forced us to move all dev environments down to the ground</p>
+<p>But configuring Kafka is not so easy as it seems, especially when we are talking about authentication</p>
+<p>In this note I'm going to recreate step by step actions required to get <code class="language-text">SASL_SSL</code> authentication working same way as in Concluent cloud</p>
+<blockquote>
+<p>TLDR: Jump to "Kafka SASL_SSL + LetsEncrypt" for final configuration</p>
+</blockquote>
+<h2>Confluent Kafka</h2>
+<p>To simplify things suppose we have dedicated server with a public ip address</p>
+<p>We wont do any fancy containers/kubernetes for simplicity</p>
+<p>At the very end we want our client to connect to Kafka with config like:</p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">bootstrap.servers</span><span class="token punctuation">=</span><span class="token value attr-value">xxx-yyyyy.europe-west3.gcp.confluent.cloud:9092</span>
+<span class="token key attr-name">ssl.endpoint.identification.algorithm</span><span class="token punctuation">=</span><span class="token value attr-value">https</span>
+<span class="token key attr-name">security.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">SASL_SSL</span>
+<span class="token key attr-name">sasl.mechanism</span><span class="token punctuation">=</span><span class="token value attr-value">PLAIN</span>
+<span class="token key attr-name">sasl.jaas.config</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.common.security.plain.PlainLoginModule required username="mac" password="123";</span></code></pre></div>
+<p>which was taken from confluent cloud</p>
+<h2>Prerequisites</h2>
+<p>Before anything else we need to perform some house keeping</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token environment constant">$USER</span> <span class="token assign-left variable">ALL</span><span class="token operator">=</span>NOPASSWD: ALL <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> /etc/sudoers.d/<span class="token environment constant">$USER</span>
+<span class="token function">sudo</span> <span class="token function">apt-get</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt-get</span> upgrade <span class="token parameter variable">-y</span> <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt-get</span> dist-upgrade <span class="token parameter variable">-y</span> <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">reboot</span>
+<span class="token function">sudo</span> <span class="token function">apt</span> autoremove <span class="token parameter variable">-y</span> <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt</span> autoclean <span class="token parameter variable">-y</span>
+<span class="token function">sudo</span> timedatectl set-timezone Europe/Kiev</code></pre></div>
+<h2>Plain - aka anonymous http</h2>
+<p>Before doing any authorization lets get up and running as is</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token comment"># java is required</span>
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token parameter variable">-y</span> default-jre
+
+<span class="token comment"># download kafka</span>
+<span class="token function">wget</span> https://archive.apache.org/dist/kafka/2.6.1/kafka_2.12-2.6.1.tgz
+<span class="token function">tar</span> <span class="token parameter variable">-xzf</span> kafka_2.12-2.6.1.tgz
+<span class="token builtin class-name">cd</span> kafka_2.12-2.6.1
+
+<span class="token comment"># start kafka and zookeeper</span>
+bin/zookeeper-server-start.sh config/zookeeper.properties
+bin/kafka-server-start.sh config/server.properties
+
+<span class="token comment"># demo</span>
+bin/kafka-topics.sh <span class="token parameter variable">--create</span> <span class="token parameter variable">--topic</span> demo --bootstrap-server localhost:9092
+bin/kafka-topics.sh <span class="token parameter variable">--describe</span> <span class="token parameter variable">--topic</span> demo --bootstrap-server localhost:9092
+bin/kafka-console-producer.sh <span class="token parameter variable">--topic</span> demo --bootstrap-server localhost:9092
+bin/kafka-console-consumer.sh <span class="token parameter variable">--topic</span> demo --from-beginning --bootstrap-server localhost:9092
+bin/kafka-topics.sh --bootstrap-server localhost:9092 <span class="token parameter variable">--list</span>
+
+<span class="token comment"># cleanup</span>
+<span class="token function">rm</span> <span class="token parameter variable">-rf</span> /tmp/kafka-logs /tmp/zookeeper</code></pre></div>
+<p>Because of how Kafka configured by default you wont be able to connect to it from outside</p>
+<p>Try this on a client machine</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">wget</span> https://archive.apache.org/dist/kafka/2.6.1/kafka_2.12-2.6.1.tgz
+<span class="token function">tar</span> <span class="token parameter variable">-xzf</span> kafka_2.12-2.6.1.tgz
+<span class="token builtin class-name">cd</span> kafka_2.12-2.6.1
+bin/kafka-topics.sh --bootstrap-server <span class="token number">178.20</span>.154.77:9092 <span class="token parameter variable">--list</span></code></pre></div>
+<p>You will receive an error complaining:</p>
+<div class="gatsby-highlight" data-language="log"><pre class="language-log"><code class="language-log"><span class="token punctuation">[</span><span class="token date number">2021-11-14</span> <span class="token time number">22:41:35,906</span><span class="token punctuation">]</span> <span class="token level warning important">WARN</span> <span class="token punctuation">[</span>AdminClient clientId<span class="token operator">=</span>adminclient<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> Error connecting to node kafka<span class="token operator">:</span><span class="token number">9092</span> <span class="token operator">(</span>id<span class="token operator">:</span> <span class="token number">0</span> rack<span class="token operator">:</span> <span class="token boolean">null</span><span class="token operator">)</span> <span class="token operator">(</span>org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>kafka<span class="token punctuation">.</span>clients<span class="token punctuation">.</span>NetworkClient<span class="token operator">)</span>
+<span class="token property">java.net.UnknownHostException:</span> kafka</code></pre></div>
+<p>By default Kafka listens on all interfaces port 9092, but whenever client is connected Kafka asks him to send requests to its hostname, in my case it is <code class="language-text">kafka</code> and it is not resolvable from outside and as a result not reachable (think of it like if you was trying to <code class="language-text">ping kafka</code>, what is <code class="language-text">kafka</code> where to find its ip address)</p>
+<p>Easy fix is to add kafka public ip address to your hosts like this:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">'178.20.154.77 kafka'</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> <span class="token parameter variable">-a</span> /etc/hosts</code></pre></div>
+<p>After this everything will work as expected</p>
+<p>Notes:</p>
+<ul>
+<li>do not forget to remove this hosts record we wont need it</li>
+<li>if your virtual machine has public ip address never ever leave kafka as is - technically it is publicly accessible and has no authentication at all</li>
+</ul>
+<p>Proper, but still insecure way will be to set hostname to something we can resolve:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> hostnamectl set-hostname kafka.marchenko.net.ua</code></pre></div>
+<p>For this to work - you need to restart kafka, it reads hostname on start only, also be sure to cleanup everything, kafka and zookeeper will rememeber previous setup, actually cleanup on each and every step</p>
+<p>So now we can try:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">bin/kafka-topics.sh --bootstrap-server kafka.marchenko.net.ua:9092 <span class="token parameter variable">--list</span>
+bin/kafka-topics.sh --bootstrap-server <span class="token number">178.20</span>.154.77:9092 <span class="token parameter variable">--list</span></code></pre></div>
+<p>Both should work</p>
+<p><strong>Links:</strong></p>
+<ul>
+<li><a href="https://kafka.apache.org/quickstart">https://kafka.apache.org/quickstart</a></li>
+<li><a href="https://kafka.apache.org/downloads">https://kafka.apache.org/downloads</a></li>
+</ul>
+<p>we will need stop and cleanup kafka often so here is little <code class="language-text">stop.sh</code> script</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token shebang important">#!/usr/bin/env bash</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">pid</span> <span class="token keyword">in</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">ps</span> a <span class="token operator">|</span> <span class="token function">grep</span> <span class="token function">java</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-v</span> <span class="token function">grep</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $1}'</span><span class="token variable">)</span></span>
+<span class="token keyword">do</span>
+	<span class="token function">kill</span> <span class="token parameter variable">-9</span> <span class="token variable">$pid</span>
+	<span class="token builtin class-name">echo</span> <span class="token variable">$pid</span>
+<span class="token keyword">done</span>
+<span class="token function">rm</span> <span class="token parameter variable">-rf</span> /tmp/kafka-logs /tmp/zookeeper</code></pre></div>
+<h2>Listeners &#x26; Advertised Listeners</h2>
+<p>Before moving forward we need to figure out what exactly is <code class="language-text">listeners</code> and <code class="language-text">advertised.listeners</code>, why the heek we need second if we are not building cluster and just trying to build single node Kafka</p>
+<p>Both <code class="language-text">listeners</code> and <code class="language-text">advertised.listeners</code> is a comma separated lists of <code class="language-text">PROTOCOL:IP:PORT</code></p>
+<p><code class="language-text">listeners</code> are describing interfeces to which Kafka will bind on start (e.g. like <code class="language-text">server.listen('0.0.0.0:9092')</code>)</p>
+<p><code class="language-text">advertised.listeners</code> are instructions to clients to where send requests</p>
+<p>Even if you are running single node Kafka cluster it still speaks to itself via <code class="language-text">advertised.listeners</code> rather than <code class="language-text">listeners</code>, also it always prevers <code class="language-text">PLAINTEXT</code></p>
+<p>Deep inside Kafka consists of series components, most important for us are server and controller</p>
+<p>Can viaualize it like</p>
+<svg width="114pt" height="229pt" viewBox="0.00 0.00 114.00 228.80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="max-width: 100%; height: auto;">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 224.8)">
+<title>G</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-224.8 110,-224.8 110,4 -4,4"></polygon>
+<g id="clust1" class="cluster">
+<title>cluster_0</title>
+<polygon fill="none" stroke="#000000" points="8,-64 8,-212.8 98,-212.8 98,-64 8,-64"></polygon>
+<text text-anchor="middle" x="53" y="-196.2" font-family="Times,serif" font-size="14.00" fill="#000000">Broker</text>
+</g>
+<!-- Server -->
+<g id="node1" class="node">
+<title>Server</title>
+<polygon fill="none" stroke="#000000" points="80,-180 26,-180 26,-144 80,-144 80,-180"></polygon>
+<text text-anchor="middle" x="53" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">Server</text>
+</g>
+<!-- Controller -->
+<g id="node2" class="node">
+<title>Controller</title>
+<polygon fill="none" stroke="#000000" points="89.5456,-108 16.4544,-108 16.4544,-72 89.5456,-72 89.5456,-108"></polygon>
+<text text-anchor="middle" x="53" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">Controller</text>
+</g>
+<!-- Server&#45;&gt;Controller -->
+<g id="edge1" class="edge">
+<title>Server-&gt;Controller</title>
+<path fill="none" stroke="#000000" d="M53,-143.8314C53,-136.131 53,-126.9743 53,-118.4166"></path>
+<polygon fill="#000000" stroke="#000000" points="56.5001,-118.4132 53,-108.4133 49.5001,-118.4133 56.5001,-118.4132"></polygon>
+</g>
+<!-- Zookeeper -->
+<g id="node3" class="node">
+<title>Zookeeper</title>
+<polygon fill="none" stroke="#000000" points="90.8571,-36 15.1429,-36 15.1429,0 90.8571,0 90.8571,-36"></polygon>
+<text text-anchor="middle" x="53" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">Zookeeper</text>
+</g>
+<!-- Controller&#45;&gt;Zookeeper -->
+<g id="edge2" class="edge">
+<title>Controller-&gt;Zookeeper</title>
+<path fill="none" stroke="#0000ff" d="M53,-71.8314C53,-64.131 53,-54.9743 53,-46.4166"></path>
+<polygon fill="#0000ff" stroke="#0000ff" points="56.5001,-46.4132 53,-36.4133 49.5001,-46.4133 56.5001,-46.4132"></polygon>
+</g>
+</g>
+</svg>
+<p>If we have multiple nodes</p>
+<svg width="276pt" height="258pt" viewBox="0.00 0.00 275.93 257.60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="max-width: 100%; height: auto;">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 253.6)">
+<title>G</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-253.6 271.9285,-253.6 271.9285,4 -4,4"></polygon>
+<g id="clust1" class="cluster">
+<title>cluster_0</title>
+<polygon fill="none" stroke="#000000" points="139,-92.8 139,-241.6 235,-241.6 235,-92.8 139,-92.8"></polygon>
+<text text-anchor="middle" x="187" y="-225" font-family="Times,serif" font-size="14.00" fill="#000000">Broker 1</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_1</title>
+<polygon fill="none" stroke="#000000" points="8,-8 8,-84.8 182,-84.8 182,-8 8,-8"></polygon>
+<text text-anchor="middle" x="95" y="-68.2" font-family="Times,serif" font-size="14.00" fill="#000000">Broker 2</text>
+</g>
+<!-- Server1 -->
+<g id="node1" class="node">
+<title>Server1</title>
+<polygon fill="none" stroke="#000000" points="216.5348,-208.8 157.4652,-208.8 157.4652,-172.8 216.5348,-172.8 216.5348,-208.8"></polygon>
+<text text-anchor="middle" x="187" y="-186.6" font-family="Times,serif" font-size="14.00" fill="#000000">Server1</text>
+</g>
+<!-- Controller1 -->
+<g id="node2" class="node">
+<title>Controller1</title>
+<polygon fill="none" stroke="#000000" points="227.0455,-136.8 146.9545,-136.8 146.9545,-100.8 227.0455,-100.8 227.0455,-136.8"></polygon>
+<text text-anchor="middle" x="187" y="-114.6" font-family="Times,serif" font-size="14.00" fill="#000000">Controller1</text>
+</g>
+<!-- Server1&#45;&gt;Controller1 -->
+<g id="edge1" class="edge">
+<title>Server1-&gt;Controller1</title>
+<path fill="none" stroke="#000000" d="M181.0476,-172.6314C180.2972,-164.931 180.0763,-155.7743 180.3849,-147.2166"></path>
+<polygon fill="#000000" stroke="#000000" points="183.8792,-147.4161 181.024,-137.2133 176.8935,-146.9697 183.8792,-147.4161"></polygon>
+</g>
+<!-- Controller1&#45;&gt;Server1 -->
+<g id="edge4" class="edge">
+<title>Controller1-&gt;Server1</title>
+<path fill="none" stroke="#ffa500" d="M192.976,-137.2133C193.7071,-144.8593 193.9203,-153.9084 193.6155,-162.3726"></path>
+<polygon fill="#ffa500" stroke="#ffa500" points="190.1048,-162.4264 192.9524,-172.6314 197.0902,-162.878 190.1048,-162.4264"></polygon>
+</g>
+<!-- Server2 -->
+<g id="node3" class="node">
+<title>Server2</title>
+<polygon fill="none" stroke="#000000" points="173.5348,-52 114.4652,-52 114.4652,-16 173.5348,-16 173.5348,-52"></polygon>
+<text text-anchor="middle" x="144" y="-29.8" font-family="Times,serif" font-size="14.00" fill="#000000">Server2</text>
+</g>
+<!-- Controller1&#45;&gt;Server2 -->
+<g id="edge5" class="edge">
+<title>Controller1-&gt;Server2</title>
+<path fill="none" stroke="#ffa500" d="M183.3481,-100.3997C178.663,-88.8756 171.2501,-73.8246 164.0098,-60.9665"></path>
+<polygon fill="#ffa500" stroke="#ffa500" points="166.8787,-58.939 158.8096,-52.0731 160.8359,-62.4724 166.8787,-58.939"></polygon>
+</g>
+<!-- Zookeeper -->
+<g id="node5" class="node">
+<title>Zookeeper</title>
+<polygon fill="none" stroke="#000000" points="267.8571,-52 192.1429,-52 192.1429,-16 267.8571,-16 267.8571,-52"></polygon>
+<text text-anchor="middle" x="230" y="-29.8" font-family="Times,serif" font-size="14.00" fill="#000000">Zookeeper</text>
+</g>
+<!-- Controller1&#45;&gt;Zookeeper -->
+<g id="edge3" class="edge">
+<title>Controller1-&gt;Zookeeper</title>
+<path fill="none" stroke="#0000ff" d="M196.3304,-100.3997C202.1172,-88.9874 209.6579,-74.1165 216.1358,-61.3416"></path>
+<polygon fill="#0000ff" stroke="#0000ff" points="219.4346,-62.5749 220.8356,-52.0731 213.1914,-59.4091 219.4346,-62.5749"></polygon>
+</g>
+<!-- Server2&#45;&gt;Controller1 -->
+<g id="edge2" class="edge">
+<title>Server2-&gt;Controller1</title>
+<path fill="none" stroke="#000000" d="M147.5193,-52.0731C152.1522,-63.5297 159.5406,-78.5676 166.784,-91.4668"></path>
+<polygon fill="#000000" stroke="#000000" points="163.9313,-93.523 171.9912,-100.3997 169.9788,-89.9977 163.9313,-93.523"></polygon>
+</g>
+<!-- Controller2 -->
+<g id="node4" class="node">
+<title>Controller2</title>
+<polygon fill="#d3d3d3" stroke="#000000" points="96.0455,-52 15.9545,-52 15.9545,-16 96.0455,-16 96.0455,-52"></polygon>
+<text text-anchor="middle" x="56" y="-29.8" font-family="Times,serif" font-size="14.00" fill="#000000">Controller2</text>
+</g>
+</g>
+</svg>
+<p>In cluster only one controller is active master and others are chilling and is here only for failover</p>
+<p>Thats the reason why even in single node Kafka still goes via advertised listeners</p>
+<p>So in default config we have:</p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token comment"># The address the socket server listens on. It will get the value returned from</span>
+<span class="token comment"># java.net.InetAddress.getCanonicalHostName() if not configured.</span>
+<span class="token comment">#   FORMAT:</span>
+<span class="token comment">#     listeners = listener_name://host_name:port</span>
+<span class="token comment">#   EXAMPLE:</span>
+<span class="token comment">#     listeners = PLAINTEXT://your.host.name:9092</span>
+<span class="token comment">#listeners=PLAINTEXT://:9092</span>
+
+<span class="token comment"># Hostname and port the broker will advertise to producers and consumers. If not set,</span>
+<span class="token comment"># it uses the value for "listeners" if configured.  Otherwise, it will use the value</span>
+<span class="token comment"># returned from java.net.InetAddress.getCanonicalHostName().</span>
+<span class="token comment">#advertised.listeners=PLAINTEXT://your.host.name:9092</span></code></pre></div>
+<p>Note that both <code class="language-text">listeners</code> and <code class="language-text">advertised.listeners</code> are configured with <code class="language-text">PLAINTEXT</code> procol which actually means allow anonymous access</p>
+<p>Also <code class="language-text">listeners</code> does not specify ip address which means that we gonna listen all interfaces (aka 0.0.0.0) and our kafka will be open to the whole world IF <code class="language-text">advertised.listeners</code> is not set and hostname can be resolved to reachable ip address</p>
+<p>So for example if we have public ip address <code class="language-text">178.20.154.77</code> and a domain name pointing to it we can configure kafka like</p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">listeners</span><span class="token punctuation">=</span><span class="token value attr-value">PLAINTEXT://0.0.0.0:9092</span>
+<span class="token key attr-name">advertised.listeners</span><span class="token punctuation">=</span><span class="token value attr-value">PLAINTEXT://178.20.154.77:9092</span></code></pre></div>
+<p>Will allow anonymous connections from inside and outside</p>
+<p>And following config</p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">listeners</span><span class="token punctuation">=</span><span class="token value attr-value">PLAINTEXT://127.0.0.1:9092</span>
+<span class="token key attr-name">advertised.listeners</span><span class="token punctuation">=</span><span class="token value attr-value">PLAINTEXT://127.0.0.1:9092</span></code></pre></div>
+<p>Will allow only local connection</p>
+<p>The reason for all this madness will be solved later with authentication, because each option can have comma separated list and brokers tent to use plaintext communications idea here is to have plaintext over private local network for inter broker communications and sasl ssl over public one for clients</p>
+<h2>Kafka Authentication and Encryption</h2>
+<p>Before jumping into both authentication and encryption we need to define some kind of terms</p>
+<h3>Encryption</h3>
+<p>Whenever we are talking aboun encryption in Kafka it is literally the same as talking about HTTP (PLAINTEXT) and HTTPS (SSL)</p>
+<h3>Authentication</h3>
+<p>Under the hood Kafka uses <a href="https://en.wikipedia.org/wiki/Java_Authentication_and_Authorization_Service">JAAS</a> (Java Authentication and Authorization Service)</p>
+<p>JAAS has set of so called mechanisms - ways to verify credentials and prpotocols - thats story about http vs https</p>
+<p>There are numerous of available mechnisms like kerberos and whatsoever, but we are looking for a <code class="language-text">plain</code> one because it is used by confluent cloud and we wish to have exactly the same</p>
+<h3>Kafka Security HTTP Analogy</h3>
+<p>In simple words imagine you have web site</p>
+<p><strong>http, anonymous</strong></p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">listeners</span><span class="token punctuation">=</span><span class="token value attr-value">PLAINTEXT://0.0.0.0:9092</span>
+<span class="token key attr-name">advertised.listeners</span><span class="token punctuation">=</span><span class="token value attr-value">PLAINTEXT://kafka.marchenko.net.ua:9092</span></code></pre></div>
+<p><strong>https, anonymous</strong></p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">listeners</span><span class="token punctuation">=</span><span class="token value attr-value">SSL://0.0.0.0:9092</span>
+<span class="token key attr-name">advertised.listeners</span><span class="token punctuation">=</span><span class="token value attr-value">SSL://kafka.marchenko.net.ua:9092</span></code></pre></div>
+<p><strong>http, basic auth</strong></p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">listeners</span><span class="token punctuation">=</span><span class="token value attr-value">PLAINTEXT://0.0.0.0:9092</span>
+<span class="token key attr-name">advertised.listeners</span><span class="token punctuation">=</span><span class="token value attr-value">PLAINTEXT://kafka.marchenko.net.ua:9092</span>
+
+<span class="token key attr-name">security.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">SASL_PLAINTEXT</span>
+<span class="token key attr-name">sasl.enabled.mechanisms</span><span class="token punctuation">=</span><span class="token value attr-value">PLAIN</span></code></pre></div>
+<p><strong>https, basic auth</strong></p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">listeners</span><span class="token punctuation">=</span><span class="token value attr-value">SSL://0.0.0.0:9092</span>
+<span class="token key attr-name">advertised.listeners</span><span class="token punctuation">=</span><span class="token value attr-value">SSL://kafka.marchenko.net.ua:9092</span>
+
+<span class="token key attr-name">security.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">SASL_SSL</span>
+<span class="token key attr-name">sasl.enabled.mechanisms</span><span class="token punctuation">=</span><span class="token value attr-value">PLAIN</span></code></pre></div>
+<p>Plus specific options, step by step we are going to configure this options till we get desired <code class="language-text">SASL_SSL</code></p>
+<h2>SASL_PLAINTEXT - aka HTTP Basic Auth</h2>
+<p>The easiest possible way to start with authentication is <code class="language-text">SASL_PLAINTEXT</code> for it to work we are using following config on a server:</p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">listeners</span><span class="token punctuation">=</span><span class="token value attr-value">PLAINTEXT://0.0.0.0:9093,SASL_PLAINTEXT://0.0.0.0:9092</span>
+<span class="token key attr-name">advertised.listeners</span><span class="token punctuation">=</span><span class="token value attr-value">PLAINTEXT://127.0.0.1:9093,SASL_PLAINTEXT://kafka.marchenko.net.ua:9092</span>
+
+<span class="token key attr-name">security.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">SASL_PLAINTEXT</span>
+<span class="token key attr-name">sasl.enabled.mechanisms</span><span class="token punctuation">=</span><span class="token value attr-value">PLAIN</span>
+
+<span class="token key attr-name">listener.name.sasl_plaintext.plain.sasl.jaas.config</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.common.security.plain.PlainLoginModule required \</span>
+  <span class="token key attr-name">username</span><span class="token punctuation">=</span><span class="token value attr-value">"admin" \</span>
+  <span class="token key attr-name">password</span><span class="token punctuation">=</span><span class="token value attr-value">"hello" \</span>
+  <span class="token key attr-name">user_admin</span><span class="token punctuation">=</span><span class="token value attr-value">"hello" \</span>
+  <span class="token key attr-name">user_mac</span><span class="token punctuation">=</span><span class="token value attr-value">"123";</span></code></pre></div>
+<p>Notes:</p>
+<ul>
+<li>take a look how we are preventing <code class="language-text">PLAINTEXT</code> access from outside (it will be used by kafka itself)</li>
+<li>take attention to this huge JAAS config, its key has <code class="language-text">sasl_plaintext</code> inside, it is important and should match chosen <code class="language-text">security.protocol</code> (e.g. when you will try <code class="language-text">SASL_SSL</code> do not forget to change it also)</li>
+<li>value of JAAS config has <code class="language-text">username</code> and <code class="language-text">password</code> which are kind of <code class="language-text">root</code> user and will be used by kafka itself if there is no <code class="language-text">PLAINTEXT</code> available, all other stings are describing available users in form <code class="language-text">user_[username]="[password]"</code></li>
+<li>be sure to not have any spaces after <code class="language-text">\</code></li>
+<li>if you put everything into single line be sure to escape equal signs</li>
+<li>take a note on ports, because we can not bind multiple times we are using non default 9093 port for plain text</li>
+</ul>
+<p>And now on a client side we need config file:</p>
+<p><strong>client.properties</strong></p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">sasl.mechanism</span><span class="token punctuation">=</span><span class="token value attr-value">PLAIN</span>
+<span class="token key attr-name">security.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">SASL_PLAINTEXT</span>
+<span class="token key attr-name">sasl.jaas.config</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.common.security.plain.PlainLoginModule required username\="mac" password\="123";</span></code></pre></div>
+<p>And try to connect:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">bin/kafka-topics.sh --bootstrap-server kafka.marchenko.net.ua:9092 --command-config client.properties <span class="token parameter variable">--list</span></code></pre></div>
+<p>Everything should work fine, but if you will try to connect without providing password it should fail with timeout - here you have your at least very very basic auth</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">bin/kafka-topics.sh --bootstrap-server kafka.marchenko.net.ua:9093 <span class="token parameter variable">--list</span></code></pre></div>
+<p>Note that still from a server we can connect without any passwords because of plaintext, we can remove it, so even local connections will go with authentication</p>
+<h3>SASL_PLAINTEXT interbroker</h3>
+<p>To require authentication even between brokers we need following config:</p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">listeners</span><span class="token punctuation">=</span><span class="token value attr-value">SASL_PLAINTEXT://0.0.0.0:9092</span>
+<span class="token key attr-name">advertised.listeners</span><span class="token punctuation">=</span><span class="token value attr-value">SASL_PLAINTEXT://kafka.marchenko.net.ua:9092</span>
+
+<span class="token key attr-name">security.inter.broker.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">SASL_PLAINTEXT</span>
+<span class="token key attr-name">sasl.mechanism.inter.broker.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">PLAIN</span>
+<span class="token key attr-name">sasl.enabled.mechanisms</span><span class="token punctuation">=</span><span class="token value attr-value">PLAIN</span>
+
+<span class="token key attr-name">listener.name.sasl_plaintext.plain.sasl.jaas.config</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.common.security.plain.PlainLoginModule required \</span>
+  <span class="token key attr-name">username</span><span class="token punctuation">=</span><span class="token value attr-value">"admin" \</span>
+  <span class="token key attr-name">password</span><span class="token punctuation">=</span><span class="token value attr-value">"hello" \</span>
+  <span class="token key attr-name">user_admin</span><span class="token punctuation">=</span><span class="token value attr-value">"hello" \</span>
+  <span class="token key attr-name">user_mac</span><span class="token punctuation">=</span><span class="token value attr-value">"123";</span></code></pre></div>
+<p>Same way as for client we are defining mechanism and protocol to use</p>
+<p><strong>IMPORTANT:</strong> make sure that your username ini jaas config appears two times, like admin in our example, otherwise Kafka wont start complaining that it can not connect to itsefl because of invalid username or password</p>
+<p>From now on you gonna need <code class="language-text">client.properties</code> on both server and client</p>
+<p>It is the same as configuring basic auth for a http server (still without https)</p>
+<h2>SSL</h2>
+<p>In this part we are going to leave authentication for a moment and configure SSL (HTTPS)</p>
+<h3>Self Signed Certificates</h3>
+<p>For our "https" to work we gonna need certificates, you can create self signed certificates like so:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">openssl req <span class="token parameter variable">-subj</span> <span class="token string">"/CN=kafka.marchenko.net.ua/"</span> <span class="token parameter variable">-newkey</span> rsa:2048 <span class="token parameter variable">-nodes</span> <span class="token parameter variable">-keyout</span> kafka.marchenko.net.ua.key <span class="token parameter variable">-x509</span> <span class="token parameter variable">-days</span> <span class="token number">365</span> <span class="token parameter variable">-out</span> kafka.marchenko.net.ua.pem</code></pre></div>
+<p>This command will create <code class="language-text">kafka.marchenko.net.ua.key</code> which is our private key and should be kept in secret and <code class="language-text">kafka.marchenko.net.ua.pem</code> which is our certificate and can be sent to anyone</p>
+<p>For Kafka to work with this certificates we need to pack them into so called <code class="language-text">pk12</code> keychain</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">openssl pkcs12 <span class="token parameter variable">-export</span> <span class="token parameter variable">-out</span> server.keystore.p12 <span class="token parameter variable">-in</span> kafka.marchenko.net.ua.pem <span class="token parameter variable">-inkey</span> kafka.marchenko.net.ua.key</code></pre></div>
+<p>This one will generate <code class="language-text">server.keystore.p12</code> which will be used by kafka server and inside contains both private key and certificate created before</p>
+<p>But also we need one more so called truststore <code class="language-text">jks</code> for clients (think of it as adding self signed certificates to trusted root)</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">keytool <span class="token parameter variable">-keystore</span> client.truststore.jks <span class="token parameter variable">-import</span> <span class="token parameter variable">-file</span> kafka.marchenko.net.ua.pem</code></pre></div>
+<h2>Kafka SSL</h2>
+<p>As with basic auth lets start with both plaintext and ssl in our server properties</p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">listeners</span><span class="token punctuation">=</span><span class="token value attr-value">PLAINTEXT://localhost:9093,SSL://:9092</span>
+<span class="token key attr-name">advertised.listeners</span><span class="token punctuation">=</span><span class="token value attr-value">PLAINTEXT://localhost:9093,SSL://kafka.marchenko.net.ua:9092</span>
+
+<span class="token key attr-name">ssl.keystore.location</span><span class="token punctuation">=</span><span class="token value attr-value">/home/mac/kafka_2.12-2.6.1/server.keystore.p12</span>
+<span class="token key attr-name">ssl.keystore.password</span><span class="token punctuation">=</span><span class="token value attr-value">123456</span></code></pre></div>
+<p>Now for the client we must grab trust store</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">scp</span> kafka:kafka_2.12-2.6.1/client.truststore.jks <span class="token builtin class-name">.</span></code></pre></div>
+<p>And following <code class="language-text">ssl.properties</code></p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">security.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">SSL</span>
+
+<span class="token key attr-name">ssl.truststore.location</span><span class="token punctuation">=</span><span class="token value attr-value">/Users/mac/Downloads/kafka_2.12-2.6.1/client.truststore.jks</span>
+<span class="token key attr-name">ssl.truststore.password</span><span class="token punctuation">=</span><span class="token value attr-value">123456</span></code></pre></div>
+<p>Now if we will try to connect from client</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">bin/kafka-topics.sh --bootstrap-server kafka.marchenko.net.ua:9092 --command-config ssl.properties <span class="token parameter variable">--list</span></code></pre></div>
+<h3>Letsencrypt</h3>
+<p>As you can guess it is not actually the same as in confluent cloud, for us to be the same we gonna need valid certificate so it will work without trustore</p>
+<p>First of all install certbot</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> certbot</code></pre></div>
+<p>And start certificate creation wizerd</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> certbot certonly <span class="token parameter variable">--standalone</span></code></pre></div>
+<p>Note that with method expects that port 80 is free and will be used for a challanged, certbot will bring its own web service for this</p>
+<p>After certificates are created you should see congratulations message with following info:</p>
+<ul>
+<li>certificate: /etc/letsencrypt/live/kafka.marchenko.net.ua/fullchain.pem</li>
+<li>private key: /etc/letsencrypt/live/kafka.marchenko.net.ua/privkey.pem</li>
+<li>secrets for upgrade: /etc/letsencrypt</li>
+<li>recommendation to backup this folder</li>
+<li>command to renew certificate: <code class="language-text">certbot renew</code></li>
+</ul>
+<p>Kafka wants p12 keystore so once again lets create it:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token comment"># just cleaning up everything</span>
+<span class="token function">rm</span> kafka.marchenko.net.ua.* client.truststore.jks server.keystore.p12
+<span class="token function">sudo</span> <span class="token function">cp</span> /etc/letsencrypt/live/kafka.marchenko.net.ua/fullchain.pem <span class="token builtin class-name">.</span>
+<span class="token function">sudo</span> <span class="token function">cp</span> /etc/letsencrypt/live/kafka.marchenko.net.ua/privkey.pem <span class="token builtin class-name">.</span>
+<span class="token function">sudo</span> <span class="token function">chown</span> mac:mac fullchain.pem
+<span class="token function">sudo</span> <span class="token function">chown</span> mac:mac privkey.pem
+
+<span class="token comment"># create jks keychain for java/kafka, password 123456</span>
+openssl pkcs12 <span class="token parameter variable">-export</span> <span class="token parameter variable">-out</span> server.keystore.p12 <span class="token parameter variable">-in</span> fullchain.pem <span class="token parameter variable">-inkey</span> privkey.pem</code></pre></div>
+<p>No need to change anything in server properties, file path and password left the same, but now our client properties might be as simple as <code class="language-text">le.properties</code></p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">security.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">SSL</span></code></pre></div>
+<p>And everything should work</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">bin/kafka-topics.sh --bootstrap-server kafka.marchenko.net.ua:9092 --command-config le.properties <span class="token parameter variable">--list</span></code></pre></div>
+<p>One final touch, lets configure our server to work only via ssl</p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">listeners</span><span class="token punctuation">=</span><span class="token value attr-value">SSL://:9092</span>
+<span class="token key attr-name">advertised.listeners</span><span class="token punctuation">=</span><span class="token value attr-value">SSL://kafka.marchenko.net.ua:9092</span>
+<span class="token key attr-name">security.inter.broker.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">SSL</span>
+
+<span class="token key attr-name">ssl.keystore.location</span><span class="token punctuation">=</span><span class="token value attr-value">/home/mac/kafka_2.12-2.6.1/server.keystore.p12</span>
+<span class="token key attr-name">ssl.keystore.password</span><span class="token punctuation">=</span><span class="token value attr-value">123456</span></code></pre></div>
+<p>Note that from now on even local connections shold be made to fqdn, localhost does not work anymore because certificate was signed for our domain</p>
+<h2>Kafka SASL_SSL + LetsEncrypt</h2>
+<p>Now it is time to combine pieces together - our SSL (HTTPS) and SASL_PLAINTEXT (Basic Auth)</p>
+<p>Once again starting with a PLAINTEXT for simplicity</p>
+<p>Our server properties now will look like</p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">listeners</span><span class="token punctuation">=</span><span class="token value attr-value">PLAINTEXT://:9093,SASL_SSL://:9092</span>
+<span class="token key attr-name">advertised.listeners</span><span class="token punctuation">=</span><span class="token value attr-value">PLAINTEXT://127.0.0.1:9093,SASL_SSL://kafka.marchenko.net.ua:9092</span>
+
+<span class="token key attr-name">security.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">SASL_SSL</span>
+<span class="token key attr-name">sasl.enabled.mechanisms</span><span class="token punctuation">=</span><span class="token value attr-value">PLAIN</span>
+
+<span class="token key attr-name">ssl.keystore.location</span><span class="token punctuation">=</span><span class="token value attr-value">/home/mac/kafka_2.12-2.6.1/server.keystore.p12</span>
+<span class="token key attr-name">ssl.keystore.password</span><span class="token punctuation">=</span><span class="token value attr-value">123456</span>
+
+<span class="token comment"># do not forget to replace sasl_plaintext to sasl_ssl</span>
+<span class="token key attr-name">listener.name.sasl_ssl.plain.sasl.jaas.config</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.common.security.plain.PlainLoginModule required \</span>
+  <span class="token key attr-name">username</span><span class="token punctuation">=</span><span class="token value attr-value">"admin" \</span>
+  <span class="token key attr-name">password</span><span class="token punctuation">=</span><span class="token value attr-value">"hello" \</span>
+  <span class="token key attr-name">user_admin</span><span class="token punctuation">=</span><span class="token value attr-value">"hello" \</span>
+  <span class="token key attr-name">user_mac</span><span class="token punctuation">=</span><span class="token value attr-value">"123";</span></code></pre></div>
+<p>And once again our final touch to allow only secure and basic auth so need to configure server</p>
+<h1>So here is our final setup</h1>
+<p><strong>server.properties</strong></p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">listeners</span><span class="token punctuation">=</span><span class="token value attr-value">SASL_SSL://:9092</span>
+<span class="token key attr-name">advertised.listeners</span><span class="token punctuation">=</span><span class="token value attr-value">SASL_SSL://kafka.marchenko.net.ua:9092</span>
+
+<span class="token key attr-name">security.inter.broker.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">SASL_SSL</span>
+<span class="token key attr-name">sasl.mechanism.inter.broker.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">PLAIN</span>
+
+<span class="token key attr-name">security.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">SASL_SSL</span>
+<span class="token key attr-name">sasl.enabled.mechanisms</span><span class="token punctuation">=</span><span class="token value attr-value">PLAIN</span>
+
+<span class="token key attr-name">ssl.keystore.location</span><span class="token punctuation">=</span><span class="token value attr-value">/home/mac/kafka_2.12-2.6.1/server.keystore.p12</span>
+<span class="token key attr-name">ssl.keystore.password</span><span class="token punctuation">=</span><span class="token value attr-value">123456</span>
+
+<span class="token key attr-name">listener.name.sasl_ssl.plain.sasl.jaas.config</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.common.security.plain.PlainLoginModule required \</span>
+  <span class="token key attr-name">username</span><span class="token punctuation">=</span><span class="token value attr-value">"admin" \</span>
+  <span class="token key attr-name">password</span><span class="token punctuation">=</span><span class="token value attr-value">"hello" \</span>
+  <span class="token key attr-name">user_admin</span><span class="token punctuation">=</span><span class="token value attr-value">"hello" \</span>
+  <span class="token key attr-name">user_mac</span><span class="token punctuation">=</span><span class="token value attr-value">"123";</span></code></pre></div>
+<p><strong>client.properties</strong></p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">ssl.endpoint.identification.algorithm</span><span class="token punctuation">=</span><span class="token value attr-value">https</span>
+<span class="token key attr-name">sasl.mechanism</span><span class="token punctuation">=</span><span class="token value attr-value">PLAIN</span>
+<span class="token key attr-name">security.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">SASL_SSL</span>
+<span class="token key attr-name">sasl.jaas.config</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.common.security.plain.PlainLoginModule required serviceName\="Kafka" username\="mac" password\="123";</span></code></pre></div>
+<h2>TODO</h2>
+<ul>
+<li>Schema Registry</li>
+<li>Rest Proxy</li>
+<li>Connect</li>
+</ul></div></main><footer><a href="#top">top</a><a href="/">home</a><a href="/search">search</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/kafka-sasl-ssl";window.___webpackCompilationHash="ef8fb55bb983484b16a7";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-b4bb882d10635d85fa25.js"],"app":["/app-98475b819971087d4b7e.js"],"component---src-pages-404-js":["/component---src-pages-404-js-2652c435d8decd31b8ef.js"],"component---src-pages-index-js":["/component---src-pages-index-js-59ea4a114c2918516395.js"],"component---src-pages-search-js":["/component---src-pages-search-js-078619e3aef857102623.js"],"component---src-templates-note-js":["/component---src-templates-note-js-b005c02681f20ea28edd.js"]};/*]]>*/</script><script src="/polyfill-b4bb882d10635d85fa25.js" nomodule=""></script><script src="/app-98475b819971087d4b7e.js" async=""></script><script src="/framework-2ce620c91826a79f925c.js" async=""></script><script src="/webpack-runtime-72217849817cd80b0f9a.js" async=""></script></body></html>

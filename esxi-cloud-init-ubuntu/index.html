@@ -1,0 +1,259 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 4.24.5"/><style data-href="/styles.f7b0302c8427f1a04772.css" data-identity="gatsby-global-css">@media (prefers-color-scheme:light){code[class*=language-],pre[class*=language-]{background:#fafafa;color:#383a42;direction:ltr;font-family:Fira Code,Fira Mono,Menlo,Consolas,DejaVu Sans Mono,monospace;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{background:#e5e5e6;color:inherit}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection{background:#e5e5e6;color:inherit}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.2em .3em;white-space:normal}.token.cdata,.token.comment,.token.prolog{color:#a0a1a7}.token.doctype,.token.entity,.token.punctuation{color:#383a42}.token.atrule,.token.attr-name,.token.boolean,.token.class-name,.token.constant,.token.number{color:#b76b01}.token.keyword{color:#a626a4}.token.deleted,.token.important,.token.property,.token.symbol,.token.tag{color:#e45649}.token.attr-value,.token.attr-value>.token.punctuation,.token.builtin,.token.char,.token.inserted,.token.regex,.token.selector,.token.string{color:#50a14f}.token.function,.token.operator,.token.variable{color:#4078f2}.token.url{color:#0184bc}.token.attr-value>.token.punctuation.attr-equals,.token.special-attr>.token.attr-value>.token.value.css{color:#383a42}.language-css .token.selector{color:#e45649}.language-css .token.property{color:#383a42}.language-css .token.function,.language-css .token.url>.token.function{color:#0184bc}.language-css .token.url>.token.string.url{color:#50a14f}.language-css .token.atrule .token.rule,.language-css .token.important,.language-javascript .token.operator{color:#a626a4}.language-javascript .token.template-string>.token.interpolation>.token.interpolation-punctuation.punctuation{color:#ca1243}.language-json .token.operator{color:#383a42}.language-json .token.null.keyword{color:#b76b01}.language-markdown .token.url,.language-markdown .token.url-reference.url>.token.string,.language-markdown .token.url>.token.operator{color:#383a42}.language-markdown .token.url>.token.content{color:#4078f2}.language-markdown .token.url-reference.url,.language-markdown .token.url>.token.url{color:#0184bc}.language-markdown .token.blockquote.punctuation,.language-markdown .token.hr.punctuation{color:#a0a1a7;font-style:italic}.language-markdown .token.code-snippet{color:#50a14f}.language-markdown .token.bold .token.content{color:#b76b01}.language-markdown .token.italic .token.content{color:#a626a4}.language-markdown .token.list.punctuation,.language-markdown .token.strike .token.content,.language-markdown .token.strike .token.punctuation,.language-markdown .token.title.important>.token.punctuation{color:#e45649}.token.bold{font-weight:700}.token.comment,.token.italic{font-style:italic}.token.entity{cursor:help}.token.namespace{opacity:.8}.token.token.cr:before,.token.token.lf:before,.token.token.space:before,.token.token.tab:not(:empty):before{color:rgba(56,58,66,.2)}div.code-toolbar>.toolbar.toolbar>.toolbar-item{margin-right:.4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span{background:#e5e5e6;border-radius:.3em;color:#696c77;padding:.1em .4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:hover{background:#c6c7c7;color:#383a42}.line-highlight.line-highlight{background:rgba(56,58,66,.05)}.line-highlight.line-highlight:before,.line-highlight.line-highlight[data-end]:after{background:#e5e5e6;border-radius:.3em;box-shadow:0 2px 0 0 rgba(0,0,0,.2);color:#383a42;padding:.1em .6em}pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:rgba(56,58,66,.05)}.command-line .command-line-prompt,.line-numbers.line-numbers .line-numbers-rows{border-right-color:rgba(56,58,66,.2)}.command-line .command-line-prompt>span:before,.line-numbers .line-numbers-rows>span:before{color:#9d9d9f}.rainbow-braces .token.token.punctuation.brace-level-1,.rainbow-braces .token.token.punctuation.brace-level-5,.rainbow-braces .token.token.punctuation.brace-level-9{color:#e45649}.rainbow-braces .token.token.punctuation.brace-level-10,.rainbow-braces .token.token.punctuation.brace-level-2,.rainbow-braces .token.token.punctuation.brace-level-6{color:#50a14f}.rainbow-braces .token.token.punctuation.brace-level-11,.rainbow-braces .token.token.punctuation.brace-level-3,.rainbow-braces .token.token.punctuation.brace-level-7{color:#4078f2}.rainbow-braces .token.token.punctuation.brace-level-12,.rainbow-braces .token.token.punctuation.brace-level-4,.rainbow-braces .token.token.punctuation.brace-level-8{color:#a626a4}pre.diff-highlight>code .token.token.deleted:not(.prefix),pre>code.diff-highlight .token.token.deleted:not(.prefix){background-color:rgba(255,82,102,.15)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::-moz-selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix),pre>code.diff-highlight .token.token.inserted:not(.prefix){background-color:rgba(25,255,91,.15)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::-moz-selection{background-color:rgba(56,224,98,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::selection{background-color:rgba(56,224,98,.25)}.prism-previewer-gradient.prism-previewer-gradient div,.prism-previewer.prism-previewer:before{border-color:hsl(0,0,95%)}.prism-previewer-color.prism-previewer-color:before,.prism-previewer-easing.prism-previewer-easing:before,.prism-previewer-gradient.prism-previewer-gradient div{border-radius:.3em}.prism-previewer.prism-previewer:after{border-top-color:hsl(0,0,95%)}.prism-previewer-flipped.prism-previewer-flipped.after{border-bottom-color:hsl(0,0,95%)}.prism-previewer-angle.prism-previewer-angle:before,.prism-previewer-easing.prism-previewer-easing,.prism-previewer-time.prism-previewer-time:before{background:#fff}.prism-previewer-angle.prism-previewer-angle circle,.prism-previewer-time.prism-previewer-time circle{stroke:#383a42;stroke-opacity:1}.prism-previewer-easing.prism-previewer-easing circle,.prism-previewer-easing.prism-previewer-easing line,.prism-previewer-easing.prism-previewer-easing path{stroke:#383a42}.prism-previewer-easing.prism-previewer-easing circle{fill:transparent}}@media (prefers-color-scheme:dark){code[class*=language-],pre[class*=language-]{background:#282c34;color:#abb2bf;direction:ltr;font-family:Fira Code,Fira Mono,Menlo,Consolas,DejaVu Sans Mono,monospace;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;text-align:left;text-shadow:0 1px rgba(0,0,0,.3);white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{background:#3e4451;color:inherit;text-shadow:none}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection{background:#3e4451;color:inherit;text-shadow:none}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.2em .3em;white-space:normal}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}.token.cdata,.token.comment,.token.prolog{color:#5c6370}.token.doctype,.token.entity,.token.punctuation{color:#abb2bf}.token.atrule,.token.attr-name,.token.boolean,.token.class-name,.token.constant,.token.number{color:#d19a66}.token.keyword{color:#c678dd}.token.deleted,.token.important,.token.property,.token.symbol,.token.tag{color:#e06c75}.token.attr-value,.token.attr-value>.token.punctuation,.token.builtin,.token.char,.token.inserted,.token.regex,.token.selector,.token.string{color:#98c379}.token.function,.token.operator,.token.variable{color:#61afef}.token.url{color:#56b6c2}.token.attr-value>.token.punctuation.attr-equals,.token.special-attr>.token.attr-value>.token.value.css{color:#abb2bf}.language-css .token.selector{color:#e06c75}.language-css .token.property{color:#abb2bf}.language-css .token.function,.language-css .token.url>.token.function{color:#56b6c2}.language-css .token.url>.token.string.url{color:#98c379}.language-css .token.atrule .token.rule,.language-css .token.important,.language-javascript .token.operator{color:#c678dd}.language-javascript .token.template-string>.token.interpolation>.token.interpolation-punctuation.punctuation{color:#be5046}.language-json .token.operator{color:#abb2bf}.language-json .token.null.keyword{color:#d19a66}.language-markdown .token.url,.language-markdown .token.url-reference.url>.token.string,.language-markdown .token.url>.token.operator{color:#abb2bf}.language-markdown .token.url>.token.content{color:#61afef}.language-markdown .token.url-reference.url,.language-markdown .token.url>.token.url{color:#56b6c2}.language-markdown .token.blockquote.punctuation,.language-markdown .token.hr.punctuation{color:#5c6370;font-style:italic}.language-markdown .token.code-snippet{color:#98c379}.language-markdown .token.bold .token.content{color:#d19a66}.language-markdown .token.italic .token.content{color:#c678dd}.language-markdown .token.list.punctuation,.language-markdown .token.strike .token.content,.language-markdown .token.strike .token.punctuation,.language-markdown .token.title.important>.token.punctuation{color:#e06c75}.token.bold{font-weight:700}.token.comment,.token.italic{font-style:italic}.token.entity{cursor:help}.token.namespace{opacity:.8}.token.token.cr:before,.token.token.lf:before,.token.token.space:before,.token.token.tab:not(:empty):before{color:rgba(171,178,191,.15);text-shadow:none}div.code-toolbar>.toolbar.toolbar>.toolbar-item{margin-right:.4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span{background:#3a3f4b;border-radius:.3em;color:#828997;padding:.1em .4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:hover{background:#3e4451;color:#abb2bf}.line-highlight.line-highlight{background:rgba(153,187,255,.04)}.line-highlight.line-highlight:before,.line-highlight.line-highlight[data-end]:after{background:#3a3f4b;border-radius:.3em;box-shadow:0 2px 0 0 rgba(0,0,0,.2);color:#abb2bf;padding:.1em .6em}pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:rgba(153,187,255,.04)}.command-line .command-line-prompt,.line-numbers.line-numbers .line-numbers-rows{border-right-color:rgba(171,178,191,.15)}.command-line .command-line-prompt>span:before,.line-numbers .line-numbers-rows>span:before{color:#636d83}.rainbow-braces .token.token.punctuation.brace-level-1,.rainbow-braces .token.token.punctuation.brace-level-5,.rainbow-braces .token.token.punctuation.brace-level-9{color:#e06c75}.rainbow-braces .token.token.punctuation.brace-level-10,.rainbow-braces .token.token.punctuation.brace-level-2,.rainbow-braces .token.token.punctuation.brace-level-6{color:#98c379}.rainbow-braces .token.token.punctuation.brace-level-11,.rainbow-braces .token.token.punctuation.brace-level-3,.rainbow-braces .token.token.punctuation.brace-level-7{color:#61afef}.rainbow-braces .token.token.punctuation.brace-level-12,.rainbow-braces .token.token.punctuation.brace-level-4,.rainbow-braces .token.token.punctuation.brace-level-8{color:#c678dd}pre.diff-highlight>code .token.token.deleted:not(.prefix),pre>code.diff-highlight .token.token.deleted:not(.prefix){background-color:rgba(255,82,102,.15)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::-moz-selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix),pre>code.diff-highlight .token.token.inserted:not(.prefix){background-color:rgba(25,255,91,.15)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::-moz-selection{background-color:rgba(56,224,98,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::selection{background-color:rgba(56,224,98,.25)}.prism-previewer-gradient.prism-previewer-gradient div,.prism-previewer.prism-previewer:before{border-color:#262931}.prism-previewer-color.prism-previewer-color:before,.prism-previewer-easing.prism-previewer-easing:before,.prism-previewer-gradient.prism-previewer-gradient div{border-radius:.3em}.prism-previewer.prism-previewer:after{border-top-color:#262931}.prism-previewer-flipped.prism-previewer-flipped.after{border-bottom-color:#262931}.prism-previewer-angle.prism-previewer-angle:before,.prism-previewer-easing.prism-previewer-easing,.prism-previewer-time.prism-previewer-time:before{background:#31363f}.prism-previewer-angle.prism-previewer-angle circle,.prism-previewer-time.prism-previewer-time circle{stroke:#abb2bf;stroke-opacity:1}.prism-previewer-easing.prism-previewer-easing circle,.prism-previewer-easing.prism-previewer-easing line,.prism-previewer-easing.prism-previewer-easing path{stroke:#abb2bf}.prism-previewer-easing.prism-previewer-easing circle{fill:transparent}}:root{--foreground:#24292f;--background:#fff}a{color:#0969da}a.visited,a:visited{color:#57606a}.green{color:#1a7f37}.red{color:#cf222e}@media (prefers-color-scheme:dark){:root{--foreground:#adbac7;--background:#22272e}a{color:#539bf5}a.visited,a:visited{color:#768390}.green{color:#57ab5a}.red{color:#e5534b}}a{text-decoration:none}a:hover{text-decoration:underline}html{font-family:Ubuntu,sans-serif}body{background-color:var(--background);color:var(--foreground);margin:0;padding:0}#top{box-sizing:border-box;display:grid;grid-template-rows:1fr 2em;margin:0;min-height:100vh;padding:1em 2em}.graph polygon{fill:transparent}.graph g ellipse[stroke="#000"],.graph g ellipse[stroke="#000000"],.graph g ellipse[stroke=black],.graph g path[stroke="#000"],.graph g path[stroke="#000000"],.graph g path[stroke=black],.graph g polygon[stroke="#000"],.graph g polygon[stroke="#000000"],.graph g polygon[stroke=black]{stroke:var(--foreground)}.graph g text[fill="#000"],.graph g text[fill="#000000"],.graph g text[fill=black]{fill:var(--foreground)}code,pre{font-family:JetBrains Mono,monospace}pre[class*=language-]{word-wrap:break-word;border-radius:0;box-sizing:border-box;margin:1em -2em;max-width:100vw;padding:1em 2em}footer a{line-height:2em;margin-right:.5em}.delta{line-height:1;margin-left:1em;white-space:nowrap}.columns{display:grid;grid-template-columns:repeat(2,1fr)}@media only screen and (max-width:1024px){.columns{grid-template-columns:repeat(1,1fr)}}.pie{text-align:center}.pie figure{display:inline-block}.pie figcaption{font-size:80%;margin-top:.25em}</style><title data-gatsby-head="true">ESXi Cloud Init Bootstrap Ubuntu</title><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="icon" href="/favicon-32x32.png?v=6389d5f13c96000946d60b6bb0a8b5a8" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div id="top"><main><div><h1>ESXi Cloud Init Bootstrap Ubuntu</h1>
+<p>How to automatically provision Ubuntu 20.04 in ESXi with help of Cloud Init</p>
+<div class="gatsby-resp-iframe-wrapper" style="padding-bottom: 56.25%; position: relative; height: 0; overflow: hidden; " > <iframe src="https://www.youtube.com/embed/lhWQBz5oj8o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style=" position: absolute; top: 0; left: 0; width: 100%; height: 100%; "></iframe> </div>
+<h2>Ubuntu Cloud Image VMDK</h2>
+<p>Ubuntu cloud images are preconfigured distributions to be run as virtual machines and to be bootstraped with cloud init</p>
+<p>Before anything else navigate to:</p>
+<p><a href="https://cloud-images.ubuntu.com/">https://cloud-images.ubuntu.com/</a></p>
+<p>And traverse to desider ubuntu version to download its vmdk file, in my case it is here:</p>
+<p><a href="https://cloud-images.ubuntu.com/focal/current/">https://cloud-images.ubuntu.com/focal/current/</a></p>
+<p><a href="https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.vmdk">vmdk</a> which is only 500mb of size</p>
+<p>After downloading vmdk upload it to esxi server somewhere in storage</p>
+<h2>ESXi Virtual Machine</h2>
+<p>The next step is to create virtual machine as usual, execpt that we do not need any disks to be created, so remove them and after creating vm attach existing disk and choose uploaded vmdk file</p>
+<p>Notes:</p>
+<ul>
+<li>in my case for experiments I am copying to to vm folder, so original vmdk can be reused many times</li>
+<li>note that vmdk size is 500mb, but disk will be 10gb, thats because by default cloud init has all required modules enabled so guest operating system will expand itself to take all disk space</li>
+<li>disk size can be changed after saving vm and reopening its settings</li>
+</ul>
+<p>If you will try to boot VM it will load but you wont be able to login, because there is no users and\or passwords created, we need to configure at least this to move further</p>
+<h2>ESXi Cloud Init GuestInfo UserData</h2>
+<p>Now the tricky part, go to virtual machine advanced settings and add two properties:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="language-text">guestinfo.userdata.encoding</code></td>
+<td><code class="language-text">base64</code></td>
+</tr>
+<tr>
+<td><code class="language-text">guestinfo.userdata</code></td>
+<td>base64 userdata.yml</td>
+</tr>
+</tbody>
+</table>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 859px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/34719addefb346c14fd298b5217c758f/39a20/esxi_advanced_userdata_cloudinit.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 32.03125%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABYElEQVQY0z2P2U7CUBRF+R3bwpNCIeqfGMUIFKc4AQW/0JiYGKcgKAiiDAXa0oEWdZleDQ8re+97bk7Ojq1IMpn1TVKq+kdKRVXTrCWTrK4lSaczIkcq/H9OqWmhYpbJsL6xyYokEUskEmxt77B/cMjh8QnHJ2ccnZ5zUapQKlW4KJUpl3Uqem2Jrteo1i7RqzX06qX4l83uIisKsXg8zl5B4+rmmubLK416g2b9mdd2h+77B/3BSDAYGkv/2R/y1umK+ciYcHt7R0HTkGWFmKIo5ApFHhvP2I6LZdrYpsV4ajE1LVxvLt5Ne4bj+YKZ4zE0xownpsiN5guapiFJcnShQk4r8vBUZzSe0usP+RgYTMwZjh/geAFT28GYWHjzENcPcP0QL1gIHyx+lgtlWf6rnNeK3D8+0e31aLU7olJ0Rfj1Tfj1gzcPRFVr5mI7ntAI03bw5yGtVpt8PkfU9hcSzlx+baeEbQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="ESXi Advanced Options - set userdata for cloud-init"
+        title="ESXi Advanced Options - set userdata for cloud-init"
+        src="/static/34719addefb346c14fd298b5217c758f/39a20/esxi_advanced_userdata_cloudinit.png"
+        srcset="/static/34719addefb346c14fd298b5217c758f/6f3f2/esxi_advanced_userdata_cloudinit.png 256w,
+/static/34719addefb346c14fd298b5217c758f/01e7c/esxi_advanced_userdata_cloudinit.png 512w,
+/static/34719addefb346c14fd298b5217c758f/39a20/esxi_advanced_userdata_cloudinit.png 859w"
+        sizes="(max-width: 859px) 100vw, 859px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>Note:</p>
+<ul>
+<li>Value is a base64 encoded cloud init file contents</li>
+<li><code class="language-text">#cloudinit</code> <strong>must</strong> be very first line for everything to work</li>
+<li>cloud init applied once, so if you did something wrong just start from scratch</li>
+<li>there is 500kb limit for this fields if your cloud init is bigger there is a way to pass base64 gzip content just google for it</li>
+</ul>
+<p>Here is a starting point:</p>
+<p><div class="gatsby-highlight" data-language="yml"><pre class="language-yml"><code class="language-yml"><span class="token comment">#cloud-config</span>
+<span class="token key atrule">users</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> mac
+    <span class="token comment"># passwd: $6$rounds=4096$4Jh2rwf9h2jM9TbQ$.CTSPJPIoIOUwKVo4A2Er19Deu945m/oD.JXVEGNH9g/piK.motblke/kpyPQ0npNKF.jZjzi61ZSBPGNbJyK/</span>
+    <span class="token key atrule">plain_text_passwd</span><span class="token punctuation">:</span> secret
+    <span class="token key atrule">groups</span><span class="token punctuation">:</span> sudo
+    <span class="token key atrule">sudo</span><span class="token punctuation">:</span> ALL=(ALL) NOPASSWD<span class="token punctuation">:</span>ALL
+    <span class="token key atrule">shell</span><span class="token punctuation">:</span> /bin/bash
+    <span class="token key atrule">lock_passwd</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token comment"># guestinfo.userdata.encoding: base64</span>
+<span class="token comment"># guestinfo.userdata: I2Nsb3VkLWNvbmZpZwp1c2VyczoKICAtIG5hbWU6IG1hYwogICAgIyBwYXNzd2Q6ICQ2JHJvdW5kcz00MDk2JDRKaDJyd2Y5aDJqTTlUYlEkLkNUU1BKUElvSU9Vd0tWbzRBMkVyMTlEZXU5NDVtL29ELkpYVkVHTkg5Zy9waUsubW90YmxrZS9rcHlQUTBucE5LRi5qWmp6aTYxWlNCUEdOYkp5Sy8KICAgIHBsYWluX3RleHRfcGFzc3dkOiBzZWNyZXQKICAgIGdyb3Vwczogc3VkbwogICAgc3VkbzogQUxMPShBTEwpIE5PUEFTU1dEOkFMTAogICAgc2hlbGw6IC9iaW4vYmFzaAogICAgbG9ja19wYXNzd2Q6IGZhbHNl</span></code></pre></div></p>
+<p>And to grab its base64: <code class="language-text">cat minimal.yml | base64</code></p>
+<p>Now we should be able to at least login to system</p>
+<p>Few useful files:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token comment"># general overview</span>
+<span class="token function">cat</span> /var/run/cloud-init/status.json
+
+<span class="token comment"># in my case was empty</span>
+<span class="token function">cat</span> /var/run/cloud-init/result.json
+
+<span class="token comment"># stdout</span>
+<span class="token function">cat</span> /var/log/cloud-init-output.log
+
+<span class="token comment"># debug</span>
+<span class="token function">cat</span> /var/log/cloud-init.log</code></pre></div>
+<h1>Second run of cloud init from withing virtual machine</h1>
+<p><a href="https://cloudinit.readthedocs.io/en/latest/topics/debugging.html#running-single-cloud-config-modules">https://cloudinit.readthedocs.io/en/latest/topics/debugging.html#running-single-cloud-config-modules</a></p>
+<p>While we are inside VM it is a good time to configure cloud init further, there is <code class="language-text">/etc/cloud/cloud.cfg</code> file, where we can append something and after that run something like:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">cloud-init clean <span class="token parameter variable">--logs</span>
+
+cloud-init single <span class="token parameter variable">--name</span> cc_ssh <span class="token parameter variable">--frequency</span> always
+cloud-init single <span class="token parameter variable">--name</span> cc_package_update_upgrade_install
+cloud-init single <span class="token parameter variable">--name</span> cc_ntp
+cloud-init single <span class="token parameter variable">--name</span> cc_timezone</code></pre></div>
+<p>Here you can see that first of all you need to cleanup cloud init state, after that you can rerun concrete module.</p>
+<p>This is how we can prepare our cloud init</p>
+<p>In my case for demo purposes I ended up with:</p>
+<p><div class="gatsby-highlight" data-language="yml"><pre class="language-yml"><code class="language-yml"><span class="token comment">#cloud-config</span>
+
+<span class="token comment"># note that "#cloud-config" must be very first line for everything to work</span>
+
+<span class="token comment"># guestinfo.userdata: cat cloudinit.yml | base64 | pbcopy</span>
+<span class="token comment"># guestinfo.userdata.encoding: base64</span>
+
+<span class="token comment"># networking</span>
+<span class="token comment"># this one should be added to:</span>
+<span class="token comment"># guestinfo.metadata:</span>
+<span class="token comment"># guestinfo.metadata.encoding</span>
+<span class="token comment"># ----------</span>
+<span class="token comment"># network:</span>
+<span class="token comment">#   version: 2</span>
+<span class="token comment">#   ethernets:</span>
+<span class="token comment">#     nics:</span>
+<span class="token comment">#       match:</span>
+<span class="token comment">#         name: ens*</span>
+<span class="token comment">#       # DHCP:</span>
+<span class="token comment">#       # ----------</span>
+<span class="token comment">#       # dhcp4: yes</span>
+<span class="token comment">#       # ----------</span>
+<span class="token comment">#       # STATIC:</span>
+<span class="token comment">#       # ----------</span>
+<span class="token comment">#       addresses:</span>
+<span class="token comment">#         - 192.168.106.22/24</span>
+<span class="token comment">#       gateway4: 192.168.106.1</span>
+<span class="token comment">#       nameservers:</span>
+<span class="token comment">#         # search: [lab, home]</span>
+<span class="token comment">#         addresses: [8.8.8.8, 1.1.1.1]</span>
+
+<span class="token comment"># hostname</span>
+<span class="token key atrule">preserve_hostname</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">hostname</span><span class="token punctuation">:</span> ub3.marchenko.net.ua
+<span class="token key atrule">manage_etc_hosts</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+<span class="token comment"># enable ntp</span>
+<span class="token key atrule">ntp</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+<span class="token comment"># timezone</span>
+<span class="token key atrule">timezone</span><span class="token punctuation">:</span> Europe/Kiev
+
+<span class="token comment"># disable root login via ssh</span>
+<span class="token key atrule">disable_root</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+<span class="token comment"># optional, additional groups</span>
+<span class="token key atrule">groups</span><span class="token punctuation">:</span>
+  <span class="token comment"># because we gonna install docker</span>
+  <span class="token punctuation">-</span> docker
+
+<span class="token key atrule">users</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> mac
+    <span class="token comment"># allows password authnetication when set to false, true by default</span>
+    <span class="token key atrule">lock_passwd</span><span class="token punctuation">:</span> <span class="token boolean important">False</span>
+    <span class="token comment"># password hash, created by `mkpasswd --method=SHA-512 --rounds=4096`, read the docs before complaining security against plain</span>
+    <span class="token comment"># passwd: $6$rounds=4096$4Jh2rwf9h2jM9TbQ$.CTSPJPIoIOUwKVo4A2Er19Deu945m/oD.JXVEGNH9g/piK.motblke/kpyPQ0npNKF.jZjzi61ZSBPGNbJyK/</span>
+    <span class="token comment"># alternative approach with plain text password</span>
+    <span class="token key atrule">plain_text_passwd</span><span class="token punctuation">:</span> secret
+    <span class="token key atrule">ssh_authorized_keys</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ssh<span class="token punctuation">-</span>rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAyfdNzj4mbl0PiOA7VQxeO8cR/U9u2SdRFZaZlRatdJZ1sYYa/Q0jMDOsr7oklftX49yGpuW1sBtWLevaKtcKz3kHkInFvlebFeFB9uPmMfo8gd+QLuLc8LeOQgn4wlSPEuizDxuMd1Sz1frZ7r7QUH8HdhnCO/FXtIg+c8DHsAVQSxapfalVCv4z4EiC3le8SxlZjxf/KaVmIdYOpbLf0GBP/gP5ObFYxvtTx7Rp1lM1ZSXYVGFBpXC15WYMHKq+LfQ8D0WpwiOIXw0723k+CSUb3tHS5a8Hz0GUtjMOizclIeiv503DqZAA8RxtWLfLUFdCeUgEyvIu430s4xBqSw== rsa<span class="token punctuation">-</span>key<span class="token punctuation">-</span><span class="token number">20140409</span>
+    <span class="token key atrule">groups</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> adm
+      <span class="token punctuation">-</span> cdrom
+      <span class="token punctuation">-</span> sudo
+      <span class="token punctuation">-</span> dip
+      <span class="token punctuation">-</span> plugdev
+      <span class="token punctuation">-</span> lxd
+      <span class="token comment"># add user to docker group</span>
+      <span class="token punctuation">-</span> docker
+    <span class="token key atrule">sudo</span><span class="token punctuation">:</span>
+      <span class="token comment"># allow sudo</span>
+      <span class="token punctuation">-</span> ALL=(ALL) NOPASSWD<span class="token punctuation">:</span>ALL
+    <span class="token key atrule">shell</span><span class="token punctuation">:</span> /bin/bash
+
+<span class="token comment"># optional, additional apt sources, docker</span>
+<span class="token key atrule">apt</span><span class="token punctuation">:</span>
+  <span class="token key atrule">sources</span><span class="token punctuation">:</span>
+    <span class="token key atrule">docker.list</span><span class="token punctuation">:</span>
+      <span class="token key atrule">source</span><span class="token punctuation">:</span> deb <span class="token punctuation">[</span>arch=amd64<span class="token punctuation">]</span> https<span class="token punctuation">:</span>//download.docker.com/linux/ubuntu $RELEASE stable
+      <span class="token key atrule">keyid</span><span class="token punctuation">:</span> 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
+
+<span class="token comment"># apt update &amp;&amp; apt upgrade, reboot if needed</span>
+<span class="token key atrule">package_update</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">package_upgrade</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">package_reboot_if_required</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+<span class="token comment"># install packages</span>
+<span class="token key atrule">packages</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> docker<span class="token punctuation">-</span>ce
+  <span class="token punctuation">-</span> docker<span class="token punctuation">-</span>ce<span class="token punctuation">-</span>cli
+  <span class="token punctuation">-</span> containerd.io
+<span class="token comment"># guestinfo.userdata.encoding: base64</span>
+<span class="token comment"># guestinfo.userdata: I2Nsb3VkLWNvbmZpZwoKIyBub3RlIHRoYXQgIiNjbG91ZC1jb25maWciIG11c3QgYmUgdmVyeSBmaXJzdCBsaW5lIGZvciBldmVyeXRoaW5nIHRvIHdvcmsKCiMgZ3Vlc3RpbmZvLnVzZXJkYXRhOiBjYXQgY2xvdWRpbml0LnltbCB8IGJhc2U2NCB8IHBiY29weQojIGd1ZXN0aW5mby51c2VyZGF0YS5lbmNvZGluZzogYmFzZTY0CgojIG5ldHdvcmtpbmcKIyB0aGlzIG9uZSBzaG91bGQgYmUgYWRkZWQgdG86CiMgZ3Vlc3RpbmZvLm1ldGFkYXRhOgojIGd1ZXN0aW5mby5tZXRhZGF0YS5lbmNvZGluZwojIC0tLS0tLS0tLS0KIyBuZXR3b3JrOgojICAgdmVyc2lvbjogMgojICAgZXRoZXJuZXRzOgojICAgICBuaWNzOgojICAgICAgIG1hdGNoOgojICAgICAgICAgbmFtZTogZW5zKgojICAgICAgICMgREhDUDoKIyAgICAgICAjIC0tLS0tLS0tLS0KIyAgICAgICAjIGRoY3A0OiB5ZXMKIyAgICAgICAjIC0tLS0tLS0tLS0KIyAgICAgICAjIFNUQVRJQzoKIyAgICAgICAjIC0tLS0tLS0tLS0KIyAgICAgICBhZGRyZXNzZXM6CiMgICAgICAgICAtIDE5Mi4xNjguMTA2LjIyLzI0CiMgICAgICAgZ2F0ZXdheTQ6IDE5Mi4xNjguMTA2LjEKIyAgICAgICBuYW1lc2VydmVyczoKIyAgICAgICAgICMgc2VhcmNoOiBbbGFiLCBob21lXQojICAgICAgICAgYWRkcmVzc2VzOiBbOC44LjguOCwgMS4xLjEuMV0KCiMgaG9zdG5hbWUKcHJlc2VydmVfaG9zdG5hbWU6IGZhbHNlCmhvc3RuYW1lOiB1YjMubWFyY2hlbmtvLm5ldC51YQptYW5hZ2VfZXRjX2hvc3RzOiB0cnVlCgojIGVuYWJsZSBudHAKbnRwOgogIGVuYWJsZWQ6IHRydWUKCiMgdGltZXpvbmUKdGltZXpvbmU6IEV1cm9wZS9LaWV2CgojIGRpc2FibGUgcm9vdCBsb2dpbiB2aWEgc3NoCmRpc2FibGVfcm9vdDogdHJ1ZQoKIyBvcHRpb25hbCwgYWRkaXRpb25hbCBncm91cHMKZ3JvdXBzOgogICMgYmVjYXVzZSB3ZSBnb25uYSBpbnN0YWxsIGRvY2tlcgogIC0gZG9ja2VyCgp1c2VyczoKICAtIG5hbWU6IG1hYwogICAgIyBhbGxvd3MgcGFzc3dvcmQgYXV0aG5ldGljYXRpb24gd2hlbiBzZXQgdG8gZmFsc2UsIHRydWUgYnkgZGVmYXVsdAogICAgbG9ja19wYXNzd2Q6IEZhbHNlCiAgICAjIHBhc3N3b3JkIGhhc2gsIGNyZWF0ZWQgYnkgYG1rcGFzc3dkIC0tbWV0aG9kPVNIQS01MTIgLS1yb3VuZHM9NDA5NmAsIHJlYWQgdGhlIGRvY3MgYmVmb3JlIGNvbXBsYWluaW5nIHNlY3VyaXR5IGFnYWluc3QgcGxhaW4KICAgICMgcGFzc3dkOiAkNiRyb3VuZHM9NDA5NiQ0SmgycndmOWgyak05VGJRJC5DVFNQSlBJb0lPVXdLVm80QTJFcjE5RGV1OTQ1bS9vRC5KWFZFR05IOWcvcGlLLm1vdGJsa2Uva3B5UFEwbnBOS0Yualpqemk2MVpTQlBHTmJKeUsvCiAgICAjIGFsdGVybmF0aXZlIGFwcHJvYWNoIHdpdGggcGxhaW4gdGV4dCBwYXNzd29yZAogICAgcGxhaW5fdGV4dF9wYXNzd2Q6IHNlY3JldAogICAgc3NoX2F1dGhvcml6ZWRfa2V5czoKICAgICAgLSBzc2gtcnNhIEFBQUFCM056YUMxeWMyRUFBQUFCSlFBQUFRRUF5ZmROemo0bWJsMFBpT0E3VlF4ZU84Y1IvVTl1MlNkUkZaYVpsUmF0ZEpaMXNZWWEvUTBqTURPc3I3b2tsZnRYNDl5R3B1VzFzQnRXTGV2YUt0Y0t6M2tIa0luRnZsZWJGZUZCOXVQbU1mbzhnZCtRTHVMYzhMZU9RZ240d2xTUEV1aXpEeHVNZDFTejFmclo3cjdRVUg4SGRobkNPL0ZYdElnK2M4REhzQVZRU3hhcGZhbFZDdjR6NEVpQzNsZThTeGxaanhmL0thVm1JZFlPcGJMZjBHQlAvZ1A1T2JGWXh2dFR4N1JwMWxNMVpTWFlWR0ZCcFhDMTVXWU1IS3ErTGZROEQwV3B3aU9JWHcwNzIzaytDU1ViM3RIUzVhOEh6MEdVdGpNT2l6Y2xJZWl2NTAzRHFaQUE4Unh0V0xmTFVGZENlVWdFeXZJdTQzMHM0eEJxU3c9PSByc2Eta2V5LTIwMTQwNDA5CiAgICBncm91cHM6CiAgICAgIC0gYWRtCiAgICAgIC0gY2Ryb20KICAgICAgLSBzdWRvCiAgICAgIC0gZGlwCiAgICAgIC0gcGx1Z2RldgogICAgICAtIGx4ZAogICAgICAjIGFkZCB1c2VyIHRvIGRvY2tlciBncm91cAogICAgICAtIGRvY2tlcgogICAgc3VkbzoKICAgICAgIyBhbGxvdyBzdWRvCiAgICAgIC0gQUxMPShBTEwpIE5PUEFTU1dEOkFMTAogICAgc2hlbGw6IC9iaW4vYmFzaAoKIyBvcHRpb25hbCwgYWRkaXRpb25hbCBhcHQgc291cmNlcywgZG9ja2VyCmFwdDoKICBzb3VyY2VzOgogICAgZG9ja2VyLmxpc3Q6CiAgICAgIHNvdXJjZTogZGViIFthcmNoPWFtZDY0XSBodHRwczovL2Rvd25sb2FkLmRvY2tlci5jb20vbGludXgvdWJ1bnR1ICRSRUxFQVNFIHN0YWJsZQogICAgICBrZXlpZDogOURDODU4MjI5RkM3REQzODg1NEFFMkQ4OEQ4MTgwM0MwRUJGQ0Q4OAoKIyBhcHQgdXBkYXRlICYmIGFwdCB1cGdyYWRlLCByZWJvb3QgaWYgbmVlZGVkCnBhY2thZ2VfdXBkYXRlOiB0cnVlCnBhY2thZ2VfdXBncmFkZTogdHJ1ZQpwYWNrYWdlX3JlYm9vdF9pZl9yZXF1aXJlZDogdHJ1ZQoKIyBpbnN0YWxsIHBhY2thZ2VzCnBhY2thZ2VzOgogIC0gZG9ja2VyLWNlCiAgLSBkb2NrZXItY2UtY2xpCiAgLSBjb250YWluZXJkLmlvCg==</span></code></pre></div></p>
+<h2>ESXi Cloud Init Networking</h2>
+<p>To configure networking we need to do almost same steps but now with <code class="language-text">metadata</code>, so add to VM following:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="language-text">guestinfo.metadata.encoding</code></td>
+<td><code class="language-text">base64</code></td>
+</tr>
+<tr>
+<td><code class="language-text">guestinfo.metadata</code></td>
+<td>base64 metadata.yml</td>
+</tr>
+</tbody>
+</table>
+<p><div class="gatsby-highlight" data-language="yml"><pre class="language-yml"><code class="language-yml"><span class="token key atrule">network</span><span class="token punctuation">:</span>
+  <span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token number">2</span>
+  <span class="token key atrule">ethernets</span><span class="token punctuation">:</span>
+    <span class="token key atrule">nics</span><span class="token punctuation">:</span>
+      <span class="token key atrule">match</span><span class="token punctuation">:</span>
+        <span class="token key atrule">name</span><span class="token punctuation">:</span> ens*
+      <span class="token key atrule">dhcp4</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+      <span class="token key atrule">dhcp6</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+      <span class="token key atrule">addresses</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> 192.168.106.22/24
+      <span class="token key atrule">gateway4</span><span class="token punctuation">:</span> 192.168.106.1
+      <span class="token key atrule">nameservers</span><span class="token punctuation">:</span>
+        <span class="token key atrule">addresses</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>8.8.8.8<span class="token punctuation">,</span> 1.1.1.1<span class="token punctuation">]</span>
+<span class="token comment"># first ens160, second ens192</span>
+
+<span class="token comment"># guestinfo.metadata: cat metadata.yml | base64 | pbcopy</span>
+<span class="token comment"># guestinfo.metadata.encoding: base64</span>
+
+<span class="token comment"># guestinfo.metadata.encoding: base64</span>
+<span class="token comment"># guestinfo.metadata: bmV0d29yazoKICB2ZXJzaW9uOiAyCiAgZXRoZXJuZXRzOgogICAgbmljczoKICAgICAgbWF0Y2g6CiAgICAgICAgbmFtZTogZW5zKgogICAgICBkaGNwNDogZmFsc2UKICAgICAgZGhjcDY6IGZhbHNlCiAgICAgIGFkZHJlc3NlczoKICAgICAgICAtIDE5Mi4xNjguMTA2LjIyLzI0CiAgICAgIGdhdGV3YXk0OiAxOTIuMTY4LjEwNi4xCiAgICAgIG5hbWVzZXJ2ZXJzOgogICAgICAgIGFkZHJlc3NlczogWzguOC44LjgsIDEuMS4xLjFdCg==</span></code></pre></div></p>
+<p>Notes:</p>
+<ul>
+<li>there is no need for any special first line in this file</li>
+<li>there is same 500kb limit as for user data</li>
+<li>seems like first network card is always <code class="language-text">ens160</code> and second <code class="language-text">ens192</code></li>
+</ul>
+<p>With all this in please we should have bootstraped docker host</p>
+<p>More info about available modules can be found here:</p>
+<p><a href="https://cloudinit.readthedocs.io/en/latest/topics/modules.html">https://cloudinit.readthedocs.io/en/latest/topics/modules.html</a></p>
+<p>And here is <a href="/esxi-automate-vm-creation">how to automate esxi vm</a></p></div></main><footer><a href="#top">top</a><a href="/">home</a><a href="/search">search</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/esxi-cloud-init-ubuntu";window.___webpackCompilationHash="ef8fb55bb983484b16a7";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-b4bb882d10635d85fa25.js"],"app":["/app-98475b819971087d4b7e.js"],"component---src-pages-404-js":["/component---src-pages-404-js-2652c435d8decd31b8ef.js"],"component---src-pages-index-js":["/component---src-pages-index-js-59ea4a114c2918516395.js"],"component---src-pages-search-js":["/component---src-pages-search-js-078619e3aef857102623.js"],"component---src-templates-note-js":["/component---src-templates-note-js-b005c02681f20ea28edd.js"]};/*]]>*/</script><script src="/polyfill-b4bb882d10635d85fa25.js" nomodule=""></script><script src="/app-98475b819971087d4b7e.js" async=""></script><script src="/framework-2ce620c91826a79f925c.js" async=""></script><script src="/webpack-runtime-72217849817cd80b0f9a.js" async=""></script></body></html>

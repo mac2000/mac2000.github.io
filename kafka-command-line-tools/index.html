@@ -1,0 +1,811 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 4.24.5"/><style data-href="/styles.f7b0302c8427f1a04772.css" data-identity="gatsby-global-css">@media (prefers-color-scheme:light){code[class*=language-],pre[class*=language-]{background:#fafafa;color:#383a42;direction:ltr;font-family:Fira Code,Fira Mono,Menlo,Consolas,DejaVu Sans Mono,monospace;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{background:#e5e5e6;color:inherit}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection{background:#e5e5e6;color:inherit}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.2em .3em;white-space:normal}.token.cdata,.token.comment,.token.prolog{color:#a0a1a7}.token.doctype,.token.entity,.token.punctuation{color:#383a42}.token.atrule,.token.attr-name,.token.boolean,.token.class-name,.token.constant,.token.number{color:#b76b01}.token.keyword{color:#a626a4}.token.deleted,.token.important,.token.property,.token.symbol,.token.tag{color:#e45649}.token.attr-value,.token.attr-value>.token.punctuation,.token.builtin,.token.char,.token.inserted,.token.regex,.token.selector,.token.string{color:#50a14f}.token.function,.token.operator,.token.variable{color:#4078f2}.token.url{color:#0184bc}.token.attr-value>.token.punctuation.attr-equals,.token.special-attr>.token.attr-value>.token.value.css{color:#383a42}.language-css .token.selector{color:#e45649}.language-css .token.property{color:#383a42}.language-css .token.function,.language-css .token.url>.token.function{color:#0184bc}.language-css .token.url>.token.string.url{color:#50a14f}.language-css .token.atrule .token.rule,.language-css .token.important,.language-javascript .token.operator{color:#a626a4}.language-javascript .token.template-string>.token.interpolation>.token.interpolation-punctuation.punctuation{color:#ca1243}.language-json .token.operator{color:#383a42}.language-json .token.null.keyword{color:#b76b01}.language-markdown .token.url,.language-markdown .token.url-reference.url>.token.string,.language-markdown .token.url>.token.operator{color:#383a42}.language-markdown .token.url>.token.content{color:#4078f2}.language-markdown .token.url-reference.url,.language-markdown .token.url>.token.url{color:#0184bc}.language-markdown .token.blockquote.punctuation,.language-markdown .token.hr.punctuation{color:#a0a1a7;font-style:italic}.language-markdown .token.code-snippet{color:#50a14f}.language-markdown .token.bold .token.content{color:#b76b01}.language-markdown .token.italic .token.content{color:#a626a4}.language-markdown .token.list.punctuation,.language-markdown .token.strike .token.content,.language-markdown .token.strike .token.punctuation,.language-markdown .token.title.important>.token.punctuation{color:#e45649}.token.bold{font-weight:700}.token.comment,.token.italic{font-style:italic}.token.entity{cursor:help}.token.namespace{opacity:.8}.token.token.cr:before,.token.token.lf:before,.token.token.space:before,.token.token.tab:not(:empty):before{color:rgba(56,58,66,.2)}div.code-toolbar>.toolbar.toolbar>.toolbar-item{margin-right:.4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span{background:#e5e5e6;border-radius:.3em;color:#696c77;padding:.1em .4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:hover{background:#c6c7c7;color:#383a42}.line-highlight.line-highlight{background:rgba(56,58,66,.05)}.line-highlight.line-highlight:before,.line-highlight.line-highlight[data-end]:after{background:#e5e5e6;border-radius:.3em;box-shadow:0 2px 0 0 rgba(0,0,0,.2);color:#383a42;padding:.1em .6em}pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:rgba(56,58,66,.05)}.command-line .command-line-prompt,.line-numbers.line-numbers .line-numbers-rows{border-right-color:rgba(56,58,66,.2)}.command-line .command-line-prompt>span:before,.line-numbers .line-numbers-rows>span:before{color:#9d9d9f}.rainbow-braces .token.token.punctuation.brace-level-1,.rainbow-braces .token.token.punctuation.brace-level-5,.rainbow-braces .token.token.punctuation.brace-level-9{color:#e45649}.rainbow-braces .token.token.punctuation.brace-level-10,.rainbow-braces .token.token.punctuation.brace-level-2,.rainbow-braces .token.token.punctuation.brace-level-6{color:#50a14f}.rainbow-braces .token.token.punctuation.brace-level-11,.rainbow-braces .token.token.punctuation.brace-level-3,.rainbow-braces .token.token.punctuation.brace-level-7{color:#4078f2}.rainbow-braces .token.token.punctuation.brace-level-12,.rainbow-braces .token.token.punctuation.brace-level-4,.rainbow-braces .token.token.punctuation.brace-level-8{color:#a626a4}pre.diff-highlight>code .token.token.deleted:not(.prefix),pre>code.diff-highlight .token.token.deleted:not(.prefix){background-color:rgba(255,82,102,.15)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::-moz-selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix),pre>code.diff-highlight .token.token.inserted:not(.prefix){background-color:rgba(25,255,91,.15)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::-moz-selection{background-color:rgba(56,224,98,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::selection{background-color:rgba(56,224,98,.25)}.prism-previewer-gradient.prism-previewer-gradient div,.prism-previewer.prism-previewer:before{border-color:hsl(0,0,95%)}.prism-previewer-color.prism-previewer-color:before,.prism-previewer-easing.prism-previewer-easing:before,.prism-previewer-gradient.prism-previewer-gradient div{border-radius:.3em}.prism-previewer.prism-previewer:after{border-top-color:hsl(0,0,95%)}.prism-previewer-flipped.prism-previewer-flipped.after{border-bottom-color:hsl(0,0,95%)}.prism-previewer-angle.prism-previewer-angle:before,.prism-previewer-easing.prism-previewer-easing,.prism-previewer-time.prism-previewer-time:before{background:#fff}.prism-previewer-angle.prism-previewer-angle circle,.prism-previewer-time.prism-previewer-time circle{stroke:#383a42;stroke-opacity:1}.prism-previewer-easing.prism-previewer-easing circle,.prism-previewer-easing.prism-previewer-easing line,.prism-previewer-easing.prism-previewer-easing path{stroke:#383a42}.prism-previewer-easing.prism-previewer-easing circle{fill:transparent}}@media (prefers-color-scheme:dark){code[class*=language-],pre[class*=language-]{background:#282c34;color:#abb2bf;direction:ltr;font-family:Fira Code,Fira Mono,Menlo,Consolas,DejaVu Sans Mono,monospace;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;text-align:left;text-shadow:0 1px rgba(0,0,0,.3);white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{background:#3e4451;color:inherit;text-shadow:none}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection{background:#3e4451;color:inherit;text-shadow:none}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.2em .3em;white-space:normal}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}.token.cdata,.token.comment,.token.prolog{color:#5c6370}.token.doctype,.token.entity,.token.punctuation{color:#abb2bf}.token.atrule,.token.attr-name,.token.boolean,.token.class-name,.token.constant,.token.number{color:#d19a66}.token.keyword{color:#c678dd}.token.deleted,.token.important,.token.property,.token.symbol,.token.tag{color:#e06c75}.token.attr-value,.token.attr-value>.token.punctuation,.token.builtin,.token.char,.token.inserted,.token.regex,.token.selector,.token.string{color:#98c379}.token.function,.token.operator,.token.variable{color:#61afef}.token.url{color:#56b6c2}.token.attr-value>.token.punctuation.attr-equals,.token.special-attr>.token.attr-value>.token.value.css{color:#abb2bf}.language-css .token.selector{color:#e06c75}.language-css .token.property{color:#abb2bf}.language-css .token.function,.language-css .token.url>.token.function{color:#56b6c2}.language-css .token.url>.token.string.url{color:#98c379}.language-css .token.atrule .token.rule,.language-css .token.important,.language-javascript .token.operator{color:#c678dd}.language-javascript .token.template-string>.token.interpolation>.token.interpolation-punctuation.punctuation{color:#be5046}.language-json .token.operator{color:#abb2bf}.language-json .token.null.keyword{color:#d19a66}.language-markdown .token.url,.language-markdown .token.url-reference.url>.token.string,.language-markdown .token.url>.token.operator{color:#abb2bf}.language-markdown .token.url>.token.content{color:#61afef}.language-markdown .token.url-reference.url,.language-markdown .token.url>.token.url{color:#56b6c2}.language-markdown .token.blockquote.punctuation,.language-markdown .token.hr.punctuation{color:#5c6370;font-style:italic}.language-markdown .token.code-snippet{color:#98c379}.language-markdown .token.bold .token.content{color:#d19a66}.language-markdown .token.italic .token.content{color:#c678dd}.language-markdown .token.list.punctuation,.language-markdown .token.strike .token.content,.language-markdown .token.strike .token.punctuation,.language-markdown .token.title.important>.token.punctuation{color:#e06c75}.token.bold{font-weight:700}.token.comment,.token.italic{font-style:italic}.token.entity{cursor:help}.token.namespace{opacity:.8}.token.token.cr:before,.token.token.lf:before,.token.token.space:before,.token.token.tab:not(:empty):before{color:rgba(171,178,191,.15);text-shadow:none}div.code-toolbar>.toolbar.toolbar>.toolbar-item{margin-right:.4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span{background:#3a3f4b;border-radius:.3em;color:#828997;padding:.1em .4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:hover{background:#3e4451;color:#abb2bf}.line-highlight.line-highlight{background:rgba(153,187,255,.04)}.line-highlight.line-highlight:before,.line-highlight.line-highlight[data-end]:after{background:#3a3f4b;border-radius:.3em;box-shadow:0 2px 0 0 rgba(0,0,0,.2);color:#abb2bf;padding:.1em .6em}pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:rgba(153,187,255,.04)}.command-line .command-line-prompt,.line-numbers.line-numbers .line-numbers-rows{border-right-color:rgba(171,178,191,.15)}.command-line .command-line-prompt>span:before,.line-numbers .line-numbers-rows>span:before{color:#636d83}.rainbow-braces .token.token.punctuation.brace-level-1,.rainbow-braces .token.token.punctuation.brace-level-5,.rainbow-braces .token.token.punctuation.brace-level-9{color:#e06c75}.rainbow-braces .token.token.punctuation.brace-level-10,.rainbow-braces .token.token.punctuation.brace-level-2,.rainbow-braces .token.token.punctuation.brace-level-6{color:#98c379}.rainbow-braces .token.token.punctuation.brace-level-11,.rainbow-braces .token.token.punctuation.brace-level-3,.rainbow-braces .token.token.punctuation.brace-level-7{color:#61afef}.rainbow-braces .token.token.punctuation.brace-level-12,.rainbow-braces .token.token.punctuation.brace-level-4,.rainbow-braces .token.token.punctuation.brace-level-8{color:#c678dd}pre.diff-highlight>code .token.token.deleted:not(.prefix),pre>code.diff-highlight .token.token.deleted:not(.prefix){background-color:rgba(255,82,102,.15)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::-moz-selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::selection{background-color:rgba(251,86,105,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix),pre>code.diff-highlight .token.token.inserted:not(.prefix){background-color:rgba(25,255,91,.15)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::-moz-selection{background-color:rgba(56,224,98,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::selection{background-color:rgba(56,224,98,.25)}.prism-previewer-gradient.prism-previewer-gradient div,.prism-previewer.prism-previewer:before{border-color:#262931}.prism-previewer-color.prism-previewer-color:before,.prism-previewer-easing.prism-previewer-easing:before,.prism-previewer-gradient.prism-previewer-gradient div{border-radius:.3em}.prism-previewer.prism-previewer:after{border-top-color:#262931}.prism-previewer-flipped.prism-previewer-flipped.after{border-bottom-color:#262931}.prism-previewer-angle.prism-previewer-angle:before,.prism-previewer-easing.prism-previewer-easing,.prism-previewer-time.prism-previewer-time:before{background:#31363f}.prism-previewer-angle.prism-previewer-angle circle,.prism-previewer-time.prism-previewer-time circle{stroke:#abb2bf;stroke-opacity:1}.prism-previewer-easing.prism-previewer-easing circle,.prism-previewer-easing.prism-previewer-easing line,.prism-previewer-easing.prism-previewer-easing path{stroke:#abb2bf}.prism-previewer-easing.prism-previewer-easing circle{fill:transparent}}:root{--foreground:#24292f;--background:#fff}a{color:#0969da}a.visited,a:visited{color:#57606a}.green{color:#1a7f37}.red{color:#cf222e}@media (prefers-color-scheme:dark){:root{--foreground:#adbac7;--background:#22272e}a{color:#539bf5}a.visited,a:visited{color:#768390}.green{color:#57ab5a}.red{color:#e5534b}}a{text-decoration:none}a:hover{text-decoration:underline}html{font-family:Ubuntu,sans-serif}body{background-color:var(--background);color:var(--foreground);margin:0;padding:0}#top{box-sizing:border-box;display:grid;grid-template-rows:1fr 2em;margin:0;min-height:100vh;padding:1em 2em}.graph polygon{fill:transparent}.graph g ellipse[stroke="#000"],.graph g ellipse[stroke="#000000"],.graph g ellipse[stroke=black],.graph g path[stroke="#000"],.graph g path[stroke="#000000"],.graph g path[stroke=black],.graph g polygon[stroke="#000"],.graph g polygon[stroke="#000000"],.graph g polygon[stroke=black]{stroke:var(--foreground)}.graph g text[fill="#000"],.graph g text[fill="#000000"],.graph g text[fill=black]{fill:var(--foreground)}code,pre{font-family:JetBrains Mono,monospace}pre[class*=language-]{word-wrap:break-word;border-radius:0;box-sizing:border-box;margin:1em -2em;max-width:100vw;padding:1em 2em}footer a{line-height:2em;margin-right:.5em}.delta{line-height:1;margin-left:1em;white-space:nowrap}.columns{display:grid;grid-template-columns:repeat(2,1fr)}@media only screen and (max-width:1024px){.columns{grid-template-columns:repeat(1,1fr)}}.pie{text-align:center}.pie figure{display:inline-block}.pie figcaption{font-size:80%;margin-top:.25em}</style><title data-gatsby-head="true">kafka command line tools</title><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="icon" href="/favicon-32x32.png?v=6389d5f13c96000946d60b6bb0a8b5a8" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=6389d5f13c96000946d60b6bb0a8b5a8"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div id="top"><main><div><h1>kafka command line tools</h1>
+<p>First of all we gonna need kafka itself, e.g.:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> <span class="token parameter variable">--name</span><span class="token operator">=</span>kafka <span class="token parameter variable">-e</span> <span class="token assign-left variable">SAMPLEDATA</span><span class="token operator">=</span><span class="token number">0</span> <span class="token parameter variable">-e</span> <span class="token assign-left variable">RUNNING_SAMPLEDATA</span><span class="token operator">=</span><span class="token number">0</span> <span class="token parameter variable">-e</span> <span class="token assign-left variable">RUNTESTS</span><span class="token operator">=</span><span class="token number">0</span> <span class="token parameter variable">-e</span> <span class="token assign-left variable">FORWARDLOGS</span><span class="token operator">=</span><span class="token number">0</span> <span class="token parameter variable">-e</span> <span class="token assign-left variable">ADV_HOST</span><span class="token operator">=</span><span class="token number">127.0</span>.0.1 <span class="token parameter variable">-p</span> <span class="token number">2181</span>:2181 <span class="token parameter variable">-p</span> <span class="token number">3030</span>:3030 <span class="token parameter variable">-p</span> <span class="token number">8081</span>-8083:8081-8083 <span class="token parameter variable">-p</span> <span class="token number">9092</span>:9092 <span class="token parameter variable">-p</span> <span class="token number">9581</span>-9585:9581-9585 lensesio/fast-data-dev:2.3.0</code></pre></div>
+<p>or</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">wget</span> https://raw.githubusercontent.com/confluentinc/examples/5.3.1-post/cp-all-in-one/docker-compose.yml
+<span class="token function">docker-compose</span> up <span class="token parameter variable">-d</span></code></pre></div>
+<p>or</p>
+<p>run everything by hands on your own like described in <a href="https://kafka.apache.org/quickstart">quickstart</a></p>
+<p>or</p>
+<p>get <a href="https://confluent.cloud">confluent.cloud</a></p>
+<h1>Kafka topics</h1>
+<p>The most basic and needed</p>
+<h2>List topics</h2>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">kafka-topics --bootstrap-server localhost:9092 <span class="token parameter variable">--list</span></code></pre></div>
+<h2>Create topic</h2>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">kafka-topics --bootstrap-server localhost:9092 <span class="token parameter variable">--create</span> <span class="token parameter variable">--topic</span> demo2 <span class="token parameter variable">--partitions</span> <span class="token number">3</span> --replication-factor <span class="token number">1</span></code></pre></div>
+<h2>Delete topic</h2>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">kafka-topics --bootstrap-server localhost:9092 <span class="token parameter variable">--delete</span> <span class="token parameter variable">--topic</span> demo2</code></pre></div>
+<h1>Console producer and consumers</h1>
+<p>Here are examples for following use cases:</p>
+<ul>
+<li>simple without key</li>
+<li>simple with string key</li>
+<li>simple with integer key</li>
+<li>json without key</li>
+<li>json with string key</li>
+<li>json with ingeteger key</li>
+<li>json with json key</li>
+<li>avro without key</li>
+<li>avro with string key</li>
+<li>avro with integer key</li>
+<li>avro with avro key</li>
+</ul>
+<p>By deafult in all following examples messages delimited by new line, e.g. start producer, type something, press enter.</p>
+<p>All follogin examples are run agains</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> <span class="token parameter variable">--name</span><span class="token operator">=</span>kafka <span class="token parameter variable">-e</span> <span class="token assign-left variable">SAMPLEDATA</span><span class="token operator">=</span><span class="token number">0</span> <span class="token parameter variable">-e</span> <span class="token assign-left variable">RUNNING_SAMPLEDATA</span><span class="token operator">=</span><span class="token number">0</span> <span class="token parameter variable">-e</span> <span class="token assign-left variable">RUNTESTS</span><span class="token operator">=</span><span class="token number">0</span> <span class="token parameter variable">-e</span> <span class="token assign-left variable">FORWARDLOGS</span><span class="token operator">=</span><span class="token number">0</span> <span class="token parameter variable">-e</span> <span class="token assign-left variable">ADV_HOST</span><span class="token operator">=</span><span class="token number">127.0</span>.0.1 <span class="token parameter variable">-p</span> <span class="token number">2181</span>:2181 <span class="token parameter variable">-p</span> <span class="token number">3030</span>:3030 <span class="token parameter variable">-p</span> <span class="token number">8081</span>-8083:8081-8083 <span class="token parameter variable">-p</span> <span class="token number">9092</span>:9092 <span class="token parameter variable">-p</span> <span class="token number">9581</span>-9585:9581-9585 lensesio/fast-data-dev:2.3.0</code></pre></div>
+<h2>String producer and consumer</h2>
+<h3>Simple without key</h3>
+<p>Create topic</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-topics --bootstrap-server localhost:9092 <span class="token parameter variable">--create</span> <span class="token parameter variable">--topic</span> SimpleWithoutKey <span class="token parameter variable">--partitions</span> <span class="token number">3</span> --replication-factor <span class="token number">1</span></code></pre></div>
+<p>Start <code class="language-text">kafka-console-producer</code> which will produce simple string messages</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-console-producer --broker-list localhost:9092 <span class="token parameter variable">--topic</span> SimpleWithoutKey</code></pre></div>
+<p>Start <code class="language-text">kafka-console-consumer</code> to consume simple string messages</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-console-consumer --bootstrap-server localhost:9092 <span class="token parameter variable">--topic</span> SimpleWithoutKey --from-beginning</code></pre></div>
+<p>Produce simple messages like:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">hello
+world</code></pre></div>
+<p>And you should see them in consumer as:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">hello
+world</code></pre></div>
+<h3>Simple with string key</h3>
+<p>Create topic</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-topics --bootstrap-server localhost:9092 <span class="token parameter variable">--create</span> <span class="token parameter variable">--topic</span> SimpleWithStringKey <span class="token parameter variable">--partitions</span> <span class="token number">3</span> --replication-factor <span class="token number">1</span></code></pre></div>
+<p>Start <code class="language-text">kafka-console-producer</code> which will produce simple string messages with string key</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-console-producer --broker-list localhost:9092 <span class="token parameter variable">--topic</span> SimpleWithStringKey <span class="token parameter variable">--property</span> <span class="token assign-left variable">parse.key</span><span class="token operator">=</span>true <span class="token parameter variable">--property</span> <span class="token assign-left variable">key.separator</span><span class="token operator">=</span>:</code></pre></div>
+<p>Notes:</p>
+<ul>
+<li><code class="language-text">--property parse.key=true</code> our consumer will expect us to enter key along side value</li>
+<li><code class="language-text">--property key.separator=:</code> is optional and by default is space</li>
+</ul>
+<p>Start <code class="language-text">kafka-console-consumer</code> to consume simple string messages with string key</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-console-consumer --bootstrap-server localhost:9092 <span class="token parameter variable">--topic</span> SimpleWithStringKey <span class="token parameter variable">--property</span> <span class="token assign-left variable">print.key</span><span class="token operator">=</span>true --from-beginning</code></pre></div>
+<p>Notes:</p>
+<ul>
+<li><code class="language-text">--property print.key=true</code> will print key</li>
+</ul>
+<p>Produce messages like:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token number">1</span>:one
+<span class="token number">2</span>:two</code></pre></div>
+<p>And you should see them in consumer as:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token number">1</span>	one
+<span class="token number">2</span>	two</code></pre></div>
+<p>If you try to produce message without key you should see an error:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">>message without key
+org.apache.kafka.common.KafkaException: No key found on line 3: acme
+	at kafka.tools.ConsoleProducer$LineMessageReader.readMessage(ConsoleProducer.scala:265)
+	at kafka.tools.ConsoleProducer$.main(ConsoleProducer.scala:54)
+	at kafka.tools.ConsoleProducer.main(ConsoleProducer.scala)</code></pre></div>
+<h3>Simple with integer key</h3>
+<p>Not fully possible at moment, here are some links:</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/44803392/">kafka-console-producer ignores value serializer?</a></li>
+<li><a href="https://issues.apache.org/jira/browse/KAFKA-2526">Console Producer / Consumer's serde config is not working</a></li>
+<li><a href="https://github.com/apache/kafka/blob/trunk/core/src/main/scala/kafka/tools/ConsoleProducer.scala#L96">Console Producer sources</a></li>
+</ul>
+<p>The problem is that no matter what you will pass to console producer it still will send bytes</p>
+<p>Create topic</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-topics --bootstrap-server localhost:9092 <span class="token parameter variable">--create</span> <span class="token parameter variable">--topic</span> SimpleWithIntKey <span class="token parameter variable">--partitions</span> <span class="token number">3</span> --replication-factor <span class="token number">1</span></code></pre></div>
+<p>Start <code class="language-text">kafka-console-producer</code> which will produce simple string messages with integer key</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-console-producer --broker-list localhost:9092 <span class="token parameter variable">--topic</span> SimpleWithIntKey <span class="token parameter variable">--property</span> <span class="token assign-left variable">parse.key</span><span class="token operator">=</span>true <span class="token parameter variable">--property</span> <span class="token assign-left variable">key.serializer</span><span class="token operator">=</span>org.apache.kafka.common.serialization.IntegerDeserializer <span class="token parameter variable">--property</span> <span class="token assign-left variable">value.serializer</span><span class="token operator">=</span>org.apache.kafka.common.serialization.StringDeserializer <span class="token parameter variable">--property</span> <span class="token assign-left variable">key.separator</span><span class="token operator">=</span>:</code></pre></div>
+<p>Notes:</p>
+<ul>
+<li><code class="language-text">--property key.serializer=org.apache.kafka.common.serialization.IntegerDeserializer</code> defines which deserializer should be used for key</li>
+<li><code class="language-text">--property value.serializer=org.apache.kafka.common.serialization.StringDeserializer</code> defines which deserializer should be user for value</li>
+<li>both not being applied</li>
+</ul>
+<p>Start <code class="language-text">kafka-console-consumer</code> to consume simple string messages with integer key</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-console-consumer --bootstrap-server localhost:9092 <span class="token parameter variable">--topic</span> SimpleWithIntKey <span class="token parameter variable">--property</span> <span class="token assign-left variable">print.key</span><span class="token operator">=</span>true --from-beginning <span class="token parameter variable">--property</span> <span class="token assign-left variable">key.deserializer</span><span class="token operator">=</span>org.apache.kafka.common.serialization.StringDeserializer <span class="token parameter variable">--property</span> <span class="token assign-left variable">value.deserializer</span><span class="token operator">=</span>org.apache.kafka.common.serialization.StringDeserializer --skip-message-on-error</code></pre></div>
+<p>Notes:</p>
+<ul>
+<li><code class="language-text">key.deserializer=org.apache.kafka.common.serialization.StringDeserializer</code> we are forced to use string instead of integer deserializer here, otherwise will receive an error <code class="language-text">ERROR Error processing message, skipping this message: (kafka.tools.ConsoleConsumer$) org.apache.kafka.common.errors.SerializationException: Size of data received by IntegerDeserializer is not 4</code></li>
+<li><code class="language-text">--skip-message-on-error</code> do not crash on bad message, just skip it</li>
+</ul>
+<p>Produce messages like:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token number">1</span>:one
+<span class="token number">2</span>:two</code></pre></div>
+<p>And you should see them in consumer as:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token number">1</span>	one
+<span class="token number">2</span>	two</code></pre></div>
+<h2>Json producer and consumer</h2>
+<h3>Json without key</h3>
+<p>Create topic</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-topics --bootstrap-server localhost:9092 <span class="token parameter variable">--create</span> <span class="token parameter variable">--topic</span> JsonWithoutKey <span class="token parameter variable">--partitions</span> <span class="token number">3</span> --replication-factor <span class="token number">1</span></code></pre></div>
+<p>Start <code class="language-text">kafka-console-producer</code> which will produce json messages</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-console-producer --broker-list localhost:9092 <span class="token parameter variable">--topic</span> JsonWithoutKey</code></pre></div>
+<p>Note that like in previous example with integer key, <code class="language-text">kafka-console-producer</code> does not respect given serializers so we will just put string which looks like json but still sent as bytes</p>
+<p>Start <code class="language-text">kafka-console-consumer</code> to consume json messages</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-console-consumer --bootstrap-server localhost:9092 <span class="token parameter variable">--topic</span> JsonWithoutKey <span class="token parameter variable">--property</span> <span class="token assign-left variable">value.deserializer</span><span class="token operator">=</span>org.apache.kafka.connect.json.JsonDeserializer --skip-message-on-error --from-beginning <span class="token parameter variable">--property</span> <span class="token assign-left variable">print.timestamp</span><span class="token operator">=</span>true</code></pre></div>
+<p>Produce json messages like:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{"foo": "bar"}
+{"acme": 42}</code></pre></div>
+<p>And you should see them like:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">CreateTime:1578081298745        {"foo":"bar"}
+CreateTime:1578081304001        {"acme":42}</code></pre></div>
+<p>There is not checks in producer but if you send something wrong you will see an error in consumer</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">CreateTime:1578081353956        [2020-01-03 19:55:54,970] ERROR Error processing message, skipping this message:  (kafka.tools.ConsoleConsumer$)
+org.apache.kafka.common.errors.SerializationException: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'foo': was expecting 'null', 'true', 'false' or NaN
+ at [Source: (byte[])"foo"; line: 1, column: 7]
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'foo': was expecting 'null', 'true', 'false' or NaN
+ at [Source: (byte[])"foo"; line: 1, column: 7]</code></pre></div>
+<h3>Json with string key</h3>
+<p>Create topic</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-topics --bootstrap-server localhost:9092 <span class="token parameter variable">--create</span> <span class="token parameter variable">--topic</span> JsonWithStringKey <span class="token parameter variable">--partitions</span> <span class="token number">3</span> --replication-factor <span class="token number">1</span></code></pre></div>
+<p>Start <code class="language-text">kafka-console-producer</code> which will produce json messages with string key</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-console-producer --broker-list localhost:9092 <span class="token parameter variable">--topic</span> JsonWithStringKey <span class="token parameter variable">--property</span> <span class="token assign-left variable">parse.key</span><span class="token operator">=</span>true <span class="token parameter variable">--property</span> <span class="token assign-left variable">key.separator</span><span class="token operator">=</span>:</code></pre></div>
+<p>Start <code class="language-text">kafka-console-consumer</code> to consume json messages with string key</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-console-consumer --bootstrap-server localhost:9092 <span class="token parameter variable">--topic</span> JsonWithStringKey <span class="token parameter variable">--property</span> <span class="token assign-left variable">print.key</span><span class="token operator">=</span>true --from-beginning <span class="token parameter variable">--property</span> <span class="token assign-left variable">value.deserializer</span><span class="token operator">=</span>org.apache.kafka.connect.json.JsonDeserializer</code></pre></div>
+<p>Produce messages:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">1:{"foo":"bar"}
+2:{"acme":42}</code></pre></div>
+<p>And you should see:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">1       {"foo":"bar"}
+2       {"acme":42}</code></pre></div>
+<p>Note that there is the same problem with keys as in previous examples, and you can not force integer key.</p>
+<h3>Json with json key</h3>
+<p>Create topic</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-topics --bootstrap-server localhost:9092 <span class="token parameter variable">--create</span> <span class="token parameter variable">--topic</span> JsonWithJsonKey <span class="token parameter variable">--partitions</span> <span class="token number">3</span> --replication-factor <span class="token number">1</span></code></pre></div>
+<p>Start <code class="language-text">kafka-console-producer</code> which will produce json messages with json keys</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-console-producer --broker-list localhost:9092 <span class="token parameter variable">--topic</span> JsonWithJsonKey <span class="token parameter variable">--property</span> <span class="token assign-left variable">parse.key</span><span class="token operator">=</span>true <span class="token parameter variable">--property</span> <span class="token assign-left variable">key.separator</span><span class="token operator">=</span><span class="token string">"|"</span></code></pre></div>
+<p>Start <code class="language-text">kafka-console-consumer</code> to consume json messages</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-console-consumer --bootstrap-server localhost:9092 <span class="token parameter variable">--topic</span> JsonWithJsonKey  <span class="token parameter variable">--property</span> <span class="token assign-left variable">value.deserializer</span><span class="token operator">=</span>org.apache.kafka.connect.json.JsonDeserializer <span class="token parameter variable">--property</span> <span class="token assign-left variable">key.deserializer</span><span class="token operator">=</span>org.apache.kafka.connect.json.JsonDeserializer --skip-message-on-error --from-beginning <span class="token parameter variable">--property</span> <span class="token assign-left variable">print.key</span><span class="token operator">=</span>true</code></pre></div>
+<p>Produce messages:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{"id":1}|{"foo":"bar"}
+{"id":2}|{"acme":42}</code></pre></div>
+<p>And you should see:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{"id":1}        {"foo":"bar"}
+{"id":2}        {"acme":42}</code></pre></div>
+<p>If you will produce bad key or value you will get:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">ERROR Error processing message, skipping this message:  (kafka.tools.ConsoleConsumer$)
+org.apache.kafka.common.errors.SerializationException: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'foo': was expecting 'null', 'true', 'false' or NaN
+ at [Source: (byte[])"foo"; line: 1, column: 7]
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'foo': was expecting 'null', 'true', 'false' or NaN
+ at [Source: (byte[])"foo"; line: 1, column: 7]</code></pre></div>
+<h2>Avro producer and consumer</h2>
+<h3>Avro without key</h3>
+<p>Create topic</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-topics --bootstrap-server localhost:9092 <span class="token parameter variable">--create</span> <span class="token parameter variable">--topic</span> AvroWithoutKey <span class="token parameter variable">--partitions</span> <span class="token number">3</span> --replication-factor <span class="token number">1</span></code></pre></div>
+<p>Start <code class="language-text">kafka-avro-console-producer</code> to produce avro messages</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-avro-console-producer --broker-list localhost:9092 <span class="token parameter variable">--topic</span> AvroWithoutKey <span class="token parameter variable">--property</span> <span class="token assign-left variable">value.schema</span><span class="token operator">=</span><span class="token string">'{"type":"record","name":"AvroWithoutKey","fields":[{"name":"foo","type":"string"}]}'</span></code></pre></div>
+<p>Note that from now on we are using <code class="language-text">kafka-avro-console-producer</code> instead of <code class="language-text">kafka-console-producer</code> which has few additional properties like <code class="language-text">--property value.schema='{"type":"record","name":"AvroWithoutKey","fields":[{"name":"foo","type":"string"}]}'</code> messages published via this consumer will be validated against given schema. Also note that this producer does not show <code class="language-text">></code> symbol, so do not wait for it.</p>
+<p>Start <code class="language-text">kafka-avro-console-consumer</code> to consume avro messages</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-avro-console-consumer --bootstrap-server localhost:9092 <span class="token parameter variable">--topic</span> AvroWithoutKey --from-beginning</code></pre></div>
+<p>Try sending something like:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token punctuation">{</span><span class="token string">"foo"</span><span class="token builtin class-name">:</span><span class="token string">"hello"</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">"foo"</span><span class="token builtin class-name">:</span><span class="token string">"world"</span><span class="token punctuation">}</span></code></pre></div>
+<p>and you should see exactly the same output in consumer.</p>
+<p>If you will try send something wrong you will receive an error:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{"acme":42}
+org.apache.kafka.common.errors.SerializationException: Error deserializing json {"acme":42} to Avro of schema {"type":"record","name":"AvroWithoutKey","fields":[{"name":"foo","type":"string"}]}
+Caused by: org.apache.avro.AvroTypeException: Expected field name not found: foo
+        at org.apache.avro.io.JsonDecoder.doAction(JsonDecoder.java:477)
+        at org.apache.avro.io.parsing.Parser.advance(Parser.java:88)</code></pre></div>
+<p>but still if something you are sending is schema compatible everything should be ok, try sending <code class="language-text">{"foo":"bar","acme":42}</code> and you will receive <code class="language-text">{"foo":"bar"}</code> in your consumer</p>
+<h3>Avro with string key</h3>
+<p>Create topic</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-topics --bootstrap-server localhost:9092 <span class="token parameter variable">--create</span> <span class="token parameter variable">--topic</span> AvroWithStringKey <span class="token parameter variable">--partitions</span> <span class="token number">3</span> --replication-factor <span class="token number">1</span></code></pre></div>
+<p>Start <code class="language-text">kafka-avro-console-producer</code> to produce avro messages with primitive string key</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-avro-console-producer --broker-list localhost:9092 <span class="token parameter variable">--topic</span> AvroWithStringKey <span class="token parameter variable">--property</span> <span class="token assign-left variable">value.schema</span><span class="token operator">=</span><span class="token string">'{"type":"record","name":"AvroWithStringKey","fields":[{"name":"foo","type":"string"}]}'</span> <span class="token parameter variable">--property</span> <span class="token assign-left variable">parse.key</span><span class="token operator">=</span>true <span class="token parameter variable">--property</span> <span class="token assign-left variable">key.schema</span><span class="token operator">=</span><span class="token string">'{"type":"string"}'</span> <span class="token parameter variable">--property</span> <span class="token assign-left variable">key.separator</span><span class="token operator">=</span><span class="token string">" "</span></code></pre></div>
+<p>Not that we have added <code class="language-text">--property key.schema='{"type":"string"}'</code> which allow us to use primitives as key and they still will be validated.</p>
+<p>Start <code class="language-text">kafka-avro-console-consumer</code> to consume avro messages with string keys</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-avro-console-consumer --bootstrap-server localhost:9092 <span class="token parameter variable">--topic</span> AvroWithStringKey --from-beginning <span class="token parameter variable">--property</span> <span class="token assign-left variable">print.key</span><span class="token operator">=</span>true <span class="token parameter variable">--property</span> <span class="token assign-left variable">key.deserializer</span><span class="token operator">=</span>org.apache.kafka.common.serialization.StringDeserializer</code></pre></div>
+<p>Try send something like:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">"one" {"foo":"1"}
+"two" {"foo":"2"}</code></pre></div>
+<p>and you should get:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">one     {"foo":"1"}
+two     {"foo":"2"}</code></pre></div>
+<p>Do not forget to wrap key with double quotes otherwise you will get an error:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">org.apache.kafka.common.errors.SerializationException: Error deserializing json one to Avro of schema "string"
+Caused by: org.codehaus.jackson.JsonParseException: Unexpected character ('o' (code 111)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')
+ at [Source: java.io.StringReader@3feb2dda; line: 1, column: 2]</code></pre></div>
+<h3>Avro with int key</h3>
+<p>Does not work, in example below after trying to send <code class="language-text">1|{"foo":"bar"}</code> receiving an error:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">org.apache.kafka.common.errors.SerializationException: Error deserializing json 1|{"foo":"hello"} to Avro of schema {"type":"record","name":"AvroWithIntKey","fields":[{"name":"foo","type":"int"}]}
+Caused by: org.apache.avro.AvroTypeException: Expected record-start. Got VALUE_NUMBER_INT</code></pre></div>
+<p>Create topic</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-topics --bootstrap-server localhost:9092 <span class="token parameter variable">--create</span> <span class="token parameter variable">--topic</span> AvroWithIntKey <span class="token parameter variable">--partitions</span> <span class="token number">3</span> --replication-factor <span class="token number">1</span></code></pre></div>
+<p>Start <code class="language-text">kafka-avro-console-producer</code> to produce avro messages with integer keys</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-avro-console-producer --broker-list localhost:9092 <span class="token parameter variable">--topic</span> AvroWithIntKey <span class="token parameter variable">--property</span> <span class="token assign-left variable">value.schema</span><span class="token operator">=</span><span class="token string">'{"type":"record","name":"AvroWithIntKey","fields":[{"name":"foo","type":"int"}]}'</span> <span class="token parameter variable">--property</span> <span class="token assign-left variable">key.separator</span><span class="token operator">=</span><span class="token string">"|"</span></code></pre></div>
+<p>Start <code class="language-text">kafka-avro-console-consumer</code> to consume avro messages</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-avro-console-consumer --bootstrap-server localhost:9092 <span class="token parameter variable">--topic</span> AvroWithIntKey --from-beginning</code></pre></div>
+<h3>Avro with avro key</h3>
+<p>Create topic</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-topics --bootstrap-server localhost:9092 <span class="token parameter variable">--create</span> <span class="token parameter variable">--topic</span> AvroWithAvroKey <span class="token parameter variable">--partitions</span> <span class="token number">3</span> --replication-factor <span class="token number">1</span></code></pre></div>
+<p>Start <code class="language-text">kafka-avro-console-producer</code> which will produce avro messages with avro keys</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-avro-console-producer --broker-list localhost:9092 <span class="token parameter variable">--topic</span> AvroWithAvroKey <span class="token parameter variable">--property</span> <span class="token assign-left variable">value.schema</span><span class="token operator">=</span><span class="token string">'{"type":"record", "name": "AvroWithAvroKey", "fields":[{"name":"foo","type":"string"}]}'</span> <span class="token parameter variable">--property</span> <span class="token assign-left variable">parse.key</span><span class="token operator">=</span>true <span class="token parameter variable">--property</span> <span class="token assign-left variable">key.schema</span><span class="token operator">=</span><span class="token string">'{"type":"record","name": "key", "fields":[{"name":"id","type":"int"}]}'</span> <span class="token parameter variable">--property</span> <span class="token assign-left variable">key.separator</span><span class="token operator">=</span><span class="token string">" "</span></code></pre></div>
+<p>Start <code class="language-text">kafka-avro-console-consumer</code> to consume avro messages with avro keys</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-avro-console-consumer --bootstrap-server localhost:9092 <span class="token parameter variable">--topic</span> AvroWithAvroKey --from-beginning <span class="token parameter variable">--property</span> <span class="token assign-left variable">print.key</span><span class="token operator">=</span>true</code></pre></div>
+<p>Try send</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{"id":1} {"foo":"hello"}
+{"id":2} {"foo":"world"}</code></pre></div>
+<p>and you should receive</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{"id":1}        {"foo":"hello"}
+{"id":2}        {"foo":"world"}</code></pre></div>
+<p>if you will try send wrong key like <code class="language-text">{"id":"guid"}</code> you will receive an error</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">org.apache.kafka.common.errors.SerializationException: Error deserializing json {"id":"guid"} to Avro of schema {"type":"record","name":"key","fields":[{"name":"id","type":"int"}]}
+Caused by: org.apache.avro.AvroTypeException: Expected int. Got VALUE_STRING</code></pre></div>
+<h1>Confluent Cloud</h1>
+<p>If you are using <a href="https://confluent.cloud/">confluent.cloud</a> from <a href="https://confluent.io/">confluent.io</a> you still able to do all this with few more params added for commands</p>
+<p>More examples can be found <a href="https://github.com/confluentinc/examples/tree/5.3.2-post/clients/cloud/kafka-commands">here</a></p>
+<h2>Topics</h2>
+<p>You gonna need properties file which you can retrieve from <code class="language-text">https://confluent.cloud/environments/*****/clusters/***-*****/integrations/clients#java</code> by navigating cluster then "CLI &#x26; client configuration"</p>
+<p><strong>cloud.properties</strong></p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">bootstrap.servers</span><span class="token punctuation">=</span><span class="token value attr-value">xxx-xxxxx.us-east1.gcp.confluent.cloud:9092</span>
+<span class="token key attr-name">ssl.endpoint.identification.algorithm</span><span class="token punctuation">=</span><span class="token value attr-value">https</span>
+<span class="token key attr-name">security.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">SASL_SSL</span>
+<span class="token key attr-name">sasl.mechanism</span><span class="token punctuation">=</span><span class="token value attr-value">PLAIN</span>
+<span class="token key attr-name">sasl.jaas.config</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.common.security.plain.PlainLoginModule required username\="xxxxxxx" password\="xxxxxxx";</span></code></pre></div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/cloud.properties:/cloud.properties confluentinc/cp-kafka:5.3.2 kafka-topics <span class="token punctuation">\</span>
+  --bootstrap-server xxx-xxxxx.us-east1.gcp.confluent.cloud:9092 <span class="token punctuation">\</span>
+  --command-config /cloud.properties <span class="token punctuation">\</span>
+  <span class="token parameter variable">--list</span></code></pre></div>
+<p>all other commands will work as expected</p>
+<h2>Produce &#x26; consume simple messages</h2>
+<p>If you are going to run simple producer without avro and schema registry then properties file from previous example should be enough</p>
+<p>Create topic</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/cloud.properties:/cloud.properties confluentinc/cp-kafka:5.3.2 kafka-topics <span class="token punctuation">\</span>
+  --bootstrap-server xxx-xxxxx.us-east1.gcp.confluent.cloud:9092 <span class="token punctuation">\</span>
+  --command-config /cloud.properties <span class="token punctuation">\</span>
+   <span class="token parameter variable">--create</span> <span class="token parameter variable">--topic</span> simple1 <span class="token parameter variable">--partitions</span> <span class="token number">3</span> --replication-factor <span class="token number">3</span></code></pre></div>
+<p>Start producer</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/cloud.properties:/cloud.properties confluentinc/cp-kafka:5.3.2 kafka-console-producer <span class="token punctuation">\</span>
+  --broker-list xxx-xxxxx.us-east1.gcp.confluent.cloud:9092 <span class="token punctuation">\</span>
+  <span class="token parameter variable">--producer.config</span> /cloud.properties <span class="token punctuation">\</span>
+  <span class="token parameter variable">--topic</span> simple1</code></pre></div>
+<p>Start consumer</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/cloud.properties:/cloud.properties confluentinc/cp-kafka:5.3.2 kafka-console-consumer <span class="token punctuation">\</span>
+  --bootstrap-server xxx-xxxxx.us-east1.gcp.confluent.cloud:9092 <span class="token punctuation">\</span>
+  <span class="token parameter variable">--consumer.config</span> /cloud.properties <span class="token punctuation">\</span>
+  <span class="token parameter variable">--topic</span> simple1</code></pre></div>
+<p>Cleanup</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/cloud.properties:/cloud.properties confluentinc/cp-kafka:5.3.2 kafka-topics <span class="token punctuation">\</span>
+  --bootstrap-server xxx-xxxxx.us-east1.gcp.confluent.cloud:9092 <span class="token punctuation">\</span>
+  --command-config /cloud.properties <span class="token punctuation">\</span>
+   <span class="token parameter variable">--delete</span> <span class="token parameter variable">--topic</span> simple1</code></pre></div>
+<p>Note that you are not restricted to strings only, you can also use all previous examples with different keys and json</p>
+<h2>Produce &#x26; consume AVRO messages in confluent.cloud</h2>
+<p>Create topic</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/cloud.properties:/cloud.properties confluentinc/cp-kafka:5.3.2 kafka-topics <span class="token punctuation">\</span>
+  --bootstrap-server xxx-xxxxx.us-east1.gcp.confluent.cloud:9092 <span class="token punctuation">\</span>
+  --command-config /cloud.properties <span class="token punctuation">\</span>
+   <span class="token parameter variable">--create</span> <span class="token parameter variable">--topic</span> avro1 <span class="token parameter variable">--partitions</span> <span class="token number">3</span> --replication-factor <span class="token number">3</span></code></pre></div>
+<p>Start producer</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/cloud.properties:/cloud.properties confluentinc/cp-schema-registry:5.3.2 kafka-avro-console-producer <span class="token punctuation">\</span>
+    --broker-list xxx-xxxxx.us-east1.gcp.confluent.cloud:9092 <span class="token punctuation">\</span>
+    <span class="token parameter variable">--topic</span> avro1 <span class="token punctuation">\</span>
+    <span class="token parameter variable">--property</span> <span class="token assign-left variable">value.schema</span><span class="token operator">=</span><span class="token string">'{"type":"record","name":"AvroWithoutKey","fields":[{"name":"foo","type":"string"}]}'</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">--producer.config</span> /cloud.properties <span class="token punctuation">\</span>
+    <span class="token parameter variable">--property</span> <span class="token assign-left variable">schema.registry.url</span><span class="token operator">=</span><span class="token string">"https://xxxx-xxxxx.us-east1.gcp.confluent.cloud"</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">--property</span> <span class="token assign-left variable">schema.registry.basic.auth.user.info</span><span class="token operator">=</span><span class="token string">"xxxxxxx:xxxxxxx"</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">--property</span> <span class="token assign-left variable">basic.auth.credentials.source</span><span class="token operator">=</span>USER_INFO</code></pre></div>
+<p>Start consumer</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/cloud.properties:/cloud.properties confluentinc/cp-schema-registry:5.3.2 kafka-avro-console-consumer <span class="token punctuation">\</span>
+    --bootstrap-server xxx-xxxxx.us-east1.gcp.confluent.cloud:9092 <span class="token punctuation">\</span>
+    <span class="token parameter variable">--topic</span> avro1 <span class="token punctuation">\</span>
+    --from-beginning <span class="token punctuation">\</span>
+    --value-deserializer io.confluent.kafka.serializers.KafkaAvroDeserializer <span class="token punctuation">\</span>
+    --key-deserializer org.apache.kafka.common.serialization.StringDeserializer <span class="token punctuation">\</span>
+    <span class="token parameter variable">--consumer.config</span> /cloud.properties <span class="token punctuation">\</span>
+    <span class="token parameter variable">--property</span> <span class="token assign-left variable">schema.registry.url</span><span class="token operator">=</span><span class="token string">"https://xxxx-xxxxx.us-east1.gcp.confluent.cloud"</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">--property</span> <span class="token assign-left variable">schema.registry.basic.auth.user.info</span><span class="token operator">=</span><span class="token string">"xxxxxxx:xxxxxxx"</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">--property</span> <span class="token assign-left variable">basic.auth.credentials.source</span><span class="token operator">=</span>USER_INFO</code></pre></div>
+<p>Notes:</p>
+<ul>
+<li>we are using another docker image <code class="language-text">confluentinc/cp-schema-registry:5.3.2</code> because of kafka avro console consumer and producer</li>
+<li><code class="language-text">cloud.properties</code> is still enough but schema registry settings should be passed via command line arguments</li>
+</ul>
+<h1>Kafka connect</h1>
+<p>We are going to use kafka connect to:</p>
+<ul>
+<li>produce predefined messages from a file to replay some sequence of events</li>
+<li>produce generated messages to get millions of them for test purposes</li>
+<li>have sample sink connector to save messages to a file</li>
+</ul>
+<p>All example will be made as standalone worker which should not be used in production and used here only because of its easy to use</p>
+<p>At very end worker command looks liks like this: <code class="language-text">connect-standalone worker.properties task1.properties task2.properties</code> where <code class="language-text">worker.properties</code> contains configuration for worker itself and some defaults for tasks, <code class="language-text">taskX.properties</code> is task configuration, you can have many of them, for example your worker might have few tasks which will produce messages from different files and one task to consume them into elasticsearch.</p>
+<p>Tasks producing data into kafka called <code class="language-text">source</code>, tasks consuming data from kafka called <code class="language-text">sink</code>.</p>
+<p>Be aware of advertised hosts and rest ports, if you are connecting to dockerized kafka which have localhost as advertised host from your worker which is also run in container nothing will work, use <code class="language-text">--net=host</code> for such scenarios, but then you gonna need to change <code class="language-text">rest.port</code> to avoid conflict with already taken port.</p>
+<p>More links about worker properties:</p>
+<ul>
+<li><a href="https://docs.confluent.io/3.2.0/connect/userguide.html#common-worker-configs">common worker configs</a></li>
+<li><a href="https://docs.confluent.io/current/installation/configuration/connect/index.html">connect configurations</a></li>
+</ul>
+<p>Also you can get samples like so:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> confluentinc/cp-kafka-connect:5.3.2 <span class="token function">cat</span> /etc/schema-registry/connect-avro-standalone.properties</code></pre></div>
+<h2>Local kafka connect</h2>
+<p>Start your kafka</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> <span class="token parameter variable">--name</span><span class="token operator">=</span>kafka <span class="token parameter variable">-e</span> <span class="token assign-left variable">SAMPLEDATA</span><span class="token operator">=</span><span class="token number">0</span> <span class="token parameter variable">-e</span> <span class="token assign-left variable">RUNNING_SAMPLEDATA</span><span class="token operator">=</span><span class="token number">0</span> <span class="token parameter variable">-e</span> <span class="token assign-left variable">RUNTESTS</span><span class="token operator">=</span><span class="token number">0</span> <span class="token parameter variable">-e</span> <span class="token assign-left variable">FORWARDLOGS</span><span class="token operator">=</span><span class="token number">0</span> <span class="token parameter variable">-e</span> <span class="token assign-left variable">ADV_HOST</span><span class="token operator">=</span><span class="token number">127.0</span>.0.1 <span class="token parameter variable">-p</span> <span class="token number">2181</span>:2181 <span class="token parameter variable">-p</span> <span class="token number">3030</span>:3030 <span class="token parameter variable">-p</span> <span class="token number">8081</span>-8082:8081-8082 <span class="token parameter variable">-p</span> <span class="token number">9092</span>:9092 <span class="token parameter variable">-p</span> <span class="token number">9581</span>-9585:9581-9585 lensesio/fast-data-dev:2.3.0</code></pre></div>
+<p>Note that I'm not exposing <code class="language-text">8083</code> which is used by kafka connect rest api to avoid conflicts, otherwise do not forget to change <code class="language-text">rest.port</code> in <code class="language-text">worker.properties</code></p>
+<h3>Simple messages</h3>
+<p><strong>worker.properties</strong></p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">bootstrap.servers</span><span class="token punctuation">=</span><span class="token value attr-value">localhost:9092</span>
+
+<span class="token comment"># do not forget to change me to avoid conflicts</span>
+<span class="token key attr-name">rest.port</span><span class="token punctuation">=</span><span class="token value attr-value">8083</span>
+
+<span class="token comment"># required for standalone workers</span>
+<span class="token key attr-name">offset.storage.file.filename</span><span class="token punctuation">=</span><span class="token value attr-value">/tmp/standalone.offsets</span>
+
+<span class="token comment"># where to look for additional plugins</span>
+<span class="token key attr-name">plugin.path</span><span class="token punctuation">=</span><span class="token value attr-value">/usr/share/java,/usr/share/confluent-hub-components</span>
+
+<span class="token comment"># optional, defaults for tasks</span>
+<span class="token key attr-name">key.converter</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.connect.storage.StringConverter</span>
+<span class="token key attr-name">value.converter</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.connect.storage.StringConverter</span></code></pre></div>
+<p>Notes:</p>
+<ul>
+<li>key and value converters are optional and can be overriden in tasks</li>
+<li>most used converters are: <code class="language-text">org.apache.kafka.connect.storage.StringConverter</code>, <code class="language-text">org.apache.kafka.connect.json.JsonConverter</code>, <code class="language-text">io.confluent.connect.avro.AvroConverter</code></li>
+<li>avro converter requires schema registry</li>
+<li>for json converter do not forget to add <code class="language-text">value.converter.schemas.enable=false</code> if you wish not to receive schema, e.g. by sending <code class="language-text">{"foo":"bar"}</code> you will receive <code class="language-text">{"schema":{"type":"string","optional":false},"payload":"{\"foo\": \"bar\"}"}</code></li>
+</ul>
+<h3>Kafka Connect Source Text File</h3>
+<p>Notes on task configuration properties:</p>
+<ul>
+<li>do not forget that each task should have unique <code class="language-text">name</code> it will be used to watch for offsets and for distributed wrokers it will be used for topic names</li>
+<li><code class="language-text">connector.class</code> is a kind of plugin, you can choose from <a href="https://hub.confluent.io/">hub.confluent.io</a></li>
+<li><code class="language-text">tasks.max</code> control parallelism, for sink tasks can not be bigger that number of topic partitions</li>
+</ul>
+<p><strong>source-text-file.properties</strong></p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">name</span><span class="token punctuation">=</span><span class="token value attr-value">source-text-file</span>
+<span class="token key attr-name">connector.class</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.connect.file.FileStreamSourceConnector</span>
+<span class="token comment"># optional, override worker defaults</span>
+<span class="token key attr-name">value.converter</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.connect.storage.StringConverter</span>
+<span class="token key attr-name">topic</span><span class="token punctuation">=</span><span class="token value attr-value">DemoTextFile</span>
+<span class="token key attr-name">file</span><span class="token punctuation">=</span><span class="token value attr-value">demo-text-file.txt</span></code></pre></div>
+<p><strong>demo-text-file.txt</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">hello
+world
+mac
+was
+here</code></pre></div>
+<p>Create topic</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-topics --bootstrap-server localhost:9092 <span class="token parameter variable">--create</span> <span class="token parameter variable">--topic</span> DemoTextFile <span class="token parameter variable">--partitions</span> <span class="token number">3</span> --replication-factor <span class="token number">1</span></code></pre></div>
+<p>Start consumer</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-console-consumer --bootstrap-server localhost:9092 <span class="token parameter variable">--topic</span> DemoTextFile --from-beginning</code></pre></div>
+<p>Start worker</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">--name</span><span class="token operator">=</span>standalone <span class="token punctuation">\</span>
+    <span class="token parameter variable">--net</span><span class="token operator">=</span>host <span class="token punctuation">\</span>
+    <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>:/data <span class="token punctuation">\</span>
+    <span class="token parameter variable">-w</span> /data <span class="token punctuation">\</span>
+    confluentinc/cp-kafka-connect:5.3.2 connect-standalone worker.properties source-text-file.properties</code></pre></div>
+<p>Note that we are bypassing our current directory into container so worker has access to all configuration files</p>
+<p>If everything is ok after some while you will see your messages from a source file in your consumer</p>
+<h3>Kafka Connect Source JSON File</h3>
+<p>This one will work same way as previous</p>
+<p><strong>source-json-file.properties</strong></p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">name</span><span class="token punctuation">=</span><span class="token value attr-value">source-json-file</span>
+<span class="token key attr-name">connector.class</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.connect.file.FileStreamSourceConnector</span>
+<span class="token comment"># optional, override worker defaults</span>
+<span class="token comment"># value.converter=org.apache.kafka.connect.json.JsonConverter</span>
+<span class="token comment"># value.converter.schemas.enable=false</span>
+<span class="token comment"># if your will use JsonConverter here you will receive string with escaped json</span>
+<span class="token key attr-name">value.converter</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.connect.storage.StringConverter</span>
+<span class="token key attr-name">topic</span><span class="token punctuation">=</span><span class="token value attr-value">DemoJsonFile</span>
+<span class="token key attr-name">file</span><span class="token punctuation">=</span><span class="token value attr-value">demo-json-file.ndjson</span></code></pre></div>
+<p><strong>demo-json-file.ndjson</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{"foo": "hello"}
+{"foo": "world"}
+{"foo": "bar"}
+{"acme": 42}</code></pre></div>
+<p>Create topic</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-topics --bootstrap-server localhost:9092 <span class="token parameter variable">--create</span> <span class="token parameter variable">--topic</span> DemoJsonFile <span class="token parameter variable">--partitions</span> <span class="token number">3</span> --replication-factor <span class="token number">1</span></code></pre></div>
+<p>Start consumer</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-console-consumer --bootstrap-server localhost:9092 <span class="token parameter variable">--topic</span> DemoJsonFile <span class="token parameter variable">--property</span> <span class="token assign-left variable">value.deserializer</span><span class="token operator">=</span>org.apache.kafka.connect.json.JsonDeserializer --skip-message-on-error --from-beginning</code></pre></div>
+<p>Start worker</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">--name</span><span class="token operator">=</span>standalone <span class="token punctuation">\</span>
+    <span class="token parameter variable">--net</span><span class="token operator">=</span>host <span class="token punctuation">\</span>
+    <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>:/data <span class="token punctuation">\</span>
+    <span class="token parameter variable">-w</span> /data <span class="token punctuation">\</span>
+    confluentinc/cp-kafka-connect:5.3.2 connect-standalone worker.properties source-json-file.properties</code></pre></div>
+<p>While everything running, try add more records to a source file and save it, you should immediatelly see them in consumer.</p>
+<p>Also try to add non json line to a source file, you will get an error:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">[2020-01-04 10:09:00,896] ERROR Error processing message, skipping this message:  (kafka.tools.ConsoleConsumer$)
+org.apache.kafka.common.errors.SerializationException: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'non': was expecting 'null', 'true', 'false' or NaN
+ at [Source: (byte[])"non json"; line: 1, column: 5]
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'non': was expecting 'null', 'true', 'false' or NaN
+ at [Source: (byte[])"non json"; line: 1, column: 5]</code></pre></div>
+<p>but because we are running consumer with a <code class="language-text">--skip-message-on-error</code> flag it should not die and continue listening to new records</p>
+<p>unfortunatelly there is no way to produce messages with keys from simple files, if you will look at <a href="https://github.com/apache/kafka/blob/trunk/connect/file/src/main/java/org/apache/kafka/connect/file/FileStreamSourceTask.java#L153">sources</a> you will see that <code class="language-text">null</code> is passed as key</p>
+<p>If you wish to have keys you should run configured console producer and pipe file contents into it</p>
+<h3>Replaying Avro Messages With Key Value</h3>
+<p>This particular example does not use Kafka Connect but still might be used to replay some sequence of messages</p>
+<p>Lets suppose that our <code class="language-text">source.txt</code> file will look like:</p>
+<p><strong>source.txt</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{"id":1}|{"foo":"hello"}
+{"id":2}|{"foo":"world"}</code></pre></div>
+<p>where each line is an message with key and value separated by pipe</p>
+<p>Create topic</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-topics --bootstrap-server localhost:9092 <span class="token parameter variable">--create</span> <span class="token parameter variable">--topic</span> AvroFromFile <span class="token parameter variable">--partitions</span> <span class="token number">3</span> --replication-factor <span class="token number">1</span></code></pre></div>
+<p>Start <code class="language-text">kafka-avro-console-consumer</code> to consume avro messages from file</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> <span class="token parameter variable">--net</span><span class="token operator">=</span>host confluentinc/cp-schema-registry:5.3.2 kafka-avro-console-consumer --bootstrap-server localhost:9092 <span class="token parameter variable">--topic</span> AvroFromFile --from-beginning <span class="token parameter variable">--property</span> <span class="token assign-left variable">print.key</span><span class="token operator">=</span>true</code></pre></div>
+<p>Start <code class="language-text">kafka-avro-console-producer</code> which will produce avro messages from a file</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> <span class="token parameter variable">--net</span><span class="token operator">=</span>host <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>:/data <span class="token parameter variable">-w</span> /data confluentinc/cp-schema-registry:5.3.2 <span class="token function">sh</span> <span class="token parameter variable">-c</span> <span class="token string">"kafka-avro-console-producer --broker-list localhost:9092 --topic AvroFromFile --property value.schema='{<span class="token entity" title="\&quot;">\"</span>type<span class="token entity" title="\&quot;">\"</span>:<span class="token entity" title="\&quot;">\"</span>record<span class="token entity" title="\&quot;">\"</span>, <span class="token entity" title="\&quot;">\"</span>name<span class="token entity" title="\&quot;">\"</span>: <span class="token entity" title="\&quot;">\"</span>AvroFromFile<span class="token entity" title="\&quot;">\"</span>, <span class="token entity" title="\&quot;">\"</span>fields<span class="token entity" title="\&quot;">\"</span>:[{<span class="token entity" title="\&quot;">\"</span>name<span class="token entity" title="\&quot;">\"</span>:<span class="token entity" title="\&quot;">\"</span>foo<span class="token entity" title="\&quot;">\"</span>,<span class="token entity" title="\&quot;">\"</span>type<span class="token entity" title="\&quot;">\"</span>:<span class="token entity" title="\&quot;">\"</span>string<span class="token entity" title="\&quot;">\"</span>}]}' --property parse.key=true --property key.schema='{<span class="token entity" title="\&quot;">\"</span>type<span class="token entity" title="\&quot;">\"</span>:<span class="token entity" title="\&quot;">\"</span>record<span class="token entity" title="\&quot;">\"</span>,<span class="token entity" title="\&quot;">\"</span>name<span class="token entity" title="\&quot;">\"</span>: <span class="token entity" title="\&quot;">\"</span>key<span class="token entity" title="\&quot;">\"</span>, <span class="token entity" title="\&quot;">\"</span>fields<span class="token entity" title="\&quot;">\"</span>:[{<span class="token entity" title="\&quot;">\"</span>name<span class="token entity" title="\&quot;">\"</span>:<span class="token entity" title="\&quot;">\"</span>id<span class="token entity" title="\&quot;">\"</span>,<span class="token entity" title="\&quot;">\"</span>type<span class="token entity" title="\&quot;">\"</span>:<span class="token entity" title="\&quot;">\"</span>int<span class="token entity" title="\&quot;">\"</span>}]}' --property key.separator=<span class="token entity" title="\&quot;">\"</span>|<span class="token entity" title="\&quot;">\"</span> &lt; source.txt"</span></code></pre></div>
+<p>And you should see your desired messages in consumer:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{"id":1}	{"foo":"hello"}
+{"id":2}	{"foo":"world"}</code></pre></div>
+<p>Note that I have used <code class="language-text">sh -c "...."</code> here because of bash can not understand whether last <code class="language-text">&lt; source.txt</code> should be ran inside docker or not</p>
+<h3>Kafka Connect Source DataGen Avro</h3>
+<p>In following example we are going to generate tousand of recods based on given avro schema</p>
+<p><strong>source.properties</strong></p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">name</span><span class="token punctuation">=</span><span class="token value attr-value">source</span>
+<span class="token key attr-name">connector.class</span><span class="token punctuation">=</span><span class="token value attr-value">io.confluent.kafka.connect.datagen.DatagenConnector</span>
+<span class="token key attr-name">kafka.topic</span><span class="token punctuation">=</span><span class="token value attr-value">AvroDatagen</span>
+<span class="token comment"># override worker.properties</span>
+<span class="token key attr-name">value.converter</span><span class="token punctuation">=</span><span class="token value attr-value">io.confluent.connect.avro.AvroConverter</span>
+<span class="token key attr-name">value.converter.schema.registry.url</span><span class="token punctuation">=</span><span class="token value attr-value">http://localhost:8081</span>
+<span class="token key attr-name">key.converter</span><span class="token punctuation">=</span><span class="token value attr-value">io.confluent.connect.avro.AvroConverter</span>
+<span class="token key attr-name">key.converter.schema.registry.url</span><span class="token punctuation">=</span><span class="token value attr-value">http://localhost:8081</span>
+<span class="token comment"># number of messages to generate</span>
+<span class="token key attr-name">iterations</span><span class="token punctuation">=</span><span class="token value attr-value">1000</span>
+<span class="token key attr-name">tasks.max</span><span class="token punctuation">=</span><span class="token value attr-value">1</span>
+<span class="token comment"># avro schema</span>
+<span class="token key attr-name">schema.filename</span><span class="token punctuation">=</span><span class="token value attr-value">/data/AvroDatagen.avsc</span></code></pre></div>
+<p>Some additional properties can be found <a href="https://docs.confluent.io/current/schema-registry/connect.html">here</a></p>
+<p>Note that by default <code class="language-text">auto.register.schemas</code> is set to <code class="language-text">true</code> so you do not need to register schemas upfront everything will be done automatically. Also note that both <code class="language-text">key.subject.name.strategy</code> and <code class="language-text">value.subject.name.strategy</code> are set to <code class="language-text">io.confluent.kafka.serializers.subject.SubjectNameStrategy</code> so schema names will be <code class="language-text">AvroDatagen-key</code> and <code class="language-text">AvroDatagen-value</code> retrospectively.</p>
+<p><strong>AvroDatagen.avsc</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{
+  "type": "record",
+  "name": "AvroDatagen",
+  "namespace": "ua.rabota.topics",
+  "fields": [
+    {
+      "name": "userId",
+      "type": {
+        "type": "int",
+        "arg.properties": {
+          "range": {
+            "min": 1,
+            "max": 100
+          }
+        }
+      }
+    },
+    {
+      "name": "vacancyId",
+      "type": {
+        "type": "long",
+        "arg.properties": {
+          "range": {
+            "min": 7710732,
+            "max": 7711732
+          }
+        }
+      }
+    },
+    {
+      "name": "platform",
+      "type": ["null", {
+        "type": "string",
+        "arg.properties": {
+          "options": ["desktop", "mobile", "ios", "android"]
+        }
+      }],
+      "default": null
+    }
+  ]
+}</code></pre></div>
+<p>Note that usually in avro schema you defining properties like <code class="language-text">{"name": "foo", "type": "string"}</code> where <code class="language-text">type</code> is usually primitive string with type name, for datagen we are describing type as object with additional <code class="language-text">arg.properties</code></p>
+<ul>
+<li><a href="https://github.com/confluentinc/kafka-connect-datagen/tree/master/src/main/resources">avro schema examples</a></li>
+<li><a href="https://github.com/confluentinc/kafka-connect-datagen/tree/0.2.x/config">connector config examples</a></li>
+<li><a href="https://github.com/confluentinc/avro-random-generator">avro generator args</a></li>
+</ul>
+<p>Crate topic</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-topics --bootstrap-server localhost:9092 <span class="token parameter variable">--create</span> <span class="token parameter variable">--topic</span> AvroDatagen <span class="token parameter variable">--partitions</span> <span class="token number">3</span> --replication-factor <span class="token number">1</span></code></pre></div>
+<p>Start consumer</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-avro-console-consumer --bootstrap-server localhost:9092 <span class="token parameter variable">--topic</span> AvroDatagen --from-beginning</code></pre></div>
+<p>Start avro datagen producer</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">--name</span><span class="token operator">=</span>standalone <span class="token punctuation">\</span>
+    <span class="token parameter variable">--net</span><span class="token operator">=</span>host <span class="token punctuation">\</span>
+    <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>:/data <span class="token punctuation">\</span>
+    <span class="token parameter variable">-w</span> /data <span class="token punctuation">\</span>
+    confluentinc/cp-kafka-connect:5.3.2 <span class="token function">bash</span> <span class="token parameter variable">-c</span> <span class="token string">"confluent-hub install --no-prompt confluentinc/kafka-connect-datagen:0.2.0 &amp;&amp; connect-standalone worker.properties source.properties"</span></code></pre></div>
+<p>Note how we are installing <code class="language-text">kafka-connect-datagen</code> before starting <code class="language-text">connect-standalone</code> it does not shipped by deafult</p>
+<p>After a while, when everything will boot up you should see incomming messages in consumer</p>
+<p>When datagen will produce desired 1000 messages it will die and you will see something like:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">[2020-01-04 11:22:37,984] ERROR WorkerSourceTask{id=source-0} Task threw an uncaught and unrecoverable exception (org.apache.kafka.connect.runtime.WorkerTask:179)
+org.apache.kafka.connect.errors.ConnectException: Stopping connector: generated the configured 1000 number of messages</code></pre></div>
+<p>Unfortunatelly datagen is quite limited about keys only way you can have keys is to provide <code class="language-text">schema.keyfield</code> which will use one of generated properties as message key, and according to <a href="https://github.com/confluentinc/kafka-connect-datagen/blob/0.2.x/src/main/java/io/confluent/kafka/connect/datagen/DatagenTask.java#L255">sources</a> it still will be simple string key.</p>
+<h3>Kafka Connect Simple Sink To Text File</h3>
+<p>This might be used for debug and log</p>
+<p><strong>sink.properties</strong></p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">name</span><span class="token punctuation">=</span><span class="token value attr-value">sink</span>
+<span class="token key attr-name">connector.class</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.connect.file.FileStreamSinkConnector</span>
+<span class="token key attr-name">tasks.max</span><span class="token punctuation">=</span><span class="token value attr-value">1</span>
+<span class="token key attr-name">topics</span><span class="token punctuation">=</span><span class="token value attr-value">SinkDemo</span>
+<span class="token key attr-name">file</span><span class="token punctuation">=</span><span class="token value attr-value">/data/data.txt</span></code></pre></div>
+<p>Create topic</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-topics --bootstrap-server localhost:9092 <span class="token parameter variable">--create</span> <span class="token parameter variable">--topic</span> SinkDemo <span class="token parameter variable">--partitions</span> <span class="token number">3</span> --replication-factor <span class="token number">1</span></code></pre></div>
+<p>Start Kafka Connect Sink to save messages to a text file</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">--name</span><span class="token operator">=</span>standalone <span class="token punctuation">\</span>
+    <span class="token parameter variable">--net</span><span class="token operator">=</span>host <span class="token punctuation">\</span>
+    <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>:/data <span class="token punctuation">\</span>
+    <span class="token parameter variable">-w</span> /data <span class="token punctuation">\</span>
+    confluentinc/cp-kafka-connect:5.3.2 connect-standalone worker.properties sink.properties</code></pre></div>
+<p>Start console producer</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka kafka-console-producer --broker-list localhost:9092 <span class="token parameter variable">--topic</span> SinkDemo</code></pre></div>
+<p>and start typing messages into it, you should immediatelly see them in text file</p>
+<p>Do not forget that you can run some tricky setups like <code class="language-text">connect-standalone worker.properties source.properties sink.properties</code> which might generate data into topic and immediatelly sink them into source</p>
+<h1>Standalone connect worker with confluent.cloud</h1>
+<p>All previous examples should work well with confluent.cloud if you will provide required configuration options</p>
+<p>What you gonna need</p>
+<p><strong>cloud.properties</strong></p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">bootstrap.servers</span><span class="token punctuation">=</span><span class="token value attr-value">xxx-xxxxx.us-east1.gcp.confluent.cloud:9092</span>
+<span class="token key attr-name">ssl.endpoint.identification.algorithm</span><span class="token punctuation">=</span><span class="token value attr-value">https</span>
+<span class="token key attr-name">security.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">SASL_SSL</span>
+<span class="token key attr-name">sasl.mechanism</span><span class="token punctuation">=</span><span class="token value attr-value">PLAIN</span>
+<span class="token key attr-name">sasl.jaas.config</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.common.security.plain.PlainLoginModule required username\="xxxxxxx" password\="xxxxxxx";</span></code></pre></div>
+<p>this file will be used by <code class="language-text">kafka-topics</code> to create topic</p>
+<p><strong>worker.properties</strong></p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">bootstrap.servers</span><span class="token punctuation">=</span><span class="token value attr-value">xxx-xxxxx.us-east1.gcp.confluent.cloud:9092</span>
+<span class="token key attr-name">plugin.path</span><span class="token punctuation">=</span><span class="token value attr-value">/usr/share/java,/usr/share/confluent-hub-components</span>
+
+<span class="token key attr-name">offset.storage.file.filename</span><span class="token punctuation">=</span><span class="token value attr-value">/tmp/standalone.offsets</span>
+
+<span class="token comment"># TODO: check whether this is a deafults</span>
+<span class="token comment"># default 60000</span>
+<span class="token key attr-name">offset.flush.interval.ms</span><span class="token punctuation">=</span><span class="token value attr-value">10000</span>
+<span class="token comment"># default 40000</span>
+<span class="token key attr-name">request.timeout.ms</span><span class="token punctuation">=</span><span class="token value attr-value">20000</span>
+<span class="token comment"># 100</span>
+<span class="token key attr-name">retry.backoff.ms</span><span class="token punctuation">=</span><span class="token value attr-value">500</span>
+<span class="token key attr-name">consumer.request.timeout.ms</span><span class="token punctuation">=</span><span class="token value attr-value">20000</span>
+<span class="token key attr-name">consumer.retry.backoff.ms</span><span class="token punctuation">=</span><span class="token value attr-value">500</span>
+<span class="token key attr-name">producer.request.timeout.ms</span><span class="token punctuation">=</span><span class="token value attr-value">20000</span>
+<span class="token key attr-name">producer.retry.backoff.ms</span><span class="token punctuation">=</span><span class="token value attr-value">500</span>
+
+<span class="token comment"># deafult https</span>
+<span class="token key attr-name">ssl.endpoint.identification.algorithm</span><span class="token punctuation">=</span><span class="token value attr-value">https</span>
+<span class="token comment"># default PLAINTEXT</span>
+<span class="token key attr-name">security.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">SASL_SSL</span>
+<span class="token comment"># default GSSAPI</span>
+<span class="token key attr-name">sasl.mechanism</span><span class="token punctuation">=</span><span class="token value attr-value">PLAIN</span>
+<span class="token key attr-name">sasl.jaas.config</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.common.security.plain.PlainLoginModule required username\="xxxxxxx" password\="xxxxxxx";</span>
+
+<span class="token comment"># Connect producer and consumer specific configuration</span>
+<span class="token key attr-name">producer.ssl.endpoint.identification.algorithm</span><span class="token punctuation">=</span><span class="token value attr-value">https</span>
+<span class="token key attr-name">producer.confluent.monitoring.interceptor.ssl.endpoint.identification.algorithm</span><span class="token punctuation">=</span><span class="token value attr-value">https</span>
+<span class="token key attr-name">consumer.ssl.endpoint.identification.algorithm</span><span class="token punctuation">=</span><span class="token value attr-value">https</span>
+<span class="token key attr-name">consumer.confluent.monitoring.interceptor.ssl.endpoint.identification.algorithm</span><span class="token punctuation">=</span><span class="token value attr-value">https</span>
+<span class="token key attr-name">producer.security.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">SASL_SSL</span>
+<span class="token key attr-name">producer.confluent.monitoring.interceptor.security.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">SASL_SSL</span>
+<span class="token key attr-name">consumer.security.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">SASL_SSL</span>
+<span class="token key attr-name">consumer.confluent.monitoring.interceptor.security.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">SASL_SSL</span>
+<span class="token key attr-name">producer.sasl.mechanism</span><span class="token punctuation">=</span><span class="token value attr-value">PLAIN</span>
+<span class="token key attr-name">producer.confluent.monitoring.interceptor.sasl.mechanism</span><span class="token punctuation">=</span><span class="token value attr-value">PLAIN</span>
+<span class="token key attr-name">consumer.sasl.mechanism</span><span class="token punctuation">=</span><span class="token value attr-value">PLAIN</span>
+<span class="token key attr-name">consumer.confluent.monitoring.interceptor.sasl.mechanism</span><span class="token punctuation">=</span><span class="token value attr-value">PLAIN</span>
+<span class="token key attr-name">producer.sasl.jaas.config</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.common.security.plain.PlainLoginModule required username\="xxxxxxx" password\="xxxxxxx";</span>
+<span class="token key attr-name">producer.confluent.monitoring.interceptor.sasl.jaas.config</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.common.security.plain.PlainLoginModule required username\="xxxxxxx" password\="xxxxxxx";</span>
+<span class="token key attr-name">consumer.sasl.jaas.config</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.common.security.plain.PlainLoginModule required username\="xxxxxxx" password\="xxxxxxx";</span>
+<span class="token key attr-name">consumer.confluent.monitoring.interceptor.sasl.jaas.config</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.common.security.plain.PlainLoginModule required username\="xxxxxxx" password\="xxxxxxx";</span>
+
+<span class="token comment"># Confluent Schema Registry for Kafka Connect</span>
+<span class="token key attr-name">value.converter</span><span class="token punctuation">=</span><span class="token value attr-value">io.confluent.connect.avro.AvroConverter</span>
+<span class="token key attr-name">value.converter.basic.auth.credentials.source</span><span class="token punctuation">=</span><span class="token value attr-value">USER_INFO</span>
+<span class="token key attr-name">value.converter.schema.registry.basic.auth.user.info</span><span class="token punctuation">=</span><span class="token value attr-value">xxxxxxx:xxxxxxx</span>
+<span class="token key attr-name">value.converter.schema.registry.url</span><span class="token punctuation">=</span><span class="token value attr-value">https://xxxx-xxxxx.us-east1.gcp.confluent.cloud</span>
+
+<span class="token key attr-name">key.converter</span><span class="token punctuation">=</span><span class="token value attr-value">io.confluent.connect.avro.AvroConverter</span>
+<span class="token key attr-name">key.converter.basic.auth.credentials.source</span><span class="token punctuation">=</span><span class="token value attr-value">USER_INFO</span>
+<span class="token key attr-name">key.converter.schema.registry.basic.auth.user.info</span><span class="token punctuation">=</span><span class="token value attr-value">xxxxxxx:xxxxxxx</span>
+<span class="token key attr-name">key.converter.schema.registry.url</span><span class="token punctuation">=</span><span class="token value attr-value">https://xxxx-xxxxx.us-east1.gcp.confluent.cloud</span>
+
+
+<span class="token comment"># additions - https://docs.confluent.io/current/cloud/connect/connect-cloud-config.html</span>
+
+<span class="token key attr-name">confluent.topic.bootstrap.servers</span><span class="token punctuation">=</span><span class="token value attr-value">xxx-xxxxx.us-east1.gcp.confluent.cloud:9092</span>
+<span class="token key attr-name">confluent.topic.sasl.jaas.config</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.common.security.plain.PlainLoginModule required username\="xxxxxxx" password\="xxxxxxx";</span>
+<span class="token key attr-name">confluent.topic.security.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">SASL_SSL</span>
+<span class="token key attr-name">confluent.topic.sasl.mechanism</span><span class="token punctuation">=</span><span class="token value attr-value">PLAIN</span>
+
+<span class="token key attr-name">reporter.admin.bootstrap.servers</span><span class="token punctuation">=</span><span class="token value attr-value">xxx-xxxxx.us-east1.gcp.confluent.cloud:9092</span>
+<span class="token key attr-name">reporter.admin.sasl.jaas.config</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.common.security.plain.PlainLoginModule required username\="xxxxxxx" password\="xxxxxxx";</span>
+<span class="token key attr-name">reporter.admin.security.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">SASL_SSL</span>
+<span class="token key attr-name">reporter.admin.sasl.mechanism</span><span class="token punctuation">=</span><span class="token value attr-value">PLAIN</span>
+
+<span class="token key attr-name">reporter.producer.bootstrap.servers</span><span class="token punctuation">=</span><span class="token value attr-value">xxx-xxxxx.us-east1.gcp.confluent.cloud:9092</span>
+<span class="token key attr-name">reporter.producer.sasl.jaas.config</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.common.security.plain.PlainLoginModule required username\="xxxxxxx" password\="xxxxxxx";</span>
+<span class="token key attr-name">reporter.producer.security.protocol</span><span class="token punctuation">=</span><span class="token value attr-value">SASL_SSL</span>
+<span class="token key attr-name">reporter.producer.sasl.mechanism</span><span class="token punctuation">=</span><span class="token value attr-value">PLAIN</span></code></pre></div>
+<p>this one is for worker to be able to comminicate with confluent cloud</p>
+<p><strong>source.properties</strong></p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">name</span><span class="token punctuation">=</span><span class="token value attr-value">source</span>
+<span class="token key attr-name">tasks.max</span><span class="token punctuation">=</span><span class="token value attr-value">1</span>
+
+<span class="token key attr-name">connector.class</span><span class="token punctuation">=</span><span class="token value attr-value">io.confluent.kafka.connect.datagen.DatagenConnector</span>
+<span class="token key attr-name">kafka.topic</span><span class="token punctuation">=</span><span class="token value attr-value">demo1</span>
+<span class="token key attr-name">iterations</span><span class="token punctuation">=</span><span class="token value attr-value">1000</span>
+<span class="token key attr-name">schema.filename</span><span class="token punctuation">=</span><span class="token value attr-value">/data/demo1.avsc</span></code></pre></div>
+<p>this one will be used by datagen connector to generate random data into given topic</p>
+<p><strong>sink.properties</strong></p>
+<div class="gatsby-highlight" data-language="ini"><pre class="language-ini"><code class="language-ini"><span class="token key attr-name">name</span><span class="token punctuation">=</span><span class="token value attr-value">sink</span>
+<span class="token key attr-name">connector.class</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.kafka.connect.file.FileStreamSinkConnector</span>
+<span class="token key attr-name">topics</span><span class="token punctuation">=</span><span class="token value attr-value">demo1</span>
+<span class="token key attr-name">file</span><span class="token punctuation">=</span><span class="token value attr-value">/data/data.txt</span></code></pre></div>
+<p>sing generated messages back from cloud to local file</p>
+<p><strong>demo1.avsc</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{
+  "type": "record",
+  "name": "demo1",
+  "namespace": "ua.rabota.topics",
+  "fields": [
+    {
+      "name": "userId",
+      "type": {
+        "type": "int",
+        "arg.properties": {
+          "range": {
+            "min": 1,
+            "max": 100
+          }
+        }
+      }
+    },
+    {
+      "name": "vacancyId",
+      "type": {
+        "type": "long",
+        "arg.properties": {
+          "range": {
+            "min": 7710732,
+            "max": 7711732
+          }
+        }
+      }
+    },
+    {
+      "name": "platform",
+      "type": ["null", {
+        "type": "string",
+        "arg.properties": {
+          "options": ["desktop", "mobile", "ios", "android"]
+        }
+      }],
+      "default": null
+    }
+  ]
+}</code></pre></div>
+<p>schema for messages to be generated</p>
+<p>create topic</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/cloud.properties:/cloud.properties confluentinc/cp-kafka:5.3.2 kafka-topics <span class="token punctuation">\</span>
+  --bootstrap-server xxx-xxxxx.us-east1.gcp.confluent.cloud:9092 <span class="token punctuation">\</span>
+  --command-config /cloud.properties <span class="token punctuation">\</span>
+  <span class="token parameter variable">--create</span> <span class="token parameter variable">--topic</span> demo1  <span class="token parameter variable">--partitions</span> <span class="token number">3</span> --replication-factor <span class="token number">3</span></code></pre></div>
+<p>start worker</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">--name</span><span class="token operator">=</span>standalone <span class="token punctuation">\</span>
+    <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>:/data <span class="token punctuation">\</span>
+    <span class="token parameter variable">-w</span> /data <span class="token punctuation">\</span>
+    confluentinc/cp-kafka-connect:5.3.2 <span class="token function">bash</span> <span class="token parameter variable">-c</span> <span class="token string">"confluent-hub install --no-prompt confluentinc/kafka-connect-datagen:0.2.0 &amp;&amp; connect-standalone worker.properties source.properties sink.properties"</span></code></pre></div>
+<p>after a while you will see that your data.txt file becomes full of random generated messages</p>
+<p>So now you can quickly send batch of messages both generated and predefined not only to local kafka but also to your confluent cloud one - profit</p>
+<h1>Distributed Worker</h1>
+<p>Confluent cloud not giving you distributed workers for some reasons. Seems like it is because they do not know how much of them you gonna need. To start your own connect cluster you will need <code class="language-text">worker.properties</code> from previous example just remove <code class="language-text">offset.storage.file.filename</code> from it and add</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">group.id=mac1
+offset.storage.topic=mac1-offsets
+config.storage.topic=mac1-configs
+status.storage.topic=mac1-status
+
+offset.storage.partitions=3
+replication.factor=3
+config.storage.replication.factor=3
+offset.storage.replication.factor=3
+status.storage.replication.factor=3</code></pre></div>
+<p>take a closer look to first four settings, make sure they are unique</p>
+<p>The difference between standalone and distributed worker is that from now you going to add and remove your tasks via <a href="https://docs.confluent.io/current/connect/references/restapi.html">rest api</a></p>
+<p>In most of the cases everything will look the same as in previous examples, except that now you are going to post json instead of property files like in example from docs:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">POST /connectors HTTP/1.1
+Host: connect.example.com
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "hdfs-sink-connector",
+    "config": {
+        "connector.class": "io.confluent.connect.hdfs.HdfsSinkConnector",
+        "tasks.max": "10",
+        "topics": "test-topic",
+        "hdfs.url": "hdfs://fakehost:9000",
+        "hadoop.conf.dir": "/opt/hadoop/conf",
+        "hadoop.home": "/opt/hadoop",
+        "flush.size": "100",
+        "rotate.interval.ms": "1000"
+    }
+}</code></pre></div>
+<p>Here is an example of docker run which is a good starting point to run your connect cluster in kubernetes</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">--name</span><span class="token operator">=</span>mac1 <span class="token punctuation">\</span>
+    <span class="token parameter variable">-p</span> <span class="token number">8083</span>:8083 <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_BOOTSTRAP_SERVERS</span><span class="token operator">=</span>xxx-xxxxx.us-east1.gcp.confluent.cloud:9092 <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_GROUP_ID</span><span class="token operator">=</span>mac1 <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_OFFSET_STORAGE_TOPIC</span><span class="token operator">=</span>mac1-offsets <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_CONFIG_STORAGE_TOPIC</span><span class="token operator">=</span>mac1-configs <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_STATUS_STORAGE_TOPIC</span><span class="token operator">=</span>mac1-status <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_OFFSET_STORAGE_PARTITIONS</span><span class="token operator">=</span><span class="token number">3</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_REPLICATION_FACTOR</span><span class="token operator">=</span><span class="token number">3</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR</span><span class="token operator">=</span><span class="token number">3</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR</span><span class="token operator">=</span><span class="token number">3</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_STATUS_STORAGE_REPLICATION_FACTOR</span><span class="token operator">=</span><span class="token number">3</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_OFFSET_FLUSH_INTERVAL_MS</span><span class="token operator">=</span><span class="token number">10000</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_REQUEST_TIMEOUT_MS</span><span class="token operator">=</span><span class="token number">20000</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_RETRY_BACKOFF_MS</span><span class="token operator">=</span><span class="token number">500</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_CONSUMER_REQUEST_TIMEOUT_MS</span><span class="token operator">=</span><span class="token number">20000</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_CONSUMER_RETRY_BACKOFF_MS</span><span class="token operator">=</span><span class="token number">500</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_PRODUCER_REQUEST_TIMEOUT_MS</span><span class="token operator">=</span><span class="token number">20000</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_PRODUCER_RETRY_BACKOFF_MS</span><span class="token operator">=</span><span class="token number">500</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM</span><span class="token operator">=</span>https <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_SECURITY_PROTOCOL</span><span class="token operator">=</span>SASL_SSL <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_SASL_MECHANISM</span><span class="token operator">=</span>PLAIN <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_SASL_JAAS_CONFIG</span><span class="token operator">=</span><span class="token string">"org.apache.kafka.common.security.plain.PlainLoginModule required username=<span class="token entity" title="\&quot;">\"</span>xxxxxxx<span class="token entity" title="\&quot;">\"</span> password=<span class="token entity" title="\&quot;">\"</span>xxxxxxx<span class="token entity" title="\&quot;">\"</span>;"</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_PRODUCER_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM</span><span class="token operator">=</span>https <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_PRODUCER_CONFLUENT_MONITORING_INTERCEPTOR_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM</span><span class="token operator">=</span>https <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_CONSUMER_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM</span><span class="token operator">=</span>https <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_CONSUMER_CONFLUENT_MONITORING_INTERCEPTOR_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM</span><span class="token operator">=</span>https <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_PRODUCER_SECURITY_PROTOCOL</span><span class="token operator">=</span>SASL_SSL <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_PRODUCER_CONFLUENT_MONITORING_INTERCEPTOR_SECURITY_PROTOCOL</span><span class="token operator">=</span>SASL_SSL <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_CONSUMER_SECURITY_PROTOCOL</span><span class="token operator">=</span>SASL_SSL <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_CONSUMER_CONFLUENT_MONITORING_INTERCEPTOR_SECURITY_PROTOCOL</span><span class="token operator">=</span>SASL_SSL <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_PRODUCER_SASL_MECHANISM</span><span class="token operator">=</span>PLAIN <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_PRODUCER_CONFLUENT_MONITORING_INTERCEPTOR_SASL_MECHANISM</span><span class="token operator">=</span>PLAIN <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_CONSUMER_SASL_MECHANISM</span><span class="token operator">=</span>PLAIN <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_CONSUMER_CONFLUENT_MONITORING_INTERCEPTOR_SASL_MECHANISM</span><span class="token operator">=</span>PLAIN <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_PRODUCER_SASL_JAAS_CONFIG</span><span class="token operator">=</span><span class="token string">"org.apache.kafka.common.security.plain.PlainLoginModule required username=<span class="token entity" title="\&quot;">\"</span>xxxxxxx<span class="token entity" title="\&quot;">\"</span> password=<span class="token entity" title="\&quot;">\"</span>xxxxxxx<span class="token entity" title="\&quot;">\"</span>;"</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_PRODUCER_CONFLUENT_MONITORING_INTERCEPTOR_SASL_JAAS_CONFIG</span><span class="token operator">=</span><span class="token string">"org.apache.kafka.common.security.plain.PlainLoginModule required username=<span class="token entity" title="\&quot;">\"</span>xxxxxxx<span class="token entity" title="\&quot;">\"</span> password=<span class="token entity" title="\&quot;">\"</span>xxxxxxx<span class="token entity" title="\&quot;">\"</span>;"</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_CONSUMER_SASL_JAAS_CONFIG</span><span class="token operator">=</span><span class="token string">"org.apache.kafka.common.security.plain.PlainLoginModule required username=<span class="token entity" title="\&quot;">\"</span>xxxxxxx<span class="token entity" title="\&quot;">\"</span> password=<span class="token entity" title="\&quot;">\"</span>xxxxxxx<span class="token entity" title="\&quot;">\"</span>;"</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_CONSUMER_CONFLUENT_MONITORING_INTERCEPTOR_SASL_JAAS_CONFIG</span><span class="token operator">=</span><span class="token string">"org.apache.kafka.common.security.plain.PlainLoginModule required username=<span class="token entity" title="\&quot;">\"</span>xxxxxxx<span class="token entity" title="\&quot;">\"</span> password=<span class="token entity" title="\&quot;">\"</span>xxxxxxx<span class="token entity" title="\&quot;">\"</span>;"</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_VALUE_CONVERTER</span><span class="token operator">=</span>io.confluent.connect.avro.AvroConverter <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_VALUE_CONVERTER_BASIC_AUTH_CREDENTIALS_SOURCE</span><span class="token operator">=</span>USER_INFO <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_BASIC_AUTH_USER_INFO</span><span class="token operator">=</span>xxxxxxx:xxxxxxx <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_URL</span><span class="token operator">=</span>https://xxxx-xxxxx.us-east1.gcp.confluent.cloud <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_KEY_CONVERTER</span><span class="token operator">=</span>io.confluent.connect.avro.AvroConverter <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_KEY_CONVERTER_SCHEMAS_ENABLE</span><span class="token operator">=</span>true <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_VALUE_CONVERTER_SCHEMAS_ENABLE</span><span class="token operator">=</span>true <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_REST_POST</span><span class="token operator">=</span><span class="token number">8083</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_REST_ADVERTISED_HOST_NAME</span><span class="token operator">=</span>localhost <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_KEY_CONVERTER_BASIC_AUTH_CREDENTIALS_SOURCE</span><span class="token operator">=</span>USER_INFO <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_KEY_CONVERTER_SCHEMA_REGISTRY_BASIC_AUTH_USER_INFO</span><span class="token operator">=</span>xxxxxxx:xxxxxxx <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">CONNECT_KEY_CONVERTER_SCHEMA_REGISTRY_URL</span><span class="token operator">=</span>https://xxxx-xxxxx.us-east1.gcp.confluent.cloud
+    confluentinc/cp-kafka-connect:5.3.2</code></pre></div>
+<h1>Bash aliases</h1>
+<p>Even simple operations like creating topic becomes not easy to remember especially if you will have local, dev, prod kafka clusters</p>
+<p>If you are using <a href="https://docs.confluent.io/current/cloud/cli/command-reference/ccloud.html">ccloud</a> command line tool you already should have <code class="language-text">~/.ccloud/</code> which to me seems a good place to save my <code class="language-text">cloud.properties</code> files in my case it will be <code class="language-text">dev.properties</code> and <code class="language-text">prod.peroperties</code></p>
+<p>Here are few starting point examples</p>
+<h2>Local kafka bash aliases</h2>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">alias</span> local-topic<span class="token operator">=</span><span class="token string">"docker run -it --rm --net=host confluentinc/cp-kafka:5.3.2 kafka-topics --bootstrap-server localhost:9092"</span>
+
+<span class="token builtin class-name">alias</span> local-topic-list<span class="token operator">=</span><span class="token string">"local-topic --list"</span>
+
+<span class="token builtin class-name">alias</span> local-topic-delete<span class="token operator">=</span><span class="token string">"local-topic --delete --topic"</span>
+
+<span class="token builtin class-name">alias</span> local-topic-describe<span class="token operator">=</span><span class="token string">"local-topic --describe --topic"</span>
+
+<span class="token builtin class-name">alias</span> local-topic-create<span class="token operator">=</span><span class="token string">"local-topic --create --replication-factor 1 --topic"</span>
+
+<span class="token builtin class-name">alias</span> local-topic-create1<span class="token operator">=</span><span class="token string">"local-topic --create --replication-factor 1 --partitions 1 --topic"</span>
+
+<span class="token builtin class-name">alias</span> local-topic-create2<span class="token operator">=</span><span class="token string">"local-topic --create --replication-factor 1 --partitions 2 --topic"</span>
+
+<span class="token builtin class-name">alias</span> local-console-consumer<span class="token operator">=</span><span class="token string">"docker run -it --rm --net=host confluentinc/cp-kafka:5.3.2 kafka-console-consumer --bootstrap-server localhost:9092 --from-beginning --topic"</span>
+
+<span class="token builtin class-name">alias</span> local-console-producer<span class="token operator">=</span><span class="token string">"docker run -it --rm --net=host confluentinc/cp-kafka:5.3.2 kafka-console-producer --broker-list localhost:9092 --topic"</span></code></pre></div>
+<h2>Confluent cloud kafka bash aliases</h2>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">alias</span> dev-topic<span class="token operator">=</span><span class="token string">"docker run -it --rm -v /Users/mac/.ccloud/dev.properties:/dev.properties confluentinc/cp-kafka:5.3.2 kafka-topics --bootstrap-server <span class="token variable"><span class="token variable">$(</span><span class="token function">grep</span> bootstrap.server ~/.ccloud/dev.properties <span class="token operator">|</span> <span class="token function">tail</span> <span class="token parameter variable">-1</span> <span class="token operator">|</span> <span class="token function">cut</span> -d<span class="token string">'='</span> <span class="token parameter variable">-f2</span><span class="token variable">)</span></span> --command-config dev.properties"</span>
+
+<span class="token builtin class-name">alias</span> dev-topic-list<span class="token operator">=</span><span class="token string">"dev-topic --list"</span>
+
+<span class="token builtin class-name">alias</span> dev-topic-delete<span class="token operator">=</span><span class="token string">"dev-topic --delete --topic"</span>
+
+<span class="token builtin class-name">alias</span> dev-topic-describe<span class="token operator">=</span><span class="token string">"dev-topic --describe --topic"</span>
+
+<span class="token builtin class-name">alias</span> dev-topic-create<span class="token operator">=</span><span class="token string">"dev-topic --create  --replication-factor 3 --topic"</span>
+
+<span class="token builtin class-name">alias</span> dev-console-consumer<span class="token operator">=</span><span class="token string">"docker run -it --rm -v /Users/mac/.ccloud/dev.properties:/dev.properties confluentinc/cp-kafka:5.3.2 kafka-console-consumer --bootstrap-server <span class="token variable"><span class="token variable">$(</span><span class="token function">grep</span> bootstrap.server ~/.ccloud/dev.properties <span class="token operator">|</span> <span class="token function">tail</span> <span class="token parameter variable">-1</span> <span class="token operator">|</span> <span class="token function">cut</span> -d<span class="token string">'='</span> <span class="token parameter variable">-f2</span><span class="token variable">)</span></span> --consumer.config dev.properties --topic"</span>
+
+<span class="token builtin class-name">alias</span> dev-console-producer<span class="token operator">=</span><span class="token string">"docker run -it --rm -v /Users/mac/.ccloud/dev.properties:/dev.properties confluentinc/cp-kafka:5.3.2 kafka-console-producer --broker-list <span class="token variable"><span class="token variable">$(</span><span class="token function">grep</span> bootstrap.server ~/.ccloud/dev.properties <span class="token operator">|</span> <span class="token function">tail</span> <span class="token parameter variable">-1</span> <span class="token operator">|</span> <span class="token function">cut</span> -d<span class="token string">'='</span> <span class="token parameter variable">-f2</span><span class="token variable">)</span></span> --producer.config dev.properties --topic"</span></code></pre></div></div></main><footer><a href="#top">top</a><a href="/">home</a><a href="/search">search</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/kafka-command-line-tools";window.___webpackCompilationHash="ef8fb55bb983484b16a7";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-b4bb882d10635d85fa25.js"],"app":["/app-98475b819971087d4b7e.js"],"component---src-pages-404-js":["/component---src-pages-404-js-2652c435d8decd31b8ef.js"],"component---src-pages-index-js":["/component---src-pages-index-js-59ea4a114c2918516395.js"],"component---src-pages-search-js":["/component---src-pages-search-js-078619e3aef857102623.js"],"component---src-templates-note-js":["/component---src-templates-note-js-b005c02681f20ea28edd.js"]};/*]]>*/</script><script src="/polyfill-b4bb882d10635d85fa25.js" nomodule=""></script><script src="/app-98475b819971087d4b7e.js" async=""></script><script src="/framework-2ce620c91826a79f925c.js" async=""></script><script src="/webpack-runtime-72217849817cd80b0f9a.js" async=""></script></body></html>
