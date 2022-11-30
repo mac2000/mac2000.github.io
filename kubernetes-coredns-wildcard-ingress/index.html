@@ -158,4 +158,42 @@ kubectl <span class="token parameter variable">-n</span> kube-system logs <span 
   <span class="token key atrule">namespace</span><span class="token punctuation">:</span> kube<span class="token punctuation">-</span>system
   <span class="token comment"># resourceVersion: "318"</span>
   <span class="token comment"># uid: a782b320-d90b-4399-8d43-3ebe3d48cc0f</span></code></pre></div></p>
-<p>and once again restart containers.</p></div></main><footer><a href="#top">top</a><a href="/">home</a><a href="/search">search</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/kubernetes-coredns-wildcard-ingress";window.___webpackCompilationHash="41bfe33cf88061592199";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-b4bb882d10635d85fa25.js"],"app":["/app-1529e4490e31717bdc91.js"],"component---src-pages-404-js":["/component---src-pages-404-js-2652c435d8decd31b8ef.js"],"component---src-pages-index-js":["/component---src-pages-index-js-1c707dd70333cdef2ccb.js"],"component---src-pages-search-js":["/component---src-pages-search-js-078619e3aef857102623.js"],"component---src-templates-note-js":["/component---src-templates-note-js-b005c02681f20ea28edd.js"]};/*]]>*/</script><script src="/polyfill-b4bb882d10635d85fa25.js" nomodule=""></script><script src="/app-1529e4490e31717bdc91.js" async=""></script><script src="/framework-2ce620c91826a79f925c.js" async=""></script><script src="/webpack-runtime-c8083bc4cc67445e30af.js" async=""></script></body></html>
+<p>and once again restart containers.</p>
+<h2>CoreDNS Ingress</h2>
+<p>And there is one more option</p>
+<p>CoreDNS has rewrite plugin that allows you to simply add aliases for any domain pointing to any service</p>
+<p>Ingress itself has service which is used for incomming traffic</p>
+<p>In my case it is something like:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">kubectl <span class="token parameter variable">-n</span> ingress get svc ingress
+
+<span class="token comment"># NAME      TYPE           CLUSTER-IP    EXTERNAL-IP    PORT(S)                      AGE</span>
+<span class="token comment"># ingress   LoadBalancer   10.0.125.37   20.10.170.60   80:31932/TCP,443:30431/TCP   82d</span></code></pre></div>
+<p>What you should not is that it has both external and internal ip addresses</p>
+<p>And if you will apply something like this:</p>
+<div class="gatsby-highlight" data-language="yml"><pre class="language-yml"><code class="language-yml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ConfigMap
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> coredns<span class="token punctuation">-</span>custom
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> kube<span class="token punctuation">-</span>system
+<span class="token key atrule">data</span><span class="token punctuation">:</span>
+  <span class="token key atrule">rewrite.override</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+    rewrite name foo.mac-blog.org.ua ingress.ingress.svc.cluster.local</span></code></pre></div>
+<p>Suddenly inside your cluster all requests to <code class="language-text">foo.mac-blog.org.ua</code> will be resolved to <code class="language-text">10.0.125.37</code> internall ingress service ip</p>
+<p>Also note that it does not matter in which namespaces services are, everything just works</p>
+<p>Rewrite has option to use regex, and to backport some outside services we always may use hosts plugin, so I ended up with something like:</p>
+<p><div class="gatsby-highlight" data-language="yml"><pre class="language-yml"><code class="language-yml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ConfigMap
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> coredns<span class="token punctuation">-</span>custom
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> kube<span class="token punctuation">-</span>system
+<span class="token key atrule">data</span><span class="token punctuation">:</span>
+  <span class="token key atrule">hosts.override</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+    hosts {
+      10.50.10.4 another-service.mac-blog.org.ua
+      fallthrough
+    }</span>
+  <span class="token key atrule">rewrite.override</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+    rewrite regex (.+)\.mac-blog\.org\.ua ingress.ingress.svc.cluster.local</span></code></pre></div></p>
+<p>And from now any subdomain will point to internal ip address of ingress, which means we are free to create as many ingresses as we want and everything will work and thanks to cert-manager we may even have tls for them and it also will work because acme requests will come outside the cluster</p>
+<p>With such setup there is no need in internal and external ingress everything may be covered with a single one</p>
+<p>What is cools it is transparent for applications and if we want some service to be internal only we always may use annotation like: <code class="language-text">nginx.ingress.kubernetes.io/whielist-source-range: 10.50.0.0/16</code> on concrete ingress to disallow external access to it</p></div></main><footer><a href="#top">top</a><a href="/">home</a><a href="/search">search</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/kubernetes-coredns-wildcard-ingress";window.___webpackCompilationHash="f25e81a179fb326a8cc8";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-b4bb882d10635d85fa25.js"],"app":["/app-1529e4490e31717bdc91.js"],"component---src-pages-404-js":["/component---src-pages-404-js-2652c435d8decd31b8ef.js"],"component---src-pages-index-js":["/component---src-pages-index-js-1c707dd70333cdef2ccb.js"],"component---src-pages-search-js":["/component---src-pages-search-js-078619e3aef857102623.js"],"component---src-templates-note-js":["/component---src-templates-note-js-b005c02681f20ea28edd.js"]};/*]]>*/</script><script src="/polyfill-b4bb882d10635d85fa25.js" nomodule=""></script><script src="/app-1529e4490e31717bdc91.js" async=""></script><script src="/framework-2ce620c91826a79f925c.js" async=""></script><script src="/webpack-runtime-c8083bc4cc67445e30af.js" async=""></script></body></html>
