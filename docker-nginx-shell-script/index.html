@@ -30,9 +30,7 @@ COPY ./05-spawn-fcgi.sh /docker-entrypoint.d/05-spawn-fcgi.sh</code></pre></div>
 
 <span class="token builtin class-name">echo</span> <span class="token string">'Content-Type: text/plain'</span>
 <span class="token builtin class-name">echo</span> <span class="token string">''</span>
-<span class="token builtin class-name">echo</span> <span class="token string">'Hello, world!'</span>
-<span class="token builtin class-name">echo</span> <span class="token variable">$HTTP_FOO</span>
-<span class="token builtin class-name">echo</span> <span class="token variable">$HTTP_ACME</span></code></pre></div></p>
+<span class="token builtin class-name">echo</span> <span class="token string">'Hello, world!'</span></code></pre></div></p>
 <p>be sure to split response body and headers by a single empty line</p>
 <p>build</p>
 <div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell"><span class="token function">docker</span> build <span class="token parameter variable">-t</span> cgi <span class="token builtin class-name">.</span></code></pre></div>
@@ -97,4 +95,124 @@ SERVER_NAME<span class="token operator">=</span>localhost</code></pre></div>
 <span class="token builtin class-name">echo</span> <span class="token variable">$HTTP_FOO</span>
 <span class="token builtin class-name">echo</span> <span class="token variable">$HTTP_ACME</span></code></pre></div>
 <p>and usage:</p>
-<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> localhost:8081/demo.sh <span class="token parameter variable">-H</span> <span class="token string">'Foo: Bar'</span> <span class="token parameter variable">-H</span> <span class="token string">'Acme: 42'</span></code></pre></div></div></main><footer><a href="#top">top</a><a href="/">home</a><a href="/search">search</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/docker-nginx-shell-script";window.___webpackCompilationHash="26ab2a0da607c99d5a1b";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-b4bb882d10635d85fa25.js"],"app":["/app-4dce200a378abd7eb1ff.js"],"component---src-pages-404-js":["/component---src-pages-404-js-2652c435d8decd31b8ef.js"],"component---src-pages-index-js":["/component---src-pages-index-js-144cfd4a5c58839d0eaf.js"],"component---src-pages-search-js":["/component---src-pages-search-js-078619e3aef857102623.js"],"component---src-templates-note-js":["/component---src-templates-note-js-b005c02681f20ea28edd.js"]};/*]]>*/</script><script src="/polyfill-b4bb882d10635d85fa25.js" nomodule=""></script><script src="/app-4dce200a378abd7eb1ff.js" async=""></script><script src="/framework-2ce620c91826a79f925c.js" async=""></script><script src="/webpack-runtime-7e559c13c9afff5df79f.js" async=""></script></body></html>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> localhost:8081/demo.sh <span class="token parameter variable">-H</span> <span class="token string">'Foo: Bar'</span> <span class="token parameter variable">-H</span> <span class="token string">'Acme: 42'</span></code></pre></div>
+<h2>route params</h2>
+<p>suppose we want to handle <code class="language-text">/foo/(.+)/bar</code></p>
+<p><div class="gatsby-highlight" data-language="conf"><pre class="language-conf"><code class="language-conf">server {
+    listen       80;
+    server_name  localhost;
+    root   /usr/share/nginx/html;
+
+    location / {
+        index  index.html index.htm;
+    }
+
+    # added example, any shell script in content root will be executable
+    location ~ \.sh$ {
+        gzip off;
+        fastcgi_pass unix:/var/run/fcgiwrap.socket;
+        include /etc/nginx/fastcgi_params;
+    }
+
+
+    location ~ ^/foo/(.+)/bar$ {
+      gzip off;
+      fastcgi_pass unix:/var/run/fcgiwrap.socket;
+      include /etc/nginx/fastcgi_params;
+      fastcgi_param FOOBAR $1;
+      fastcgi_param SCRIPT_FILENAME  /usr/share/nginx/html/route.sh;
+    }
+}</code></pre></div></p>
+<p><div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/sh</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">'Content-Type: text/plain'</span>
+<span class="token builtin class-name">echo</span> <span class="token string">''</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"FOOBAR: <span class="token variable">$FOOBAR</span>"</span></code></pre></div></p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> <span class="token parameter variable">-p</span> <span class="token number">8081</span>:80 <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/demo.sh:/usr/share/nginx/html/demo.sh <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/route.sh:/usr/share/nginx/html/route.sh <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/route.conf:/etc/nginx/conf.d/default.conf cgi</code></pre></div>
+<p>with that in place all commands will work:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> localhost:8081
+<span class="token comment"># nginx start page</span>
+<span class="token function">curl</span> localhost:8081/demo.sh
+<span class="token comment"># Hello, world!</span>
+<span class="token function">curl</span> localhost:8081/foo/helloworld/bar
+<span class="token comment"># FOOBAR: helloworld</span></code></pre></div>
+<h2>json</h2>
+<p>we can use <code class="language-text">jq</code> to build json responses, aka</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/sh</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">'Content-Type: application/json'</span>
+<span class="token builtin class-name">echo</span> <span class="token string">''</span>
+jq <span class="token parameter variable">-n</span> <span class="token parameter variable">--arg</span> inarr <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">echo</span> <span class="token parameter variable">-en</span> <span class="token string">"hello<span class="token entity" title="\n">\n</span>world<span class="token entity" title="\n">\n</span>"</span><span class="token variable">)</span></span>"</span> <span class="token string">'$inarr | split("\n")'</span>
+<span class="token comment"># echo -e "one\ntwo\nthree" | jq -R . | jq -s '.'</span></code></pre></div>
+<p>other samples</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token comment"># jq - produce array of strings</span>
+<span class="token builtin class-name">echo</span> <span class="token parameter variable">-e</span> <span class="token string">"one<span class="token entity" title="\n">\n</span>two<span class="token entity" title="\n">\n</span>three"</span> <span class="token operator">|</span> jq <span class="token parameter variable">-R</span> <span class="token builtin class-name">.</span> <span class="token operator">|</span> jq <span class="token parameter variable">-s</span> <span class="token string">'.'</span>
+<span class="token comment"># [</span>
+<span class="token comment">#   "one",</span>
+<span class="token comment">#   "two",</span>
+<span class="token comment">#   "three"</span>
+<span class="token comment"># ]</span>
+
+<span class="token comment"># jq - produce json object</span>
+jq <span class="token parameter variable">-n</span> <span class="token parameter variable">--arg</span> foo <span class="token string">"bar"</span> <span class="token parameter variable">--arg</span> acme <span class="token string">"42"</span> <span class="token string">'{foo: $foo, acme: $acme}'</span>
+<span class="token comment"># {</span>
+<span class="token comment">#   "foo": "bar",</span>
+<span class="token comment">#   "acme": "42"</span>
+<span class="token comment"># }</span>
+
+<span class="token comment"># jq - produce nested object</span>
+jq <span class="token parameter variable">-n</span> <span class="token parameter variable">--arg</span> foo <span class="token string">"bar"</span> <span class="token parameter variable">--arg</span> acme <span class="token string">"42"</span> <span class="token string">'{nested: {foo: $foo, acme: $acme}, hello: "world"}'</span>
+<span class="token comment"># {</span>
+<span class="token comment">#   "nested": {</span>
+<span class="token comment">#     "foo": "bar",</span>
+<span class="token comment">#     "acme": "42"</span>
+<span class="token comment">#   },</span>
+<span class="token comment">#   "hello": "world"</span>
+<span class="token comment"># }</span>
+
+<span class="token comment"># jq - produce array of objects</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">c</span> <span class="token keyword">in</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">docker</span> <span class="token function">ps</span> <span class="token parameter variable">-aq</span><span class="token variable">)</span></span>
+<span class="token keyword">do</span>
+  <span class="token assign-left variable">n</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">docker</span> inspect $c <span class="token operator">|</span> jq <span class="token parameter variable">-r</span> <span class="token string">".[0].Name"</span><span class="token variable">)</span></span>
+  jq <span class="token parameter variable">-n</span> <span class="token parameter variable">--arg</span> c <span class="token variable">$c</span> <span class="token parameter variable">--arg</span> n <span class="token variable">$n</span> <span class="token string">'{id: $c, name: $n}'</span>
+<span class="token keyword">done</span> <span class="token operator">|</span> jq <span class="token parameter variable">-n</span> <span class="token string">'[inputs | {id: .id, name: .name}]'</span>
+<span class="token comment"># [</span>
+<span class="token comment">#   {</span>
+<span class="token comment">#     "id": "bfca592aaa1d",</span>
+<span class="token comment">#     "name": "/goofy_heisenberg"</span>
+<span class="token comment">#   },</span>
+<span class="token comment">#   {</span>
+<span class="token comment">#     "id": "31fac6dfe385",</span>
+<span class="token comment">#     "name": "/elastic"</span>
+<span class="token comment">#   }</span>
+<span class="token comment"># ]</span>
+
+<span class="token comment"># jq - tsv with headers</span>
+<span class="token builtin class-name">echo</span> <span class="token parameter variable">-en</span> <span class="token string">"id<span class="token entity" title="\t">\t</span>name<span class="token entity" title="\n">\n</span>1<span class="token entity" title="\t">\t</span>one<span class="token entity" title="\n">\n</span>2<span class="token entity" title="\t">\t</span>two<span class="token entity" title="\n">\n</span>"</span> <span class="token operator">|</span> jq <span class="token parameter variable">-s</span> <span class="token parameter variable">--slurp</span> --raw-input --raw-output <span class="token string">'split("\n") | .[1:-1] | map(split("\t")) | map({"id": .[0], "name": .[1]})'</span>
+
+<span class="token comment"># jq - tsv without headers</span>
+<span class="token builtin class-name">echo</span> <span class="token parameter variable">-en</span> <span class="token string">"1<span class="token entity" title="\t">\t</span>one<span class="token entity" title="\n">\n</span>2<span class="token entity" title="\t">\t</span>two<span class="token entity" title="\n">\n</span>"</span> <span class="token operator">|</span> jq <span class="token parameter variable">-s</span> <span class="token parameter variable">--slurp</span> --raw-input --raw-output <span class="token string">'split("\n") | .[0:-1] | map(split("\t")) | map({"id": .[0], "name": .[1]})'</span>
+
+<span class="token builtin class-name">echo</span> <span class="token parameter variable">-en</span> <span class="token string">"1<span class="token entity" title="\t">\t</span>one<span class="token entity" title="\n">\n</span>2<span class="token entity" title="\t">\t</span>two"</span> <span class="token operator">|</span> jq <span class="token parameter variable">-s</span> <span class="token parameter variable">--slurp</span> --raw-input --raw-output <span class="token string">'split("\n")| map(split("\t")) | map({"id": .[0], "name": .[1]})'</span>
+<span class="token comment"># [</span>
+<span class="token comment">#   {</span>
+<span class="token comment">#     "id": "1",</span>
+<span class="token comment">#     "name": "one"</span>
+<span class="token comment">#   },</span>
+<span class="token comment">#   {</span>
+<span class="token comment">#     "id": "2",</span>
+<span class="token comment">#     "name": "two"</span>
+<span class="token comment">#   }</span>
+<span class="token comment"># ]</span></code></pre></div>
+<h2>content negotiation</h2>
+<p>we may get accept header from incomming request and depending on its value do something like</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$HTTP_ACCEPT</span> <span class="token operator">==</span> *<span class="token string">"application/json"</span>* <span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token keyword">then</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">'Content-Type: application/json'</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">''</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">'{"foo":"bar"}'</span>
+<span class="token keyword">else</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">'Content-Type: text/plain'</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">''</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">'foo: bar'</span>
+<span class="token keyword">fi</span></code></pre></div></div></main><footer><a href="#top">top</a><a href="/">home</a><a href="/search">search</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/docker-nginx-shell-script";window.___webpackCompilationHash="26ab2a0da607c99d5a1b";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-b4bb882d10635d85fa25.js"],"app":["/app-4dce200a378abd7eb1ff.js"],"component---src-pages-404-js":["/component---src-pages-404-js-2652c435d8decd31b8ef.js"],"component---src-pages-index-js":["/component---src-pages-index-js-144cfd4a5c58839d0eaf.js"],"component---src-pages-search-js":["/component---src-pages-search-js-078619e3aef857102623.js"],"component---src-templates-note-js":["/component---src-templates-note-js-b005c02681f20ea28edd.js"]};/*]]>*/</script><script src="/polyfill-b4bb882d10635d85fa25.js" nomodule=""></script><script src="/app-4dce200a378abd7eb1ff.js" async=""></script><script src="/framework-2ce620c91826a79f925c.js" async=""></script><script src="/webpack-runtime-7e559c13c9afff5df79f.js" async=""></script></body></html>
