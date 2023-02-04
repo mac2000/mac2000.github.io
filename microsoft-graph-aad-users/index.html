@@ -437,4 +437,105 @@ az ad app create --display-name mactemp
 <span class="token function">curl</span> https://graph.microsoft.com/v1.0/users <span class="token parameter variable">-H</span> <span class="token string">"Authorization: Bearer <span class="token variable">$token</span>"</span> <span class="token operator">|</span> jq
 
 <span class="token comment"># STEP 4: CLEANUP</span>
-az ad app delete <span class="token parameter variable">--id</span> <span class="token variable">$client_id</span></code></pre></div></div></main><footer><a href="#top">top</a><a href="/">home</a><a href="/search">search</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/microsoft-graph-aad-users";window.___webpackCompilationHash="bf35e8be9c9e8e80f168";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-b4bb882d10635d85fa25.js"],"app":["/app-4dce200a378abd7eb1ff.js"],"component---src-pages-404-js":["/component---src-pages-404-js-2652c435d8decd31b8ef.js"],"component---src-pages-index-js":["/component---src-pages-index-js-ffacaeb3da1810e96895.js"],"component---src-pages-search-js":["/component---src-pages-search-js-078619e3aef857102623.js"],"component---src-templates-note-js":["/component---src-templates-note-js-b005c02681f20ea28edd.js"]};/*]]>*/</script><script src="/polyfill-b4bb882d10635d85fa25.js" nomodule=""></script><script src="/app-4dce200a378abd7eb1ff.js" async=""></script><script src="/framework-2ce620c91826a79f925c.js" async=""></script><script src="/webpack-runtime-6dca1a41c86a4340451e.js" async=""></script></body></html>
+az ad app delete <span class="token parameter variable">--id</span> <span class="token variable">$client_id</span></code></pre></div>
+<h1>Creating and Azure app for device flow</h1>
+<p>Trying to mimicate <a href="https://moiaune.dev/2021/10/22/azure-device-flow-authentication-in-go/">Azure Device Flow Authentication in Go</a> which has quite a good example of how to get up and running with device auth flow in Go.</p>
+<p>The same way as previous we need to make sure we are in the right subscription</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token comment"># current</span>
+az account show <span class="token parameter variable">--query</span> name <span class="token parameter variable">--output</span> tsv
+<span class="token comment"># available</span>
+az account list <span class="token parameter variable">--query</span> <span class="token string">"[].{name:name}"</span> <span class="token parameter variable">--output</span> tsv
+<span class="token comment"># change</span>
+az account <span class="token builtin class-name">set</span> <span class="token parameter variable">--subscription</span><span class="token operator">=</span><span class="token string">"mysubs"</span>
+
+<span class="token comment"># tenant_id</span>
+<span class="token assign-left variable">tenant_id</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>az account show <span class="token parameter variable">--query</span> tenantId <span class="token parameter variable">--output</span> tsv<span class="token variable">)</span></span>
+<span class="token builtin class-name">echo</span> <span class="token string">"tenant_id: <span class="token variable">$tenant_id</span>"</span></code></pre></div>
+<p>Now we can create our app</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token comment"># https://learn.microsoft.com/en-us/cli/azure/ad/app?view=azure-cli-latest</span>
+az ad app create --display-name mactemp
+
+<span class="token comment"># https://learn.microsoft.com/en-us/cli/azure/ad/app?view=azure-cli-latest#az-ad-app-list</span>
+<span class="token assign-left variable">client_id</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>az ad app list <span class="token parameter variable">--query</span> <span class="token string">"[?displayName=='mactemp'].{client_id:appId}[0]"</span> <span class="token parameter variable">--output</span> tsv<span class="token variable">)</span></span>
+<span class="token builtin class-name">echo</span> <span class="token string">"client_id: <span class="token variable">$client_id</span>"</span>
+
+<span class="token comment"># https://learn.microsoft.com/en-us/cli/azure/ad/app/credential?view=azure-cli-latest#az-ad-app-credential-reset</span>
+<span class="token assign-left variable">client_secret</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>az ad app credential reset <span class="token parameter variable">--id</span> $client_id <span class="token parameter variable">--append</span> --display-name mactemp <span class="token parameter variable">--years</span> <span class="token number">10</span> <span class="token parameter variable">--query</span> password <span class="token parameter variable">--output</span> tsv<span class="token variable">)</span></span>
+<span class="token builtin class-name">echo</span> <span class="token string">"client_secret: <span class="token variable">$client_secret</span>"</span>
+
+<span class="token comment"># allow public flows</span>
+<span class="token comment"># https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application-cli-rest#change-the-flag-for-public-client-applications</span>
+<span class="token comment"># https://github.com/Azure/azure-cli/issues/7955#issuecomment-611976458</span>
+<span class="token comment"># az ad app show --id $client_id | grep ublic -C 1</span>
+<span class="token comment"># this should enable "Allow public client flows" checkbox on "Authentication" tab in the sidebar</span>
+az ad app update <span class="token parameter variable">--id</span> <span class="token variable">$client_id</span> <span class="token parameter variable">--set</span> <span class="token assign-left variable">isFallbackPublicClient</span><span class="token operator">=</span>true</code></pre></div>
+<p>The device authentication flow is described <a href="https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-device-code">here</a></p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token string">"https://login.microsoftonline.com/<span class="token variable">$tenant_id</span>/oauth2/v2.0/devicecode"</span> <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/x-www-form-urlencoded"</span> <span class="token parameter variable">-d</span> <span class="token string">"client_id=<span class="token variable">$client_id</span>
+&amp;scope=user.read%20openid%20profile"</span></code></pre></div>
+<p>The response will be something like:</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"user_code"</span><span class="token operator">:</span><span class="token string">"CW3AD73A4"</span><span class="token punctuation">,</span>
+  <span class="token property">"device_code"</span><span class="token operator">:</span><span class="token string">"CAQABAAEAAAD--DLA3...."</span><span class="token punctuation">,</span>
+  <span class="token property">"verification_uri"</span><span class="token operator">:</span><span class="token string">"https://microsoft.com/devicelogin"</span><span class="token punctuation">,</span>
+  <span class="token property">"expires_in"</span><span class="token operator">:</span><span class="token number">900</span><span class="token punctuation">,</span>
+  <span class="token property">"interval"</span><span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">,</span>
+  <span class="token property">"message"</span><span class="token operator">:</span><span class="token string">"To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code CW3AD73A4 to authenticate."</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>While user opens browsers and logs in, your app is expected to be pulling results</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token string">"https://login.microsoftonline.com/<span class="token variable">$tenant_id</span>/oauth2/v2.0/token"</span> <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/x-www-form-urlencoded"</span> <span class="token parameter variable">-d</span> <span class="token string">"grant_type=urn:ietf:params:oauth:grant-type:device_code&amp;client_id=<span class="token variable">$client_id</span>&amp;device_code=CAQABAAEAAAD--DLA3VO....."</span></code></pre></div>
+<p>And the response will be something like:</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"token_type"</span><span class="token operator">:</span><span class="token string">"Bearer"</span><span class="token punctuation">,</span>
+  <span class="token property">"scope"</span><span class="token operator">:</span><span class="token string">"openid profile User.Read email"</span><span class="token punctuation">,</span>
+  <span class="token property">"expires_in"</span><span class="token operator">:</span><span class="token number">4184</span><span class="token punctuation">,</span>
+  <span class="token property">"ext_expires_in"</span><span class="token operator">:</span><span class="token number">4184</span><span class="token punctuation">,</span>
+  <span class="token property">"access_token"</span><span class="token operator">:</span><span class="token string">"eyJ0eXAiOiJKV1QiLC..."</span><span class="token punctuation">,</span>
+  <span class="token property">"id_token"</span><span class="token operator">:</span><span class="token string">"eyJ0eXAiOiJKV1QiLCJhbG..."</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Libraries in majority of languages will have something around validation of tokens but we will try to call user info endpoint found at <a href="https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration">https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration</a></p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> https://graph.microsoft.com/oidc/userinfo <span class="token parameter variable">-H</span> <span class="token string">"Authorization: Bearer eyJ0eXAiOiJKV1QiLCJub25j..."</span></code></pre></div>
+<p>The response will be something like:</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"sub"</span><span class="token operator">:</span><span class="token string">"g_461q6Bo2lIySX1faMNhrOkMY_Q2h6i-1GpzjinOqM"</span><span class="token punctuation">,</span>
+  <span class="token property">"name"</span><span class="token operator">:</span><span class="token string">"Alexandr Marchenko"</span><span class="token punctuation">,</span>
+  <span class="token property">"family_name"</span><span class="token operator">:</span><span class="token string">"Marchenko"</span><span class="token punctuation">,</span>
+  <span class="token property">"given_name"</span><span class="token operator">:</span><span class="token string">"Alexandr"</span><span class="token punctuation">,</span>
+  <span class="token property">"picture"</span><span class="token operator">:</span><span class="token string">"https://graph.microsoft.com/v1.0/me/photo/$value"</span><span class="token punctuation">,</span>
+  <span class="token property">"email"</span><span class="token operator">:</span><span class="token string">"AlexandrM@rabota.ua"</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Noth that <code class="language-text">access_token</code> is used, if you will try to use <code class="language-text">id_token</code> you will get an error like:</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"error"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token property">"code"</span><span class="token operator">:</span><span class="token string">"InvalidAuthenticationToken"</span><span class="token punctuation">,</span>
+    <span class="token property">"message"</span><span class="token operator">:</span><span class="token string">"Access token validation failure. Invalid audience."</span><span class="token punctuation">,</span>
+    <span class="token property">"innerError"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"date"</span><span class="token operator">:</span><span class="token string">"2023-02-04T14:50:48"</span><span class="token punctuation">,</span>
+      <span class="token property">"request-id"</span><span class="token operator">:</span><span class="token string">"b9a5ab76-0620-4f44-9987-9970e7438d2f"</span><span class="token punctuation">,</span>
+      <span class="token property">"client-request-id"</span><span class="token operator">:</span><span class="token string">"b9a5ab76-0620-4f44-9987-9970e7438d2f"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>The Go lang implementation will be something like:</p>
+<p><div class="gatsby-highlight" data-language="go"><pre class="language-go"><code class="language-go"><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">"fmt"</span>
+	<span class="token string">"os"</span>
+
+	<span class="token string">"github.com/Azure/go-autorest/autorest/azure/auth"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	clientID <span class="token operator">:=</span> os<span class="token punctuation">.</span>Args<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+	tenantID <span class="token operator">:=</span> os<span class="token punctuation">.</span>Args<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+	deviceConfig <span class="token operator">:=</span> auth<span class="token punctuation">.</span><span class="token function">NewDeviceFlowConfig</span><span class="token punctuation">(</span>clientID<span class="token punctuation">,</span> tenantID<span class="token punctuation">)</span>
+
+	<span class="token comment">// https://github.com/Azure/azure-sdk-for-go/issues/3804#issuecomment-452118022</span>
+	spToken<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> deviceConfig<span class="token punctuation">.</span><span class="token function">ServicePrincipalToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	token <span class="token operator">:=</span> spToken<span class="token punctuation">.</span><span class="token function">Token</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"AccessToken"</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>token<span class="token punctuation">.</span>AccessToken<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div></p>
+<p>And to run it:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">go run device/main.go <span class="token variable">$client_id</span> <span class="token variable">$tenant_id</span></code></pre></div>
+<p>But unfortunately at moment that does not work and complains about wrong requested scopes, so probably need to be done semi-manually</p></div></main><footer><a href="#top">top</a><a href="/">home</a><a href="/search">search</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/microsoft-graph-aad-users";window.___webpackCompilationHash="64ab191b000bd2732607";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-b4bb882d10635d85fa25.js"],"app":["/app-4dce200a378abd7eb1ff.js"],"component---src-pages-404-js":["/component---src-pages-404-js-2652c435d8decd31b8ef.js"],"component---src-pages-index-js":["/component---src-pages-index-js-ffacaeb3da1810e96895.js"],"component---src-pages-search-js":["/component---src-pages-search-js-078619e3aef857102623.js"],"component---src-templates-note-js":["/component---src-templates-note-js-b005c02681f20ea28edd.js"]};/*]]>*/</script><script src="/polyfill-b4bb882d10635d85fa25.js" nomodule=""></script><script src="/app-4dce200a378abd7eb1ff.js" async=""></script><script src="/framework-2ce620c91826a79f925c.js" async=""></script><script src="/webpack-runtime-6dca1a41c86a4340451e.js" async=""></script></body></html>
