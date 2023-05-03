@@ -72,12 +72,12 @@ Write-Host $project.Name</code></pre></div>
   <span class="token variable">$projectId</span> = <span class="token string">"Projects-1"</span>
 <span class="token punctuation">}</span>
 
-<span class="token variable">$project</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://robota.octopus.app/api/projects/<span class="token variable">$projectId</span>"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span>
+<span class="token variable">$project</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://example.octopus.app/api/projects/<span class="token variable">$projectId</span>"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span>
 <span class="token variable">$failed</span> = 0
 
 <span class="token comment"># VARIABLES</span>
 
-<span class="token variable">$variables</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://robota.octopus.app<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$project</span><span class="token punctuation">.</span>Links<span class="token punctuation">.</span>Variables<span class="token punctuation">)</span></span>"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span> <span class="token punctuation">|</span> <span class="token function">Select-Object</span> <span class="token operator">-</span>ExpandProperty Variables
+<span class="token variable">$variables</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://example.octopus.app<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$project</span><span class="token punctuation">.</span>Links<span class="token punctuation">.</span>Variables<span class="token punctuation">)</span></span>"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span> <span class="token punctuation">|</span> <span class="token function">Select-Object</span> <span class="token operator">-</span>ExpandProperty Variables
 <span class="token variable">$owner</span> = <span class="token variable">$variables</span> <span class="token punctuation">|</span> <span class="token function">Where-Object</span> Name <span class="token operator">-EQ</span> <span class="token string">'Owner'</span>
 <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">-not</span> <span class="token variable">$owner</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token function">Write-Host</span> <span class="token string">"- 'Owner' variable is missing"</span>
@@ -95,8 +95,8 @@ Write-Host $project.Name</code></pre></div>
 
 <span class="token comment"># CHANNELS</span>
 
-<span class="token variable">$channels</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://robota.octopus.app/api/projects/<span class="token variable">$projectId</span>/channels"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span> <span class="token punctuation">|</span> <span class="token function">Select-Object</span> <span class="token operator">-</span>ExpandProperty Items
-<span class="token variable">$process</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://robota.octopus.app<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$project</span><span class="token punctuation">.</span>Links<span class="token punctuation">.</span>DeploymentProcess<span class="token punctuation">)</span></span>"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span>
+<span class="token variable">$channels</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://example.octopus.app/api/projects/<span class="token variable">$projectId</span>/channels"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span> <span class="token punctuation">|</span> <span class="token function">Select-Object</span> <span class="token operator">-</span>ExpandProperty Items
+<span class="token variable">$process</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://example.octopus.app<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$project</span><span class="token punctuation">.</span>Links<span class="token punctuation">.</span>DeploymentProcess<span class="token punctuation">)</span></span>"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span>
 
 <span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token variable">$step</span> in <span class="token variable">$process</span><span class="token punctuation">.</span>Steps<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token variable">$action</span> in <span class="token variable">$step</span><span class="token punctuation">.</span>Actions<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -164,7 +164,7 @@ Write-Host $project.Name</code></pre></div>
 <p>Here is what I have ended up with:</p>
 <p><div class="gatsby-highlight" data-language="powershell"><pre class="language-powershell"><code class="language-powershell"><span class="token variable">$headers</span> = @<span class="token punctuation">{</span><span class="token string">"X-Octopus-ApiKey"</span> = <span class="token variable">$env</span>:OCTOPUS_APIKEY<span class="token punctuation">}</span>
 
-<span class="token variable">$templates</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://robota.octopus.app/api/actiontemplates/all"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span>
+<span class="token variable">$templates</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://example.octopus.app/api/actiontemplates/all"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span>
 <span class="token variable">$template</span>  = <span class="token variable">$templates</span> <span class="token punctuation">|</span> <span class="token function">Where-Object</span> Name <span class="token operator">-EQ</span> <span class="token string">'octochecks'</span>
 
 <span class="token variable">$step</span> = @<span class="token punctuation">{</span>
@@ -185,11 +185,11 @@ Write-Host $project.Name</code></pre></div>
   <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 
-<span class="token variable">$projects</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://robota.octopus.app/api/projects/all"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span>
+<span class="token variable">$projects</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://example.octopus.app/api/projects/all"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span>
 
 <span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token variable">$project</span> in <span class="token variable">$projects</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment"># $project = $projects | Where-Object Name -EQ 'Prometheus'</span>
-  <span class="token variable">$process</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://robota.octopus.app<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$project</span><span class="token punctuation">.</span>Links<span class="token punctuation">.</span>DeploymentProcess<span class="token punctuation">)</span></span>"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span>
+  <span class="token variable">$process</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://example.octopus.app<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$project</span><span class="token punctuation">.</span>Links<span class="token punctuation">.</span>DeploymentProcess<span class="token punctuation">)</span></span>"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$process</span><span class="token punctuation">.</span>Steps<span class="token punctuation">.</span>Count <span class="token operator">-eq</span> 0<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">continue</span> <span class="token punctuation">}</span> <span class="token comment"># project without any step</span>
 
   <span class="token variable">$steps</span> = @<span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -221,7 +221,7 @@ Write-Host $project.Name</code></pre></div>
   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$changed</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">try</span> <span class="token punctuation">{</span>
       <span class="token variable">$process</span><span class="token punctuation">.</span>Steps = <span class="token variable">$steps</span>
-      <span class="token function">Invoke-RestMethod</span> <span class="token operator">-</span>Method Put <span class="token string">"https://robota.octopus.app<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$project</span><span class="token punctuation">.</span>Links<span class="token punctuation">.</span>DeploymentProcess<span class="token punctuation">)</span></span>"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span> <span class="token operator">-</span>Body <span class="token punctuation">(</span><span class="token function">ConvertTo-Json</span> <span class="token operator">-</span>Depth 100 <span class="token operator">-</span>Compress <span class="token operator">-</span>InputObject <span class="token variable">$process</span><span class="token punctuation">)</span> <span class="token punctuation">|</span> <span class="token function">Out-Null</span>
+      <span class="token function">Invoke-RestMethod</span> <span class="token operator">-</span>Method Put <span class="token string">"https://example.octopus.app<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$project</span><span class="token punctuation">.</span>Links<span class="token punctuation">.</span>DeploymentProcess<span class="token punctuation">)</span></span>"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span> <span class="token operator">-</span>Body <span class="token punctuation">(</span><span class="token function">ConvertTo-Json</span> <span class="token operator">-</span>Depth 100 <span class="token operator">-</span>Compress <span class="token operator">-</span>InputObject <span class="token variable">$process</span><span class="token punctuation">)</span> <span class="token punctuation">|</span> <span class="token function">Out-Null</span>
       <span class="token function">Write-Host</span> <span class="token variable">$project</span><span class="token punctuation">.</span>Name <span class="token operator">-</span>ForegroundColor Green
     <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">{</span>
       <span class="token function">Write-Host</span> <span class="token variable">$project</span><span class="token punctuation">.</span>Name <span class="token operator">-</span>ForegroundColor Red
@@ -229,110 +229,7 @@ Write-Host $project.Name</code></pre></div>
   <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
     <span class="token function">Write-Host</span> <span class="token variable">$project</span><span class="token punctuation">.</span>Name <span class="token operator">-</span>ForegroundColor Cyan
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="token comment"># ADDD EXAMPLE</span>
-
-<span class="token variable">$project</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://robota.octopus.app/api/projects/Projects-1"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span>
-<span class="token variable">$process</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://robota.octopus.app<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$project</span><span class="token punctuation">.</span>Links<span class="token punctuation">.</span>DeploymentProcess<span class="token punctuation">)</span></span>"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span>
-
-<span class="token variable">$step</span> = @<span class="token punctuation">{</span>
-  Name = <span class="token variable">$template</span><span class="token punctuation">.</span>Name
-  Actions = @<span class="token punctuation">(</span>@<span class="token punctuation">{</span>
-    Name = <span class="token variable">$template</span><span class="token punctuation">.</span>Name
-    ActionType = <span class="token variable">$template</span><span class="token punctuation">.</span>ActionType
-    IsRequired = <span class="token boolean">$true</span>
-    WorkerPoolVariable = <span class="token string">'octoworker'</span> <span class="token comment"># NOTE: if using default workers remove me</span>
-    Properties = @<span class="token punctuation">{</span>
-      <span class="token string">"Octopus.Action.Script.ScriptSource"</span> = <span class="token variable">$template</span><span class="token punctuation">.</span>Properties<span class="token punctuation">.</span><span class="token string">'Octopus.Action.Script.ScriptSource'</span>
-      <span class="token string">"Octopus.Action.Script.Syntax"</span> = <span class="token variable">$template</span><span class="token punctuation">.</span>Properties<span class="token punctuation">.</span><span class="token string">'Octopus.Action.Script.Syntax'</span>
-      <span class="token string">"Octopus.Action.Template.Version"</span> = <span class="token variable">$template</span><span class="token punctuation">.</span>Version
-      <span class="token string">"Octopus.Action.Script.ScriptBody"</span> = <span class="token variable">$template</span><span class="token punctuation">.</span>Properties<span class="token punctuation">.</span><span class="token string">'Octopus.Action.Script.ScriptBody'</span>
-      <span class="token string">"Octopus.Action.RunOnServer"</span> = <span class="token boolean">$true</span>
-      <span class="token string">"Octopus.Action.Template.Id"</span> = <span class="token variable">$template</span><span class="token punctuation">.</span>Id
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-<span class="token comment"># $action.Properties</span>
-<span class="token comment"># $template.Properties.'Octopus.Action.Script.Syntax'</span>
-
-<span class="token variable">$process</span><span class="token punctuation">.</span>Steps <span class="token operator">+=</span> <span class="token variable">$step</span>
-
-<span class="token function">Invoke-RestMethod</span> <span class="token operator">-</span>Method Put <span class="token string">"https://robota.octopus.app<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$project</span><span class="token punctuation">.</span>Links<span class="token punctuation">.</span>DeploymentProcess<span class="token punctuation">)</span></span>"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span> <span class="token operator">-</span>Body <span class="token punctuation">(</span><span class="token function">ConvertTo-Json</span> <span class="token operator">-</span>Depth 100 <span class="token operator">-</span>Compress <span class="token operator">-</span>InputObject <span class="token variable">$process</span><span class="token punctuation">)</span>
-
-
-<span class="token comment">## MAKE REQUIRED</span>
-
-<span class="token variable">$project</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://robota.octopus.app/api/projects/Projects-1"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span>
-<span class="token variable">$process</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://robota.octopus.app<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$project</span><span class="token punctuation">.</span>Links<span class="token punctuation">.</span>DeploymentProcess<span class="token punctuation">)</span></span>"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span>
-
-<span class="token variable">$update</span> = <span class="token boolean">$false</span>
-<span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token variable">$step</span> in <span class="token variable">$process</span><span class="token punctuation">.</span>Steps<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token variable">$action</span> in <span class="token variable">$step</span><span class="token punctuation">.</span>Actions<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$action</span><span class="token punctuation">.</span>Properties<span class="token punctuation">.</span><span class="token string">'Octopus.Action.Template.Id'</span> <span class="token operator">-ne</span> <span class="token variable">$template</span><span class="token punctuation">.</span>Id<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">continue</span> <span class="token punctuation">}</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$action</span><span class="token punctuation">.</span>IsDisabled<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token variable">$action</span><span class="token punctuation">.</span>IsDisabled = <span class="token boolean">$false</span>
-      <span class="token variable">$update</span> = <span class="token boolean">$true</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">-not</span> <span class="token variable">$action</span><span class="token punctuation">.</span>IsRequired<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token variable">$action</span><span class="token punctuation">.</span>IsRequired = <span class="token boolean">$true</span>
-      <span class="token variable">$update</span> = <span class="token boolean">$true</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token function">Invoke-RestMethod</span> <span class="token operator">-</span>Method Put <span class="token string">"https://robota.octopus.app<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$project</span><span class="token punctuation">.</span>Links<span class="token punctuation">.</span>DeploymentProcess<span class="token punctuation">)</span></span>"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span> <span class="token operator">-</span>Body <span class="token punctuation">(</span><span class="token function">ConvertTo-Json</span> <span class="token operator">-</span>Depth 100 <span class="token operator">-</span>Compress <span class="token operator">-</span>InputObject <span class="token variable">$process</span><span class="token punctuation">)</span>
-
-
-<span class="token comment">## MOVE</span>
-
-<span class="token variable">$project</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://robota.octopus.app/api/projects/Projects-1"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span>
-<span class="token variable">$process</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://robota.octopus.app<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$project</span><span class="token punctuation">.</span>Links<span class="token punctuation">.</span>DeploymentProcess<span class="token punctuation">)</span></span>"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span>
-
-<span class="token variable">$step</span> = @<span class="token punctuation">{</span>
-  Name = <span class="token variable">$template</span><span class="token punctuation">.</span>Name
-  Actions = @<span class="token punctuation">(</span>@<span class="token punctuation">{</span>
-    Name = <span class="token variable">$template</span><span class="token punctuation">.</span>Name
-    ActionType = <span class="token variable">$template</span><span class="token punctuation">.</span>ActionType
-    IsRequired = <span class="token boolean">$true</span>
-    WorkerPoolVariable = <span class="token string">'octoworker'</span> <span class="token comment"># NOTE: if using default workers remove me</span>
-    Properties = @<span class="token punctuation">{</span>
-      <span class="token string">"Octopus.Action.Script.ScriptSource"</span> = <span class="token variable">$template</span><span class="token punctuation">.</span>Properties<span class="token punctuation">.</span><span class="token string">'Octopus.Action.Script.ScriptSource'</span>
-      <span class="token string">"Octopus.Action.Script.Syntax"</span> = <span class="token variable">$template</span><span class="token punctuation">.</span>Properties<span class="token punctuation">.</span><span class="token string">'Octopus.Action.Script.Syntax'</span>
-      <span class="token string">"Octopus.Action.Template.Version"</span> = <span class="token variable">$template</span><span class="token punctuation">.</span>Version
-      <span class="token string">"Octopus.Action.Script.ScriptBody"</span> = <span class="token variable">$template</span><span class="token punctuation">.</span>Properties<span class="token punctuation">.</span><span class="token string">'Octopus.Action.Script.ScriptBody'</span>
-      <span class="token string">"Octopus.Action.RunOnServer"</span> = <span class="token boolean">$true</span>
-      <span class="token string">"Octopus.Action.Template.Id"</span> = <span class="token variable">$template</span><span class="token punctuation">.</span>Id
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$process</span><span class="token punctuation">.</span>Steps<span class="token punctuation">[</span>0<span class="token punctuation">]</span><span class="token punctuation">.</span>Actions<span class="token punctuation">[</span>0<span class="token punctuation">]</span><span class="token punctuation">.</span>Properties<span class="token punctuation">.</span><span class="token string">'Octopus.Action.Template.Id'</span> <span class="token operator">-eq</span> <span class="token variable">$template</span><span class="token punctuation">.</span>Id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment"># nonthing todo</span>
-<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-  <span class="token variable">$steps</span> = @<span class="token punctuation">(</span><span class="token variable">$step</span><span class="token punctuation">)</span>
-  <span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token variable">$step</span> in <span class="token variable">$process</span><span class="token punctuation">.</span>Steps<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$step</span><span class="token punctuation">.</span>Actions<span class="token punctuation">[</span>0<span class="token punctuation">]</span><span class="token punctuation">.</span>Properties<span class="token punctuation">.</span><span class="token string">'Octopus.Action.Template.Id'</span> <span class="token operator">-ne</span> <span class="token variable">$template</span><span class="token punctuation">.</span>Id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token variable">$steps</span> <span class="token operator">+=</span> <span class="token variable">$step</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token variable">$process</span><span class="token punctuation">.</span>Steps = <span class="token variable">$steps</span>
-
-<span class="token function">Invoke-RestMethod</span> <span class="token operator">-</span>Method Put <span class="token string">"https://robota.octopus.app<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$project</span><span class="token punctuation">.</span>Links<span class="token punctuation">.</span>DeploymentProcess<span class="token punctuation">)</span></span>"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span> <span class="token operator">-</span>Body <span class="token punctuation">(</span><span class="token function">ConvertTo-Json</span> <span class="token operator">-</span>Depth 100 <span class="token operator">-</span>Compress <span class="token operator">-</span>InputObject <span class="token variable">$process</span><span class="token punctuation">)</span></code></pre></div></p>
+<span class="token punctuation">}</span></code></pre></div></p>
 <p>Notes:</p>
 <ul>
 <li>Be sure to manually add step to some project and get its data to make corresponding changes, for example in my case I am using worker pools which may be not needed in your setup</li>
@@ -384,11 +281,11 @@ $body = @{
 <span class="token variable">$headers</span> = @<span class="token punctuation">{</span><span class="token string">"X-Octopus-ApiKey"</span> = <span class="token variable">$env</span>:OCTOPUS_APIKEY<span class="token punctuation">}</span>
 <span class="token variable">$deployment</span> = <span class="token variable">$body</span><span class="token punctuation">.</span>Payload<span class="token punctuation">.</span>Event<span class="token punctuation">.</span>RelatedDocumentIds <span class="token punctuation">|</span> <span class="token function">Where-Object</span> <span class="token punctuation">{</span> <span class="token variable">$_</span><span class="token punctuation">.</span>StartsWith<span class="token punctuation">(</span><span class="token string">"Deployments-"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
 <span class="token variable">$test</span> = <span class="token variable">$body</span><span class="token punctuation">.</span>Payload<span class="token punctuation">.</span>Event<span class="token punctuation">.</span>RelatedDocumentIds<span class="token punctuation">.</span>Count <span class="token operator">-eq</span> 1
-<span class="token variable">$deployment</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://robota.octopus.app/api/deployments/<span class="token variable">$deployment</span>"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span>
-<span class="token variable">$project</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://robota.octopus.app/api/projects/<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$deployment</span><span class="token punctuation">.</span>ProjectId<span class="token punctuation">)</span></span>"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span>
-<span class="token variable">$process</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://robota.octopus.app<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$project</span><span class="token punctuation">.</span>Links<span class="token punctuation">.</span>DeploymentProcess<span class="token punctuation">)</span></span>"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span>
+<span class="token variable">$deployment</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://example.octopus.app/api/deployments/<span class="token variable">$deployment</span>"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span>
+<span class="token variable">$project</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://example.octopus.app/api/projects/<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$deployment</span><span class="token punctuation">.</span>ProjectId<span class="token punctuation">)</span></span>"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span>
+<span class="token variable">$process</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://example.octopus.app<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$project</span><span class="token punctuation">.</span>Links<span class="token punctuation">.</span>DeploymentProcess<span class="token punctuation">)</span></span>"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span>
 <span class="token variable">$skipped</span> = <span class="token variable">$process</span><span class="token punctuation">.</span>Steps <span class="token punctuation">|</span> <span class="token function">Select-Object</span> <span class="token operator">-</span>ExpandProperty Actions <span class="token punctuation">|</span> <span class="token function">Where-Object</span> Id <span class="token operator">-in</span> <span class="token variable">$deployment</span><span class="token punctuation">.</span>SkipActions <span class="token punctuation">|</span> <span class="token function">Select-Object</span> <span class="token operator">-</span>ExpandProperty Name
-<span class="token variable">$templates</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://robota.octopus.app/api/actiontemplates/all"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span>
+<span class="token variable">$templates</span> = <span class="token function">Invoke-RestMethod</span> <span class="token string">"https://example.octopus.app/api/actiontemplates/all"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span>
 <span class="token variable">$template</span>  = <span class="token variable">$templates</span> <span class="token punctuation">|</span> <span class="token function">Where-Object</span> Name <span class="token operator">-EQ</span> <span class="token string">'octochecks'</span>
 
 <span class="token variable">$step</span> = @<span class="token punctuation">{</span>
@@ -439,7 +336,7 @@ $body = @{
 <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$changed</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">try</span> <span class="token punctuation">{</span>
     <span class="token variable">$process</span><span class="token punctuation">.</span>Steps = <span class="token variable">$steps</span>
-    <span class="token function">Invoke-RestMethod</span> <span class="token operator">-</span>Method Put <span class="token string">"https://robota.octopus.app<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$project</span><span class="token punctuation">.</span>Links<span class="token punctuation">.</span>DeploymentProcess<span class="token punctuation">)</span></span>"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span> <span class="token operator">-</span>Body <span class="token punctuation">(</span><span class="token function">ConvertTo-Json</span> <span class="token operator">-</span>Depth 100 <span class="token operator">-</span>Compress <span class="token operator">-</span>InputObject <span class="token variable">$process</span><span class="token punctuation">)</span> <span class="token punctuation">|</span> <span class="token function">Out-Null</span>
+    <span class="token function">Invoke-RestMethod</span> <span class="token operator">-</span>Method Put <span class="token string">"https://example.octopus.app<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$project</span><span class="token punctuation">.</span>Links<span class="token punctuation">.</span>DeploymentProcess<span class="token punctuation">)</span></span>"</span> <span class="token operator">-</span>Headers <span class="token variable">$headers</span> <span class="token operator">-</span>Body <span class="token punctuation">(</span><span class="token function">ConvertTo-Json</span> <span class="token operator">-</span>Depth 100 <span class="token operator">-</span>Compress <span class="token operator">-</span>InputObject <span class="token variable">$process</span><span class="token punctuation">)</span> <span class="token punctuation">|</span> <span class="token function">Out-Null</span>
     <span class="token function">Write-Host</span> <span class="token string">"<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$project</span><span class="token punctuation">.</span>Name<span class="token punctuation">)</span></span> - updated"</span>
   <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">{</span>
     <span class="token function">Write-Host</span> <span class="token string">"<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$project</span><span class="token punctuation">.</span>Name<span class="token punctuation">)</span></span> - failed"</span>
@@ -453,7 +350,8 @@ $body = @{
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> <span class="token parameter variable">-p</span> <span class="token number">8080</span>:80 <span class="token parameter variable">-e</span> <span class="token assign-left variable">OCTOPUS_APIKEY</span><span class="token operator">=</span><span class="token variable">$OCTOPUS_APIKEY</span> <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/entrypoint.sh:/docker-entrypoint.d/00-init.sh <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/default.conf:/etc/nginx/conf.d/default.conf <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/webhook.ps1:/usr/share/nginx/html/webhook.ps1 nginx:alpine</code></pre></div>
 <p>And optionally (if have nowhere to deploy) expose it:</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">ngrok http <span class="token number">8080</span> <span class="token parameter variable">--region</span><span class="token operator">=</span>eu</code></pre></div>
-<p>Once again, it does not solves initial goal, but at least better than nothing, plus slack notifications wont allow engineers to skip it often and sooner or later checks will be fixed</p></div></main><footer><a href="#top">top</a><a href="/">home</a><a href="/search">search</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/octochecks/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p>Once again, it does not solves initial goal, but at least better than nothing, plus slack notifications wont allow engineers to skip it often and sooner or later checks will be fixed</p>
+<p>Hopefully in future there will be something similar to Kubernetes admission webhooks</p></div></main><footer><a href="#top">top</a><a href="/">home</a><a href="/search">search</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/octochecks/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
