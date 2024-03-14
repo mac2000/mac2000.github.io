@@ -425,7 +425,44 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre></div></p>
-<p>The only thing changed is that we are using popover window with <code class="language-text">SFSafariViewController</code> so our signin flow is more straight forward</p></div><script async="" data-cfasync="false" src="//pl22579382.profitablegatecpm.com/b08035ca65863491d14154ebe8357b75/invoke.js"></script><div id="container-b08035ca65863491d14154ebe8357b75"></div></main><footer><a href="#top">top</a><a href="/">home</a><a href="/search">search</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/swift-google-oidc/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p>The only thing changed is that we are using popover window with <code class="language-text">SFSafariViewController</code> so our signin flow is more straight forward</p>
+<h2>Widgets and App Groups</h2>
+<p>To share tokens between app and widget you need to create an so called app group which can be done in target settings</p>
+<p>Just create an group, something like <code class="language-text">groups.GoogleOpenIdConnectDemo</code> and select it for both targets app and widget, and everywhere replace used of app storage to something like this:</p>
+<div class="gatsby-highlight" data-language="swift"><pre class="language-swift"><code class="language-swift"><span class="token attribute atrule">@AppStorage</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"access_token"</span></span><span class="token punctuation">,</span>store<span class="token punctuation">:</span> <span class="token class-name">UserDefaults</span><span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>suiteName<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"group.GoogleOpenIdConnect"</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">var</span> accessToken<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token operator">?</span></code></pre></div>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1024px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/04df47a6fdf11f1f20665363965f1367/2acc9/demo3.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 58.59375%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAACNElEQVR42oWSv2sUURDH938QhIAYMAFtxEIsROwsrIzENEEx8RcEFINNsDGIRkPAQi00CtFoCIlpFFHBwiZY2FiYIqgBOZPc7t3t3v6829u9vd2PO2tynBfFgdn3lpn3ed83M8rhHbvZ09HJkY4uhjq7eTgxgVYqYRgGtm1jWRaO61Iqm6wWTHKahaZbaVynWCyi6zqmaeKmOZ7noZzpPsTRXfu4cGA/r7u28aivl7zjUg9CSBLSD1EjxgsSbD8hjGIacZyGkszjjb2sYsr1nmGmLp/nlTbBh8VLKfAYPwo6lu1RrVSIoog4PWDZbqrUI240aDSi1BvU6/Xf8ZYLlPLxU3gjfTz58pjxt7PMjZ5D1W0c26FW87ODAkw2FIiFYZiVQ54o0LglpiRT0zB7gnDqINbkIDNjV/iplVjNq+RyOVRNw/f9LFng1Wo1A0ndHMdp/kssU1iXzDejMLSd6O4wMzeusVYoZoDN2oiLKgFII6RhspbS5olSaYhcWqvVUIKPS8QjA3C2n+DOJC/GbqdP1mk1AYuCSlpTUSOqZC+ruMA266kYn/Oon1awVk2MxW/MX72PWi5uAUqyKJCDolYgAg2C4I9cxcfju76C7RqY6wbPHjxHK2hbgO1wAYkLXNQ3ge9vWSzfLPN12uRlqcL4wgJ6Pv9XYDu4dRabwJP3Ai6+qzKw7rPXjTg9N4+j5on/obC9WZveBPYsQ/+aSm99iZ1+xODTadx0VMKNwW1X8D/7BcCraXvvkVX6AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="demo3"
+        title=""
+        src="/static/04df47a6fdf11f1f20665363965f1367/2bef9/demo3.png"
+        srcset="/static/04df47a6fdf11f1f20665363965f1367/6f3f2/demo3.png 256w,
+/static/04df47a6fdf11f1f20665363965f1367/01e7c/demo3.png 512w,
+/static/04df47a6fdf11f1f20665363965f1367/2bef9/demo3.png 1024w,
+/static/04df47a6fdf11f1f20665363965f1367/71c1d/demo3.png 1536w,
+/static/04df47a6fdf11f1f20665363965f1367/a878e/demo3.png 2048w,
+/static/04df47a6fdf11f1f20665363965f1367/2acc9/demo3.png 2378w"
+        sizes="(max-width: 1024px) 100vw, 1024px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p></div><script async="" data-cfasync="false" src="//pl22579382.profitablegatecpm.com/b08035ca65863491d14154ebe8357b75/invoke.js"></script><div id="container-b08035ca65863491d14154ebe8357b75"></div></main><footer><a href="#top">top</a><a href="/">home</a><a href="/search">search</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/swift-google-oidc/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
