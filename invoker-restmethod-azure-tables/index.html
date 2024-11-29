@@ -116,10 +116,128 @@ Location     : Home</code></pre></div>
 <p><a href="https://msdn.microsoft.com/en-us/library/azure/dd179371.aspx">Specifying Conditional Headers for Blob Service Operations</a></p>
 <p><a href="http://blog.einbu.no/2009/08/authenticating-against-azure-table-storage/">Authenticating against Azure Table Storage</a></p>
 <p><a href="https://msdn.microsoft.com/en-us/library/azure/dd179428.aspx">Authentication for the Azure Storage Services</a></p>
-<p><a href="https://azure.microsoft.com/en-us/documentation/articles/storage-php-how-to-use-table-storage/">How to use table storage from PHP</a></p></div></main><footer><a href="#top">top</a><a href="/">home</a><a href="/search">search</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/invoker-restmethod-azure-tables/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p><a href="https://azure.microsoft.com/en-us/documentation/articles/storage-php-how-to-use-table-storage/">How to use table storage from PHP</a></p>
+<h2>Update from 2024</h2>
+<p>Here is one more example of how race conditions can be utilized with help of ETag</p>
+<div class="gatsby-highlight" data-language="pwsh"><pre class="language-pwsh"><code class="language-pwsh">&lt;#
+docker run -it --rm --name=azurite -p 10000:10000 -p 10001:10001 -p 10002:10002 mcr.microsoft.com/azure-storage/azurite
+#&gt;
+
+$accountName = &#39;devstoreaccount1&#39;
+$accountKey = &#39;Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==&#39;
+$tableName = &#39;mactemp&#39;
+# $endpoint = &quot;https://$accountName.table.core.windows.net&quot;
+$endpoint = &quot;http://127.0.0.1:10002/devstoreaccount1&quot;
+
+function repeated_signature_stuff_extracted_for_readability($uri) {
+  $date = [datetime]::UtcNow.ToString(&#39;R&#39;, [System.Globalization.CultureInfo]::InvariantCulture)
+  $resource = [uri] $uri | Select-Object -ExpandProperty AbsolutePath # Path without query string
+  $stringToSign = $date + &quot;`n/&quot; + $accountName + $resource
+
+  $hasher = New-Object System.Security.Cryptography.HMACSHA256
+  $hasher.Key = [Convert]::FromBase64String($accountKey)
+  $signedSignature = [Convert]::ToBase64String($hasher.ComputeHash([Text.Encoding]::UTF8.GetBytes($stringToSign)))
+  $authorizationHeader = &quot;SharedKeyLite &quot; + $accountName + &quot;:&quot; + $signedSignature
+
+  return @{
+    Authorization  = $authorizationHeader
+    Date           = $date
+    &#39;x-ms-version&#39; = &#39;2019-02-02&#39;
+    &#39;Content-Type&#39; = &#39;application/json&#39;
+    &#39;Accept&#39;       = &#39;application/json;odata=nometadata&#39;
+  }
+}
+
+# each example below, has repeating signature block, it is the same each time
+
+
+# CREATE TABLE
+$uri = &quot;$endpoint/Tables&quot;
+$headers = repeated_signature_stuff_extracted_for_readability($uri)
+Invoke-WebRequest -Method Post -Uri $uri -Headers $headers -Body (ConvertTo-Json -InputObject @{ TableName = $tableName })
+
+# INSERT RECORD
+$uri = &quot;$endpoint/$tableName&quot;
+$headers = repeated_signature_stuff_extracted_for_readability($uri)
+Invoke-WebRequest -Method Post -Uri $uri -Headers $headers -Body (ConvertTo-Json -InputObject @{
+    PartitionKey = &quot;pk1&quot;
+    RowKey       = &quot;rk1&quot;
+    Foo          = &quot;bar&quot;
+    Acme         = 42
+  })
+
+
+# RETRIEVE RECORD
+$uri = &quot;$endpoint/$tableName(PartitionKey=&#39;pk1&#39;,RowKey=&#39;rk1&#39;)&quot;
+$headers = repeated_signature_stuff_extracted_for_readability($uri)
+$response = Invoke-WebRequest -Method Get -Uri $uri -Headers $headers
+# $response.Headers # Etag, Date
+$response.Content | ConvertFrom-Json | Out-Host
+
+# UPDATE RECORD
+$uri = &quot;$endpoint/$tableName(PartitionKey=&#39;pk1&#39;,RowKey=&#39;rk1&#39;)&quot;
+$headers = repeated_signature_stuff_extracted_for_readability($uri)
+Invoke-WebRequest -Method Merge -Uri $uri -Headers $headers -Body (ConvertTo-Json -InputObject @{
+    PartitionKey = &quot;pk1&quot;
+    RowKey       = &quot;rk1&quot;
+    Foo          = &quot;BAZ&quot;
+    Acme         = 100500
+  })
+
+# RETRIEVE RECORD - check if it was updated
+$uri = &quot;$endpoint/$tableName(PartitionKey=&#39;pk1&#39;,RowKey=&#39;rk1&#39;)&quot;
+$headers = repeated_signature_stuff_extracted_for_readability($uri)
+$response = Invoke-WebRequest -Method Get -Uri $uri -Headers $headers
+$response.Content | ConvertFrom-Json | Out-Host
+
+
+# --------------------------------------------
+
+# DEMO RACE CONDITIONS
+
+# lets pretend we have two clients, each trying to update the same record at the same time
+# we are going to avoid race conditions by utilizing ETag and If-Match headers
+# both clients will first read the record, then update it
+# pseudo code will be:
+# 1. client1 get record - ok
+# 2. client2 get record - ok
+# 3. client2 update record - ok
+# 4. client1 update record - should fail - race condition
+
+
+# 1. client1 get record - ok
+$uri = &quot;$endpoint/$tableName(PartitionKey=&#39;pk1&#39;,RowKey=&#39;rk1&#39;)&quot;
+$headers = repeated_signature_stuff_extracted_for_readability($uri)
+$response1 = Invoke-WebRequest -Method Get -Uri $uri -Headers $headers
+$record1 = $response1.Content | ConvertFrom-Json
+$record1 | Out-Host
+$response1.Headers.ETag | Out-Host
+
+# 2. client2 get record - ok
+$uri = &quot;$endpoint/$tableName(PartitionKey=&#39;pk1&#39;,RowKey=&#39;rk1&#39;)&quot;
+$headers = repeated_signature_stuff_extracted_for_readability($uri)
+$response2 = Invoke-WebRequest -Method Get -Uri $uri -Headers $headers
+$record2 = $response2.Content | ConvertFrom-Json
+$record2 | Out-Host
+$response2.Headers.ETag | Out-Host
+
+# 3. client2 update record - ok
+$record2.Foo = &quot;UPDATED BY CLIENT 2&quot;
+$uri = &quot;$endpoint/$tableName(PartitionKey=&#39;pk1&#39;,RowKey=&#39;rk1&#39;)&quot;
+$headers = repeated_signature_stuff_extracted_for_readability($uri)
+$headers[&#39;If-Match&#39;] = [string]$response2.Headers.ETag
+Invoke-WebRequest -Method Merge -Uri $uri -Headers $headers -Body (ConvertTo-Json -InputObject $record2)
+
+# 4. client1 update record - should fail - race condition
+$record1.Foo = &quot;UPDATED BY CLIENT 1&quot;
+$uri = &quot;$endpoint/$tableName(PartitionKey=&#39;pk1&#39;,RowKey=&#39;rk1&#39;)&quot;
+$headers = repeated_signature_stuff_extracted_for_readability($uri)
+$headers[&#39;If-Match&#39;] = [string]$response1.Headers.ETag
+Invoke-WebRequest -Method Merge -Uri $uri -Headers $headers -Body (ConvertTo-Json -InputObject $record2)
+# will fail with 412 Precondition Failed error saing that UpdateConditionNotSatisfied</code></pre></div></div></main><footer><a href="#top">top</a><a href="/">home</a><a href="/search">search</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/invoker-restmethod-azure-tables/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
             window.___chunkMapping="{\"app\":[\"/app-a8b683592f6e22cac82a.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-645f86121d32a262d039.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-2e4674c1a0d4c6860d2e.js\"],\"component---src-pages-search-js\":[\"/component---src-pages-search-js-47fb6b0774916da2e931.js\"],\"component---src-templates-note-js\":[\"/component---src-templates-note-js-81e5c651144ef401fc6b.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="615ac399b5968be31cca";</script><script src="/webpack-runtime-fd0998a650847eb185ba.js" async></script><script src="/framework-4b4a12623f06935baae7.js" async></script><script src="/app-a8b683592f6e22cac82a.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="6a74dd5b44a5825851a1";</script><script src="/webpack-runtime-fd0998a650847eb185ba.js" async></script><script src="/framework-4b4a12623f06935baae7.js" async></script><script src="/app-a8b683592f6e22cac82a.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
