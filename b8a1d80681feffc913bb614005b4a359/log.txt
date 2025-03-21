@@ -1,0 +1,2983 @@
+Enter your message: Creating trace Customer service with id trace_a27976cfd4df410a8928e6f7356586cc
+Setting current trace: trace_a27976cfd4df410a8928e6f7356586cc
+Creating span <agents.tracing.span_data.AgentSpanData object at 0x1083832f0> with id None
+Running agent Triage Agent (turn 1)
+Creating span <agents.tracing.span_data.ResponseSpanData object at 0x108398810> with id None
+Calling LLM gpt-4o with input:
+[
+  {
+    "content": "lets book a seat",
+    "role": "user"
+  }
+]
+Tools:
+[
+  {
+    "name": "transfer_to_faq_agent",
+    "parameters": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "strict": true,
+    "type": "function",
+    "description": "Handoff to the FAQ Agent agent to handle the request. A helpful agent that can answer questions about the airline."
+  },
+  {
+    "name": "transfer_to_seat_booking_agent",
+    "parameters": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "strict": true,
+    "type": "function",
+    "description": "Handoff to the Seat Booking Agent agent to handle the request. A helpful agent that can update a seat on a flight."
+  }
+]
+Stream: False
+Tool choice: NOT_GIVEN
+Response format: NOT_GIVEN
+
+-------------------------------------------------------
+
+POST https://api.openai.com/v1/responses
+{
+  "input": [
+    {
+      "content": "lets book a seat",
+      "role": "user"
+    }
+  ],
+  "model": "gpt-4o",
+  "include": [],
+  "instructions": "# System context\nYou are part of a multi-agent system called the Agents SDK, designed to make agent coordination and execution easy. Agents uses two primary abstraction: **Agents** and **Handoffs**. An agent encompasses instructions and tools and can hand off a conversation to another agent when appropriate. Handoffs are achieved by calling a handoff function, generally named `transfer_to_<agent_name>`. Transfers between agents are handled seamlessly in the background; do not mention or draw attention to these transfers in your conversation with the user.\n You are a helpful triaging agent. You can use your tools to delegate questions to other appropriate agents.",
+  "stream": false,
+  "tools": [
+    {
+      "name": "transfer_to_faq_agent",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Handoff to the FAQ Agent agent to handle the request. A helpful agent that can answer questions about the airline."
+    },
+    {
+      "name": "transfer_to_seat_booking_agent",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Handoff to the Seat Booking Agent agent to handle the request. A helpful agent that can update a seat on a flight."
+    }
+  ]
+}
+
+{
+  "id": "resp_67dd42b40abc8192b5f7030c995b6a29087f7e66587ef6c8",
+  "created_at": 1742553780.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": "# System context\nYou are part of a multi-agent system called the Agents SDK, designed to make agent coordination and execution easy. Agents uses two primary abstraction: **Agents** and **Handoffs**. An agent encompasses instructions and tools and can hand off a conversation to another agent when appropriate. Handoffs are achieved by calling a handoff function, generally named `transfer_to_<agent_name>`. Transfers between agents are handled seamlessly in the background; do not mention or draw attention to these transfers in your conversation with the user.\n You are a helpful triaging agent. You can use your tools to delegate questions to other appropriate agents.",
+  "metadata": {},
+  "model": "gpt-4o-2024-08-06",
+  "object": "response",
+  "output": [
+    {
+      "arguments": "{}",
+      "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+      "name": "transfer_to_seat_booking_agent",
+      "type": "function_call",
+      "id": "fc_67dd42b489408192897a48a09b9b99ff087f7e66587ef6c8",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [
+    {
+      "name": "transfer_to_faq_agent",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Handoff to the FAQ Agent agent to handle the request. A helpful agent that can answer questions about the airline."
+    },
+    {
+      "name": "transfer_to_seat_booking_agent",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Handoff to the Seat Booking Agent agent to handle the request. A helpful agent that can update a seat on a flight."
+    }
+  ],
+  "top_p": 1.0,
+  "max_output_tokens": null,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": null,
+    "generate_summary": null
+  },
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    }
+  },
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 441,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 15,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 456
+  },
+  "user": null,
+  "store": true
+}
+
+
+LLM resp:
+[
+  {
+    "arguments": "{}",
+    "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+    "name": "transfer_to_seat_booking_agent",
+    "type": "function_call",
+    "id": "fc_67dd42b489408192897a48a09b9b99ff087f7e66587ef6c8",
+    "status": "completed"
+  }
+]
+
+Creating span <agents.tracing.span_data.HandoffSpanData object at 0x10a843350> with id None
+Creating span <agents.tracing.span_data.AgentSpanData object at 0x10a898870> with id None
+Running agent Seat Booking Agent (turn 2)
+Creating span <agents.tracing.span_data.ResponseSpanData object at 0x103e72410> with id None
+Calling LLM gpt-4o with input:
+[
+  {
+    "content": "lets book a seat",
+    "role": "user"
+  },
+  {
+    "arguments": "{}",
+    "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+    "name": "transfer_to_seat_booking_agent",
+    "type": "function_call",
+    "id": "fc_67dd42b489408192897a48a09b9b99ff087f7e66587ef6c8",
+    "status": "completed"
+  },
+  {
+    "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+    "output": "{'assistant': 'Seat Booking Agent'}",
+    "type": "function_call_output"
+  }
+]
+Tools:
+[
+  {
+    "name": "update_seat",
+    "parameters": {
+      "properties": {
+        "confirmation_number": {
+          "description": "The confirmation number for the flight.",
+          "title": "Confirmation Number",
+          "type": "string"
+        },
+        "new_seat": {
+          "description": "The new seat to update to.",
+          "title": "New Seat",
+          "type": "string"
+        }
+      },
+      "required": [
+        "confirmation_number",
+        "new_seat"
+      ],
+      "title": "update_seat_args",
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true,
+    "type": "function",
+    "description": "Update the seat for a given confirmation number."
+  },
+  {
+    "name": "transfer_to_triage_agent",
+    "parameters": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "strict": true,
+    "type": "function",
+    "description": "Handoff to the Triage Agent agent to handle the request. A triage agent that can delegate a customer's request to the appropriate agent."
+  }
+]
+Stream: False
+Tool choice: NOT_GIVEN
+Response format: NOT_GIVEN
+
+-------------------------------------------------------
+
+POST https://api.openai.com/v1/responses
+{
+  "input": [
+    {
+      "content": "lets book a seat",
+      "role": "user"
+    },
+    {
+      "arguments": "{}",
+      "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+      "name": "transfer_to_seat_booking_agent",
+      "type": "function_call",
+      "id": "fc_67dd42b489408192897a48a09b9b99ff087f7e66587ef6c8",
+      "status": "completed"
+    },
+    {
+      "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+      "output": "{'assistant': 'Seat Booking Agent'}",
+      "type": "function_call_output"
+    }
+  ],
+  "model": "gpt-4o",
+  "include": [],
+  "instructions": "# System context\nYou are part of a multi-agent system called the Agents SDK, designed to make agent coordination and execution easy. Agents uses two primary abstraction: **Agents** and **Handoffs**. An agent encompasses instructions and tools and can hand off a conversation to another agent when appropriate. Handoffs are achieved by calling a handoff function, generally named `transfer_to_<agent_name>`. Transfers between agents are handled seamlessly in the background; do not mention or draw attention to these transfers in your conversation with the user.\n\n    You are a seat booking agent. If you are speaking to a customer, you probably were transferred to from the triage agent.\n    Use the following routine to support the customer.\n    # Routine\n    1. Ask for their confirmation number.\n    2. Ask the customer what their desired seat number is.\n    3. Use the update seat tool to update the seat on the flight.\n    If the customer asks a question that is not related to the routine, transfer back to the triage agent. ",
+  "stream": false,
+  "tools": [
+    {
+      "name": "update_seat",
+      "parameters": {
+        "properties": {
+          "confirmation_number": {
+            "description": "The confirmation number for the flight.",
+            "title": "Confirmation Number",
+            "type": "string"
+          },
+          "new_seat": {
+            "description": "The new seat to update to.",
+            "title": "New Seat",
+            "type": "string"
+          }
+        },
+        "required": [
+          "confirmation_number",
+          "new_seat"
+        ],
+        "title": "update_seat_args",
+        "type": "object",
+        "additionalProperties": false
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Update the seat for a given confirmation number."
+    },
+    {
+      "name": "transfer_to_triage_agent",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Handoff to the Triage Agent agent to handle the request. A triage agent that can delegate a customer's request to the appropriate agent."
+    }
+  ]
+}
+
+{
+  "id": "resp_67dd42b5042c81929491c0a739a9d28d087f7e66587ef6c8",
+  "created_at": 1742553781.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": "# System context\nYou are part of a multi-agent system called the Agents SDK, designed to make agent coordination and execution easy. Agents uses two primary abstraction: **Agents** and **Handoffs**. An agent encompasses instructions and tools and can hand off a conversation to another agent when appropriate. Handoffs are achieved by calling a handoff function, generally named `transfer_to_<agent_name>`. Transfers between agents are handled seamlessly in the background; do not mention or draw attention to these transfers in your conversation with the user.\n\n    You are a seat booking agent. If you are speaking to a customer, you probably were transferred to from the triage agent.\n    Use the following routine to support the customer.\n    # Routine\n    1. Ask for their confirmation number.\n    2. Ask the customer what their desired seat number is.\n    3. Use the update seat tool to update the seat on the flight.\n    If the customer asks a question that is not related to the routine, transfer back to the triage agent. ",
+  "metadata": {},
+  "model": "gpt-4o-2024-08-06",
+  "object": "response",
+  "output": [
+    {
+      "id": "msg_67dd42b599448192a7af0df524060000087f7e66587ef6c8",
+      "content": [
+        {
+          "annotations": [],
+          "text": "I can help with that! Could you please provide your confirmation number?",
+          "type": "output_text"
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [
+    {
+      "name": "update_seat",
+      "parameters": {
+        "properties": {
+          "confirmation_number": {
+            "description": "The confirmation number for the flight.",
+            "title": "Confirmation Number",
+            "type": "string"
+          },
+          "new_seat": {
+            "description": "The new seat to update to.",
+            "title": "New Seat",
+            "type": "string"
+          }
+        },
+        "required": [
+          "confirmation_number",
+          "new_seat"
+        ],
+        "title": "update_seat_args",
+        "type": "object",
+        "additionalProperties": false
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Update the seat for a given confirmation number."
+    },
+    {
+      "name": "transfer_to_triage_agent",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Handoff to the Triage Agent agent to handle the request. A triage agent that can delegate a customer's request to the appropriate agent."
+    }
+  ],
+  "top_p": 1.0,
+  "max_output_tokens": null,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": null,
+    "generate_summary": null
+  },
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    }
+  },
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 589,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 16,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 605
+  },
+  "user": null,
+  "store": true
+}
+
+
+LLM resp:
+[
+  {
+    "id": "msg_67dd42b599448192a7af0df524060000087f7e66587ef6c8",
+    "content": [
+      {
+        "annotations": [],
+        "text": "I can help with that! Could you please provide your confirmation number?",
+        "type": "output_text"
+      }
+    ],
+    "role": "assistant",
+    "status": "completed",
+    "type": "message"
+  }
+]
+
+Triage Agent: Skipping item: HandoffCallItem
+Handed off from Triage Agent to Seat Booking Agent
+Seat Booking Agent: I can help with that! Could you please provide your confirmation number?
+Resetting current trace
+Enter your message: Exported 6 items
+Creating trace Customer service with id trace_bd0729076c4a48ea931e55a6ffbfe4d3
+Setting current trace: trace_bd0729076c4a48ea931e55a6ffbfe4d3
+Creating span <agents.tracing.span_data.AgentSpanData object at 0x10a857d90> with id None
+Running agent Seat Booking Agent (turn 1)
+Creating span <agents.tracing.span_data.ResponseSpanData object at 0x10a8a7810> with id None
+Calling LLM gpt-4o with input:
+[
+  {
+    "content": "lets book a seat",
+    "role": "user"
+  },
+  {
+    "arguments": "{}",
+    "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+    "name": "transfer_to_seat_booking_agent",
+    "type": "function_call",
+    "id": "fc_67dd42b489408192897a48a09b9b99ff087f7e66587ef6c8",
+    "status": "completed"
+  },
+  {
+    "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+    "output": "{'assistant': 'Seat Booking Agent'}",
+    "type": "function_call_output"
+  },
+  {
+    "id": "msg_67dd42b599448192a7af0df524060000087f7e66587ef6c8",
+    "content": [
+      {
+        "annotations": [],
+        "text": "I can help with that! Could you please provide your confirmation number?",
+        "type": "output_text"
+      }
+    ],
+    "role": "assistant",
+    "status": "completed",
+    "type": "message"
+  },
+  {
+    "content": "123",
+    "role": "user"
+  }
+]
+Tools:
+[
+  {
+    "name": "update_seat",
+    "parameters": {
+      "properties": {
+        "confirmation_number": {
+          "description": "The confirmation number for the flight.",
+          "title": "Confirmation Number",
+          "type": "string"
+        },
+        "new_seat": {
+          "description": "The new seat to update to.",
+          "title": "New Seat",
+          "type": "string"
+        }
+      },
+      "required": [
+        "confirmation_number",
+        "new_seat"
+      ],
+      "title": "update_seat_args",
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true,
+    "type": "function",
+    "description": "Update the seat for a given confirmation number."
+  },
+  {
+    "name": "transfer_to_triage_agent",
+    "parameters": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "strict": true,
+    "type": "function",
+    "description": "Handoff to the Triage Agent agent to handle the request. A triage agent that can delegate a customer's request to the appropriate agent."
+  }
+]
+Stream: False
+Tool choice: NOT_GIVEN
+Response format: NOT_GIVEN
+
+-------------------------------------------------------
+
+POST https://api.openai.com/v1/responses
+{
+  "input": [
+    {
+      "content": "lets book a seat",
+      "role": "user"
+    },
+    {
+      "arguments": "{}",
+      "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+      "name": "transfer_to_seat_booking_agent",
+      "type": "function_call",
+      "id": "fc_67dd42b489408192897a48a09b9b99ff087f7e66587ef6c8",
+      "status": "completed"
+    },
+    {
+      "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+      "output": "{'assistant': 'Seat Booking Agent'}",
+      "type": "function_call_output"
+    },
+    {
+      "id": "msg_67dd42b599448192a7af0df524060000087f7e66587ef6c8",
+      "content": [
+        {
+          "annotations": [],
+          "text": "I can help with that! Could you please provide your confirmation number?",
+          "type": "output_text"
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    },
+    {
+      "content": "123",
+      "role": "user"
+    }
+  ],
+  "model": "gpt-4o",
+  "include": [],
+  "instructions": "# System context\nYou are part of a multi-agent system called the Agents SDK, designed to make agent coordination and execution easy. Agents uses two primary abstraction: **Agents** and **Handoffs**. An agent encompasses instructions and tools and can hand off a conversation to another agent when appropriate. Handoffs are achieved by calling a handoff function, generally named `transfer_to_<agent_name>`. Transfers between agents are handled seamlessly in the background; do not mention or draw attention to these transfers in your conversation with the user.\n\n    You are a seat booking agent. If you are speaking to a customer, you probably were transferred to from the triage agent.\n    Use the following routine to support the customer.\n    # Routine\n    1. Ask for their confirmation number.\n    2. Ask the customer what their desired seat number is.\n    3. Use the update seat tool to update the seat on the flight.\n    If the customer asks a question that is not related to the routine, transfer back to the triage agent. ",
+  "stream": false,
+  "tools": [
+    {
+      "name": "update_seat",
+      "parameters": {
+        "properties": {
+          "confirmation_number": {
+            "description": "The confirmation number for the flight.",
+            "title": "Confirmation Number",
+            "type": "string"
+          },
+          "new_seat": {
+            "description": "The new seat to update to.",
+            "title": "New Seat",
+            "type": "string"
+          }
+        },
+        "required": [
+          "confirmation_number",
+          "new_seat"
+        ],
+        "title": "update_seat_args",
+        "type": "object",
+        "additionalProperties": false
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Update the seat for a given confirmation number."
+    },
+    {
+      "name": "transfer_to_triage_agent",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Handoff to the Triage Agent agent to handle the request. A triage agent that can delegate a customer's request to the appropriate agent."
+    }
+  ]
+}
+
+{
+  "id": "resp_67dd42bc129481929c2f9862f70ff344087f7e66587ef6c8",
+  "created_at": 1742553788.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": "# System context\nYou are part of a multi-agent system called the Agents SDK, designed to make agent coordination and execution easy. Agents uses two primary abstraction: **Agents** and **Handoffs**. An agent encompasses instructions and tools and can hand off a conversation to another agent when appropriate. Handoffs are achieved by calling a handoff function, generally named `transfer_to_<agent_name>`. Transfers between agents are handled seamlessly in the background; do not mention or draw attention to these transfers in your conversation with the user.\n\n    You are a seat booking agent. If you are speaking to a customer, you probably were transferred to from the triage agent.\n    Use the following routine to support the customer.\n    # Routine\n    1. Ask for their confirmation number.\n    2. Ask the customer what their desired seat number is.\n    3. Use the update seat tool to update the seat on the flight.\n    If the customer asks a question that is not related to the routine, transfer back to the triage agent. ",
+  "metadata": {},
+  "model": "gpt-4o-2024-08-06",
+  "object": "response",
+  "output": [
+    {
+      "id": "msg_67dd42bc9d2c819281a2725a30c291fc087f7e66587ef6c8",
+      "content": [
+        {
+          "annotations": [],
+          "text": "What seat number would you like to book?",
+          "type": "output_text"
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [
+    {
+      "name": "update_seat",
+      "parameters": {
+        "properties": {
+          "confirmation_number": {
+            "description": "The confirmation number for the flight.",
+            "title": "Confirmation Number",
+            "type": "string"
+          },
+          "new_seat": {
+            "description": "The new seat to update to.",
+            "title": "New Seat",
+            "type": "string"
+          }
+        },
+        "required": [
+          "confirmation_number",
+          "new_seat"
+        ],
+        "title": "update_seat_args",
+        "type": "object",
+        "additionalProperties": false
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Update the seat for a given confirmation number."
+    },
+    {
+      "name": "transfer_to_triage_agent",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Handoff to the Triage Agent agent to handle the request. A triage agent that can delegate a customer's request to the appropriate agent."
+    }
+  ],
+  "top_p": 1.0,
+  "max_output_tokens": null,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": null,
+    "generate_summary": null
+  },
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    }
+  },
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 612,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 11,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 623
+  },
+  "user": null,
+  "store": true
+}
+
+
+LLM resp:
+[
+  {
+    "id": "msg_67dd42bc9d2c819281a2725a30c291fc087f7e66587ef6c8",
+    "content": [
+      {
+        "annotations": [],
+        "text": "What seat number would you like to book?",
+        "type": "output_text"
+      }
+    ],
+    "role": "assistant",
+    "status": "completed",
+    "type": "message"
+  }
+]
+
+Seat Booking Agent: What seat number would you like to book?
+Resetting current trace
+Enter your message: Exported 3 items
+Creating trace Customer service with id trace_a8e44aaf8d544805b8a4443a5b3fc1cc
+Setting current trace: trace_a8e44aaf8d544805b8a4443a5b3fc1cc
+Creating span <agents.tracing.span_data.AgentSpanData object at 0x1083834d0> with id None
+Running agent Seat Booking Agent (turn 1)
+Creating span <agents.tracing.span_data.ResponseSpanData object at 0x10a8b0350> with id None
+Calling LLM gpt-4o with input:
+[
+  {
+    "content": "lets book a seat",
+    "role": "user"
+  },
+  {
+    "arguments": "{}",
+    "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+    "name": "transfer_to_seat_booking_agent",
+    "type": "function_call",
+    "id": "fc_67dd42b489408192897a48a09b9b99ff087f7e66587ef6c8",
+    "status": "completed"
+  },
+  {
+    "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+    "output": "{'assistant': 'Seat Booking Agent'}",
+    "type": "function_call_output"
+  },
+  {
+    "id": "msg_67dd42b599448192a7af0df524060000087f7e66587ef6c8",
+    "content": [
+      {
+        "annotations": [],
+        "text": "I can help with that! Could you please provide your confirmation number?",
+        "type": "output_text"
+      }
+    ],
+    "role": "assistant",
+    "status": "completed",
+    "type": "message"
+  },
+  {
+    "content": "123",
+    "role": "user"
+  },
+  {
+    "id": "msg_67dd42bc9d2c819281a2725a30c291fc087f7e66587ef6c8",
+    "content": [
+      {
+        "annotations": [],
+        "text": "What seat number would you like to book?",
+        "type": "output_text"
+      }
+    ],
+    "role": "assistant",
+    "status": "completed",
+    "type": "message"
+  },
+  {
+    "content": "2B",
+    "role": "user"
+  }
+]
+Tools:
+[
+  {
+    "name": "update_seat",
+    "parameters": {
+      "properties": {
+        "confirmation_number": {
+          "description": "The confirmation number for the flight.",
+          "title": "Confirmation Number",
+          "type": "string"
+        },
+        "new_seat": {
+          "description": "The new seat to update to.",
+          "title": "New Seat",
+          "type": "string"
+        }
+      },
+      "required": [
+        "confirmation_number",
+        "new_seat"
+      ],
+      "title": "update_seat_args",
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true,
+    "type": "function",
+    "description": "Update the seat for a given confirmation number."
+  },
+  {
+    "name": "transfer_to_triage_agent",
+    "parameters": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "strict": true,
+    "type": "function",
+    "description": "Handoff to the Triage Agent agent to handle the request. A triage agent that can delegate a customer's request to the appropriate agent."
+  }
+]
+Stream: False
+Tool choice: NOT_GIVEN
+Response format: NOT_GIVEN
+
+Exported 1 items
+-------------------------------------------------------
+
+POST https://api.openai.com/v1/responses
+{
+  "input": [
+    {
+      "content": "lets book a seat",
+      "role": "user"
+    },
+    {
+      "arguments": "{}",
+      "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+      "name": "transfer_to_seat_booking_agent",
+      "type": "function_call",
+      "id": "fc_67dd42b489408192897a48a09b9b99ff087f7e66587ef6c8",
+      "status": "completed"
+    },
+    {
+      "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+      "output": "{'assistant': 'Seat Booking Agent'}",
+      "type": "function_call_output"
+    },
+    {
+      "id": "msg_67dd42b599448192a7af0df524060000087f7e66587ef6c8",
+      "content": [
+        {
+          "annotations": [],
+          "text": "I can help with that! Could you please provide your confirmation number?",
+          "type": "output_text"
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    },
+    {
+      "content": "123",
+      "role": "user"
+    },
+    {
+      "id": "msg_67dd42bc9d2c819281a2725a30c291fc087f7e66587ef6c8",
+      "content": [
+        {
+          "annotations": [],
+          "text": "What seat number would you like to book?",
+          "type": "output_text"
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    },
+    {
+      "content": "2B",
+      "role": "user"
+    }
+  ],
+  "model": "gpt-4o",
+  "include": [],
+  "instructions": "# System context\nYou are part of a multi-agent system called the Agents SDK, designed to make agent coordination and execution easy. Agents uses two primary abstraction: **Agents** and **Handoffs**. An agent encompasses instructions and tools and can hand off a conversation to another agent when appropriate. Handoffs are achieved by calling a handoff function, generally named `transfer_to_<agent_name>`. Transfers between agents are handled seamlessly in the background; do not mention or draw attention to these transfers in your conversation with the user.\n\n    You are a seat booking agent. If you are speaking to a customer, you probably were transferred to from the triage agent.\n    Use the following routine to support the customer.\n    # Routine\n    1. Ask for their confirmation number.\n    2. Ask the customer what their desired seat number is.\n    3. Use the update seat tool to update the seat on the flight.\n    If the customer asks a question that is not related to the routine, transfer back to the triage agent. ",
+  "stream": false,
+  "tools": [
+    {
+      "name": "update_seat",
+      "parameters": {
+        "properties": {
+          "confirmation_number": {
+            "description": "The confirmation number for the flight.",
+            "title": "Confirmation Number",
+            "type": "string"
+          },
+          "new_seat": {
+            "description": "The new seat to update to.",
+            "title": "New Seat",
+            "type": "string"
+          }
+        },
+        "required": [
+          "confirmation_number",
+          "new_seat"
+        ],
+        "title": "update_seat_args",
+        "type": "object",
+        "additionalProperties": false
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Update the seat for a given confirmation number."
+    },
+    {
+      "name": "transfer_to_triage_agent",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Handoff to the Triage Agent agent to handle the request. A triage agent that can delegate a customer's request to the appropriate agent."
+    }
+  ]
+}
+
+{
+  "id": "resp_67dd42c42ef881929e78ea8023fe1aed087f7e66587ef6c8",
+  "created_at": 1742553796.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": "# System context\nYou are part of a multi-agent system called the Agents SDK, designed to make agent coordination and execution easy. Agents uses two primary abstraction: **Agents** and **Handoffs**. An agent encompasses instructions and tools and can hand off a conversation to another agent when appropriate. Handoffs are achieved by calling a handoff function, generally named `transfer_to_<agent_name>`. Transfers between agents are handled seamlessly in the background; do not mention or draw attention to these transfers in your conversation with the user.\n\n    You are a seat booking agent. If you are speaking to a customer, you probably were transferred to from the triage agent.\n    Use the following routine to support the customer.\n    # Routine\n    1. Ask for their confirmation number.\n    2. Ask the customer what their desired seat number is.\n    3. Use the update seat tool to update the seat on the flight.\n    If the customer asks a question that is not related to the routine, transfer back to the triage agent. ",
+  "metadata": {},
+  "model": "gpt-4o-2024-08-06",
+  "object": "response",
+  "output": [
+    {
+      "arguments": "{\"confirmation_number\":\"123\",\"new_seat\":\"2B\"}",
+      "call_id": "call_OFHEZpTocN0IAD7ZQcviKaDZ",
+      "name": "update_seat",
+      "type": "function_call",
+      "id": "fc_67dd42c4af6481929a7ab3d43423e947087f7e66587ef6c8",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [
+    {
+      "name": "update_seat",
+      "parameters": {
+        "properties": {
+          "confirmation_number": {
+            "description": "The confirmation number for the flight.",
+            "title": "Confirmation Number",
+            "type": "string"
+          },
+          "new_seat": {
+            "description": "The new seat to update to.",
+            "title": "New Seat",
+            "type": "string"
+          }
+        },
+        "required": [
+          "confirmation_number",
+          "new_seat"
+        ],
+        "title": "update_seat_args",
+        "type": "object",
+        "additionalProperties": false
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Update the seat for a given confirmation number."
+    },
+    {
+      "name": "transfer_to_triage_agent",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Handoff to the Triage Agent agent to handle the request. A triage agent that can delegate a customer's request to the appropriate agent."
+    }
+  ],
+  "top_p": 1.0,
+  "max_output_tokens": null,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": null,
+    "generate_summary": null
+  },
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    }
+  },
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 631,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 24,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 655
+  },
+  "user": null,
+  "store": true
+}
+
+
+LLM resp:
+[
+  {
+    "arguments": "{\"confirmation_number\":\"123\",\"new_seat\":\"2B\"}",
+    "call_id": "call_OFHEZpTocN0IAD7ZQcviKaDZ",
+    "name": "update_seat",
+    "type": "function_call",
+    "id": "fc_67dd42c4af6481929a7ab3d43423e947087f7e66587ef6c8",
+    "status": "completed"
+  }
+]
+
+Creating span <agents.tracing.span_data.FunctionSpanData object at 0x10a89b840> with id None
+Invoking tool update_seat with input {"confirmation_number":"123","new_seat":"2B"}
+Tool call args: ['123', '2B'], kwargs: {}
+Tool update_seat returned Updated seat to 2B for confirmation number 123
+Running agent Seat Booking Agent (turn 2)
+Creating span <agents.tracing.span_data.ResponseSpanData object at 0x10838b2d0> with id None
+Calling LLM gpt-4o with input:
+[
+  {
+    "content": "lets book a seat",
+    "role": "user"
+  },
+  {
+    "arguments": "{}",
+    "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+    "name": "transfer_to_seat_booking_agent",
+    "type": "function_call",
+    "id": "fc_67dd42b489408192897a48a09b9b99ff087f7e66587ef6c8",
+    "status": "completed"
+  },
+  {
+    "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+    "output": "{'assistant': 'Seat Booking Agent'}",
+    "type": "function_call_output"
+  },
+  {
+    "id": "msg_67dd42b599448192a7af0df524060000087f7e66587ef6c8",
+    "content": [
+      {
+        "annotations": [],
+        "text": "I can help with that! Could you please provide your confirmation number?",
+        "type": "output_text"
+      }
+    ],
+    "role": "assistant",
+    "status": "completed",
+    "type": "message"
+  },
+  {
+    "content": "123",
+    "role": "user"
+  },
+  {
+    "id": "msg_67dd42bc9d2c819281a2725a30c291fc087f7e66587ef6c8",
+    "content": [
+      {
+        "annotations": [],
+        "text": "What seat number would you like to book?",
+        "type": "output_text"
+      }
+    ],
+    "role": "assistant",
+    "status": "completed",
+    "type": "message"
+  },
+  {
+    "content": "2B",
+    "role": "user"
+  },
+  {
+    "arguments": "{\"confirmation_number\":\"123\",\"new_seat\":\"2B\"}",
+    "call_id": "call_OFHEZpTocN0IAD7ZQcviKaDZ",
+    "name": "update_seat",
+    "type": "function_call",
+    "id": "fc_67dd42c4af6481929a7ab3d43423e947087f7e66587ef6c8",
+    "status": "completed"
+  },
+  {
+    "call_id": "call_OFHEZpTocN0IAD7ZQcviKaDZ",
+    "output": "Updated seat to 2B for confirmation number 123",
+    "type": "function_call_output"
+  }
+]
+Tools:
+[
+  {
+    "name": "update_seat",
+    "parameters": {
+      "properties": {
+        "confirmation_number": {
+          "description": "The confirmation number for the flight.",
+          "title": "Confirmation Number",
+          "type": "string"
+        },
+        "new_seat": {
+          "description": "The new seat to update to.",
+          "title": "New Seat",
+          "type": "string"
+        }
+      },
+      "required": [
+        "confirmation_number",
+        "new_seat"
+      ],
+      "title": "update_seat_args",
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true,
+    "type": "function",
+    "description": "Update the seat for a given confirmation number."
+  },
+  {
+    "name": "transfer_to_triage_agent",
+    "parameters": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "strict": true,
+    "type": "function",
+    "description": "Handoff to the Triage Agent agent to handle the request. A triage agent that can delegate a customer's request to the appropriate agent."
+  }
+]
+Stream: False
+Tool choice: NOT_GIVEN
+Response format: NOT_GIVEN
+
+-------------------------------------------------------
+
+POST https://api.openai.com/v1/responses
+{
+  "input": [
+    {
+      "content": "lets book a seat",
+      "role": "user"
+    },
+    {
+      "arguments": "{}",
+      "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+      "name": "transfer_to_seat_booking_agent",
+      "type": "function_call",
+      "id": "fc_67dd42b489408192897a48a09b9b99ff087f7e66587ef6c8",
+      "status": "completed"
+    },
+    {
+      "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+      "output": "{'assistant': 'Seat Booking Agent'}",
+      "type": "function_call_output"
+    },
+    {
+      "id": "msg_67dd42b599448192a7af0df524060000087f7e66587ef6c8",
+      "content": [
+        {
+          "annotations": [],
+          "text": "I can help with that! Could you please provide your confirmation number?",
+          "type": "output_text"
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    },
+    {
+      "content": "123",
+      "role": "user"
+    },
+    {
+      "id": "msg_67dd42bc9d2c819281a2725a30c291fc087f7e66587ef6c8",
+      "content": [
+        {
+          "annotations": [],
+          "text": "What seat number would you like to book?",
+          "type": "output_text"
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    },
+    {
+      "content": "2B",
+      "role": "user"
+    },
+    {
+      "arguments": "{\"confirmation_number\":\"123\",\"new_seat\":\"2B\"}",
+      "call_id": "call_OFHEZpTocN0IAD7ZQcviKaDZ",
+      "name": "update_seat",
+      "type": "function_call",
+      "id": "fc_67dd42c4af6481929a7ab3d43423e947087f7e66587ef6c8",
+      "status": "completed"
+    },
+    {
+      "call_id": "call_OFHEZpTocN0IAD7ZQcviKaDZ",
+      "output": "Updated seat to 2B for confirmation number 123",
+      "type": "function_call_output"
+    }
+  ],
+  "model": "gpt-4o",
+  "include": [],
+  "instructions": "# System context\nYou are part of a multi-agent system called the Agents SDK, designed to make agent coordination and execution easy. Agents uses two primary abstraction: **Agents** and **Handoffs**. An agent encompasses instructions and tools and can hand off a conversation to another agent when appropriate. Handoffs are achieved by calling a handoff function, generally named `transfer_to_<agent_name>`. Transfers between agents are handled seamlessly in the background; do not mention or draw attention to these transfers in your conversation with the user.\n\n    You are a seat booking agent. If you are speaking to a customer, you probably were transferred to from the triage agent.\n    Use the following routine to support the customer.\n    # Routine\n    1. Ask for their confirmation number.\n    2. Ask the customer what their desired seat number is.\n    3. Use the update seat tool to update the seat on the flight.\n    If the customer asks a question that is not related to the routine, transfer back to the triage agent. ",
+  "stream": false,
+  "tools": [
+    {
+      "name": "update_seat",
+      "parameters": {
+        "properties": {
+          "confirmation_number": {
+            "description": "The confirmation number for the flight.",
+            "title": "Confirmation Number",
+            "type": "string"
+          },
+          "new_seat": {
+            "description": "The new seat to update to.",
+            "title": "New Seat",
+            "type": "string"
+          }
+        },
+        "required": [
+          "confirmation_number",
+          "new_seat"
+        ],
+        "title": "update_seat_args",
+        "type": "object",
+        "additionalProperties": false
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Update the seat for a given confirmation number."
+    },
+    {
+      "name": "transfer_to_triage_agent",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Handoff to the Triage Agent agent to handle the request. A triage agent that can delegate a customer's request to the appropriate agent."
+    }
+  ]
+}
+
+{
+  "id": "resp_67dd42c536f881929abdada45ce4196d087f7e66587ef6c8",
+  "created_at": 1742553797.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": "# System context\nYou are part of a multi-agent system called the Agents SDK, designed to make agent coordination and execution easy. Agents uses two primary abstraction: **Agents** and **Handoffs**. An agent encompasses instructions and tools and can hand off a conversation to another agent when appropriate. Handoffs are achieved by calling a handoff function, generally named `transfer_to_<agent_name>`. Transfers between agents are handled seamlessly in the background; do not mention or draw attention to these transfers in your conversation with the user.\n\n    You are a seat booking agent. If you are speaking to a customer, you probably were transferred to from the triage agent.\n    Use the following routine to support the customer.\n    # Routine\n    1. Ask for their confirmation number.\n    2. Ask the customer what their desired seat number is.\n    3. Use the update seat tool to update the seat on the flight.\n    If the customer asks a question that is not related to the routine, transfer back to the triage agent. ",
+  "metadata": {},
+  "model": "gpt-4o-2024-08-06",
+  "object": "response",
+  "output": [
+    {
+      "id": "msg_67dd42c5a3e88192a9d0da259ee29c0f087f7e66587ef6c8",
+      "content": [
+        {
+          "annotations": [],
+          "text": "Your seat has been successfully updated to 2B. If there's anything else you need, feel free to ask!",
+          "type": "output_text"
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [
+    {
+      "name": "update_seat",
+      "parameters": {
+        "properties": {
+          "confirmation_number": {
+            "description": "The confirmation number for the flight.",
+            "title": "Confirmation Number",
+            "type": "string"
+          },
+          "new_seat": {
+            "description": "The new seat to update to.",
+            "title": "New Seat",
+            "type": "string"
+          }
+        },
+        "required": [
+          "confirmation_number",
+          "new_seat"
+        ],
+        "title": "update_seat_args",
+        "type": "object",
+        "additionalProperties": false
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Update the seat for a given confirmation number."
+    },
+    {
+      "name": "transfer_to_triage_agent",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Handoff to the Triage Agent agent to handle the request. A triage agent that can delegate a customer's request to the appropriate agent."
+    }
+  ],
+  "top_p": 1.0,
+  "max_output_tokens": null,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": null,
+    "generate_summary": null
+  },
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    }
+  },
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 675,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 25,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 700
+  },
+  "user": null,
+  "store": true
+}
+
+
+LLM resp:
+[
+  {
+    "id": "msg_67dd42c5a3e88192a9d0da259ee29c0f087f7e66587ef6c8",
+    "content": [
+      {
+        "annotations": [],
+        "text": "Your seat has been successfully updated to 2B. If there's anything else you need, feel free to ask!",
+        "type": "output_text"
+      }
+    ],
+    "role": "assistant",
+    "status": "completed",
+    "type": "message"
+  }
+]
+
+Seat Booking Agent: Calling a tool
+Seat Booking Agent: Tool call output: Updated seat to 2B for confirmation number 123
+Seat Booking Agent: Your seat has been successfully updated to 2B. If there's anything else you need, feel free to ask!
+Resetting current trace
+Enter your message: Exported 4 items
+Creating trace Customer service with id trace_1a47fc982c284bb3825b99453ee2f758
+Setting current trace: trace_1a47fc982c284bb3825b99453ee2f758
+Creating span <agents.tracing.span_data.AgentSpanData object at 0x10a822710> with id None
+Running agent Seat Booking Agent (turn 1)
+Creating span <agents.tracing.span_data.ResponseSpanData object at 0x10a934a10> with id None
+Calling LLM gpt-4o with input:
+[
+  {
+    "content": "lets book a seat",
+    "role": "user"
+  },
+  {
+    "arguments": "{}",
+    "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+    "name": "transfer_to_seat_booking_agent",
+    "type": "function_call",
+    "id": "fc_67dd42b489408192897a48a09b9b99ff087f7e66587ef6c8",
+    "status": "completed"
+  },
+  {
+    "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+    "output": "{'assistant': 'Seat Booking Agent'}",
+    "type": "function_call_output"
+  },
+  {
+    "id": "msg_67dd42b599448192a7af0df524060000087f7e66587ef6c8",
+    "content": [
+      {
+        "annotations": [],
+        "text": "I can help with that! Could you please provide your confirmation number?",
+        "type": "output_text"
+      }
+    ],
+    "role": "assistant",
+    "status": "completed",
+    "type": "message"
+  },
+  {
+    "content": "123",
+    "role": "user"
+  },
+  {
+    "id": "msg_67dd42bc9d2c819281a2725a30c291fc087f7e66587ef6c8",
+    "content": [
+      {
+        "annotations": [],
+        "text": "What seat number would you like to book?",
+        "type": "output_text"
+      }
+    ],
+    "role": "assistant",
+    "status": "completed",
+    "type": "message"
+  },
+  {
+    "content": "2B",
+    "role": "user"
+  },
+  {
+    "arguments": "{\"confirmation_number\":\"123\",\"new_seat\":\"2B\"}",
+    "call_id": "call_OFHEZpTocN0IAD7ZQcviKaDZ",
+    "name": "update_seat",
+    "type": "function_call",
+    "id": "fc_67dd42c4af6481929a7ab3d43423e947087f7e66587ef6c8",
+    "status": "completed"
+  },
+  {
+    "call_id": "call_OFHEZpTocN0IAD7ZQcviKaDZ",
+    "output": "Updated seat to 2B for confirmation number 123",
+    "type": "function_call_output"
+  },
+  {
+    "id": "msg_67dd42c5a3e88192a9d0da259ee29c0f087f7e66587ef6c8",
+    "content": [
+      {
+        "annotations": [],
+        "text": "Your seat has been successfully updated to 2B. If there's anything else you need, feel free to ask!",
+        "type": "output_text"
+      }
+    ],
+    "role": "assistant",
+    "status": "completed",
+    "type": "message"
+  },
+  {
+    "content": "how many bags can i bring?",
+    "role": "user"
+  }
+]
+Tools:
+[
+  {
+    "name": "update_seat",
+    "parameters": {
+      "properties": {
+        "confirmation_number": {
+          "description": "The confirmation number for the flight.",
+          "title": "Confirmation Number",
+          "type": "string"
+        },
+        "new_seat": {
+          "description": "The new seat to update to.",
+          "title": "New Seat",
+          "type": "string"
+        }
+      },
+      "required": [
+        "confirmation_number",
+        "new_seat"
+      ],
+      "title": "update_seat_args",
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true,
+    "type": "function",
+    "description": "Update the seat for a given confirmation number."
+  },
+  {
+    "name": "transfer_to_triage_agent",
+    "parameters": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "strict": true,
+    "type": "function",
+    "description": "Handoff to the Triage Agent agent to handle the request. A triage agent that can delegate a customer's request to the appropriate agent."
+  }
+]
+Stream: False
+Tool choice: NOT_GIVEN
+Response format: NOT_GIVEN
+
+Exported 1 items
+-------------------------------------------------------
+
+POST https://api.openai.com/v1/responses
+{
+  "input": [
+    {
+      "content": "lets book a seat",
+      "role": "user"
+    },
+    {
+      "arguments": "{}",
+      "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+      "name": "transfer_to_seat_booking_agent",
+      "type": "function_call",
+      "id": "fc_67dd42b489408192897a48a09b9b99ff087f7e66587ef6c8",
+      "status": "completed"
+    },
+    {
+      "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+      "output": "{'assistant': 'Seat Booking Agent'}",
+      "type": "function_call_output"
+    },
+    {
+      "id": "msg_67dd42b599448192a7af0df524060000087f7e66587ef6c8",
+      "content": [
+        {
+          "annotations": [],
+          "text": "I can help with that! Could you please provide your confirmation number?",
+          "type": "output_text"
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    },
+    {
+      "content": "123",
+      "role": "user"
+    },
+    {
+      "id": "msg_67dd42bc9d2c819281a2725a30c291fc087f7e66587ef6c8",
+      "content": [
+        {
+          "annotations": [],
+          "text": "What seat number would you like to book?",
+          "type": "output_text"
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    },
+    {
+      "content": "2B",
+      "role": "user"
+    },
+    {
+      "arguments": "{\"confirmation_number\":\"123\",\"new_seat\":\"2B\"}",
+      "call_id": "call_OFHEZpTocN0IAD7ZQcviKaDZ",
+      "name": "update_seat",
+      "type": "function_call",
+      "id": "fc_67dd42c4af6481929a7ab3d43423e947087f7e66587ef6c8",
+      "status": "completed"
+    },
+    {
+      "call_id": "call_OFHEZpTocN0IAD7ZQcviKaDZ",
+      "output": "Updated seat to 2B for confirmation number 123",
+      "type": "function_call_output"
+    },
+    {
+      "id": "msg_67dd42c5a3e88192a9d0da259ee29c0f087f7e66587ef6c8",
+      "content": [
+        {
+          "annotations": [],
+          "text": "Your seat has been successfully updated to 2B. If there's anything else you need, feel free to ask!",
+          "type": "output_text"
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    },
+    {
+      "content": "how many bags can i bring?",
+      "role": "user"
+    }
+  ],
+  "model": "gpt-4o",
+  "include": [],
+  "instructions": "# System context\nYou are part of a multi-agent system called the Agents SDK, designed to make agent coordination and execution easy. Agents uses two primary abstraction: **Agents** and **Handoffs**. An agent encompasses instructions and tools and can hand off a conversation to another agent when appropriate. Handoffs are achieved by calling a handoff function, generally named `transfer_to_<agent_name>`. Transfers between agents are handled seamlessly in the background; do not mention or draw attention to these transfers in your conversation with the user.\n\n    You are a seat booking agent. If you are speaking to a customer, you probably were transferred to from the triage agent.\n    Use the following routine to support the customer.\n    # Routine\n    1. Ask for their confirmation number.\n    2. Ask the customer what their desired seat number is.\n    3. Use the update seat tool to update the seat on the flight.\n    If the customer asks a question that is not related to the routine, transfer back to the triage agent. ",
+  "stream": false,
+  "tools": [
+    {
+      "name": "update_seat",
+      "parameters": {
+        "properties": {
+          "confirmation_number": {
+            "description": "The confirmation number for the flight.",
+            "title": "Confirmation Number",
+            "type": "string"
+          },
+          "new_seat": {
+            "description": "The new seat to update to.",
+            "title": "New Seat",
+            "type": "string"
+          }
+        },
+        "required": [
+          "confirmation_number",
+          "new_seat"
+        ],
+        "title": "update_seat_args",
+        "type": "object",
+        "additionalProperties": false
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Update the seat for a given confirmation number."
+    },
+    {
+      "name": "transfer_to_triage_agent",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Handoff to the Triage Agent agent to handle the request. A triage agent that can delegate a customer's request to the appropriate agent."
+    }
+  ]
+}
+
+{
+  "id": "resp_67dd42d4c3808192ae040b7203c2a897087f7e66587ef6c8",
+  "created_at": 1742553812.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": "# System context\nYou are part of a multi-agent system called the Agents SDK, designed to make agent coordination and execution easy. Agents uses two primary abstraction: **Agents** and **Handoffs**. An agent encompasses instructions and tools and can hand off a conversation to another agent when appropriate. Handoffs are achieved by calling a handoff function, generally named `transfer_to_<agent_name>`. Transfers between agents are handled seamlessly in the background; do not mention or draw attention to these transfers in your conversation with the user.\n\n    You are a seat booking agent. If you are speaking to a customer, you probably were transferred to from the triage agent.\n    Use the following routine to support the customer.\n    # Routine\n    1. Ask for their confirmation number.\n    2. Ask the customer what their desired seat number is.\n    3. Use the update seat tool to update the seat on the flight.\n    If the customer asks a question that is not related to the routine, transfer back to the triage agent. ",
+  "metadata": {},
+  "model": "gpt-4o-2024-08-06",
+  "object": "response",
+  "output": [
+    {
+      "arguments": "{}",
+      "call_id": "call_euvw6XvyO4Scy89Z5VlxvkC9",
+      "name": "transfer_to_triage_agent",
+      "type": "function_call",
+      "id": "fc_67dd42d54d148192a34958b6b03df99b087f7e66587ef6c8",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [
+    {
+      "name": "update_seat",
+      "parameters": {
+        "properties": {
+          "confirmation_number": {
+            "description": "The confirmation number for the flight.",
+            "title": "Confirmation Number",
+            "type": "string"
+          },
+          "new_seat": {
+            "description": "The new seat to update to.",
+            "title": "New Seat",
+            "type": "string"
+          }
+        },
+        "required": [
+          "confirmation_number",
+          "new_seat"
+        ],
+        "title": "update_seat_args",
+        "type": "object",
+        "additionalProperties": false
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Update the seat for a given confirmation number."
+    },
+    {
+      "name": "transfer_to_triage_agent",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Handoff to the Triage Agent agent to handle the request. A triage agent that can delegate a customer's request to the appropriate agent."
+    }
+  ],
+  "top_p": 1.0,
+  "max_output_tokens": null,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": null,
+    "generate_summary": null
+  },
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    }
+  },
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 713,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 14,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 727
+  },
+  "user": null,
+  "store": true
+}
+
+
+LLM resp:
+[
+  {
+    "arguments": "{}",
+    "call_id": "call_euvw6XvyO4Scy89Z5VlxvkC9",
+    "name": "transfer_to_triage_agent",
+    "type": "function_call",
+    "id": "fc_67dd42d54d148192a34958b6b03df99b087f7e66587ef6c8",
+    "status": "completed"
+  }
+]
+
+Creating span <agents.tracing.span_data.HandoffSpanData object at 0x10a8eb910> with id None
+Creating span <agents.tracing.span_data.AgentSpanData object at 0x10a926e90> with id None
+Running agent Triage Agent (turn 2)
+Creating span <agents.tracing.span_data.ResponseSpanData object at 0x10a8eb510> with id None
+Calling LLM gpt-4o with input:
+[
+  {
+    "content": "lets book a seat",
+    "role": "user"
+  },
+  {
+    "arguments": "{}",
+    "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+    "name": "transfer_to_seat_booking_agent",
+    "type": "function_call",
+    "id": "fc_67dd42b489408192897a48a09b9b99ff087f7e66587ef6c8",
+    "status": "completed"
+  },
+  {
+    "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+    "output": "{'assistant': 'Seat Booking Agent'}",
+    "type": "function_call_output"
+  },
+  {
+    "id": "msg_67dd42b599448192a7af0df524060000087f7e66587ef6c8",
+    "content": [
+      {
+        "annotations": [],
+        "text": "I can help with that! Could you please provide your confirmation number?",
+        "type": "output_text"
+      }
+    ],
+    "role": "assistant",
+    "status": "completed",
+    "type": "message"
+  },
+  {
+    "content": "123",
+    "role": "user"
+  },
+  {
+    "id": "msg_67dd42bc9d2c819281a2725a30c291fc087f7e66587ef6c8",
+    "content": [
+      {
+        "annotations": [],
+        "text": "What seat number would you like to book?",
+        "type": "output_text"
+      }
+    ],
+    "role": "assistant",
+    "status": "completed",
+    "type": "message"
+  },
+  {
+    "content": "2B",
+    "role": "user"
+  },
+  {
+    "arguments": "{\"confirmation_number\":\"123\",\"new_seat\":\"2B\"}",
+    "call_id": "call_OFHEZpTocN0IAD7ZQcviKaDZ",
+    "name": "update_seat",
+    "type": "function_call",
+    "id": "fc_67dd42c4af6481929a7ab3d43423e947087f7e66587ef6c8",
+    "status": "completed"
+  },
+  {
+    "call_id": "call_OFHEZpTocN0IAD7ZQcviKaDZ",
+    "output": "Updated seat to 2B for confirmation number 123",
+    "type": "function_call_output"
+  },
+  {
+    "id": "msg_67dd42c5a3e88192a9d0da259ee29c0f087f7e66587ef6c8",
+    "content": [
+      {
+        "annotations": [],
+        "text": "Your seat has been successfully updated to 2B. If there's anything else you need, feel free to ask!",
+        "type": "output_text"
+      }
+    ],
+    "role": "assistant",
+    "status": "completed",
+    "type": "message"
+  },
+  {
+    "content": "how many bags can i bring?",
+    "role": "user"
+  },
+  {
+    "arguments": "{}",
+    "call_id": "call_euvw6XvyO4Scy89Z5VlxvkC9",
+    "name": "transfer_to_triage_agent",
+    "type": "function_call",
+    "id": "fc_67dd42d54d148192a34958b6b03df99b087f7e66587ef6c8",
+    "status": "completed"
+  },
+  {
+    "call_id": "call_euvw6XvyO4Scy89Z5VlxvkC9",
+    "output": "{'assistant': 'Triage Agent'}",
+    "type": "function_call_output"
+  }
+]
+Tools:
+[
+  {
+    "name": "transfer_to_faq_agent",
+    "parameters": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "strict": true,
+    "type": "function",
+    "description": "Handoff to the FAQ Agent agent to handle the request. A helpful agent that can answer questions about the airline."
+  },
+  {
+    "name": "transfer_to_seat_booking_agent",
+    "parameters": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "strict": true,
+    "type": "function",
+    "description": "Handoff to the Seat Booking Agent agent to handle the request. A helpful agent that can update a seat on a flight."
+  }
+]
+Stream: False
+Tool choice: NOT_GIVEN
+Response format: NOT_GIVEN
+
+-------------------------------------------------------
+
+POST https://api.openai.com/v1/responses
+{
+  "input": [
+    {
+      "content": "lets book a seat",
+      "role": "user"
+    },
+    {
+      "arguments": "{}",
+      "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+      "name": "transfer_to_seat_booking_agent",
+      "type": "function_call",
+      "id": "fc_67dd42b489408192897a48a09b9b99ff087f7e66587ef6c8",
+      "status": "completed"
+    },
+    {
+      "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+      "output": "{'assistant': 'Seat Booking Agent'}",
+      "type": "function_call_output"
+    },
+    {
+      "id": "msg_67dd42b599448192a7af0df524060000087f7e66587ef6c8",
+      "content": [
+        {
+          "annotations": [],
+          "text": "I can help with that! Could you please provide your confirmation number?",
+          "type": "output_text"
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    },
+    {
+      "content": "123",
+      "role": "user"
+    },
+    {
+      "id": "msg_67dd42bc9d2c819281a2725a30c291fc087f7e66587ef6c8",
+      "content": [
+        {
+          "annotations": [],
+          "text": "What seat number would you like to book?",
+          "type": "output_text"
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    },
+    {
+      "content": "2B",
+      "role": "user"
+    },
+    {
+      "arguments": "{\"confirmation_number\":\"123\",\"new_seat\":\"2B\"}",
+      "call_id": "call_OFHEZpTocN0IAD7ZQcviKaDZ",
+      "name": "update_seat",
+      "type": "function_call",
+      "id": "fc_67dd42c4af6481929a7ab3d43423e947087f7e66587ef6c8",
+      "status": "completed"
+    },
+    {
+      "call_id": "call_OFHEZpTocN0IAD7ZQcviKaDZ",
+      "output": "Updated seat to 2B for confirmation number 123",
+      "type": "function_call_output"
+    },
+    {
+      "id": "msg_67dd42c5a3e88192a9d0da259ee29c0f087f7e66587ef6c8",
+      "content": [
+        {
+          "annotations": [],
+          "text": "Your seat has been successfully updated to 2B. If there's anything else you need, feel free to ask!",
+          "type": "output_text"
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    },
+    {
+      "content": "how many bags can i bring?",
+      "role": "user"
+    },
+    {
+      "arguments": "{}",
+      "call_id": "call_euvw6XvyO4Scy89Z5VlxvkC9",
+      "name": "transfer_to_triage_agent",
+      "type": "function_call",
+      "id": "fc_67dd42d54d148192a34958b6b03df99b087f7e66587ef6c8",
+      "status": "completed"
+    },
+    {
+      "call_id": "call_euvw6XvyO4Scy89Z5VlxvkC9",
+      "output": "{'assistant': 'Triage Agent'}",
+      "type": "function_call_output"
+    }
+  ],
+  "model": "gpt-4o",
+  "include": [],
+  "instructions": "# System context\nYou are part of a multi-agent system called the Agents SDK, designed to make agent coordination and execution easy. Agents uses two primary abstraction: **Agents** and **Handoffs**. An agent encompasses instructions and tools and can hand off a conversation to another agent when appropriate. Handoffs are achieved by calling a handoff function, generally named `transfer_to_<agent_name>`. Transfers between agents are handled seamlessly in the background; do not mention or draw attention to these transfers in your conversation with the user.\n You are a helpful triaging agent. You can use your tools to delegate questions to other appropriate agents.",
+  "stream": false,
+  "tools": [
+    {
+      "name": "transfer_to_faq_agent",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Handoff to the FAQ Agent agent to handle the request. A helpful agent that can answer questions about the airline."
+    },
+    {
+      "name": "transfer_to_seat_booking_agent",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Handoff to the Seat Booking Agent agent to handle the request. A helpful agent that can update a seat on a flight."
+    }
+  ]
+}
+
+{
+  "id": "resp_67dd42d60ca4819295da8f477a71b2d4087f7e66587ef6c8",
+  "created_at": 1742553814.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": "# System context\nYou are part of a multi-agent system called the Agents SDK, designed to make agent coordination and execution easy. Agents uses two primary abstraction: **Agents** and **Handoffs**. An agent encompasses instructions and tools and can hand off a conversation to another agent when appropriate. Handoffs are achieved by calling a handoff function, generally named `transfer_to_<agent_name>`. Transfers between agents are handled seamlessly in the background; do not mention or draw attention to these transfers in your conversation with the user.\n You are a helpful triaging agent. You can use your tools to delegate questions to other appropriate agents.",
+  "metadata": {},
+  "model": "gpt-4o-2024-08-06",
+  "object": "response",
+  "output": [
+    {
+      "arguments": "{}",
+      "call_id": "call_HR8oOvmIntROblts1BgVcyBY",
+      "name": "transfer_to_faq_agent",
+      "type": "function_call",
+      "id": "fc_67dd42d6857881928a6408df13fd5b42087f7e66587ef6c8",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [
+    {
+      "name": "transfer_to_faq_agent",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Handoff to the FAQ Agent agent to handle the request. A helpful agent that can answer questions about the airline."
+    },
+    {
+      "name": "transfer_to_seat_booking_agent",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Handoff to the Seat Booking Agent agent to handle the request. A helpful agent that can update a seat on a flight."
+    }
+  ],
+  "top_p": 1.0,
+  "max_output_tokens": null,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": null,
+    "generate_summary": null
+  },
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    }
+  },
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 633,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 14,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 647
+  },
+  "user": null,
+  "store": true
+}
+
+
+LLM resp:
+[
+  {
+    "arguments": "{}",
+    "call_id": "call_HR8oOvmIntROblts1BgVcyBY",
+    "name": "transfer_to_faq_agent",
+    "type": "function_call",
+    "id": "fc_67dd42d6857881928a6408df13fd5b42087f7e66587ef6c8",
+    "status": "completed"
+  }
+]
+
+Creating span <agents.tracing.span_data.HandoffSpanData object at 0x10a943110> with id None
+Creating span <agents.tracing.span_data.AgentSpanData object at 0x10a926c10> with id None
+Running agent FAQ Agent (turn 3)
+Creating span <agents.tracing.span_data.ResponseSpanData object at 0x10a943550> with id None
+Calling LLM gpt-4o with input:
+[
+  {
+    "content": "lets book a seat",
+    "role": "user"
+  },
+  {
+    "arguments": "{}",
+    "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+    "name": "transfer_to_seat_booking_agent",
+    "type": "function_call",
+    "id": "fc_67dd42b489408192897a48a09b9b99ff087f7e66587ef6c8",
+    "status": "completed"
+  },
+  {
+    "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+    "output": "{'assistant': 'Seat Booking Agent'}",
+    "type": "function_call_output"
+  },
+  {
+    "id": "msg_67dd42b599448192a7af0df524060000087f7e66587ef6c8",
+    "content": [
+      {
+        "annotations": [],
+        "text": "I can help with that! Could you please provide your confirmation number?",
+        "type": "output_text"
+      }
+    ],
+    "role": "assistant",
+    "status": "completed",
+    "type": "message"
+  },
+  {
+    "content": "123",
+    "role": "user"
+  },
+  {
+    "id": "msg_67dd42bc9d2c819281a2725a30c291fc087f7e66587ef6c8",
+    "content": [
+      {
+        "annotations": [],
+        "text": "What seat number would you like to book?",
+        "type": "output_text"
+      }
+    ],
+    "role": "assistant",
+    "status": "completed",
+    "type": "message"
+  },
+  {
+    "content": "2B",
+    "role": "user"
+  },
+  {
+    "arguments": "{\"confirmation_number\":\"123\",\"new_seat\":\"2B\"}",
+    "call_id": "call_OFHEZpTocN0IAD7ZQcviKaDZ",
+    "name": "update_seat",
+    "type": "function_call",
+    "id": "fc_67dd42c4af6481929a7ab3d43423e947087f7e66587ef6c8",
+    "status": "completed"
+  },
+  {
+    "call_id": "call_OFHEZpTocN0IAD7ZQcviKaDZ",
+    "output": "Updated seat to 2B for confirmation number 123",
+    "type": "function_call_output"
+  },
+  {
+    "id": "msg_67dd42c5a3e88192a9d0da259ee29c0f087f7e66587ef6c8",
+    "content": [
+      {
+        "annotations": [],
+        "text": "Your seat has been successfully updated to 2B. If there's anything else you need, feel free to ask!",
+        "type": "output_text"
+      }
+    ],
+    "role": "assistant",
+    "status": "completed",
+    "type": "message"
+  },
+  {
+    "content": "how many bags can i bring?",
+    "role": "user"
+  },
+  {
+    "arguments": "{}",
+    "call_id": "call_euvw6XvyO4Scy89Z5VlxvkC9",
+    "name": "transfer_to_triage_agent",
+    "type": "function_call",
+    "id": "fc_67dd42d54d148192a34958b6b03df99b087f7e66587ef6c8",
+    "status": "completed"
+  },
+  {
+    "call_id": "call_euvw6XvyO4Scy89Z5VlxvkC9",
+    "output": "{'assistant': 'Triage Agent'}",
+    "type": "function_call_output"
+  },
+  {
+    "arguments": "{}",
+    "call_id": "call_HR8oOvmIntROblts1BgVcyBY",
+    "name": "transfer_to_faq_agent",
+    "type": "function_call",
+    "id": "fc_67dd42d6857881928a6408df13fd5b42087f7e66587ef6c8",
+    "status": "completed"
+  },
+  {
+    "call_id": "call_HR8oOvmIntROblts1BgVcyBY",
+    "output": "{'assistant': 'FAQ Agent'}",
+    "type": "function_call_output"
+  }
+]
+Tools:
+[
+  {
+    "name": "faq_lookup_tool",
+    "parameters": {
+      "properties": {
+        "question": {
+          "title": "Question",
+          "type": "string"
+        }
+      },
+      "required": [
+        "question"
+      ],
+      "title": "faq_lookup_tool_args",
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true,
+    "type": "function",
+    "description": "Lookup frequently asked questions."
+  },
+  {
+    "name": "transfer_to_triage_agent",
+    "parameters": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "strict": true,
+    "type": "function",
+    "description": "Handoff to the Triage Agent agent to handle the request. A triage agent that can delegate a customer's request to the appropriate agent."
+  }
+]
+Stream: False
+Tool choice: NOT_GIVEN
+Response format: NOT_GIVEN
+
+-------------------------------------------------------
+
+POST https://api.openai.com/v1/responses
+{
+  "input": [
+    {
+      "content": "lets book a seat",
+      "role": "user"
+    },
+    {
+      "arguments": "{}",
+      "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+      "name": "transfer_to_seat_booking_agent",
+      "type": "function_call",
+      "id": "fc_67dd42b489408192897a48a09b9b99ff087f7e66587ef6c8",
+      "status": "completed"
+    },
+    {
+      "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+      "output": "{'assistant': 'Seat Booking Agent'}",
+      "type": "function_call_output"
+    },
+    {
+      "id": "msg_67dd42b599448192a7af0df524060000087f7e66587ef6c8",
+      "content": [
+        {
+          "annotations": [],
+          "text": "I can help with that! Could you please provide your confirmation number?",
+          "type": "output_text"
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    },
+    {
+      "content": "123",
+      "role": "user"
+    },
+    {
+      "id": "msg_67dd42bc9d2c819281a2725a30c291fc087f7e66587ef6c8",
+      "content": [
+        {
+          "annotations": [],
+          "text": "What seat number would you like to book?",
+          "type": "output_text"
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    },
+    {
+      "content": "2B",
+      "role": "user"
+    },
+    {
+      "arguments": "{\"confirmation_number\":\"123\",\"new_seat\":\"2B\"}",
+      "call_id": "call_OFHEZpTocN0IAD7ZQcviKaDZ",
+      "name": "update_seat",
+      "type": "function_call",
+      "id": "fc_67dd42c4af6481929a7ab3d43423e947087f7e66587ef6c8",
+      "status": "completed"
+    },
+    {
+      "call_id": "call_OFHEZpTocN0IAD7ZQcviKaDZ",
+      "output": "Updated seat to 2B for confirmation number 123",
+      "type": "function_call_output"
+    },
+    {
+      "id": "msg_67dd42c5a3e88192a9d0da259ee29c0f087f7e66587ef6c8",
+      "content": [
+        {
+          "annotations": [],
+          "text": "Your seat has been successfully updated to 2B. If there's anything else you need, feel free to ask!",
+          "type": "output_text"
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    },
+    {
+      "content": "how many bags can i bring?",
+      "role": "user"
+    },
+    {
+      "arguments": "{}",
+      "call_id": "call_euvw6XvyO4Scy89Z5VlxvkC9",
+      "name": "transfer_to_triage_agent",
+      "type": "function_call",
+      "id": "fc_67dd42d54d148192a34958b6b03df99b087f7e66587ef6c8",
+      "status": "completed"
+    },
+    {
+      "call_id": "call_euvw6XvyO4Scy89Z5VlxvkC9",
+      "output": "{'assistant': 'Triage Agent'}",
+      "type": "function_call_output"
+    },
+    {
+      "arguments": "{}",
+      "call_id": "call_HR8oOvmIntROblts1BgVcyBY",
+      "name": "transfer_to_faq_agent",
+      "type": "function_call",
+      "id": "fc_67dd42d6857881928a6408df13fd5b42087f7e66587ef6c8",
+      "status": "completed"
+    },
+    {
+      "call_id": "call_HR8oOvmIntROblts1BgVcyBY",
+      "output": "{'assistant': 'FAQ Agent'}",
+      "type": "function_call_output"
+    }
+  ],
+  "model": "gpt-4o",
+  "include": [],
+  "instructions": "# System context\nYou are part of a multi-agent system called the Agents SDK, designed to make agent coordination and execution easy. Agents uses two primary abstraction: **Agents** and **Handoffs**. An agent encompasses instructions and tools and can hand off a conversation to another agent when appropriate. Handoffs are achieved by calling a handoff function, generally named `transfer_to_<agent_name>`. Transfers between agents are handled seamlessly in the background; do not mention or draw attention to these transfers in your conversation with the user.\n\n    You are an FAQ agent. If you are speaking to a customer, you probably were transferred to from the triage agent.\n    Use the following routine to support the customer.\n    # Routine\n    1. Identify the last question asked by the customer.\n    2. Use the faq lookup tool to answer the question. Do not rely on your own knowledge.\n    3. If you cannot answer the question, transfer back to the triage agent.",
+  "stream": false,
+  "tools": [
+    {
+      "name": "faq_lookup_tool",
+      "parameters": {
+        "properties": {
+          "question": {
+            "title": "Question",
+            "type": "string"
+          }
+        },
+        "required": [
+          "question"
+        ],
+        "title": "faq_lookup_tool_args",
+        "type": "object",
+        "additionalProperties": false
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Lookup frequently asked questions."
+    },
+    {
+      "name": "transfer_to_triage_agent",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Handoff to the Triage Agent agent to handle the request. A triage agent that can delegate a customer's request to the appropriate agent."
+    }
+  ]
+}
+
+{
+  "id": "resp_67dd42d713748192a6d045704ffd62ed087f7e66587ef6c8",
+  "created_at": 1742553815.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": "# System context\nYou are part of a multi-agent system called the Agents SDK, designed to make agent coordination and execution easy. Agents uses two primary abstraction: **Agents** and **Handoffs**. An agent encompasses instructions and tools and can hand off a conversation to another agent when appropriate. Handoffs are achieved by calling a handoff function, generally named `transfer_to_<agent_name>`. Transfers between agents are handled seamlessly in the background; do not mention or draw attention to these transfers in your conversation with the user.\n\n    You are an FAQ agent. If you are speaking to a customer, you probably were transferred to from the triage agent.\n    Use the following routine to support the customer.\n    # Routine\n    1. Identify the last question asked by the customer.\n    2. Use the faq lookup tool to answer the question. Do not rely on your own knowledge.\n    3. If you cannot answer the question, transfer back to the triage agent.",
+  "metadata": {},
+  "model": "gpt-4o-2024-08-06",
+  "object": "response",
+  "output": [
+    {
+      "arguments": "{\"question\":\"how many bags can I bring\"}",
+      "call_id": "call_765qURWsmAZMELhUGLA2Yl3d",
+      "name": "faq_lookup_tool",
+      "type": "function_call",
+      "id": "fc_67dd42d7a7c48192b153beda02c54bed087f7e66587ef6c8",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [
+    {
+      "name": "faq_lookup_tool",
+      "parameters": {
+        "properties": {
+          "question": {
+            "title": "Question",
+            "type": "string"
+          }
+        },
+        "required": [
+          "question"
+        ],
+        "title": "faq_lookup_tool_args",
+        "type": "object",
+        "additionalProperties": false
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Lookup frequently asked questions."
+    },
+    {
+      "name": "transfer_to_triage_agent",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Handoff to the Triage Agent agent to handle the request. A triage agent that can delegate a customer's request to the appropriate agent."
+    }
+  ],
+  "top_p": 1.0,
+  "max_output_tokens": null,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": null,
+    "generate_summary": null
+  },
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    }
+  },
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 735,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 22,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 757
+  },
+  "user": null,
+  "store": true
+}
+
+
+LLM resp:
+[
+  {
+    "arguments": "{\"question\":\"how many bags can I bring\"}",
+    "call_id": "call_765qURWsmAZMELhUGLA2Yl3d",
+    "name": "faq_lookup_tool",
+    "type": "function_call",
+    "id": "fc_67dd42d7a7c48192b153beda02c54bed087f7e66587ef6c8",
+    "status": "completed"
+  }
+]
+
+Creating span <agents.tracing.span_data.FunctionSpanData object at 0x10a90edf0> with id None
+Invoking tool faq_lookup_tool with input {"question":"how many bags can I bring"}
+Tool call args: ['how many bags can I bring'], kwargs: {}
+Tool faq_lookup_tool returned You are allowed to bring one bag on the plane. It must be under 50 pounds and 22 inches x 14 inches x 9 inches.
+Running agent FAQ Agent (turn 4)
+Creating span <agents.tracing.span_data.ResponseSpanData object at 0x10a852ad0> with id None
+Calling LLM gpt-4o with input:
+[
+  {
+    "content": "lets book a seat",
+    "role": "user"
+  },
+  {
+    "arguments": "{}",
+    "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+    "name": "transfer_to_seat_booking_agent",
+    "type": "function_call",
+    "id": "fc_67dd42b489408192897a48a09b9b99ff087f7e66587ef6c8",
+    "status": "completed"
+  },
+  {
+    "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+    "output": "{'assistant': 'Seat Booking Agent'}",
+    "type": "function_call_output"
+  },
+  {
+    "id": "msg_67dd42b599448192a7af0df524060000087f7e66587ef6c8",
+    "content": [
+      {
+        "annotations": [],
+        "text": "I can help with that! Could you please provide your confirmation number?",
+        "type": "output_text"
+      }
+    ],
+    "role": "assistant",
+    "status": "completed",
+    "type": "message"
+  },
+  {
+    "content": "123",
+    "role": "user"
+  },
+  {
+    "id": "msg_67dd42bc9d2c819281a2725a30c291fc087f7e66587ef6c8",
+    "content": [
+      {
+        "annotations": [],
+        "text": "What seat number would you like to book?",
+        "type": "output_text"
+      }
+    ],
+    "role": "assistant",
+    "status": "completed",
+    "type": "message"
+  },
+  {
+    "content": "2B",
+    "role": "user"
+  },
+  {
+    "arguments": "{\"confirmation_number\":\"123\",\"new_seat\":\"2B\"}",
+    "call_id": "call_OFHEZpTocN0IAD7ZQcviKaDZ",
+    "name": "update_seat",
+    "type": "function_call",
+    "id": "fc_67dd42c4af6481929a7ab3d43423e947087f7e66587ef6c8",
+    "status": "completed"
+  },
+  {
+    "call_id": "call_OFHEZpTocN0IAD7ZQcviKaDZ",
+    "output": "Updated seat to 2B for confirmation number 123",
+    "type": "function_call_output"
+  },
+  {
+    "id": "msg_67dd42c5a3e88192a9d0da259ee29c0f087f7e66587ef6c8",
+    "content": [
+      {
+        "annotations": [],
+        "text": "Your seat has been successfully updated to 2B. If there's anything else you need, feel free to ask!",
+        "type": "output_text"
+      }
+    ],
+    "role": "assistant",
+    "status": "completed",
+    "type": "message"
+  },
+  {
+    "content": "how many bags can i bring?",
+    "role": "user"
+  },
+  {
+    "arguments": "{}",
+    "call_id": "call_euvw6XvyO4Scy89Z5VlxvkC9",
+    "name": "transfer_to_triage_agent",
+    "type": "function_call",
+    "id": "fc_67dd42d54d148192a34958b6b03df99b087f7e66587ef6c8",
+    "status": "completed"
+  },
+  {
+    "call_id": "call_euvw6XvyO4Scy89Z5VlxvkC9",
+    "output": "{'assistant': 'Triage Agent'}",
+    "type": "function_call_output"
+  },
+  {
+    "arguments": "{}",
+    "call_id": "call_HR8oOvmIntROblts1BgVcyBY",
+    "name": "transfer_to_faq_agent",
+    "type": "function_call",
+    "id": "fc_67dd42d6857881928a6408df13fd5b42087f7e66587ef6c8",
+    "status": "completed"
+  },
+  {
+    "call_id": "call_HR8oOvmIntROblts1BgVcyBY",
+    "output": "{'assistant': 'FAQ Agent'}",
+    "type": "function_call_output"
+  },
+  {
+    "arguments": "{\"question\":\"how many bags can I bring\"}",
+    "call_id": "call_765qURWsmAZMELhUGLA2Yl3d",
+    "name": "faq_lookup_tool",
+    "type": "function_call",
+    "id": "fc_67dd42d7a7c48192b153beda02c54bed087f7e66587ef6c8",
+    "status": "completed"
+  },
+  {
+    "call_id": "call_765qURWsmAZMELhUGLA2Yl3d",
+    "output": "You are allowed to bring one bag on the plane. It must be under 50 pounds and 22 inches x 14 inches x 9 inches.",
+    "type": "function_call_output"
+  }
+]
+Tools:
+[
+  {
+    "name": "faq_lookup_tool",
+    "parameters": {
+      "properties": {
+        "question": {
+          "title": "Question",
+          "type": "string"
+        }
+      },
+      "required": [
+        "question"
+      ],
+      "title": "faq_lookup_tool_args",
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true,
+    "type": "function",
+    "description": "Lookup frequently asked questions."
+  },
+  {
+    "name": "transfer_to_triage_agent",
+    "parameters": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "strict": true,
+    "type": "function",
+    "description": "Handoff to the Triage Agent agent to handle the request. A triage agent that can delegate a customer's request to the appropriate agent."
+  }
+]
+Stream: False
+Tool choice: NOT_GIVEN
+Response format: NOT_GIVEN
+
+-------------------------------------------------------
+
+POST https://api.openai.com/v1/responses
+{
+  "input": [
+    {
+      "content": "lets book a seat",
+      "role": "user"
+    },
+    {
+      "arguments": "{}",
+      "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+      "name": "transfer_to_seat_booking_agent",
+      "type": "function_call",
+      "id": "fc_67dd42b489408192897a48a09b9b99ff087f7e66587ef6c8",
+      "status": "completed"
+    },
+    {
+      "call_id": "call_BsQGMjTnDoN8v0v5T4wF53Dl",
+      "output": "{'assistant': 'Seat Booking Agent'}",
+      "type": "function_call_output"
+    },
+    {
+      "id": "msg_67dd42b599448192a7af0df524060000087f7e66587ef6c8",
+      "content": [
+        {
+          "annotations": [],
+          "text": "I can help with that! Could you please provide your confirmation number?",
+          "type": "output_text"
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    },
+    {
+      "content": "123",
+      "role": "user"
+    },
+    {
+      "id": "msg_67dd42bc9d2c819281a2725a30c291fc087f7e66587ef6c8",
+      "content": [
+        {
+          "annotations": [],
+          "text": "What seat number would you like to book?",
+          "type": "output_text"
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    },
+    {
+      "content": "2B",
+      "role": "user"
+    },
+    {
+      "arguments": "{\"confirmation_number\":\"123\",\"new_seat\":\"2B\"}",
+      "call_id": "call_OFHEZpTocN0IAD7ZQcviKaDZ",
+      "name": "update_seat",
+      "type": "function_call",
+      "id": "fc_67dd42c4af6481929a7ab3d43423e947087f7e66587ef6c8",
+      "status": "completed"
+    },
+    {
+      "call_id": "call_OFHEZpTocN0IAD7ZQcviKaDZ",
+      "output": "Updated seat to 2B for confirmation number 123",
+      "type": "function_call_output"
+    },
+    {
+      "id": "msg_67dd42c5a3e88192a9d0da259ee29c0f087f7e66587ef6c8",
+      "content": [
+        {
+          "annotations": [],
+          "text": "Your seat has been successfully updated to 2B. If there's anything else you need, feel free to ask!",
+          "type": "output_text"
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    },
+    {
+      "content": "how many bags can i bring?",
+      "role": "user"
+    },
+    {
+      "arguments": "{}",
+      "call_id": "call_euvw6XvyO4Scy89Z5VlxvkC9",
+      "name": "transfer_to_triage_agent",
+      "type": "function_call",
+      "id": "fc_67dd42d54d148192a34958b6b03df99b087f7e66587ef6c8",
+      "status": "completed"
+    },
+    {
+      "call_id": "call_euvw6XvyO4Scy89Z5VlxvkC9",
+      "output": "{'assistant': 'Triage Agent'}",
+      "type": "function_call_output"
+    },
+    {
+      "arguments": "{}",
+      "call_id": "call_HR8oOvmIntROblts1BgVcyBY",
+      "name": "transfer_to_faq_agent",
+      "type": "function_call",
+      "id": "fc_67dd42d6857881928a6408df13fd5b42087f7e66587ef6c8",
+      "status": "completed"
+    },
+    {
+      "call_id": "call_HR8oOvmIntROblts1BgVcyBY",
+      "output": "{'assistant': 'FAQ Agent'}",
+      "type": "function_call_output"
+    },
+    {
+      "arguments": "{\"question\":\"how many bags can I bring\"}",
+      "call_id": "call_765qURWsmAZMELhUGLA2Yl3d",
+      "name": "faq_lookup_tool",
+      "type": "function_call",
+      "id": "fc_67dd42d7a7c48192b153beda02c54bed087f7e66587ef6c8",
+      "status": "completed"
+    },
+    {
+      "call_id": "call_765qURWsmAZMELhUGLA2Yl3d",
+      "output": "You are allowed to bring one bag on the plane. It must be under 50 pounds and 22 inches x 14 inches x 9 inches.",
+      "type": "function_call_output"
+    }
+  ],
+  "model": "gpt-4o",
+  "include": [],
+  "instructions": "# System context\nYou are part of a multi-agent system called the Agents SDK, designed to make agent coordination and execution easy. Agents uses two primary abstraction: **Agents** and **Handoffs**. An agent encompasses instructions and tools and can hand off a conversation to another agent when appropriate. Handoffs are achieved by calling a handoff function, generally named `transfer_to_<agent_name>`. Transfers between agents are handled seamlessly in the background; do not mention or draw attention to these transfers in your conversation with the user.\n\n    You are an FAQ agent. If you are speaking to a customer, you probably were transferred to from the triage agent.\n    Use the following routine to support the customer.\n    # Routine\n    1. Identify the last question asked by the customer.\n    2. Use the faq lookup tool to answer the question. Do not rely on your own knowledge.\n    3. If you cannot answer the question, transfer back to the triage agent.",
+  "stream": false,
+  "tools": [
+    {
+      "name": "faq_lookup_tool",
+      "parameters": {
+        "properties": {
+          "question": {
+            "title": "Question",
+            "type": "string"
+          }
+        },
+        "required": [
+          "question"
+        ],
+        "title": "faq_lookup_tool_args",
+        "type": "object",
+        "additionalProperties": false
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Lookup frequently asked questions."
+    },
+    {
+      "name": "transfer_to_triage_agent",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Handoff to the Triage Agent agent to handle the request. A triage agent that can delegate a customer's request to the appropriate agent."
+    }
+  ]
+}
+
+{
+  "id": "resp_67dd42d87c08819282d0bf513d7bcb25087f7e66587ef6c8",
+  "created_at": 1742553816.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": "# System context\nYou are part of a multi-agent system called the Agents SDK, designed to make agent coordination and execution easy. Agents uses two primary abstraction: **Agents** and **Handoffs**. An agent encompasses instructions and tools and can hand off a conversation to another agent when appropriate. Handoffs are achieved by calling a handoff function, generally named `transfer_to_<agent_name>`. Transfers between agents are handled seamlessly in the background; do not mention or draw attention to these transfers in your conversation with the user.\n\n    You are an FAQ agent. If you are speaking to a customer, you probably were transferred to from the triage agent.\n    Use the following routine to support the customer.\n    # Routine\n    1. Identify the last question asked by the customer.\n    2. Use the faq lookup tool to answer the question. Do not rely on your own knowledge.\n    3. If you cannot answer the question, transfer back to the triage agent.",
+  "metadata": {},
+  "model": "gpt-4o-2024-08-06",
+  "object": "response",
+  "output": [
+    {
+      "id": "msg_67dd42d925f08192a5d5808f60d23a66087f7e66587ef6c8",
+      "content": [
+        {
+          "annotations": [],
+          "text": "You can bring one bag on the plane. It must be under 50 pounds and measure up to 22 inches x 14 inches x 9 inches.",
+          "type": "output_text"
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [
+    {
+      "name": "faq_lookup_tool",
+      "parameters": {
+        "properties": {
+          "question": {
+            "title": "Question",
+            "type": "string"
+          }
+        },
+        "required": [
+          "question"
+        ],
+        "title": "faq_lookup_tool_args",
+        "type": "object",
+        "additionalProperties": false
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Lookup frequently asked questions."
+    },
+    {
+      "name": "transfer_to_triage_agent",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "strict": true,
+      "type": "function",
+      "description": "Handoff to the Triage Agent agent to handle the request. A triage agent that can delegate a customer's request to the appropriate agent."
+    }
+  ],
+  "top_p": 1.0,
+  "max_output_tokens": null,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": null,
+    "generate_summary": null
+  },
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    }
+  },
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 798,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 34,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 832
+  },
+  "user": null,
+  "store": true
+}
+
+
+LLM resp:
+[
+  {
+    "id": "msg_67dd42d925f08192a5d5808f60d23a66087f7e66587ef6c8",
+    "content": [
+      {
+        "annotations": [],
+        "text": "You can bring one bag on the plane. It must be under 50 pounds and measure up to 22 inches x 14 inches x 9 inches.",
+        "type": "output_text"
+      }
+    ],
+    "role": "assistant",
+    "status": "completed",
+    "type": "message"
+  }
+]
+
+Seat Booking Agent: Skipping item: HandoffCallItem
+Handed off from Seat Booking Agent to Triage Agent
+Triage Agent: Skipping item: HandoffCallItem
+Handed off from Triage Agent to FAQ Agent
+FAQ Agent: Calling a tool
+FAQ Agent: Tool call output: You are allowed to bring one bag on the plane. It must be under 50 pounds and 22 inches x 14 inches x 9 inches.
+FAQ Agent: You can bring one bag on the plane. It must be under 50 pounds and measure up to 22 inches x 14 inches x 9 inches.
+Resetting current trace
+Enter your message: Exported 10 items
