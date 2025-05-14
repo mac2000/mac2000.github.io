@@ -134,7 +134,116 @@ To <span class="token url">https://github.com/mac2000/demo</span>  <span class="
 <p>there are other ways to configure something similar is you are stick to github</p>
 <p>you may want to configure webhook on github side, it will call an endpoint on your server, which will git pull changes</p>
 <p>alternativelly you may provide ssh key to github and create some kind of github action that will ssh into your server and do the work</p>
-<p>both cases require server to be exposed somehow to external network and obviously you tied up with github</p></div></main><footer><a href="#top">top</a><a href="/">home</a><a href="/search">search</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/git-sync-remote/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p>both cases require server to be exposed somehow to external network and obviously you tied up with github</p>
+<p><strong>scp, rsync</strong></p>
+<p>also there are</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">scp</span> <span class="token parameter variable">-r</span> <span class="token builtin class-name">.</span> mini:~/github.com/mac2000/demo</code></pre></div>
+<p>but as you may guess it will be way to slow</p>
+<p>alternativelly we may want</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">rsync</span> <span class="token parameter variable">-avz</span> <span class="token parameter variable">--delete</span> <span class="token parameter variable">--filter</span><span class="token operator">=</span><span class="token string">':- .gitignore'</span> <span class="token parameter variable">-e</span> <span class="token function">ssh</span> <span class="token builtin class-name">.</span> mini:~/github.com/mac2000/demo</code></pre></div>
+<p>but at the very end, having git is an ultimate answer to the question - what files are changed on remote</p>
+<p><strong>ticks</strong></p>
+<p>also, with git hooks we can do all sorts of tricks, e.g.</p>
+<p>inf post-receive hook we are receiving oldrev newrev refname stdin which allows us to answer the question - what files were changed, e.g.:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token shebang important">#!/usr/bin/env bash</span>
+<span class="token builtin class-name">set</span> <span class="token parameter variable">-e</span>
+
+<span class="token keyword">while</span> <span class="token builtin class-name">read</span> oldrev newrev refname
+<span class="token keyword">do</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">"oldrev: <span class="token variable">$oldrev</span>"</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">"newrev: <span class="token variable">$newrev</span>"</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">"refname: <span class="token variable">$refname</span>"</span>
+  <span class="token function">git</span> <span class="token function">diff</span> --name-only <span class="token string">"<span class="token variable">$oldrev</span>"</span> <span class="token string">"<span class="token variable">$newrev</span>"</span>
+<span class="token keyword">done</span></code></pre></div>
+<p>you may want to run your script only for main branch</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token keyword">while</span> <span class="token builtin class-name">read</span> oldrev newrev refname
+<span class="token keyword">do</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">"oldrev: <span class="token variable">$oldrev</span>"</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">"newrev: <span class="token variable">$newrev</span>"</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">"refname: <span class="token variable">$refname</span>"</span>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$refname</span>"</span> <span class="token operator">=</span> <span class="token string">"refs/heads/main"</span> <span class="token punctuation">]</span>
+  <span class="token keyword">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"main branch pushed - do the workd"</span>
+  <span class="token keyword">fi</span>
+<span class="token keyword">done</span></code></pre></div>
+<p>for git diff options are:</p>
+<ul>
+<li><code class="language-text">git diff --name-only "$oldrev" "$newrev"</code> - list file names</li>
+<li><code class="language-text">git diff --name-status "$oldrev" "$newrev"</code> - list file names prefixed with one letter change code, e.g. <code class="language-text">A</code> - added, <code class="language-text">M</code> - modified, <code class="language-text">D</code> - deleted</li>
+<li><code class="language-text">git diff --diff-filter=AM --name-only "$oldrev" "$newrev"</code> - list file names filtered by change, in this example only added or modified files will be printed</li>
+</ul>
+<p>let's imagin we have nodejs project served by nginx</p>
+<p>so our script may become something like (pseudo)</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">if changed_files.includes('package.json') {
+  npm install
+}
+
+npm run build
+
+if changed_files.includes('nginx.conf') {
+  nginx -s reload
+}
+
+if changed_files.includes('demo.plist') {
+  launchctl load ~/Library/LaunchAgents/demo.plist
+}
+
+...</code></pre></div>
+<p>also, what's important you are not forced to write your script in bash, here is an example of such script written in node</p>
+<p><div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token hashbang comment">#!/usr/bin/env /opt/homebrew/bin/node</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> createInterface <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"readline"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> execSync <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"child_process"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span> oldrev<span class="token punctuation">,</span> newrev<span class="token punctuation">,</span> refname <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">{</span> oldrev<span class="token punctuation">,</span> newrev<span class="token punctuation">,</span> refname <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// remote: {</span>
+<span class="token comment">// remote:   oldrev: 'e1be22c77fc76247341a376204d277a75c8b08a5',</span>
+<span class="token comment">// remote:   newrev: '2632b65ca1c3be923a25d9bd53bcb8f6d52b9ddc',</span>
+<span class="token comment">// remote:   refname: 'refs/heads/main'</span>
+<span class="token comment">// remote: }</span>
+
+<span class="token keyword">const</span> files <span class="token operator">=</span> <span class="token function">changes</span><span class="token punctuation">(</span>oldrev<span class="token punctuation">,</span> newrev<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">{</span> files <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// remote:   files: [ '.gitignore', 'foo.txt', 'package-lock.json', 'package.json' ]</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>refname <span class="token operator">===</span> <span class="token string">"refs/heads/main"</span> <span class="token operator">&amp;&amp;</span> files<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">"package.json"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"package.json changed, running npm install"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token function">execSync</span><span class="token punctuation">(</span><span class="token string">"npm install"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">stdio</span><span class="token operator">:</span> <span class="token string">"inherit"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// remote: /bin/sh: npm: command not found - do not forget about paths, or eval brew</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"npm install failed"</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    process<span class="token punctuation">.</span><span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">readStdin</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> rl <span class="token operator">=</span> <span class="token function">createInterface</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">input</span><span class="token operator">:</span> process<span class="token punctuation">.</span>stdin<span class="token punctuation">,</span> <span class="token literal-property property">terminal</span><span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> lines <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    rl<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"line"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">line</span><span class="token punctuation">)</span> <span class="token operator">=></span> lines<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    rl<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"close"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token comment">// technically there may be more than one line, aka push with commits to different branches</span>
+      <span class="token function">resolve</span><span class="token punctuation">(</span>lines<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> lines <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">readStdin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>oldrev<span class="token punctuation">,</span> newrev<span class="token punctuation">,</span> refname<span class="token punctuation">]</span> <span class="token operator">=</span> lines<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\s+</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span> oldrev<span class="token punctuation">,</span> newrev<span class="token punctuation">,</span> refname <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">changes</span><span class="token punctuation">(</span><span class="token parameter">oldrev<span class="token punctuation">,</span> newrev</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">execSync</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">git diff --name-only </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>oldrev<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>newrev<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">l</span><span class="token punctuation">)</span> <span class="token operator">=></span> l<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>Boolean<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div></p></div></main><footer><a href="#top">top</a><a href="/">home</a><a href="/search">search</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/git-sync-remote/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
